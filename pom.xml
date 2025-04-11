@@ -81,7 +81,7 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <sourceDirectory>${basedir}/src/main/resources/schemas/report.yaml</sourceDirectory>
+                            <sourceDirectory>${basedir}/src/main/resources/wfc/schemas/report.yaml</sourceDirectory>
                             <targetPackage>com.webfuzzing.commons.report</targetPackage>
                         </configuration>
                     </execution>
