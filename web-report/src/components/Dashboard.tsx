@@ -56,12 +56,14 @@ export const Dashboard: React.FC<IDashboard> = ({data, test_files}) => {
                         <TabsTrigger
                             value="overview"
                             className="min-w-[150px] py-3 border border-gray-300 data-[state=active]:bg-white data-[state=active]:border-2 data-[state=active]:border-black data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                            data-testid="tab-overview"
                         >
                             Overview
                         </TabsTrigger>
                         <TabsTrigger
                             value="endpoints"
                             className="min-w-[150px] py-3 border border-gray-300 data-[state=active]:bg-white data-[state=active]:border-2 data-[state=active]:border-black data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                            data-testid="tab-endpoints"
                         >
                             Endpoints
                         </TabsTrigger>

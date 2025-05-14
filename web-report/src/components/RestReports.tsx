@@ -12,6 +12,7 @@ export const RestReports: React.FC<RESTReport> = ({total_http_calls, covered_htt
         "5XX": 0
     }
 
+    //TODO make this calculation in utils and test it.
     endpoint_ids.map(
         (endpoint) => {
             const allStatusCodes = covered_http_status.filter(status => status.endpoint_id === endpoint)
@@ -73,12 +74,12 @@ export const RestReports: React.FC<RESTReport> = ({total_http_calls, covered_htt
             <div className="mt-6">
                 <div className="flex justify-between font-bold">
                     <span># Endpoints:</span>
-                    <span>{endpoint_ids.length}</span>
+                    <span data-testid="rest-report-endpoint">{endpoint_ids.length}</span>
                 </div>
                 <div className="border-t border-black my-2"></div>
                 <div className="flex justify-between font-bold">
                     <span># HTTP Calls:</span>
-                    <span>{total_http_calls}</span>
+                    <span data-testid="rest-report-http-calls">{total_http_calls}</span>
                 </div>
                 <div className="border-t border-black my-2"></div>
             </div>

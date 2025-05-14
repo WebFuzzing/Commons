@@ -75,7 +75,7 @@ export const Endpoints: React.FC<IProps> = ({addTestTab, data}) => {
             <Accordion type="single" collapsible className="w-full">
                 {
                     transformed.map((item, index) => (
-                        <EndpointAccordion key={index} value={`_${index}`} endpoint={item.endpoint}
+                        <EndpointAccordion data-testid="endpoint" key={index} value={`_${index}`} endpoint={item.endpoint}
                                            status_codes={item.http_status_codes} faults={item.faults}
                                            addTestTab={addTestTab}/>
                     ))

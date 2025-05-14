@@ -14,11 +14,11 @@ export const GeneratedTests: React.FC<IGeneratedTests> = ({total_tests, total_te
             <div className="flex-1">
                 <div className="flex justify-between">
                     <span className="text-lg font-bold">Generated Tests Cases:</span>
-                    <span className="text-lg font-bold">{total_tests}</span>
+                    <span className="text-lg font-bold" data-testid="generated-tests-total-tests">{total_tests}</span>
                 </div>
                 <div className="flex justify-between">
                     <span className="text-lg font-bold">Generated Test Files:</span>
-                    <span className="text-lg font-bold">{total_test_files}</span>
+                    <span className="text-lg font-bold" data-testid="generated-tests-total-test-files">{total_test_files}</span>
                 </div>
             </div>
         </div>
