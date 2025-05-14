@@ -2,15 +2,10 @@ import {Card} from "@/components/ui/card.tsx";
 import {ShieldAlert} from "lucide-react";
 import type React from "react";
 import {Faults} from "@/types/GeneratedTypes.tsx";
+import {getFaultCounts} from "@/utils.tsx";
 
 export const FaultsComponent: React.FC<Faults> = ({total_number, found_faults}) => {
-    const faultCounts = new Map();
-    //TODO make this calculation in utils and test it.
-    found_faults.forEach(fault => {
-        fault.fault_categories.forEach(category => {
-            faultCounts.set(category.code, (faultCounts.get(category.code) || 0) + 1);
-        });
-    });
+    const faultCounts = getFaultCounts(found_faults);
 
     return(
         <Card className="border-2 border-black p-6 rounded-none">

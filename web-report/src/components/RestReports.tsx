@@ -2,60 +2,11 @@ import {Card} from "@/components/ui/card.tsx";
 import type React from "react";
 import {CoveragePieChart} from "@/components/CoveragePieChart.tsx";
 import {RESTReport} from "@/types/GeneratedTypes.tsx";
+import {calculateAllStatusCounts} from "@/utils.tsx";
 
 export const RestReports: React.FC<RESTReport> = ({total_http_calls, covered_http_status, endpoint_ids}) => {
     const total = endpoint_ids.length;
-    const allStatusCounts ={
-        "2XX": 0,
-        "3XX": 0,
-        "4XX": 0,
-        "5XX": 0
-    }
-
-    //TODO make this calculation in utils and test it.
-    endpoint_ids.map(
-        (endpoint) => {
-            const allStatusCodes = covered_http_status.filter(status => status.endpoint_id === endpoint)
-                .map(
-                    (status) => status.http_status
-                ).flat()
-            const uniqueStatusCodes = [...new Set(allStatusCodes)];
-
-            const isContainStatusCode = {
-                "2XX": false,
-                "3XX": false,
-                "4XX": false,
-                "5XX": false
-            }
-
-            uniqueStatusCodes.map(
-                (status) => {
-                    if (status >= 200 && status < 300) {
-                        isContainStatusCode["2XX"] = true;
-                    } else if (status >= 300 && status < 400) {
-                        isContainStatusCode["3XX"] = true;
-                    } else if (status >= 400 && status < 500) {
-                        isContainStatusCode["4XX"] = true;
-                    } else if (status >= 500 && status < 600) {
-                        isContainStatusCode["5XX"] = true;
-                    }
-                }
-            )
-
-            if (isContainStatusCode["2XX"]) {
-                allStatusCounts["2XX"]++;
-            }
-            if (isContainStatusCode["3XX"]) {
-                allStatusCounts["3XX"]++;
-            }
-            if (isContainStatusCode["4XX"]) {
-                allStatusCounts["4XX"]++;
-            }
-            if (isContainStatusCode["5XX"]) {
-                allStatusCounts["5XX"]++;
-            }
-        }
-    )
+    const allStatusCounts = calculateAllStatusCounts(covered_http_status, endpoint_ids);
 
     return (
         <Card className="border-2 border-black p-6 rounded-none">

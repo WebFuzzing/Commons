@@ -3,7 +3,7 @@ import '@testing-library/jest-dom';
 import {resolve} from "path";
 import {readFileSync} from "fs";
 import {vi} from "vitest";
-import {fetchFileContent} from "@/utils.tsx";
+import {fetchFileContent, getFaultCounts} from "@/utils.tsx";
 import App from "@/App.tsx";
 
 // Read the report.json file
@@ -80,11 +80,12 @@ describe('App test', () => {
         expect(screen.getByText(/Please wait, files are loading.../)).toBeInTheDocument();
         const total = reportData.problem_details.rest.endpoint_ids.length;
         const total_http_calls = reportData.problem_details.rest.total_http_calls;
+
         await waitFor(() => {
-            //TODO make number of endpoints testable
             expect(screen.getByTestId('rest-report-endpoint')).toContainHTML(`${total}`);
             expect(screen.getByTestId('rest-report-http-calls')).toContainHTML(`${total_http_calls}`);
         });
+
     });
 
     it('check generated tests', async () => {
@@ -135,12 +136,11 @@ describe('App test', () => {
         render(<App />);
         expect(screen.getByText(/Please wait, files are loading.../)).toBeInTheDocument();
         const total_faults = reportData.faults.total_number;
+        const faultCounts = getFaultCounts(reportData.faults.found_faults);
 
         await waitFor(() => {
             expect(screen.getByTestId('faults-component-total-faults')).toContainHTML(`${total_faults}`);
-
-            //TODO make faultCounts testable
-            // expect(screen.getByTestId('faults-component-fault-counts')).toContainHTML(`${total_test_files}`);
+            expect(screen.getByTestId('faults-component-fault-counts')).toContainHTML(faultCounts.size.toString());
         });
     });
 });
