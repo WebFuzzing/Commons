@@ -42,11 +42,11 @@ npm run build
 yarn build
 ```
 
-The build artifacts will be stored in the `dist/` directory.
+The build artifacts will be stored in the `../target/generated-sources/webreport` directory.
 
 ## Preview Production Build
 
-To preview the production build locally:
+To preview the production build locally (uses existing build without rebuilding):
 
 ```bash
 npm run preview
@@ -54,10 +54,23 @@ npm run preview
 yarn preview
 ```
 
+## Debug Mode
+
+To run the application in debug mode using static test files:
+
+```bash
+npm run debug
+# or
+yarn debug
+```
+
+This will build the project and copy static test files from `tests/static` directory to `../target/generated-sources/webreport` before previewing.
+
 ## Available Scripts
 
 - `dev` - Start development server
 - `build` - Build for production
 - `preview` - Preview production build
 - `lint` - Run ESLint
-- `installAndBuild` - Install dependencies and build (Yarn only)
+- `installAndBuild` - Install dependencies, run tests and build (Yarn only)
+- `debug` - Build the project and run in debug mode using static test files from `tests/static` directory
