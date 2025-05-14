@@ -2,15 +2,20 @@ import {Card} from "@/components/ui/card.tsx";
 import type React from "react";
 import {Badge} from "@/components/ui/badge.tsx";
 import {CodeBlock} from "@/components/CodeBlock.tsx";
-import {IFoundFaultsType, IProblemDetailsType, ITestCaseType, ITestFilesType} from "@/Types.tsx";
+import {FoundFault, RESTReport, TestCase} from "@/types/GeneratedTypes.tsx";
 import {extractCodeLines, getColor} from "@/utils.tsx";
+import {ITestFiles} from "@/types/General.tsx";
+
 
 interface IProps {
     test_case_name: string;
-    test_cases: Array<ITestCaseType>;
-    found_faults: Array<IFoundFaultsType>;
-    problem_details: IProblemDetailsType;
-    test_files: Array<ITestFilesType>;
+    test_cases: Array<TestCase>;
+    found_faults: Array<FoundFault>;
+    problem_details: {
+        rest?: RESTReport;
+        [k: string]: unknown;
+    };
+    test_files: Array<ITestFiles>;
 }
 
 export const TestResults: React.FC<IProps> = ({
@@ -20,6 +25,10 @@ export const TestResults: React.FC<IProps> = ({
                                                   problem_details,
                                                   test_files
                                               }) => {
+
+    if(!problem_details.rest){
+        return <div>We are only supporting REST results now. You need to provide rest results.</div>
+    }
 
     const test_case = test_cases.find((test) => test.id === test_case_name);
     const related_faults = found_faults.filter(fault => fault.test_case_id === test_case_name);

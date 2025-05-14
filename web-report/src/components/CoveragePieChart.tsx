@@ -1,7 +1,8 @@
 import {Cell, Label, Pie, PieChart, ResponsiveContainer} from "recharts";
 import type React from "react";
 
-interface ICoverageData {
+
+export interface ICoverageData {
     covered: number;
     total: number;
     color: string;

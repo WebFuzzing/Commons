@@ -2,12 +2,12 @@ import {Card} from "@/components/ui/card.tsx";
 import {Target} from "lucide-react";
 import type React from "react";
 
-interface IGeneratedTestsType {
+interface IGeneratedTests {
     total_tests: number
     total_test_files: number
 }
 
-export const GeneratedTests: React.FC<IGeneratedTestsType> = ({total_tests, total_test_files}) => (
+export const GeneratedTests: React.FC<IGeneratedTests> = ({total_tests, total_test_files}) => (
     <Card className="border-2 border-black p-6 rounded-none">
         <div className="flex items-start gap-4">
             <Target className="w-6 h-6 text-gray-500"/>

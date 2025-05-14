@@ -37,10 +37,14 @@ export const fetchFileContent = async (filePath: string): Promise<string | objec
 
 export const extractCodeLines = (
     fileContent: string,
-    startLine: number,
-    endLine: number
+    startLine: number | undefined,
+    endLine: number  | undefined
 ): string => {
     const lines: string[] = fileContent.split('\n');
+
+    if(!startLine || !endLine){
+        return "";
+    }
 
     const startIndex: number = Math.max(0, startLine);
     const endIndex: number = Math.min(lines.length - 1, endLine - 1);

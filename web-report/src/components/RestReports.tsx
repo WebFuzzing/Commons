@@ -1,9 +1,9 @@
 import {Card} from "@/components/ui/card.tsx";
 import type React from "react";
 import {CoveragePieChart} from "@/components/CoveragePieChart.tsx";
-import {IRestType} from "@/Types.tsx";
+import {RESTReport} from "@/types/GeneratedTypes.tsx";
 
-export const RestReports: React.FC<IRestType> = ({total_http_calls, covered_http_status, endpoint_ids}) => {
+export const RestReports: React.FC<RESTReport> = ({total_http_calls, covered_http_status, endpoint_ids}) => {
     const total = endpoint_ids.length;
     const allStatusCounts ={
         "2XX": 0,
