@@ -3,8 +3,8 @@ import '@testing-library/jest-dom';
 import {resolve} from "path";
 import {readFileSync} from "fs";
 import {vi} from "vitest";
-import {fetchFileContent, getFaultCounts} from "@/utils.tsx";
-import App from "@/App.tsx";
+import App from "../src/App";
+import {fetchFileContent, getFaultCounts} from "../src/utils";
 
 // Read the report.json file
 const reportJsonPath = resolve(__dirname, './static/report.json');

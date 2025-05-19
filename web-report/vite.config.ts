@@ -10,8 +10,8 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'happy-dom',
-    setupFiles: ['./src/tests/setup.ts'],
-    include: ['src/**/*.{test,spec}.{ts,tsx}'],
+    setupFiles: ['./src-e2e/setup.ts'],
+    include: ['./src-e2e/**/*.{test,spec}.{ts,tsx}'],
   },
   resolve: {
     alias: {

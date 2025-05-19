@@ -10,7 +10,7 @@
     "installAndBuild": "yarn install && yarn generate && vitest --no-watch && tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "debug": "vite build && cpx \"src/tests/static/*\" ../target/generated-sources/webreport && vite preview",
+    "debug": "vite build && cpx \"src-e2e/static/*\" ../target/generated-sources/webreport && vite preview",
     "test": "vitest"
   },
   "dependencies": {
