@@ -1,3 +1,5 @@
+import {CoveredEndpoint, FoundFault} from "@/types/GeneratedTypes.tsx";
+
 export const getColor = (code: string | number, isBackground: boolean, isFault: boolean) => {
     if (isFault) {
         return isBackground ? "bg-red-500" : "text-red-500";
@@ -37,10 +39,14 @@ export const fetchFileContent = async (filePath: string): Promise<string | objec
 
 export const extractCodeLines = (
     fileContent: string,
-    startLine: number,
-    endLine: number
+    startLine: number | undefined,
+    endLine: number  | undefined
 ): string => {
     const lines: string[] = fileContent.split('\n');
+
+    if(!startLine || !endLine){
+        return "";
+    }
 
     const startIndex: number = Math.max(0, startLine);
     const endIndex: number = Math.min(lines.length - 1, endLine - 1);
@@ -54,3 +60,67 @@ export const extractCodeLines = (
 
     return lines.slice(startIndex, endIndex + 2).join('\n');
 };
+
+export const calculateAllStatusCounts = (covered_http_status: CoveredEndpoint[], endpoint_ids:string[]) => {
+    const allStatusCounts ={
+        "2XX": 0,
+        "3XX": 0,
+        "4XX": 0,
+        "5XX": 0
+    }
+
+    endpoint_ids.map(
+        (endpoint) => {
+            const allStatusCodes = covered_http_status.filter(status => status.endpoint_id === endpoint)
+                .map(
+                    (status) => status.http_status
+                ).flat()
+            const uniqueStatusCodes = [...new Set(allStatusCodes)];
+
+            const isContainStatusCode = {
+                "2XX": false,
+                "3XX": false,
+                "4XX": false,
+                "5XX": false
+            }
+
+            uniqueStatusCodes.map(
+                (status) => {
+                    if (status >= 200 && status < 300) {
+                        isContainStatusCode["2XX"] = true;
+                    } else if (status >= 300 && status < 400) {
+                        isContainStatusCode["3XX"] = true;
+                    } else if (status >= 400 && status < 500) {
+                        isContainStatusCode["4XX"] = true;
+                    } else if (status >= 500 && status < 600) {
+                        isContainStatusCode["5XX"] = true;
+                    }
+                }
+            )
+
+            if (isContainStatusCode["2XX"]) {
+                allStatusCounts["2XX"]++;
+            }
+            if (isContainStatusCode["3XX"]) {
+                allStatusCounts["3XX"]++;
+            }
+            if (isContainStatusCode["4XX"]) {
+                allStatusCounts["4XX"]++;
+            }
+            if (isContainStatusCode["5XX"]) {
+                allStatusCounts["5XX"]++;
+            }
+        }
+    )
+    return allStatusCounts;
+}
+
+export const getFaultCounts = (found_faults: FoundFault[]) => {
+    const faultCounts = new Map();
+    found_faults.forEach(fault => {
+        fault.fault_categories.forEach(category => {
+            faultCounts.set(category.code, (faultCounts.get(category.code) || 0) + 1);
+        });
+    });
+    return faultCounts;
+}

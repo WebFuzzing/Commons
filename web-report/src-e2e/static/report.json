@@ -1,0 +1,4870 @@
+{
+  "schema_version": "0.0.1",
+  "tool_name": "EvoMaster",
+  "tool_version": "unknown",
+  "creation_time": "2025-04-09T19:31:54.258Z",
+  "faults": {
+    "total_number": 529,
+    "found_faults": [
+      {
+        "operation_id": "GET:/app/api/credentials/",
+        "test_case_id": "faults.java#test_0",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "GET:/app/api/credentials/ -> [Path '/collection/14/role'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/credentials/ -> [Path '/collection/14/username'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          }
+        ]
+      },
+      {
+        "operation_id": "GET:/app/api/projects",
+        "test_case_id": "faults.java#test_1",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "GET:/app/api/projects -> [Path '/collection/9/endDate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/projects -> [Path '/collection/9/startDate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          }
+        ]
+      },
+      {
+        "operation_id": "GET:/app/api/projects",
+        "test_case_id": "faults.java#test_2",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "GET:/app/api/projects -> [Path '/collection/9/endDate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/projects -> [Path '/collection/9/startDate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/departments",
+        "test_case_id": "faults.java#test_3",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/departments -> [Path '/location/postalCode'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/credentials/save",
+        "test_case_id": "faults.java#test_4",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/credentials/save -> [Path '/password'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "POST:/app/api/credentials/save -> [Path '/role'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "POST:/app/api/credentials/save -> [Path '/username'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          }
+        ]
+      },
+      {
+        "operation_id": "GET:/app/api/employees/data/manager-project-data/{employeeId}",
+        "test_case_id": "faults.java#test_5",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/data/manager-project-data/{employeeId} -> [Path '/collection/0/title'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/data/manager-project-data/{employeeId} -> [Path '/collection/1/title'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/data/manager-project-data/{employeeId} -> [Path '/collection/2/title'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/credentials",
+        "test_case_id": "faults.java#test_6",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/credentials -> [Path '/role'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "POST:/app/api/credentials -> [Path '/username'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/credentials",
+        "test_case_id": "faults.java#test_7",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/credentials -> [Path '/password'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          }
+        ]
+      },
+      {
+        "operation_id": "PUT:/app/api/credentials/update",
+        "test_case_id": "faults.java#test_8",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "PUT:/app/api/credentials/update -> [Path '/username'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/departments",
+        "test_case_id": "faults.java#test_9",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/departments -> [Path '/location/adr'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/projects",
+        "test_case_id": "faults.java#test_10",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/projects -> [Path '/startDate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/credentials",
+        "test_case_id": "faults.java#test_11",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/credentials -> Response status 400 not defined for path '/api/credentials'."
+          }
+        ]
+      },
+      {
+        "operation_id": "GET:/app/api/credentials",
+        "test_case_id": "faults.java#test_11",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "GET:/app/api/credentials -> [Path '/collection/14/password'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/credentials -> [Path '/collection/14/role'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/credentials -> [Path '/collection/14/username'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/credentials -> [Path '/collection/15/username'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/credentials -> [Path '/collection/16/role'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/credentials -> [Path '/collection/16/username'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          }
+        ]
+      },
+      {
+        "operation_id": "GET:/app/api/employees",
+        "test_case_id": "faults.java#test_12",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/0/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/0/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/1/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/1/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/2/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/2/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/3/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/3/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/4/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/4/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/5/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/5/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/6/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/6/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/6/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/7/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/7/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/8/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/8/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/9/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/9/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/9/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/10/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/10/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/10/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/11/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/11/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/12/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/12/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/12/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/13/department'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/13/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees -> [Path '/collection/13/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          }
+        ]
+      },
+      {
+        "operation_id": "GET:/app/api/employees/",
+        "test_case_id": "faults.java#test_13",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/0/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/0/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/1/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/1/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/2/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/2/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/3/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/3/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/4/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/4/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/5/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/5/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/6/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/6/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/6/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/7/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/7/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/8/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/8/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/9/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/9/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/9/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/10/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/10/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/10/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/11/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/11/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/12/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/12/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/12/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/13/department'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/13/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/ -> [Path '/collection/13/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          }
+        ]
+      },
+      {
+        "operation_id": "PUT:/app/api/locations",
+        "test_case_id": "faults.java#test_14",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "PUT:/app/api/locations -> Response status 400 not defined for path '/api/locations'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/projects",
+        "test_case_id": "faults.java#test_15",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/projects -> [Path '/endDate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "POST:/app/api/projects -> [Path '/startDate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          }
+        ]
+      },
+      {
+        "operation_id": "PUT:/app/api/projects",
+        "test_case_id": "faults.java#test_15",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "PUT:/app/api/projects -> Response status 400 not defined for path '/api/projects'."
+          }
+        ]
+      },
+      {
+        "operation_id": "GET:/app/api/assignments",
+        "test_case_id": "faults.java#test_16",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/0/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/0/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/0/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/1/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/1/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/2/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/2/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/2/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/3/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/3/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/3/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/4/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/4/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/4/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/5/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/5/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/5/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/6/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/6/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/6/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/7/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/7/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/8/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/8/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/8/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/9/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/9/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/9/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/10/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/10/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/10/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/11/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/11/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/11/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/12/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/12/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/12/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/13/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/13/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/13/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/14/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/14/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/14/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/15/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/15/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/15/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/16/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/16/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/16/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/17/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/17/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/17/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/18/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/18/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/18/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/19/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/19/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/19/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/20/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/20/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/20/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/21/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/21/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/21/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/22/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/22/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/22/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/23/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/23/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/23/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/24/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/24/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/24/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/25/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/25/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/25/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/26/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/26/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/26/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/27/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/27/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/27/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/28/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/28/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/28/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/29/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/29/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/29/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/30/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/30/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/30/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/31/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/31/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/31/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/32/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/32/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/32/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/33/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/33/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/33/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/34/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/34/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/34/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/35/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/35/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/35/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/36/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/36/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/36/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/36/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/37/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/37/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/37/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/37/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/38/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/38/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/38/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/38/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/39/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/39/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/39/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/39/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/40/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/40/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/40/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/40/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/41/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/41/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/41/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/41/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/42/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/42/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/42/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/42/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/43/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/43/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/43/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/43/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/44/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/44/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/44/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/44/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/45/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/45/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/45/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/45/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/46/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/46/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/46/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/46/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/47/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/47/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/47/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/48/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/48/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/48/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/49/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/49/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/49/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/50/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/50/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/50/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/51/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/51/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/51/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/52/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/52/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/52/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/53/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/53/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/53/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/53/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/54/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/54/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/54/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/54/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/55/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/55/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/55/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/55/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/56/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/56/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/56/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/56/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/57/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/57/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/57/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/57/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/58/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/58/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/58/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments -> [Path '/collection/58/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          }
+        ]
+      },
+      {
+        "operation_id": "GET:/app/api/assignments/",
+        "test_case_id": "faults.java#test_17",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/0/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/0/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/0/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/1/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/1/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/2/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/2/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/2/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/3/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/3/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/3/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/4/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/4/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/4/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/5/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/5/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/5/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/6/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/6/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/6/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/7/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/7/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/8/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/8/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/8/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/9/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/9/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/9/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/10/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/10/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/10/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/11/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/11/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/11/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/12/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/12/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/12/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/13/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/13/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/13/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/14/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/14/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/14/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/15/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/15/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/15/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/16/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/16/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/16/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/17/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/17/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/17/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/18/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/18/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/18/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/19/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/19/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/19/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/20/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/20/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/20/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/21/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/21/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/21/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/22/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/22/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/22/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/23/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/23/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/23/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/24/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/24/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/24/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/25/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/25/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/25/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/26/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/26/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/26/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/27/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/27/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/27/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/28/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/28/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/28/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/29/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/29/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/29/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/30/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/30/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/30/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/31/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/31/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/31/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/32/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/32/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/32/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/33/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/33/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/33/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/34/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/34/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/34/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/35/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/35/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/35/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/36/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/36/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/36/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/36/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/37/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/37/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/37/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/37/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/38/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/38/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/38/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/38/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/39/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/39/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/39/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/39/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/40/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/40/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/40/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/40/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/41/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/41/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/41/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/41/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/42/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/42/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/42/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/42/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/43/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/43/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/43/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/43/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/44/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/44/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/44/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/44/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/45/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/45/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/45/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/45/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/46/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/46/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/46/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/46/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/47/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/47/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/47/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/48/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/48/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/48/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/49/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/49/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/49/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/50/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/50/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/50/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/51/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/51/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/51/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/52/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/52/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/52/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/53/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/53/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/53/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/53/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/54/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/54/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/54/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/54/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/55/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/55/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/55/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/55/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/56/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/56/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/56/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/56/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/57/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/57/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/57/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/57/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/58/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/58/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/58/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          },
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/ -> [Path '/collection/58/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
+          }
+        ]
+      },
+      {
+        "operation_id": "GET:/app/api/assignments/{employeeId}/{projectId}",
+        "test_case_id": "faults.java#test_18",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/{employeeId}/{projectId} -> Response status 400 not defined for path '/api/assignments/{employeeId}/{projectId}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/projects",
+        "test_case_id": "faults.java#test_19",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/projects -> Response status 400 not defined for path '/api/projects'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/projects/save",
+        "test_case_id": "faults.java#test_20",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/projects/save -> Response status 400 not defined for path '/api/projects/save'."
+          }
+        ]
+      },
+      {
+        "operation_id": "DELETE:/app/api/assignments/delete/{employeeId}/{projectId}/{commitDate}",
+        "test_case_id": "faults.java#test_21",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "DELETE:/app/api/assignments/delete/{employeeId}/{projectId}/{commitDate} -> Response status 400 not defined for path '/api/assignments/delete/{employeeId}/{projectId}/{commitDate}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "GET:/app/api/employees/data/department/{departmentId}",
+        "test_case_id": "faults.java#test_22",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/data/department/{departmentId} -> Response status 400 not defined for path '/api/employees/data/department/{departmentId}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "DELETE:/app/api/departments/delete/{id}",
+        "test_case_id": "faults.java#test_23",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "DELETE:/app/api/departments/delete/{id} -> Response status 400 not defined for path '/api/departments/delete/{id}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "DELETE:/app/api/employees/{id}",
+        "test_case_id": "faults.java#test_24",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "DELETE:/app/api/employees/{id} -> Response status 400 not defined for path '/api/employees/{id}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "DELETE:/app/api/locations/delete/{id}",
+        "test_case_id": "faults.java#test_25",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "DELETE:/app/api/locations/delete/{id} -> Response status 400 not defined for path '/api/locations/delete/{id}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "DELETE:/app/api/projects/delete/{id}",
+        "test_case_id": "faults.java#test_26",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "DELETE:/app/api/projects/delete/{id} -> Response status 400 not defined for path '/api/projects/delete/{id}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "GET:/app/api/departments/{id}",
+        "test_case_id": "faults.java#test_27",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "GET:/app/api/departments/{id} -> Response status 400 not defined for path '/api/departments/{id}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "PUT:/app/api/projects",
+        "test_case_id": "faults.java#test_28",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "PUT:/app/api/projects -> Response status 400 not defined for path '/api/projects'."
+          }
+        ]
+      },
+      {
+        "operation_id": "PUT:/app/api/projects",
+        "test_case_id": "faults.java#test_29",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "PUT:/app/api/projects -> Response status 400 not defined for path '/api/projects'."
+          }
+        ]
+      },
+      {
+        "operation_id": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}",
+        "test_case_id": "faults.java#test_30",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId} -> Response status 400 not defined for path '/api/assignments/data/project-commit/{employeeId}/{projectId}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "GET:/app/api/assignments/{employeeId}/{projectId}/{commitDate}",
+        "test_case_id": "faults.java#test_31",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/{employeeId}/{projectId}/{commitDate} -> Response status 400 not defined for path '/api/assignments/{employeeId}/{projectId}/{commitDate}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "GET:/app/api/employees/data/manager-project-data/{employeeId}",
+        "test_case_id": "faults.java#test_32",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/data/manager-project-data/{employeeId} -> Response status 400 not defined for path '/api/employees/data/manager-project-data/{employeeId}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "DELETE:/app/api/credentials/delete/{id}",
+        "test_case_id": "faults.java#test_33",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "DELETE:/app/api/credentials/delete/{id} -> Response status 400 not defined for path '/api/credentials/delete/{id}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "GET:/app/api/credentials/{id}",
+        "test_case_id": "faults.java#test_34",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "GET:/app/api/credentials/{id} -> Response status 400 not defined for path '/api/credentials/{id}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "GET:/app/api/employees/{id}",
+        "test_case_id": "faults.java#test_35",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/{id} -> Response status 400 not defined for path '/api/employees/{id}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "GET:/app/api/projects/{id}",
+        "test_case_id": "faults.java#test_36",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "GET:/app/api/projects/{id} -> Response status 400 not defined for path '/api/projects/{id}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "DELETE:/app/api/projects/{id}",
+        "test_case_id": "faults.java#test_37",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "DELETE:/app/api/projects/{id} -> Response status 400 not defined for path '/api/projects/{id}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "DELETE:/app/api/credentials/username/{username}",
+        "test_case_id": "faults.java#test_38",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "DELETE:/app/api/credentials/username/{username} -> Response status 400 not defined for path '/api/credentials/username/{username}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "GET:/app/api/employees/username/{username}",
+        "test_case_id": "faults.java#test_39",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/username/{username} -> Response status 400 not defined for path '/api/employees/username/{username}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "GET:/app/api/credentials/username/{username}",
+        "test_case_id": "faults.java#test_40",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "GET:/app/api/credentials/username/{username} -> Response status 400 not defined for path '/api/credentials/username/{username}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "PUT:/app/api/assignments",
+        "test_case_id": "faults.java#test_41",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "PUT:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
+          }
+        ]
+      },
+      {
+        "operation_id": "GET:/app/api/credentials/username/{username}",
+        "test_case_id": "faults.java#test_42",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "GET:/app/api/credentials/username/{username} -> Response status 400 not defined for path '/api/credentials/username/{username}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/locations/save",
+        "test_case_id": "faults.java#test_43",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/locations/save -> Response status 400 not defined for path '/api/locations/save'."
+          }
+        ]
+      },
+      {
+        "operation_id": "PUT:/app/api/locations/update",
+        "test_case_id": "faults.java#test_44",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "PUT:/app/api/locations/update -> Response status 400 not defined for path '/api/locations/update'."
+          }
+        ]
+      },
+      {
+        "operation_id": "PUT:/app/api/departments",
+        "test_case_id": "faults.java#test_45",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "PUT:/app/api/departments -> Response status 400 not defined for path '/api/departments'."
+          }
+        ]
+      },
+      {
+        "operation_id": "PUT:/app/api/departments",
+        "test_case_id": "faults.java#test_46",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "PUT:/app/api/departments -> Response status 400 not defined for path '/api/departments'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/authenticate",
+        "test_case_id": "faults.java#test_47",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/authenticate -> Response status 400 not defined for path '/api/authenticate'."
+          }
+        ]
+      },
+      {
+        "operation_id": "PUT:/app/api/departments",
+        "test_case_id": "faults.java#test_48",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "PUT:/app/api/departments -> Response status 400 not defined for path '/api/departments'."
+          }
+        ]
+      },
+      {
+        "operation_id": "PUT:/app/api/employees",
+        "test_case_id": "faults.java#test_49",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "PUT:/app/api/employees -> Response status 400 not defined for path '/api/employees'."
+          }
+        ]
+      },
+      {
+        "operation_id": "PUT:/app/api/employees/update",
+        "test_case_id": "faults.java#test_50",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "PUT:/app/api/employees/update -> Response status 400 not defined for path '/api/employees/update'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/credentials",
+        "test_case_id": "faults.java#test_51",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/credentials -> Response status 400 not defined for path '/api/credentials'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/employees/save",
+        "test_case_id": "faults.java#test_52",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/employees/save -> Response status 400 not defined for path '/api/employees/save'."
+          }
+        ]
+      },
+      {
+        "operation_id": "PUT:/app/api/assignments/update",
+        "test_case_id": "faults.java#test_53",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "PUT:/app/api/assignments/update -> Response status 400 not defined for path '/api/assignments/update'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/assignments",
+        "test_case_id": "faults.java#test_54",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
+          }
+        ]
+      },
+      {
+        "operation_id": "GET:/app/api/assignments/data/project-commit/{projectId}",
+        "test_case_id": "faults.java#test_55",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/data/project-commit/{projectId} -> Response status 400 not defined for path '/api/assignments/data/project-commit/{projectId}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "DELETE:/app/api/projects/{id}",
+        "test_case_id": "faults.java#test_56",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "DELETE:/app/api/projects/{id} -> Response status 400 not defined for path '/api/projects/{id}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "GET:/app/api/locations/{id}",
+        "test_case_id": "faults.java#test_57",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "GET:/app/api/locations/{id} -> Response status 400 not defined for path '/api/locations/{id}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "PUT:/app/api/projects",
+        "test_case_id": "faults.java#test_58",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "PUT:/app/api/projects -> Response status 400 not defined for path '/api/projects'."
+          }
+        ]
+      },
+      {
+        "operation_id": "DELETE:/app/api/employees/username/{username}",
+        "test_case_id": "faults.java#test_59",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "DELETE:/app/api/employees/username/{username} -> Response status 400 not defined for path '/api/employees/username/{username}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/projects/save",
+        "test_case_id": "faults.java#test_60",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/projects/save -> Response status 400 not defined for path '/api/projects/save'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/projects",
+        "test_case_id": "faults.java#test_61",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/projects -> Response status 400 not defined for path '/api/projects'."
+          }
+        ]
+      },
+      {
+        "operation_id": "DELETE:/app/api/employees/username/{username}",
+        "test_case_id": "faults.java#test_62",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "DELETE:/app/api/employees/username/{username} -> Response status 400 not defined for path '/api/employees/username/{username}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}/{commitDate}",
+        "test_case_id": "faults.java#test_63",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}/{commitDate} -> Response status 400 not defined for path '/api/assignments/data/project-commit/{employeeId}/{projectId}/{commitDate}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}",
+        "test_case_id": "faults.java#test_64",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId} -> Response status 400 not defined for path '/api/assignments/data/project-commit/{employeeId}/{projectId}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "DELETE:/app/api/assignments/{employeeId}/{projectId}/{commitDate}",
+        "test_case_id": "faults.java#test_65",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "DELETE:/app/api/assignments/{employeeId}/{projectId}/{commitDate} -> Response status 400 not defined for path '/api/assignments/{employeeId}/{projectId}/{commitDate}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "GET:/app/api/employees/data/employee-project-data/{employeeId}",
+        "test_case_id": "faults.java#test_66",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "GET:/app/api/employees/data/employee-project-data/{employeeId} -> Response status 400 not defined for path '/api/employees/data/employee-project-data/{employeeId}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "DELETE:/app/api/departments/{id}",
+        "test_case_id": "faults.java#test_67",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "DELETE:/app/api/departments/{id} -> Response status 400 not defined for path '/api/departments/{id}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "DELETE:/app/api/locations/{id}",
+        "test_case_id": "faults.java#test_68",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "DELETE:/app/api/locations/{id} -> Response status 400 not defined for path '/api/locations/{id}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}/{commitDate}",
+        "test_case_id": "faults.java#test_69",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}/{commitDate} -> Response status 400 not defined for path '/api/assignments/data/project-commit/{employeeId}/{projectId}/{commitDate}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}",
+        "test_case_id": "faults.java#test_70",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId} -> Response status 400 not defined for path '/api/assignments/data/project-commit/{employeeId}/{projectId}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "DELETE:/app/api/credentials/{id}",
+        "test_case_id": "faults.java#test_71",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "DELETE:/app/api/credentials/{id} -> Response status 400 not defined for path '/api/credentials/{id}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "DELETE:/app/api/employees/delete/{id}",
+        "test_case_id": "faults.java#test_72",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "DELETE:/app/api/employees/delete/{id} -> Response status 400 not defined for path '/api/employees/delete/{id}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/employees/save",
+        "test_case_id": "faults.java#test_73",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/employees/save -> Response status 400 not defined for path '/api/employees/save'."
+          }
+        ]
+      },
+      {
+        "operation_id": "PUT:/app/api/projects/update",
+        "test_case_id": "faults.java#test_74",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "PUT:/app/api/projects/update -> Response status 400 not defined for path '/api/projects/update'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/locations",
+        "test_case_id": "faults.java#test_75",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/locations -> Response status 400 not defined for path '/api/locations'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/assignments",
+        "test_case_id": "faults.java#test_76",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
+          }
+        ]
+      },
+      {
+        "operation_id": "PUT:/app/api/assignments/update",
+        "test_case_id": "faults.java#test_77",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "PUT:/app/api/assignments/update -> Response status 400 not defined for path '/api/assignments/update'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/assignments/save",
+        "test_case_id": "faults.java#test_78",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/assignments/save -> Response status 400 not defined for path '/api/assignments/save'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/departments",
+        "test_case_id": "faults.java#test_79",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/departments -> Response status 400 not defined for path '/api/departments'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/assignments",
+        "test_case_id": "faults.java#test_80",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
+          }
+        ]
+      },
+      {
+        "operation_id": "PUT:/app/api/credentials",
+        "test_case_id": "faults.java#test_81",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "PUT:/app/api/credentials -> Response status 400 not defined for path '/api/credentials'."
+          }
+        ]
+      },
+      {
+        "operation_id": "PUT:/app/api/projects/update",
+        "test_case_id": "faults.java#test_82",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "PUT:/app/api/projects/update -> Response status 400 not defined for path '/api/projects/update'."
+          }
+        ]
+      },
+      {
+        "operation_id": "PUT:/app/api/projects",
+        "test_case_id": "faults.java#test_83",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "PUT:/app/api/projects -> Response status 400 not defined for path '/api/projects'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/departments/save",
+        "test_case_id": "faults.java#test_84",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/departments/save -> Response status 400 not defined for path '/api/departments/save'."
+          }
+        ]
+      },
+      {
+        "operation_id": "PUT:/app/api/departments/update",
+        "test_case_id": "faults.java#test_85",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "PUT:/app/api/departments/update -> Response status 400 not defined for path '/api/departments/update'."
+          }
+        ]
+      },
+      {
+        "operation_id": "PUT:/app/api/departments/update",
+        "test_case_id": "faults.java#test_86",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "PUT:/app/api/departments/update -> Response status 400 not defined for path '/api/departments/update'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/credentials/save",
+        "test_case_id": "faults.java#test_87",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/credentials/save -> Response status 400 not defined for path '/api/credentials/save'."
+          }
+        ]
+      },
+      {
+        "operation_id": "PUT:/app/api/credentials/update",
+        "test_case_id": "faults.java#test_88",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "PUT:/app/api/credentials/update -> Response status 400 not defined for path '/api/credentials/update'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/assignments",
+        "test_case_id": "faults.java#test_89",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
+          }
+        ]
+      },
+      {
+        "operation_id": "PUT:/app/api/departments/update",
+        "test_case_id": "faults.java#test_90",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "PUT:/app/api/departments/update -> Response status 400 not defined for path '/api/departments/update'."
+          }
+        ]
+      },
+      {
+        "operation_id": "DELETE:/app/api/credentials/{id}",
+        "test_case_id": "faults.java#test_91",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "DELETE:/app/api/credentials/{id} -> Response status 400 not defined for path '/api/credentials/{id}'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/employees",
+        "test_case_id": "faults.java#test_92",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/employees -> Response status 400 not defined for path '/api/employees'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/locations",
+        "test_case_id": "faults.java#test_93",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/locations -> Response status 400 not defined for path '/api/locations'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/authenticate/",
+        "test_case_id": "faults.java#test_94",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/authenticate/ -> Response status 400 not defined for path '/api/authenticate/'."
+          }
+        ]
+      },
+      {
+        "operation_id": "PUT:/app/api/projects",
+        "test_case_id": "faults.java#test_95",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "PUT:/app/api/projects -> Response status 400 not defined for path '/api/projects'."
+          }
+        ]
+      },
+      {
+        "operation_id": "PUT:/app/api/locations/update",
+        "test_case_id": "faults.java#test_96",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "PUT:/app/api/locations/update -> Response status 400 not defined for path '/api/locations/update'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/authenticate/",
+        "test_case_id": "faults.java#test_97",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/authenticate/ -> Response status 400 not defined for path '/api/authenticate/'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/assignments/save",
+        "test_case_id": "faults.java#test_98",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/assignments/save -> Response status 400 not defined for path '/api/assignments/save'."
+          }
+        ]
+      },
+      {
+        "operation_id": "PUT:/app/api/departments",
+        "test_case_id": "faults.java#test_99",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "PUT:/app/api/departments -> Response status 400 not defined for path '/api/departments'."
+          }
+        ]
+      },
+      {
+        "operation_id": "PUT:/app/api/assignments/update",
+        "test_case_id": "faults.java#test_100",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "PUT:/app/api/assignments/update -> Response status 400 not defined for path '/api/assignments/update'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/assignments",
+        "test_case_id": "faults.java#test_101",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
+          }
+        ]
+      },
+      {
+        "operation_id": "PUT:/app/api/locations",
+        "test_case_id": "faults.java#test_102",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "PUT:/app/api/locations -> Response status 400 not defined for path '/api/locations'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/departments/save",
+        "test_case_id": "faults.java#test_103",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/departments/save -> Response status 400 not defined for path '/api/departments/save'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/projects",
+        "test_case_id": "faults.java#test_104",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/projects -> Response status 400 not defined for path '/api/projects'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/assignments",
+        "test_case_id": "faults.java#test_105",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/departments",
+        "test_case_id": "faults.java#test_106",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/departments -> Response status 400 not defined for path '/api/departments'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/assignments",
+        "test_case_id": "faults.java#test_107",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
+          }
+        ]
+      },
+      {
+        "operation_id": "PUT:/app/api/assignments",
+        "test_case_id": "faults.java#test_108",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "PUT:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
+          }
+        ]
+      },
+      {
+        "operation_id": "POST:/app/api/assignments",
+        "test_case_id": "faults.java#test_109",
+        "fault_categories": [
+          {
+            "code": 200,
+            "context": "POST:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
+          }
+        ]
+      }
+    ]
+  },
+  "problem_details": {
+    "rest": {
+      "total_http_calls": 130,
+      "endpoint_ids": [
+        "GET:/app/api/assignments",
+        "POST:/app/api/assignments",
+        "PUT:/app/api/assignments",
+        "GET:/app/api/assignments/",
+        "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}",
+        "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}/{commitDate}",
+        "GET:/app/api/assignments/data/project-commit/{projectId}",
+        "DELETE:/app/api/assignments/delete/{employeeId}/{projectId}/{commitDate}",
+        "POST:/app/api/assignments/save",
+        "PUT:/app/api/assignments/update",
+        "GET:/app/api/assignments/{employeeId}/{projectId}",
+        "GET:/app/api/assignments/{employeeId}/{projectId}/{commitDate}",
+        "DELETE:/app/api/assignments/{employeeId}/{projectId}/{commitDate}",
+        "POST:/app/api/authenticate",
+        "POST:/app/api/authenticate/",
+        "GET:/app/api/credentials",
+        "POST:/app/api/credentials",
+        "PUT:/app/api/credentials",
+        "GET:/app/api/credentials/",
+        "DELETE:/app/api/credentials/delete/{id}",
+        "POST:/app/api/credentials/save",
+        "PUT:/app/api/credentials/update",
+        "GET:/app/api/credentials/username/{username}",
+        "DELETE:/app/api/credentials/username/{username}",
+        "GET:/app/api/credentials/{id}",
+        "DELETE:/app/api/credentials/{id}",
+        "GET:/app/api/departments",
+        "POST:/app/api/departments",
+        "PUT:/app/api/departments",
+        "GET:/app/api/departments/",
+        "DELETE:/app/api/departments/delete/{id}",
+        "POST:/app/api/departments/save",
+        "PUT:/app/api/departments/update",
+        "GET:/app/api/departments/{id}",
+        "DELETE:/app/api/departments/{id}",
+        "GET:/app/api/employees",
+        "POST:/app/api/employees",
+        "PUT:/app/api/employees",
+        "GET:/app/api/employees/",
+        "GET:/app/api/employees/data/department/{departmentId}",
+        "GET:/app/api/employees/data/employee-project-data/{employeeId}",
+        "GET:/app/api/employees/data/manager-project-data/{employeeId}",
+        "DELETE:/app/api/employees/delete/{id}",
+        "POST:/app/api/employees/save",
+        "PUT:/app/api/employees/update",
+        "GET:/app/api/employees/username/{username}",
+        "DELETE:/app/api/employees/username/{username}",
+        "GET:/app/api/employees/{id}",
+        "DELETE:/app/api/employees/{id}",
+        "GET:/app/api/locations",
+        "POST:/app/api/locations",
+        "PUT:/app/api/locations",
+        "GET:/app/api/locations/",
+        "DELETE:/app/api/locations/delete/{id}",
+        "POST:/app/api/locations/save",
+        "PUT:/app/api/locations/update",
+        "GET:/app/api/locations/{id}",
+        "DELETE:/app/api/locations/{id}",
+        "GET:/app/api/projects",
+        "POST:/app/api/projects",
+        "PUT:/app/api/projects",
+        "GET:/app/api/projects/",
+        "DELETE:/app/api/projects/delete/{id}",
+        "POST:/app/api/projects/save",
+        "PUT:/app/api/projects/update",
+        "GET:/app/api/projects/{id}",
+        "DELETE:/app/api/projects/{id}"
+      ],
+      "covered_http_status": [
+        {
+          "endpoint_id": "GET:/app/api/credentials/",
+          "test_case_id": "faults.java#test_0",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/projects",
+          "test_case_id": "faults.java#test_1",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/projects",
+          "test_case_id": "faults.java#test_2",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/departments",
+          "test_case_id": "faults.java#test_3",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/credentials/save",
+          "test_case_id": "faults.java#test_4",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/employees/data/manager-project-data/{employeeId}",
+          "test_case_id": "faults.java#test_5",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/credentials",
+          "test_case_id": "faults.java#test_6",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/credentials",
+          "test_case_id": "faults.java#test_7",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/credentials/update",
+          "test_case_id": "faults.java#test_8",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/departments",
+          "test_case_id": "faults.java#test_9",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/projects",
+          "test_case_id": "faults.java#test_10",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/credentials",
+          "test_case_id": "faults.java#test_11",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/credentials",
+          "test_case_id": "faults.java#test_11",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/employees",
+          "test_case_id": "faults.java#test_12",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/employees/",
+          "test_case_id": "faults.java#test_13",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/locations",
+          "test_case_id": "faults.java#test_14",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/locations",
+          "test_case_id": "faults.java#test_14",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/projects",
+          "test_case_id": "faults.java#test_15",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/projects",
+          "test_case_id": "faults.java#test_15",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/assignments",
+          "test_case_id": "faults.java#test_16",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/assignments/",
+          "test_case_id": "faults.java#test_17",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/assignments/{employeeId}/{projectId}",
+          "test_case_id": "faults.java#test_18",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/projects",
+          "test_case_id": "faults.java#test_19",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/projects/save",
+          "test_case_id": "faults.java#test_20",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "DELETE:/app/api/assignments/delete/{employeeId}/{projectId}/{commitDate}",
+          "test_case_id": "faults.java#test_21",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/employees/data/department/{departmentId}",
+          "test_case_id": "faults.java#test_22",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "DELETE:/app/api/departments/delete/{id}",
+          "test_case_id": "faults.java#test_23",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "DELETE:/app/api/employees/{id}",
+          "test_case_id": "faults.java#test_24",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "DELETE:/app/api/locations/delete/{id}",
+          "test_case_id": "faults.java#test_25",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "DELETE:/app/api/projects/delete/{id}",
+          "test_case_id": "faults.java#test_26",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/departments/{id}",
+          "test_case_id": "faults.java#test_27",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/projects",
+          "test_case_id": "faults.java#test_28",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/projects",
+          "test_case_id": "faults.java#test_29",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}",
+          "test_case_id": "faults.java#test_30",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/assignments/{employeeId}/{projectId}/{commitDate}",
+          "test_case_id": "faults.java#test_31",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/employees/data/manager-project-data/{employeeId}",
+          "test_case_id": "faults.java#test_32",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "DELETE:/app/api/credentials/delete/{id}",
+          "test_case_id": "faults.java#test_33",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/credentials/{id}",
+          "test_case_id": "faults.java#test_34",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/employees/{id}",
+          "test_case_id": "faults.java#test_35",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/projects/{id}",
+          "test_case_id": "faults.java#test_36",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "DELETE:/app/api/projects/{id}",
+          "test_case_id": "faults.java#test_37",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "DELETE:/app/api/credentials/username/{username}",
+          "test_case_id": "faults.java#test_38",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/employees/username/{username}",
+          "test_case_id": "faults.java#test_39",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/credentials/username/{username}",
+          "test_case_id": "faults.java#test_40",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/assignments",
+          "test_case_id": "faults.java#test_41",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/credentials/username/{username}",
+          "test_case_id": "faults.java#test_42",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/locations/save",
+          "test_case_id": "faults.java#test_43",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/locations/update",
+          "test_case_id": "faults.java#test_44",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/departments",
+          "test_case_id": "faults.java#test_45",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/departments",
+          "test_case_id": "faults.java#test_46",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/authenticate",
+          "test_case_id": "faults.java#test_47",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/departments",
+          "test_case_id": "faults.java#test_48",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/employees",
+          "test_case_id": "faults.java#test_49",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/employees/update",
+          "test_case_id": "faults.java#test_50",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/credentials",
+          "test_case_id": "faults.java#test_51",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/employees/save",
+          "test_case_id": "faults.java#test_52",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/assignments/update",
+          "test_case_id": "faults.java#test_53",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/assignments",
+          "test_case_id": "faults.java#test_54",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/assignments/data/project-commit/{projectId}",
+          "test_case_id": "faults.java#test_55",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "DELETE:/app/api/projects/{id}",
+          "test_case_id": "faults.java#test_56",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/locations/{id}",
+          "test_case_id": "faults.java#test_57",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/projects",
+          "test_case_id": "faults.java#test_58",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "DELETE:/app/api/employees/username/{username}",
+          "test_case_id": "faults.java#test_59",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/projects/save",
+          "test_case_id": "faults.java#test_60",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/projects",
+          "test_case_id": "faults.java#test_61",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "DELETE:/app/api/employees/username/{username}",
+          "test_case_id": "faults.java#test_62",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}/{commitDate}",
+          "test_case_id": "faults.java#test_63",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}",
+          "test_case_id": "faults.java#test_64",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "DELETE:/app/api/assignments/{employeeId}/{projectId}/{commitDate}",
+          "test_case_id": "faults.java#test_65",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/employees/data/employee-project-data/{employeeId}",
+          "test_case_id": "faults.java#test_66",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "DELETE:/app/api/departments/{id}",
+          "test_case_id": "faults.java#test_67",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "DELETE:/app/api/locations/{id}",
+          "test_case_id": "faults.java#test_68",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}/{commitDate}",
+          "test_case_id": "faults.java#test_69",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}",
+          "test_case_id": "faults.java#test_70",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "DELETE:/app/api/credentials/{id}",
+          "test_case_id": "faults.java#test_71",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "DELETE:/app/api/employees/delete/{id}",
+          "test_case_id": "faults.java#test_72",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/employees/save",
+          "test_case_id": "faults.java#test_73",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/projects/update",
+          "test_case_id": "faults.java#test_74",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/locations",
+          "test_case_id": "faults.java#test_75",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/assignments",
+          "test_case_id": "faults.java#test_76",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/assignments/update",
+          "test_case_id": "faults.java#test_77",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/assignments/save",
+          "test_case_id": "faults.java#test_78",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/departments",
+          "test_case_id": "faults.java#test_79",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/assignments",
+          "test_case_id": "faults.java#test_80",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/credentials",
+          "test_case_id": "faults.java#test_81",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/projects/update",
+          "test_case_id": "faults.java#test_82",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/projects",
+          "test_case_id": "faults.java#test_83",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/departments/save",
+          "test_case_id": "faults.java#test_84",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/departments/update",
+          "test_case_id": "faults.java#test_85",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/departments/update",
+          "test_case_id": "faults.java#test_86",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/credentials/save",
+          "test_case_id": "faults.java#test_87",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/credentials/update",
+          "test_case_id": "faults.java#test_88",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/assignments",
+          "test_case_id": "faults.java#test_89",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/departments/update",
+          "test_case_id": "faults.java#test_90",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "DELETE:/app/api/credentials/{id}",
+          "test_case_id": "faults.java#test_91",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/employees",
+          "test_case_id": "faults.java#test_92",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/locations",
+          "test_case_id": "faults.java#test_93",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/authenticate/",
+          "test_case_id": "faults.java#test_94",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/projects",
+          "test_case_id": "faults.java#test_95",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/locations/update",
+          "test_case_id": "faults.java#test_96",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/authenticate/",
+          "test_case_id": "faults.java#test_97",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/assignments/save",
+          "test_case_id": "faults.java#test_98",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/departments",
+          "test_case_id": "faults.java#test_99",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/assignments/update",
+          "test_case_id": "faults.java#test_100",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/assignments",
+          "test_case_id": "faults.java#test_101",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/locations",
+          "test_case_id": "faults.java#test_102",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/departments/save",
+          "test_case_id": "faults.java#test_103",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/projects",
+          "test_case_id": "faults.java#test_104",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/assignments",
+          "test_case_id": "faults.java#test_105",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/departments",
+          "test_case_id": "faults.java#test_106",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/assignments",
+          "test_case_id": "faults.java#test_107",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/assignments",
+          "test_case_id": "faults.java#test_108",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/assignments",
+          "test_case_id": "faults.java#test_109",
+          "http_status": [
+            400
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/v2/api-docs",
+          "test_case_id": "successes.java#test_0",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/projects/",
+          "test_case_id": "successes.java#test_1",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/locations",
+          "test_case_id": "successes.java#test_2",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/locations",
+          "test_case_id": "successes.java#test_3",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/departments",
+          "test_case_id": "successes.java#test_4",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/departments/",
+          "test_case_id": "successes.java#test_5",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "DELETE:/app/api/employees/delete/{id}",
+          "test_case_id": "successes.java#test_6",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "DELETE:/app/api/credentials/username/{username}",
+          "test_case_id": "successes.java#test_7",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "DELETE:/app/api/employees/username/{username}",
+          "test_case_id": "successes.java#test_8",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/credentials",
+          "test_case_id": "successes.java#test_9",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/credentials/",
+          "test_case_id": "successes.java#test_10",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/projects/{id}",
+          "test_case_id": "successes.java#test_11",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "GET:/app/api/locations/",
+          "test_case_id": "successes.java#test_12",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/locations",
+          "test_case_id": "successes.java#test_13",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "POST:/app/api/locations/save",
+          "test_case_id": "successes.java#test_14",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/credentials",
+          "test_case_id": "successes.java#test_15",
+          "http_status": [
+            200
+          ]
+        },
+        {
+          "endpoint_id": "PUT:/app/api/departments/update",
+          "test_case_id": "successes.java#test_16",
+          "http_status": [
+            200
+          ]
+        }
+      ]
+    }
+  },
+  "total_tests": 127,
+  "test_file_paths": [
+    "faults.java",
+    "successes.java"
+  ],
+  "test_cases": [
+    {
+      "id": "faults.java#test_0",
+      "file_path": "faults.java",
+      "name": "test_0",
+      "start_line": 85,
+      "end_line": 119
+    },
+    {
+      "id": "faults.java#test_1",
+      "file_path": "faults.java",
+      "name": "test_1",
+      "start_line": 122,
+      "end_line": 206
+    },
+    {
+      "id": "faults.java#test_2",
+      "file_path": "faults.java",
+      "name": "test_2",
+      "start_line": 209,
+      "end_line": 295
+    },
+    {
+      "id": "faults.java#test_3",
+      "file_path": "faults.java",
+      "name": "test_3",
+      "start_line": 298,
+      "end_line": 329
+    },
+    {
+      "id": "faults.java#test_4",
+      "file_path": "faults.java",
+      "name": "test_4",
+      "start_line": 332,
+      "end_line": 367
+    },
+    {
+      "id": "faults.java#test_5",
+      "file_path": "faults.java",
+      "name": "test_5",
+      "start_line": 370,
+      "end_line": 412
+    },
+    {
+      "id": "faults.java#test_6",
+      "file_path": "faults.java",
+      "name": "test_6",
+      "start_line": 415,
+      "end_line": 451
+    },
+    {
+      "id": "faults.java#test_7",
+      "file_path": "faults.java",
+      "name": "test_7",
+      "start_line": 454,
+      "end_line": 490
+    },
+    {
+      "id": "faults.java#test_8",
+      "file_path": "faults.java",
+      "name": "test_8",
+      "start_line": 493,
+      "end_line": 528
+    },
+    {
+      "id": "faults.java#test_9",
+      "file_path": "faults.java",
+      "name": "test_9",
+      "start_line": 531,
+      "end_line": 570
+    },
+    {
+      "id": "faults.java#test_10",
+      "file_path": "faults.java",
+      "name": "test_10",
+      "start_line": 573,
+      "end_line": 609
+    },
+    {
+      "id": "faults.java#test_11",
+      "file_path": "faults.java",
+      "name": "test_11",
+      "start_line": 612,
+      "end_line": 668
+    },
+    {
+      "id": "faults.java#test_12",
+      "file_path": "faults.java",
+      "name": "test_12",
+      "start_line": 671,
+      "end_line": 838
+    },
+    {
+      "id": "faults.java#test_13",
+      "file_path": "faults.java",
+      "name": "test_13",
+      "start_line": 841,
+      "end_line": 1008
+    },
+    {
+      "id": "faults.java#test_14",
+      "file_path": "faults.java",
+      "name": "test_14",
+      "start_line": 1011,
+      "end_line": 1062
+    },
+    {
+      "id": "faults.java#test_15",
+      "file_path": "faults.java",
+      "name": "test_15",
+      "start_line": 1065,
+      "end_line": 1121
+    },
+    {
+      "id": "faults.java#test_16",
+      "file_path": "faults.java",
+      "name": "test_16",
+      "start_line": 1124,
+      "end_line": 1480
+    },
+    {
+      "id": "faults.java#test_17",
+      "file_path": "faults.java",
+      "name": "test_17",
+      "start_line": 1483,
+      "end_line": 1839
+    },
+    {
+      "id": "faults.java#test_18",
+      "file_path": "faults.java",
+      "name": "test_18",
+      "start_line": 1842,
+      "end_line": 1860
+    },
+    {
+      "id": "faults.java#test_19",
+      "file_path": "faults.java",
+      "name": "test_19",
+      "start_line": 1863,
+      "end_line": 1910
+    },
+    {
+      "id": "faults.java#test_20",
+      "file_path": "faults.java",
+      "name": "test_20",
+      "start_line": 1913,
+      "end_line": 1940
+    },
+    {
+      "id": "faults.java#test_21",
+      "file_path": "faults.java",
+      "name": "test_21",
+      "start_line": 1943,
+      "end_line": 1961
+    },
+    {
+      "id": "faults.java#test_22",
+      "file_path": "faults.java",
+      "name": "test_22",
+      "start_line": 1964,
+      "end_line": 1982
+    },
+    {
+      "id": "faults.java#test_23",
+      "file_path": "faults.java",
+      "name": "test_23",
+      "start_line": 1985,
+      "end_line": 2003
+    },
+    {
+      "id": "faults.java#test_24",
+      "file_path": "faults.java",
+      "name": "test_24",
+      "start_line": 2006,
+      "end_line": 2024
+    },
+    {
+      "id": "faults.java#test_25",
+      "file_path": "faults.java",
+      "name": "test_25",
+      "start_line": 2027,
+      "end_line": 2045
+    },
+    {
+      "id": "faults.java#test_26",
+      "file_path": "faults.java",
+      "name": "test_26",
+      "start_line": 2048,
+      "end_line": 2066
+    },
+    {
+      "id": "faults.java#test_27",
+      "file_path": "faults.java",
+      "name": "test_27",
+      "start_line": 2069,
+      "end_line": 2087
+    },
+    {
+      "id": "faults.java#test_28",
+      "file_path": "faults.java",
+      "name": "test_28",
+      "start_line": 2090,
+      "end_line": 2165
+    },
+    {
+      "id": "faults.java#test_29",
+      "file_path": "faults.java",
+      "name": "test_29",
+      "start_line": 2168,
+      "end_line": 2245
+    },
+    {
+      "id": "faults.java#test_30",
+      "file_path": "faults.java",
+      "name": "test_30",
+      "start_line": 2248,
+      "end_line": 2266
+    },
+    {
+      "id": "faults.java#test_31",
+      "file_path": "faults.java",
+      "name": "test_31",
+      "start_line": 2269,
+      "end_line": 2287
+    },
+    {
+      "id": "faults.java#test_32",
+      "file_path": "faults.java",
+      "name": "test_32",
+      "start_line": 2290,
+      "end_line": 2308
+    },
+    {
+      "id": "faults.java#test_33",
+      "file_path": "faults.java",
+      "name": "test_33",
+      "start_line": 2311,
+      "end_line": 2329
+    },
+    {
+      "id": "faults.java#test_34",
+      "file_path": "faults.java",
+      "name": "test_34",
+      "start_line": 2332,
+      "end_line": 2350
+    },
+    {
+      "id": "faults.java#test_35",
+      "file_path": "faults.java",
+      "name": "test_35",
+      "start_line": 2353,
+      "end_line": 2371
+    },
+    {
+      "id": "faults.java#test_36",
+      "file_path": "faults.java",
+      "name": "test_36",
+      "start_line": 2374,
+      "end_line": 2392
+    },
+    {
+      "id": "faults.java#test_37",
+      "file_path": "faults.java",
+      "name": "test_37",
+      "start_line": 2395,
+      "end_line": 2413
+    },
+    {
+      "id": "faults.java#test_38",
+      "file_path": "faults.java",
+      "name": "test_38",
+      "start_line": 2416,
+      "end_line": 2434
+    },
+    {
+      "id": "faults.java#test_39",
+      "file_path": "faults.java",
+      "name": "test_39",
+      "start_line": 2437,
+      "end_line": 2455
+    },
+    {
+      "id": "faults.java#test_40",
+      "file_path": "faults.java",
+      "name": "test_40",
+      "start_line": 2458,
+      "end_line": 2526
+    },
+    {
+      "id": "faults.java#test_41",
+      "file_path": "faults.java",
+      "name": "test_41",
+      "start_line": 2529,
+      "end_line": 2568
+    },
+    {
+      "id": "faults.java#test_42",
+      "file_path": "faults.java",
+      "name": "test_42",
+      "start_line": 2571,
+      "end_line": 2667
+    },
+    {
+      "id": "faults.java#test_43",
+      "file_path": "faults.java",
+      "name": "test_43",
+      "start_line": 2670,
+      "end_line": 2692
+    },
+    {
+      "id": "faults.java#test_44",
+      "file_path": "faults.java",
+      "name": "test_44",
+      "start_line": 2695,
+      "end_line": 2718
+    },
+    {
+      "id": "faults.java#test_45",
+      "file_path": "faults.java",
+      "name": "test_45",
+      "start_line": 2721,
+      "end_line": 2794
+    },
+    {
+      "id": "faults.java#test_46",
+      "file_path": "faults.java",
+      "name": "test_46",
+      "start_line": 2797,
+      "end_line": 2872
+    },
+    {
+      "id": "faults.java#test_47",
+      "file_path": "faults.java",
+      "name": "test_47",
+      "start_line": 2875,
+      "end_line": 2897
+    },
+    {
+      "id": "faults.java#test_48",
+      "file_path": "faults.java",
+      "name": "test_48",
+      "start_line": 2900,
+      "end_line": 2927
+    },
+    {
+      "id": "faults.java#test_49",
+      "file_path": "faults.java",
+      "name": "test_49",
+      "start_line": 2930,
+      "end_line": 2959
+    },
+    {
+      "id": "faults.java#test_50",
+      "file_path": "faults.java",
+      "name": "test_50",
+      "start_line": 2962,
+      "end_line": 2999
+    },
+    {
+      "id": "faults.java#test_51",
+      "file_path": "faults.java",
+      "name": "test_51",
+      "start_line": 3002,
+      "end_line": 3026
+    },
+    {
+      "id": "faults.java#test_52",
+      "file_path": "faults.java",
+      "name": "test_52",
+      "start_line": 3029,
+      "end_line": 3109
+    },
+    {
+      "id": "faults.java#test_53",
+      "file_path": "faults.java",
+      "name": "test_53",
+      "start_line": 3112,
+      "end_line": 3135
+    },
+    {
+      "id": "faults.java#test_54",
+      "file_path": "faults.java",
+      "name": "test_54",
+      "start_line": 3138,
+      "end_line": 3162
+    },
+    {
+      "id": "faults.java#test_55",
+      "file_path": "faults.java",
+      "name": "test_55",
+      "start_line": 3165,
+      "end_line": 3191
+    },
+    {
+      "id": "faults.java#test_56",
+      "file_path": "faults.java",
+      "name": "test_56",
+      "start_line": 3194,
+      "end_line": 3220
+    },
+    {
+      "id": "faults.java#test_57",
+      "file_path": "faults.java",
+      "name": "test_57",
+      "start_line": 3223,
+      "end_line": 3249
+    },
+    {
+      "id": "faults.java#test_58",
+      "file_path": "faults.java",
+      "name": "test_58",
+      "start_line": 3252,
+      "end_line": 3286
+    },
+    {
+      "id": "faults.java#test_59",
+      "file_path": "faults.java",
+      "name": "test_59",
+      "start_line": 3289,
+      "end_line": 3315
+    },
+    {
+      "id": "faults.java#test_60",
+      "file_path": "faults.java",
+      "name": "test_60",
+      "start_line": 3318,
+      "end_line": 3353
+    },
+    {
+      "id": "faults.java#test_61",
+      "file_path": "faults.java",
+      "name": "test_61",
+      "start_line": 3356,
+      "end_line": 3390
+    },
+    {
+      "id": "faults.java#test_62",
+      "file_path": "faults.java",
+      "name": "test_62",
+      "start_line": 3393,
+      "end_line": 3468
+    },
+    {
+      "id": "faults.java#test_63",
+      "file_path": "faults.java",
+      "name": "test_63",
+      "start_line": 3471,
+      "end_line": 3497
+    },
+    {
+      "id": "faults.java#test_64",
+      "file_path": "faults.java",
+      "name": "test_64",
+      "start_line": 3500,
+      "end_line": 3528
+    },
+    {
+      "id": "faults.java#test_65",
+      "file_path": "faults.java",
+      "name": "test_65",
+      "start_line": 3531,
+      "end_line": 3557
+    },
+    {
+      "id": "faults.java#test_66",
+      "file_path": "faults.java",
+      "name": "test_66",
+      "start_line": 3560,
+      "end_line": 3588
+    },
+    {
+      "id": "faults.java#test_67",
+      "file_path": "faults.java",
+      "name": "test_67",
+      "start_line": 3591,
+      "end_line": 3617
+    },
+    {
+      "id": "faults.java#test_68",
+      "file_path": "faults.java",
+      "name": "test_68",
+      "start_line": 3620,
+      "end_line": 3646
+    },
+    {
+      "id": "faults.java#test_69",
+      "file_path": "faults.java",
+      "name": "test_69",
+      "start_line": 3649,
+      "end_line": 3691
+    },
+    {
+      "id": "faults.java#test_70",
+      "file_path": "faults.java",
+      "name": "test_70",
+      "start_line": 3694,
+      "end_line": 3720
+    },
+    {
+      "id": "faults.java#test_71",
+      "file_path": "faults.java",
+      "name": "test_71",
+      "start_line": 3723,
+      "end_line": 3749
+    },
+    {
+      "id": "faults.java#test_72",
+      "file_path": "faults.java",
+      "name": "test_72",
+      "start_line": 3752,
+      "end_line": 3778
+    },
+    {
+      "id": "faults.java#test_73",
+      "file_path": "faults.java",
+      "name": "test_73",
+      "start_line": 3781,
+      "end_line": 3816
+    },
+    {
+      "id": "faults.java#test_74",
+      "file_path": "faults.java",
+      "name": "test_74",
+      "start_line": 3819,
+      "end_line": 3853
+    },
+    {
+      "id": "faults.java#test_75",
+      "file_path": "faults.java",
+      "name": "test_75",
+      "start_line": 3856,
+      "end_line": 3884
+    },
+    {
+      "id": "faults.java#test_76",
+      "file_path": "faults.java",
+      "name": "test_76",
+      "start_line": 3887,
+      "end_line": 3927
+    },
+    {
+      "id": "faults.java#test_77",
+      "file_path": "faults.java",
+      "name": "test_77",
+      "start_line": 3930,
+      "end_line": 3981
+    },
+    {
+      "id": "faults.java#test_78",
+      "file_path": "faults.java",
+      "name": "test_78",
+      "start_line": 3984,
+      "end_line": 4030
+    },
+    {
+      "id": "faults.java#test_79",
+      "file_path": "faults.java",
+      "name": "test_79",
+      "start_line": 4033,
+      "end_line": 4061
+    },
+    {
+      "id": "faults.java#test_80",
+      "file_path": "faults.java",
+      "name": "test_80",
+      "start_line": 4064,
+      "end_line": 4114
+    },
+    {
+      "id": "faults.java#test_81",
+      "file_path": "faults.java",
+      "name": "test_81",
+      "start_line": 4117,
+      "end_line": 4147
+    },
+    {
+      "id": "faults.java#test_82",
+      "file_path": "faults.java",
+      "name": "test_82",
+      "start_line": 4150,
+      "end_line": 4180
+    },
+    {
+      "id": "faults.java#test_83",
+      "file_path": "faults.java",
+      "name": "test_83",
+      "start_line": 4183,
+      "end_line": 4213
+    },
+    {
+      "id": "faults.java#test_84",
+      "file_path": "faults.java",
+      "name": "test_84",
+      "start_line": 4216,
+      "end_line": 4247
+    },
+    {
+      "id": "faults.java#test_85",
+      "file_path": "faults.java",
+      "name": "test_85",
+      "start_line": 4250,
+      "end_line": 4281
+    },
+    {
+      "id": "faults.java#test_86",
+      "file_path": "faults.java",
+      "name": "test_86",
+      "start_line": 4284,
+      "end_line": 4326
+    },
+    {
+      "id": "faults.java#test_87",
+      "file_path": "faults.java",
+      "name": "test_87",
+      "start_line": 4329,
+      "end_line": 4361
+    },
+    {
+      "id": "faults.java#test_88",
+      "file_path": "faults.java",
+      "name": "test_88",
+      "start_line": 4364,
+      "end_line": 4396
+    },
+    {
+      "id": "faults.java#test_89",
+      "file_path": "faults.java",
+      "name": "test_89",
+      "start_line": 4399,
+      "end_line": 4427
+    },
+    {
+      "id": "faults.java#test_90",
+      "file_path": "faults.java",
+      "name": "test_90",
+      "start_line": 4430,
+      "end_line": 4460
+    },
+    {
+      "id": "faults.java#test_91",
+      "file_path": "faults.java",
+      "name": "test_91",
+      "start_line": 4463,
+      "end_line": 4489
+    },
+    {
+      "id": "faults.java#test_92",
+      "file_path": "faults.java",
+      "name": "test_92",
+      "start_line": 4492,
+      "end_line": 4535
+    },
+    {
+      "id": "faults.java#test_93",
+      "file_path": "faults.java",
+      "name": "test_93",
+      "start_line": 4538,
+      "end_line": 4571
+    },
+    {
+      "id": "faults.java#test_94",
+      "file_path": "faults.java",
+      "name": "test_94",
+      "start_line": 4574,
+      "end_line": 4632
+    },
+    {
+      "id": "faults.java#test_95",
+      "file_path": "faults.java",
+      "name": "test_95",
+      "start_line": 4635,
+      "end_line": 4668
+    },
+    {
+      "id": "faults.java#test_96",
+      "file_path": "faults.java",
+      "name": "test_96",
+      "start_line": 4671,
+      "end_line": 4704
+    },
+    {
+      "id": "faults.java#test_97",
+      "file_path": "faults.java",
+      "name": "test_97",
+      "start_line": 4707,
+      "end_line": 4767
+    },
+    {
+      "id": "faults.java#test_98",
+      "file_path": "faults.java",
+      "name": "test_98",
+      "start_line": 4770,
+      "end_line": 4820
+    },
+    {
+      "id": "faults.java#test_99",
+      "file_path": "faults.java",
+      "name": "test_99",
+      "start_line": 4823,
+      "end_line": 4857
+    },
+    {
+      "id": "faults.java#test_100",
+      "file_path": "faults.java",
+      "name": "test_100",
+      "start_line": 4860,
+      "end_line": 4910
+    },
+    {
+      "id": "faults.java#test_101",
+      "file_path": "faults.java",
+      "name": "test_101",
+      "start_line": 4913,
+      "end_line": 4956
+    },
+    {
+      "id": "faults.java#test_102",
+      "file_path": "faults.java",
+      "name": "test_102",
+      "start_line": 4959,
+      "end_line": 4991
+    },
+    {
+      "id": "faults.java#test_103",
+      "file_path": "faults.java",
+      "name": "test_103",
+      "start_line": 4994,
+      "end_line": 5029
+    },
+    {
+      "id": "faults.java#test_104",
+      "file_path": "faults.java",
+      "name": "test_104",
+      "start_line": 5032,
+      "end_line": 5062
+    },
+    {
+      "id": "faults.java#test_105",
+      "file_path": "faults.java",
+      "name": "test_105",
+      "start_line": 5065,
+      "end_line": 5096
+    },
+    {
+      "id": "faults.java#test_106",
+      "file_path": "faults.java",
+      "name": "test_106",
+      "start_line": 5099,
+      "end_line": 5134
+    },
+    {
+      "id": "faults.java#test_107",
+      "file_path": "faults.java",
+      "name": "test_107",
+      "start_line": 5137,
+      "end_line": 5192
+    },
+    {
+      "id": "faults.java#test_108",
+      "file_path": "faults.java",
+      "name": "test_108",
+      "start_line": 5195,
+      "end_line": 5235
+    },
+    {
+      "id": "faults.java#test_109",
+      "file_path": "faults.java",
+      "name": "test_109",
+      "start_line": 5238,
+      "end_line": 5281
+    },
+    {
+      "id": "successes.java#test_0",
+      "file_path": "successes.java",
+      "name": "test_0",
+      "start_line": 85,
+      "end_line": 96
+    },
+    {
+      "id": "successes.java#test_1",
+      "file_path": "successes.java",
+      "name": "test_1",
+      "start_line": 99,
+      "end_line": 130
+    },
+    {
+      "id": "successes.java#test_2",
+      "file_path": "successes.java",
+      "name": "test_2",
+      "start_line": 133,
+      "end_line": 156
+    },
+    {
+      "id": "successes.java#test_3",
+      "file_path": "successes.java",
+      "name": "test_3",
+      "start_line": 159,
+      "end_line": 194
+    },
+    {
+      "id": "successes.java#test_4",
+      "file_path": "successes.java",
+      "name": "test_4",
+      "start_line": 197,
+      "end_line": 230
+    },
+    {
+      "id": "successes.java#test_5",
+      "file_path": "successes.java",
+      "name": "test_5",
+      "start_line": 233,
+      "end_line": 266
+    },
+    {
+      "id": "successes.java#test_6",
+      "file_path": "successes.java",
+      "name": "test_6",
+      "start_line": 269,
+      "end_line": 284
+    },
+    {
+      "id": "successes.java#test_7",
+      "file_path": "successes.java",
+      "name": "test_7",
+      "start_line": 287,
+      "end_line": 310
+    },
+    {
+      "id": "successes.java#test_8",
+      "file_path": "successes.java",
+      "name": "test_8",
+      "start_line": 313,
+      "end_line": 336
+    },
+    {
+      "id": "successes.java#test_9",
+      "file_path": "successes.java",
+      "name": "test_9",
+      "start_line": 339,
+      "end_line": 378
+    },
+    {
+      "id": "successes.java#test_10",
+      "file_path": "successes.java",
+      "name": "test_10",
+      "start_line": 381,
+      "end_line": 420
+    },
+    {
+      "id": "successes.java#test_11",
+      "file_path": "successes.java",
+      "name": "test_11",
+      "start_line": 423,
+      "end_line": 450
+    },
+    {
+      "id": "successes.java#test_12",
+      "file_path": "successes.java",
+      "name": "test_12",
+      "start_line": 453,
+      "end_line": 529
+    },
+    {
+      "id": "successes.java#test_13",
+      "file_path": "successes.java",
+      "name": "test_13",
+      "start_line": 532,
+      "end_line": 564
+    },
+    {
+      "id": "successes.java#test_14",
+      "file_path": "successes.java",
+      "name": "test_14",
+      "start_line": 567,
+      "end_line": 600
+    },
+    {
+      "id": "successes.java#test_15",
+      "file_path": "successes.java",
+      "name": "test_15",
+      "start_line": 603,
+      "end_line": 638
+    },
+    {
+      "id": "successes.java#test_16",
+      "file_path": "successes.java",
+      "name": "test_16",
+      "start_line": 641,
+      "end_line": 679
+    }
+  ],
+  "extra": [
+    {
+      "tool_name": "EvoMaster",
+      "criteria": [
+        {
+          "name": "Line Coverage",
+          "covered": 428,
+          "total": 1229
+        },
+        {
+          "name": "Branch Coverage",
+          "covered": 6,
+          "total": 130
+        }
+      ]
+    }
+  ]
+}

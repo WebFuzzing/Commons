@@ -6,14 +6,22 @@ import {Header} from "@/components/Header.tsx";
 import {Overview} from "@/pages/Overview.tsx";
 import {Endpoints} from "@/pages/Endpoints.tsx";
 import {TestResults} from "@/pages/TestResults.tsx";
-import {IDashboardType} from "@/Types.tsx";
-import {ScrollArea, ScrollBar} from "@/components/ui/scroll-area.tsx";
 
-interface ITestTabs {
+import {ScrollArea, ScrollBar} from "@/components/ui/scroll-area.tsx";
+import {WebFuzzingReport} from "@/types/GeneratedTypes.tsx";
+import {ITestFiles} from "@/types/General.tsx";
+
+
+export interface ITestTabs {
     value: string;
 }
 
-export const Dashboard: React.FC<IDashboardType> = ({data, test_files}) => {
+export interface IDashboard {
+    data: WebFuzzingReport;
+    test_files: Array<ITestFiles>;
+}
+
+export const Dashboard: React.FC<IDashboard> = ({data, test_files}) => {
     const [activeTab, setActiveTab] = useState("overview")
 
     const [testTabs, setTestTabs] = useState<Array<ITestTabs>>([]);
@@ -48,12 +56,14 @@ export const Dashboard: React.FC<IDashboardType> = ({data, test_files}) => {
                         <TabsTrigger
                             value="overview"
                             className="min-w-[150px] py-3 border border-gray-300 data-[state=active]:bg-white data-[state=active]:border-2 data-[state=active]:border-black data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                            data-testid="tab-overview"
                         >
                             Overview
                         </TabsTrigger>
                         <TabsTrigger
                             value="endpoints"
                             className="min-w-[150px] py-3 border border-gray-300 data-[state=active]:bg-white data-[state=active]:border-2 data-[state=active]:border-black data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                            data-testid="tab-endpoints"
                         >
                             Endpoints
                         </TabsTrigger>

@@ -34,7 +34,7 @@ export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
     const faultColors = ["bg-red-300", "bg-red-500", "bg-red-700"];
 
     return (
-        <AccordionItem value={value} className="border-2 border-black mb-4 overflow-hidden">
+        <AccordionItem value={value} className="border-2 border-black mb-4 overflow-hidden" data-testid={endpoint}>
             <AccordionTrigger className="bg-blue-100 px-4 py-3 text-lg font-bold hover:no-underline hover:bg-blue-200">
                 {endpoint}
             </AccordionTrigger>

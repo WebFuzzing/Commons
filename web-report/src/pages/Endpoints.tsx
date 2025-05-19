@@ -1,17 +1,17 @@
 import type React from "react";
 import {Accordion} from "@/components/ui/accordion.tsx";
 import {EndpointAccordion} from "@/components/EndpointAccordion.tsx";
-import {ITypes} from "@/Types.tsx";
+import {WebFuzzingReport} from "@/types/GeneratedTypes.tsx";
 
 
 interface IProps {
     addTestTab: (value: string, event: React.MouseEvent<HTMLElement>) => void;
-    data: ITypes
+    data: WebFuzzingReport
 }
 
 export const Endpoints: React.FC<IProps> = ({addTestTab, data}) => {
 
-    const transformJson = (original: ITypes) => {
+    const transformJson = (original: WebFuzzingReport) => {
 
         const endpointMap = new Map();
 
@@ -37,6 +37,10 @@ export const Endpoints: React.FC<IProps> = ({addTestTab, data}) => {
                 }
             });
         });
+
+        if(original.problem_details.rest == null){
+            return Array.from([]);
+        }
 
         original.problem_details.rest.covered_http_status.forEach(status => {
             if (!endpointMap.has(status.endpoint_id)) {
@@ -71,7 +75,7 @@ export const Endpoints: React.FC<IProps> = ({addTestTab, data}) => {
             <Accordion type="single" collapsible className="w-full">
                 {
                     transformed.map((item, index) => (
-                        <EndpointAccordion key={index} value={`_${index}`} endpoint={item.endpoint}
+                        <EndpointAccordion data-testid="endpoint" key={index} value={`_${index}`} endpoint={item.endpoint}
                                            status_codes={item.http_status_codes} faults={item.faults}
                                            addTestTab={addTestTab}/>
                     ))

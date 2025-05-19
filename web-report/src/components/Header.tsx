@@ -8,8 +8,8 @@ interface IHeaderProps {
 
 export const Header: React.FC<IHeaderProps> = ({date, tool_name_version, schema_version}) => (
     <div className="flex justify-between border-b border-black pb-2 mb-4">
-        <div className="font-bold">Creation Date: {new Date(date).toUTCString()}</div>
-        <div className="font-bold text-center">Tool: {tool_name_version}</div>
-        <div className="font-bold text-right">Schema Version: {schema_version}</div>
+        <div className="font-bold" data-testid="header-creation-date">Creation Date: {new Date(date).toUTCString()}</div>
+        <div className="font-bold text-center" data-testid="header-tool-name-version">Tool: {tool_name_version}</div>
+        <div className="font-bold text-right" data-testid="header-schema-version">Schema Version: {schema_version}</div>
     </div>
 )
