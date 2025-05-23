@@ -74,7 +74,7 @@ export const TestResults: React.FC<IProps> = ({
                         unique_status_codes.length > 0 && <div className="flex flex-wrap gap-2 mb-3">
                             <Badge
                                 className="bg-green-500 cursor-default text-white px-4 py-2 text-base font-bold border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-                                HTTP
+                                HTTPS
                             </Badge>
 
                             {

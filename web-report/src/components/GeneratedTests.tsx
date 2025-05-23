@@ -1,13 +1,14 @@
 import {Card} from "@/components/ui/card.tsx";
 import {Target} from "lucide-react";
 import type React from "react";
+import {getFileColor} from "@/utils.tsx";
 
 interface IGeneratedTests {
     total_tests: number
-    total_test_files: number
+    test_files: Array<string>
 }
 
-export const GeneratedTests: React.FC<IGeneratedTests> = ({total_tests, total_test_files}) => (
+export const GeneratedTests: React.FC<IGeneratedTests> = ({total_tests, test_files}) => (
     <Card className="border-2 border-black p-6 rounded-none">
         <div className="flex items-start gap-4">
             <Target className="w-6 h-6 text-gray-500"/>
@@ -18,7 +19,24 @@ export const GeneratedTests: React.FC<IGeneratedTests> = ({total_tests, total_te
                 </div>
                 <div className="flex justify-between">
                     <span className="text-lg font-bold">Generated Test Files:</span>
-                    <span className="text-lg font-bold" data-testid="generated-tests-total-test-files">{total_test_files}</span>
+                    <span className="text-lg font-bold" data-testid="generated-tests-total-test-files">{test_files.length}</span>
+                </div>
+                <div className="mt-4 pt-4 border-t border-gray-200">
+                    <div className="text-sm font-medium text-gray-700 mb-2">Test Files</div>
+                    <div className="space-y-1">
+                        {
+                            test_files.length > 0 ? (
+                                test_files.map((file, index) => (
+                                    <div className="flex items-center gap-2 text-sm text-gray-600" key={index}>
+                                        <div className={`w-2 h-2 ${getFileColor(index, file)} rounded-full`}></div>
+                                        <span>{file}</span>
+                                    </div>
+                                ))
+                            ) : (
+                                <div className="text-gray-500 italic">No test files generated.</div>
+                            )
+                        }
+                    </div>
                 </div>
             </div>
         </div>

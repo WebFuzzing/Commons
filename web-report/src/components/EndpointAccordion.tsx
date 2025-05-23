@@ -31,19 +31,50 @@ export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
     const selectedTestCases = status_codes.find((code) => code.code === selectedCode)?.test_cases || [];
     const selectedFaultTestCases = faults.find((code) => code.code === selectedCode)?.test_cases || [];
 
-    const faultColors = ["bg-red-300", "bg-red-500", "bg-red-700"];
+    const sortedStatusCodes = status_codes.sort((a, b) =>
+        {
+            const codeA = Number(a.code);
+            const codeB = Number(b.code);
+            if (isNaN(codeA) || isNaN(codeB)) {
+                return String(a.code).localeCompare(String(b.code));
+            }
+            return codeA - codeB;
+        }
+    );
 
+    const sortedFaults = faults.sort((a, b) => {
+        const codeA = Number(a.code);
+        const codeB = Number(b.code);
+        if (isNaN(codeA) || isNaN(codeB)) {
+            return String(a.code).localeCompare(String(b.code));
+        }
+        return codeA - codeB;
+    });
+
+    const faultColors = ["bg-red-300", "bg-red-500", "bg-red-700"];
     return (
         <AccordionItem value={value} className="border-2 border-black mb-4 overflow-hidden" data-testid={endpoint}>
             <AccordionTrigger className="bg-blue-100 px-4 py-3 text-lg font-bold hover:no-underline hover:bg-blue-200">
-                {endpoint}
+                <div className="flex-1 font-mono">{endpoint}</div>
+                <div className="flex flex-wrap justify-end gap-2 mr-4">
+                    {sortedStatusCodes.map((code, idx) => (
+                        <Badge key={`_${idx}`} className={`${getColor(code.code, true, false)}`}>
+                            {code.code}
+                        </Badge>
+                    ))}
+                    {sortedFaults.map((code, idx) => (
+                        <Badge key={`_${idx}`} className={`${getColor(code.code, true, true)}`}>
+                            {code.code}
+                        </Badge>
+                    ))}
+                </div>
             </AccordionTrigger>
             <AccordionContent className="p-4">
                 <div className="mb-6">
-                    <div className="font-bold text-lg mb-2">HTTP</div>
+                    <div className="font-bold text-lg mb-2">HTTP CODES</div>
                     <div className="flex flex-wrap gap-2">
                         {
-                            status_codes.map((code, index) => (
+                            sortedStatusCodes.map((code, index) => (
                                 <Badge key={index} onClick={() => {
                                     setSelectedCode(code.code);
                                     setIsFault(false);
@@ -54,17 +85,17 @@ export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
                             ))
                         }
                         {
-                            status_codes.length == 0 &&
+                            sortedStatusCodes.length == 0 &&
                             <div className="text-gray-500 italic">No status codes recorded for this endpoint.</div>
                         }
                     </div>
                 </div>
 
                 <div>
-                    <div className="font-bold text-lg mb-2 text-red-500">FAULTS</div>
+                    <div className="font-bold text-lg mb-2 text-red-500">FAULT CODES</div>
                     <div className="flex flex-wrap gap-2">
                         {
-                            faults.map((fault, index) => (
+                            sortedFaults.map((fault, index) => (
                                 <Badge key={index} onClick={() => {
                                     setSelectedCode(fault.code)
                                     setIsFault(true);
@@ -75,7 +106,7 @@ export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
                             ))
                         }
                         {
-                            faults.length == 0 &&
+                            sortedFaults.length == 0 &&
                             <div className="text-gray-500 italic">No faults recorded for this endpoint.</div>
                         }
                     </div>

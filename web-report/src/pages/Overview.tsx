@@ -19,7 +19,7 @@ export const Overview: React.FC<IOverviewType> = ({rest, test_cases, test_file_p
             {/* Right Panel */}
             <div className="flex flex-col gap-6">
                 {/* Generated Tests */}
-                <GeneratedTests total_tests={test_cases.length} total_test_files={test_file_paths.length}/>
+                <GeneratedTests total_tests={test_cases.length} test_files={test_file_paths}/>
                 {/* Faults */}
                 <FaultsComponent {...faults}/>
             </div>
