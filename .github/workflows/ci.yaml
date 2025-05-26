@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - "**"
+    tags-ignore:
+      - '**'
+    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onpushpull_requestpull_request_targetpathspaths-ignore
+    # Avoid building if only modifying non-code files.
+    # An exception is docs/options.md , as created from build
+    paths:
+      - "**"
+      - '!README.md'
+      - '!LICENSE'
+      - '!.gitignore'
+      - '!release_notes.md'
+
+
+jobs:
+  full-build-base:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout code
+      - uses: actions/checkout@v4
+      # Build/test for JDK
+      - name: Setup JDK 8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+# TODO: likely will need caching for JS deps as well
+      - name: Cache Maven packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+      - name: Build with Maven
+        run: mvn clean verify --fae
+      # Make test report accessible from GitHub Actions (as Maven logs are long)
+      - name: Publish Test Report
+        if: success() || failure()
+        uses: mikepenz/action-junit-report@v4
+        env:
+          NODE_OPTIONS: "--max_old_space_size=6144"
+        with:
+          report_paths: '**/target/surefire-reports/TEST-*.xml'
