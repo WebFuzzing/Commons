@@ -1,7 +1,6 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-#https://www.learnjsonschema.com/2020-12/core/id/
-$id: "TODO"
-title: "Web Fuzzing Report"
+$id: "https://github.com/WebFuzzing/Commons/blob/master/src/main/resources/wfc/schemas/report.yaml"
+title: "Web Fuzzing Commons Report"
 description: "Schema Definition for Web Fuzzing Commons Reports"
 type: object
 properties:
