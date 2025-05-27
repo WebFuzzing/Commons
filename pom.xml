@@ -5,7 +5,7 @@
     <groupId>com.webfuzzing</groupId>
     <artifactId>commons</artifactId>
 
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
 
     <inceptionYear>2024</inceptionYear>
     <name>WFC</name>
@@ -102,6 +102,8 @@
                    This profile is needed when making a deployment to Maven Central.
 
                    mvn  -P release -DskipTests  deploy
+                   git tag v<x.y.z>
+                   git push origin v<x.y.z>
               -->
             <id>release</id>
             <build>
