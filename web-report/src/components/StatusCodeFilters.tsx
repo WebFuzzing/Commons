@@ -51,9 +51,9 @@ export function StatusCodeFilters({data, onFiltersChange}: StatusCodeFiltersProp
 
     return (
         <div className="mb-6">
-            <div className="flex items-center mb-2">
-                <h3 className="text-sm font-medium text-gray-700 mr-3">Filter by Status Code:</h3>
-                <div className="flex flex-wrap gap-2">
+            <div className="items-center mb-2">
+                <h3 className="text-sm font-medium text-gray-700 mr-3">Filter by Status Code</h3>
+                <div className="flex-wrap gap-2">
                     {allStatusCodes.map((code) => (
                         <StatusCodeFilterButton
                             key={code.code}
@@ -64,9 +64,9 @@ export function StatusCodeFilters({data, onFiltersChange}: StatusCodeFiltersProp
                     ))}
                 </div>
             </div>
-            <div className="flex items-center mb-2">
-                <h3 className="text-sm font-medium text-gray-700 mr-3">Filter by Fault Code:</h3>
-                <div className="flex flex-wrap gap-2">
+            <div className="items-center mb-2">
+                <h3 className="text-sm font-medium text-gray-700 mr-3">Filter by Fault Code</h3>
+                <div className="flex-wrap gap-2">
                     {allFaultCodes.map((code) => (
                         <StatusCodeFilterButton
                             key={-code}
@@ -79,6 +79,7 @@ export function StatusCodeFilters({data, onFiltersChange}: StatusCodeFiltersProp
                 </div>
             </div>
             <div className="text-xs text-gray-500 mt-1">Click to toggle: Default → Active → Removed → Default</div>
+            <div className="border-t border-black my-2"></div>
         </div>
     )
 }

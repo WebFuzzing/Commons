@@ -65,13 +65,13 @@ export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
                 <div className="flex-1 font-mono">{endpoint}</div>
                 <div className="flex flex-wrap justify-end gap-2 mr-4">
                     {sortedStatusCodes.map((code, idx) => (
-                        <Badge key={`_${idx}`} className={`${getColor(code.code, true, false)}`}>
-                            {code.code}
+                        <Badge key={`_${idx}`} className={`${getColor(code.code, true, false)} font-mono`}>
+                            H{code.code}
                         </Badge>
                     ))}
                     {sortedFaults.map((code, idx) => (
-                        <Badge key={`_${idx}`} className={`${getColor(code.code, true, true)}`}>
-                            {code.code}
+                        <Badge key={`_${idx}`} className={`${getColor(code.code, true, true)} font-mono`}>
+                            F{code.code}
                         </Badge>
                     ))}
                 </div>

@@ -11,10 +11,10 @@
   "creation_date": "Date when the report was generated.",
   "tool_name_version": "Name and version of the tool that generated the report.",
   "schema_version": "Version of the schema used for the report.",
-  "status_2xx": "2xx status codes",
-  "status_3xx": "3xx status codes",
-  "status_4xx": "4xx status codes",
-  "status_5xx": "5xx status codes",
+  "status_2xx": "Coverage of the 2xx status codes",
+  "status_3xx": "Coverage of the 3xx status codes",
+  "status_4xx": "Coverage of the 4xx status codes",
+  "status_5xx": "Coverage of the 5xx status codes",
   "fault_codes": [
     {
       "short_definition": "HTTP_STATUS_500",
