@@ -1,4 +1,5 @@
 import { useState } from "react"
+import {Badge} from "@/components/ui/badge.tsx";
 
 type FilterState = "inactive" | "active" | "removed"
 
@@ -25,7 +26,7 @@ export function StatusCodeFilterButton({ code, initialState = "inactive", onChan
     }
 
     const getStyles = () => {
-        const baseStyles = `${getBackgroundColor()} text-white font-mono rounded-full px-3 py-1 transition-all duration-200`
+        const baseStyles = `${getBackgroundColor()} cursor-pointer text-white font-mono rounded-full px-5 py-1 transition-all duration-200`
 
         switch (state) {
             case "active":
@@ -47,8 +48,8 @@ export function StatusCodeFilterButton({ code, initialState = "inactive", onChan
     }
 
     return (
-        <button className={getStyles()} onClick={toggleState}>
-            {isFault ? `${-1 * code}`: code}
-        </button>
+        <Badge className={getStyles()} onClick={toggleState}>
+            {isFault ? `F${-1 * code}`: `H${code}`}
+        </Badge>
     )
 }

@@ -1,7 +1,20 @@
 {
-  "number_of_endpoints": "Number of endpoints (ver:path) in the API.",
+  "number_of_endpoints": "Number of endpoints (verb:path) in the API.",
   "number_of_http_calls": "Total number of HTTP calls in the generated test suites.",
-  "number_of_fault_codes": "Code number identifiers for detected fault types",
+  "code_number_identifiers": "Code number identifiers for detected fault types",
+  "identifier_name": "Identifier name for the fault type.",
+  "number_of_faults_per_code": "Number of faults detected for each code.",
+  "generated_test_files": "Number of generated test files.",
+  "generated_test_cases": "Number of generated test cases.",
+  "total_faults": "Total number of faults detected in the API.",
+  "distinct_fault_types": "Total number of distinct fault types detected in the API.",
+  "creation_date": "Date when the report was generated.",
+  "tool_name_version": "Name and version of the tool that generated the report.",
+  "schema_version": "Version of the schema used for the report.",
+  "status_2xx": "2xx status codes",
+  "status_3xx": "3xx status codes",
+  "status_4xx": "4xx status codes",
+  "status_5xx": "5xx status codes",
   "fault_codes": [
     {
       "short_definition": "HTTP_STATUS_500",

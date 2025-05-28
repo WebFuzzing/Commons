@@ -62,6 +62,11 @@ export function StatusCodeFilters({data, onFiltersChange}: StatusCodeFiltersProp
                             onChange={handleFilterChange}
                         />
                     ))}
+                </div>
+            </div>
+            <div className="flex items-center mb-2">
+                <h3 className="text-sm font-medium text-gray-700 mr-3">Filter by Fault Code:</h3>
+                <div className="flex flex-wrap gap-2">
                     {allFaultCodes.map((code) => (
                         <StatusCodeFilterButton
                             key={-code}

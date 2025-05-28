@@ -36,11 +36,11 @@ export const TestResults: React.FC<IProps> = ({
 
     const all_fault_codes = related_faults.map((fault) =>
         fault.fault_categories.map((f) => f.code)).flat();
-    const unique_fault_codes = [...new Set(all_fault_codes)];
+    const unique_fault_codes = [...new Set(all_fault_codes)].sort((a, b) => a - b);
 
     const all_status_codes = related_http_status.map((status) =>
         status.http_status.map((s) => s)).flat();
-    const unique_status_codes = [...new Set(all_status_codes)];
+    const unique_status_codes = [...new Set(all_status_codes)].sort((a, b) => a - b);
     const current_file = test_files.find((file) => file.name === test_case?.file_path);
 
 

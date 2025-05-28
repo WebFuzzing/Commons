@@ -1,7 +1,7 @@
 import {Card} from "@/components/ui/card.tsx";
 import type React from "react";
 import {getColor} from "@/utils.tsx";
-import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@/components/ui/tooltip.tsx";
+import {ReportTooltip} from "@/components/ui/report-tooltip.tsx";
 
 interface ITestCaseProps {
     code: string | number;
@@ -21,18 +21,10 @@ export const TestCases: React.FC<ITestCaseProps> = ({code, test_cases, addTestTa
                     {
                         // Test Cases
                         test_cases.map((testCase, key) => (
-                            <TooltipProvider key={key}>
-                                <Tooltip>
-                                    <TooltipTrigger asChild>
-                                        <div onClick={(event) => addTestTab(testCase, event)}
-                                             className="border-b-2 border-black p-3 hover:bg-gray-100 cursor-pointer">{testCase}</div>
-                                    </TooltipTrigger>
-                                    <TooltipContent>
-                                        <p>Press ctrl while clicking to open without navigating it.</p>
-                                    </TooltipContent>
-                                </Tooltip>
-                            </TooltipProvider>
-
+                            <ReportTooltip key={key} tooltipText="Press CTRL while clicking to open without navigating it.">
+                                <div onClick={(event) => addTestTab(testCase, event)}
+                                     className="border-b-2 border-black p-3 hover:bg-gray-100 cursor-pointer">{testCase}</div>
+                            </ReportTooltip>
                         ))
                     }
                 </div>

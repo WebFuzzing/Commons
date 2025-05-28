@@ -25,11 +25,6 @@ export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
                                                                         addTestTab
                                                                     }) => {
 
-    const [selectedCode, setSelectedCode] = useState<number | string>(0);
-    const [isFault, setIsFault] = useState(false);
-
-    const selectedTestCases = status_codes.find((code) => code.code === selectedCode)?.test_cases || [];
-    const selectedFaultTestCases = faults.find((code) => code.code === selectedCode)?.test_cases || [];
 
     const sortedStatusCodes = status_codes.sort((a, b) =>
         {
@@ -42,6 +37,12 @@ export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
         }
     );
 
+    const [selectedCode, setSelectedCode] = useState<number | string>(sortedStatusCodes[0]?.code || 0);
+    const [isFault, setIsFault] = useState(false);
+
+    const selectedTestCases = status_codes.find((code) => code.code === selectedCode)?.test_cases || [];
+    const selectedFaultTestCases = faults.find((code) => code.code === selectedCode)?.test_cases || [];
+
     const sortedFaults = faults.sort((a, b) => {
         const codeA = Number(a.code);
         const codeB = Number(b.code);
@@ -50,6 +51,12 @@ export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
         }
         return codeA - codeB;
     });
+    const getSelectedStyle = (code: number | string, fault: boolean) => {
+
+        const isSelected = selectedCode === code && isFault === fault;
+        return isSelected ? "ring-2 ring-offset-2 ring-offset-white ring-blue-400 shadow-md" : "";
+
+    }
 
     const faultColors = ["bg-red-300", "bg-red-500", "bg-red-700"];
     return (
@@ -79,7 +86,7 @@ export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
                                     setSelectedCode(code.code);
                                     setIsFault(false);
                                 }}
-                                       className={`${getColor(code.code, true, false)} hover:bg-green-600 cursor-pointer text-white px-4 py-2 text-base font-bold border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]`}>
+                                       className={`${getColor(code.code, true, false)} ${getSelectedStyle(code.code, false)} hover:bg-green-600 cursor-pointer text-white px-4 py-2 text-base font-bold border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]`}>
                                     {code.code}
                                 </Badge>
                             ))
@@ -100,7 +107,7 @@ export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
                                     setSelectedCode(fault.code)
                                     setIsFault(true);
                                 }}
-                                       className={`${faultColors[index % faultColors.length]} hover:bg-red-400 cursor-pointer text-white px-4 py-2 text-base font-bold border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]`}>
+                                       className={`${faultColors[index % faultColors.length]} ${getSelectedStyle(fault.code, true)} hover:bg-red-400 cursor-pointer text-white px-4 py-2 text-base font-bold border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]`}>
                                     {fault.code}
                                 </Badge>
                             ))
@@ -111,6 +118,7 @@ export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
                         }
                     </div>
                 </div>
+                <div className="text-xs text-gray-500 mt-1">Click to show test cases.</div>
 
                 {
                     (selectedTestCases.length > 0 || selectedFaultTestCases.length > 0) &&
