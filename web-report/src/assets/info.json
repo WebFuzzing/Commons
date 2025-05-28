@@ -1,7 +1,7 @@
 {
-  "number_of_endpoints": "Number of endpoints.",
-  "number_of_http_calls": "Total number of HTTP calls.",
-  "number_of_fault_codes": "Number of codes",
+  "number_of_endpoints": "Number of endpoints (ver:path) in the API.",
+  "number_of_http_calls": "Total number of HTTP calls in the generated test suites.",
+  "number_of_fault_codes": "Code number identifiers for detected fault types",
   "fault_codes": [
     {
       "short_definition": "HTTP_STATUS_500",
