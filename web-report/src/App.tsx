@@ -3,7 +3,7 @@ import {Dashboard} from "@/components/Dashboard.tsx";
 import {useEffect, useState} from "react";
 import {WebFuzzingReport} from "@/types/GeneratedTypes.tsx";
 import {LoadingScreen} from "@/components/LoadingScreen.tsx";
-import {fetchFileContent} from "@/utils.tsx";
+import {fetchFileContent} from "@/lib/utils";
 import {ITestFiles} from "@/types/General.tsx";
 
 function App() {

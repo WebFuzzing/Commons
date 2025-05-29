@@ -2,7 +2,7 @@ import {Card} from "@/components/ui/card.tsx";
 import {ShieldAlert} from "lucide-react";
 import React, {useState} from "react";
 import {Faults} from "@/types/GeneratedTypes.tsx";
-import {getFaultCounts} from "@/utils.tsx";
+import {getFaultCounts} from "@/lib/utils";
 import info from "@/assets/info.json";
 import {StatusCodeModal} from "@/components/StatusCodeModal.tsx";
 import {ReportTooltip} from "@/components/ui/report-tooltip.tsx";

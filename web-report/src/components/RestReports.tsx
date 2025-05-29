@@ -2,7 +2,7 @@ import {Card} from "@/components/ui/card.tsx";
 import type React from "react";
 import {CoveragePieChart} from "@/components/CoveragePieChart.tsx";
 import {RESTReport} from "@/types/GeneratedTypes.tsx";
-import {calculateAllStatusCounts} from "@/utils.tsx";
+import {calculateAllStatusCounts} from "@/lib/utils";
 import info from "@/assets/info.json";
 import {ReportTooltip} from "@/components/ui/report-tooltip.tsx";
 

@@ -1,6 +1,6 @@
 import {Card} from "@/components/ui/card.tsx";
 import type React from "react";
-import {getColor} from "@/utils.tsx";
+import {getColor} from "@/lib/utils";
 import {ReportTooltip} from "@/components/ui/report-tooltip.tsx";
 
 interface ITestCaseProps {

@@ -2,7 +2,7 @@ import {AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui
 import {Badge} from "@/components/ui/badge.tsx";
 import React, {useState} from "react";
 import {TestCases} from "@/components/TestCases.tsx";
-import {getColor} from "@/utils.tsx";
+import {getColor} from "@/lib/utils";
 
 interface IStatusType {
     code: number | string;

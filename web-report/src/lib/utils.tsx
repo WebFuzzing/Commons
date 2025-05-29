@@ -1,4 +1,10 @@
 import {CoveredEndpoint, FoundFault} from "@/types/GeneratedTypes.tsx";
+import {ClassValue, clsx} from "clsx";
+import {twMerge} from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+    return twMerge(clsx(inputs))
+}
 
 export const getColor = (code: string | number, isBackground: boolean, isFault: boolean) => {
     if (isFault) {

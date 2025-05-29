@@ -3,7 +3,7 @@ import type React from "react";
 import {Badge} from "@/components/ui/badge.tsx";
 import {CodeBlock} from "@/components/CodeBlock.tsx";
 import {FoundFault, RESTReport, TestCase} from "@/types/GeneratedTypes.tsx";
-import {extractCodeLines, getColor} from "@/utils.tsx";
+import {extractCodeLines, getColor} from "@/lib/utils";
 import {ITestFiles} from "@/types/General.tsx";
 
 

@@ -1,7 +1,7 @@
 import {Card} from "@/components/ui/card.tsx";
 import {Target} from "lucide-react";
 import type React from "react";
-import {getFileColor} from "@/utils.tsx";
+import {getFileColor} from "@/lib/utils";
 import info from "@/assets/info.json";
 import {ReportTooltip} from "@/components/ui/report-tooltip.tsx";
 
