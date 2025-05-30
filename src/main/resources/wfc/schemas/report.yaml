@@ -73,8 +73,8 @@ $def:
         description: "Identifying fault 'code', based on WFC classification."
         type: integer
       context:
-        description: "An optional context for the fault. The same fault type could be manifested in different ways, and we
-        use this property to differentiate among them."
+        description: "An optional context for the fault. The same fault type could be manifested in different ways, \
+                      and we use this property to differentiate among them."
         type: string
     required: ["code"]
   TestFilePath:
@@ -102,7 +102,7 @@ $def:
     minimum: 0
     maximum: 599
   FoundFault:
-    description: "Data-structure to represent found faults, based on operations (e.g., HTTP endpoints in REST, and methods
+    description: "Data-structure to represent found faults, based on operations (e.g., HTTP endpoints in REST, and methods \
                   in GraphQL and RPC) and which tests find faults in them."
     type: object
     properties:
@@ -122,8 +122,8 @@ $def:
     type: object
     properties:
       total_http_calls:
-        description: "Total number of HTTP calls made in all the test cases. A test case could contain several HTTP calls,
-        e.g., a POST followed by a GET and then a DELETE."
+        description: "Total number of HTTP calls made in all the test cases. A test case could contain several HTTP calls, \
+                      e.g., a POST followed by a GET and then a DELETE."
         type: integer
         minimum: 0
       endpoint_ids:
