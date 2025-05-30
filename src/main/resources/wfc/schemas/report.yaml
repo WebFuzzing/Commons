@@ -162,7 +162,9 @@ $def:
     type: object
     properties:
       total_number:
-        description: "The total number of potential faults identified in the generated test suites."
+        description: "The total number of potential faults identified in the generated test suites. \
+                      Each fault is uniquely identified with its 'code' category and 'context'. \
+                      Note that different tests can detect the same fault, and a test case can detect several different faults."
         type: integer
         minimum: 0
       found_faults:
