@@ -4,14 +4,14 @@ import {resolve} from "path";
 import {readFileSync} from "fs";
 import {vi} from "vitest";
 import App from "../src/App";
-import {fetchFileContent, getFaultCounts} from "../src/utils";
+import {fetchFileContent, getFaultCounts} from "@/lib/utils";
 
 // Read the report.json file
 const reportJsonPath = resolve(__dirname, './static/report.json');
 const reportData = JSON.parse(readFileSync(reportJsonPath, 'utf-8'));
 
 // Mock the fetchFileContent function to return the content of the report.json file
-vi.mock('@/utils.tsx', async (importOriginal) => {
+vi.mock('@/lib/utils.tsx', async (importOriginal) => {
     const originalModule = await importOriginal();
     return{
         ...originalModule as typeof importOriginal,
