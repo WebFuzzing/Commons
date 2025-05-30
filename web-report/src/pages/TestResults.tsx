@@ -3,7 +3,7 @@ import type React from "react";
 import {Badge} from "@/components/ui/badge.tsx";
 import {CodeBlock} from "@/components/CodeBlock.tsx";
 import {FoundFault, RESTReport, TestCase} from "@/types/GeneratedTypes.tsx";
-import {extractCodeLines, getColor} from "@/utils.tsx";
+import {extractCodeLines, getColor} from "@/lib/utils";
 import {ITestFiles} from "@/types/General.tsx";
 
 
@@ -36,11 +36,11 @@ export const TestResults: React.FC<IProps> = ({
 
     const all_fault_codes = related_faults.map((fault) =>
         fault.fault_categories.map((f) => f.code)).flat();
-    const unique_fault_codes = [...new Set(all_fault_codes)];
+    const unique_fault_codes = [...new Set(all_fault_codes)].sort((a, b) => a - b);
 
     const all_status_codes = related_http_status.map((status) =>
         status.http_status.map((s) => s)).flat();
-    const unique_status_codes = [...new Set(all_status_codes)];
+    const unique_status_codes = [...new Set(all_status_codes)].sort((a, b) => a - b);
     const current_file = test_files.find((file) => file.name === test_case?.file_path);
 
 
@@ -74,7 +74,7 @@ export const TestResults: React.FC<IProps> = ({
                         unique_status_codes.length > 0 && <div className="flex flex-wrap gap-2 mb-3">
                             <Badge
                                 className="bg-green-500 cursor-default text-white px-4 py-2 text-base font-bold border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-                                HTTP
+                                HTTPS
                             </Badge>
 
                             {

@@ -45,6 +45,14 @@ export const Dashboard: React.FC<IDashboard> = ({data, test_files}) => {
             setActiveTab(updatedTabs[0].value)
         }
     }
+
+    const numberOfTestCaseOfFiles = data.test_file_paths.map((test_file) => {
+        return {
+            "file_name":  test_file,
+            "number_of_test_cases": data.test_cases.filter((test_case) => test_case.file_path === test_file).length
+        }
+    });
+
     return (
         <div className="border border-black p-4 w-[80%] mx-auto bg-white">
             <Header date={data.creation_time}
@@ -101,7 +109,7 @@ export const Dashboard: React.FC<IDashboard> = ({data, test_files}) => {
                 <TabsContent value="overview" className="mt-0">
                     <Overview rest={data.problem_details.rest}
                               test_cases={data.test_cases}
-                              test_file_paths={data.test_file_paths}
+                              test_files={numberOfTestCaseOfFiles}
                               faults={data.faults}/>
                 </TabsContent>
 

@@ -1,4 +1,10 @@
 import {CoveredEndpoint, FoundFault} from "@/types/GeneratedTypes.tsx";
+import {ClassValue, clsx} from "clsx";
+import {twMerge} from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+    return twMerge(clsx(inputs))
+}
 
 export const getColor = (code: string | number, isBackground: boolean, isFault: boolean) => {
     if (isFault) {
@@ -123,4 +129,26 @@ export const getFaultCounts = (found_faults: FoundFault[]) => {
         });
     });
     return faultCounts;
+}
+
+export const getFileColor = (index: number, file: string) => {
+    const isFault = file.includes("fault");
+    const isSuccess = file.includes("success");
+    const isOthers = file.includes("other");
+
+    if(isFault) {
+        return "bg-red-500";
+    }
+
+    if(isSuccess) {
+        return "bg-green-500";
+    }
+
+    if(isOthers) {
+        return "bg-yellow-500";
+    }
+
+    const colorList = ["bg-blue-500", "bg-green-500", "bg-red-500", "bg-yellow-500", "bg-purple-500", "bg-pink-500"];
+
+    return colorList[index % colorList.length];
 }
