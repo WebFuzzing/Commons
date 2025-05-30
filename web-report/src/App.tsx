@@ -1,14 +1,14 @@
 import './App.css'
 import {Dashboard} from "@/components/Dashboard.tsx";
 import {useEffect, useState} from "react";
-import {WebFuzzingReport} from "@/types/GeneratedTypes.tsx";
+import {WebFuzzingCommonsReport} from "@/types/GeneratedTypes.tsx";
 import {LoadingScreen} from "@/components/LoadingScreen.tsx";
 import {fetchFileContent} from "@/lib/utils";
 import {ITestFiles} from "@/types/General.tsx";
 
 function App() {
 
-    const [data, setData] = useState<WebFuzzingReport | null>(null);
+    const [data, setData] = useState<WebFuzzingCommonsReport | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [testFiles, setTestFiles] = useState<ITestFiles[]>([]);
@@ -16,7 +16,7 @@ function App() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const jsonData = await fetchFileContent('./report.json') as WebFuzzingReport;
+                const jsonData = await fetchFileContent('./report.json') as WebFuzzingCommonsReport;
                 setData(jsonData);
             } catch (error: Error | unknown) {
                 if (error instanceof Error) {

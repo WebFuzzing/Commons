@@ -8,7 +8,7 @@ import {Endpoints} from "@/pages/Endpoints.tsx";
 import {TestResults} from "@/pages/TestResults.tsx";
 
 import {ScrollArea, ScrollBar} from "@/components/ui/scroll-area.tsx";
-import {WebFuzzingReport} from "@/types/GeneratedTypes.tsx";
+import {WebFuzzingCommonsReport} from "@/types/GeneratedTypes.tsx";
 import {ITestFiles} from "@/types/General.tsx";
 
 
@@ -17,7 +17,7 @@ export interface ITestTabs {
 }
 
 export interface IDashboard {
-    data: WebFuzzingReport;
+    data: WebFuzzingCommonsReport;
     test_files: Array<ITestFiles>;
 }
 

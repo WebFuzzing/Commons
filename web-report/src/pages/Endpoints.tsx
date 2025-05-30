@@ -1,17 +1,17 @@
 import React, {useState} from "react";
 import {Accordion} from "@/components/ui/accordion.tsx";
 import {EndpointAccordion} from "@/components/EndpointAccordion.tsx";
-import {WebFuzzingReport} from "@/types/GeneratedTypes.tsx";
+import {WebFuzzingCommonsReport} from "@/types/GeneratedTypes.tsx";
 import {StatusCodeFilters} from "@/components/StatusCodeFilters.tsx";
 
 interface IProps {
     addTestTab: (value: string, event: React.MouseEvent<HTMLElement>) => void;
-    data: WebFuzzingReport
+    data: WebFuzzingCommonsReport
 }
 
 export const Endpoints: React.FC<IProps> = ({addTestTab, data}) => {
 
-    const transformJson = (original: WebFuzzingReport) => {
+    const transformJson = (original: WebFuzzingCommonsReport) => {
 
         const endpointMap = new Map<string, {
             endpoint: string,
