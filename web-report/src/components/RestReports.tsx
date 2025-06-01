@@ -2,7 +2,7 @@ import {Card} from "@/components/ui/card.tsx";
 import type React from "react";
 import {CoveragePieChart} from "@/components/CoveragePieChart.tsx";
 import {RESTReport} from "@/types/GeneratedTypes.tsx";
-import {calculateAllStatusCounts} from "@/lib/utils";
+import {calculateAllStatusCounts, getText} from "@/lib/utils";
 import info from "@/assets/info.json";
 import {ReportTooltip} from "@/components/ui/report-tooltip.tsx";
 
@@ -18,16 +18,32 @@ export const RestReports: React.FC<RESTReport> = ({covered_http_status, endpoint
             <div className="border-t border-black my-2"></div>
 
             <div className="grid grid-cols-2 gap-4 mb-6">
-                <ReportTooltip tooltipText={info.status_2xx}>
+                <ReportTooltip tooltipText={getText(info.http_endpoint_codes, {
+                    number_of_endpoints: allStatusCounts["2XX"],
+                    code: "2XX",
+                    total_endpoints: total
+                })}>
                     <CoveragePieChart covered={allStatusCounts["2XX"]} total={total} color={"#7fd561"} label={"2XX"}/>
                 </ReportTooltip>
-                <ReportTooltip tooltipText={info.status_3xx}>
+                <ReportTooltip tooltipText={getText(info.http_endpoint_codes, {
+                    number_of_endpoints: allStatusCounts["3XX"],
+                    code: "3XX",
+                    total_endpoints: total
+                })}>
                     <CoveragePieChart covered={allStatusCounts["3XX"]} total={total} color={"#b8c1e6"} label={"3XX"}/>
                 </ReportTooltip>
-                <ReportTooltip tooltipText={info.status_4xx}>
+                <ReportTooltip tooltipText={getText(info.http_endpoint_codes, {
+                    number_of_endpoints: allStatusCounts["4XX"],
+                    code: "4XX",
+                    total_endpoints: total
+                })}>
                     <CoveragePieChart covered={allStatusCounts["4XX"]} total={total} color={"#FFAB5B"} label={"4XX"}/>
                 </ReportTooltip>
-                <ReportTooltip tooltipText={info.status_5xx}>
+                <ReportTooltip tooltipText={getText(info.http_endpoint_codes, {
+                    number_of_endpoints: allStatusCounts["5XX"],
+                    code: "5XX",
+                    total_endpoints: total
+                })}>
                     <CoveragePieChart covered={allStatusCounts["5XX"]} total={total} color={"#930d3b"} label={"5XX"}/>
                 </ReportTooltip>
             </div>

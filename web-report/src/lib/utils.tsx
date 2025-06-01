@@ -1,4 +1,4 @@
-import {CoveredEndpoint, FoundFault} from "@/types/GeneratedTypes.tsx";
+import {CoveredEndpoint, FoundFault, WebFuzzingCommonsReport} from "@/types/GeneratedTypes.tsx";
 import {ClassValue, clsx} from "clsx";
 import {twMerge} from "tailwind-merge";
 
@@ -123,12 +123,34 @@ export const calculateAllStatusCounts = (covered_http_status: CoveredEndpoint[],
 
 export const getFaultCounts = (found_faults: FoundFault[]) => {
     const faultCounts = new Map();
+    // A fault defines a unique operation_id, code, and context. To define a unique fault, we can use a combination of these three properties.
+
     found_faults.forEach(fault => {
         fault.fault_categories.forEach(category => {
-            faultCounts.set(category.code, (faultCounts.get(category.code) || 0) + 1);
+            faultCounts.set(`${fault.operation_id}|${category.code}|${category.context}`, (faultCounts.get(category.code) || 0) + 1);
         });
     });
-    return faultCounts;
+
+    const uniqueFaults = Array.from(faultCounts.keys()).map(key => {
+        const [operationId, code, context] = key.split('|');
+        return {
+            operation_id: operationId,
+            code: parseInt(code, 10),
+            context: context || '',
+            count: faultCounts.get(key)
+        };
+    });
+    const uniqueCodes = new Set(uniqueFaults.map(fault => fault.code));
+    
+    return Array.from(uniqueCodes).map(code => {
+        const faultsWithCode = uniqueFaults.filter(fault => fault.code === code);
+        const uniqueOperationCounts = new Set(faultsWithCode.map(fault => fault.operation_id)).size;
+        return {
+            code: code,
+            count: faultsWithCode.length,
+            operation_count: uniqueOperationCounts,
+        }
+    })
 }
 
 export const getFileColor = (index: number, file: string) => {
@@ -151,4 +173,113 @@ export const getFileColor = (index: number, file: string) => {
     const colorList = ["bg-blue-500", "bg-green-500", "bg-red-500", "bg-yellow-500", "bg-purple-500", "bg-pink-500"];
 
     return colorList[index % colorList.length];
+}
+
+export const getLanguage = (file_name: string) => {
+
+    switch (file_name.split('.').pop()) {
+        case 'java':
+            return 'java';
+        case 'js':
+            return 'javascript';
+        case 'py':
+            return 'python';
+        case 'ts':
+            return 'typescript';
+        default:
+            return 'plaintext';
+    }
+}
+
+export interface ITransformedReport {
+    endpoint: string;
+    faults: {
+        code: number;
+        test_cases: string[];
+    }[];
+    http_status_codes: {
+        code: number;
+        test_cases: string[];
+    }[];
+}
+
+export const transformWebFuzzingReport = (original: WebFuzzingCommonsReport | null): Array<ITransformedReport> => {
+
+    if (!original || !original.problem_details || !original.problem_details.rest) {
+        return [];
+    }
+
+    const endpointMap = new Map<string, ITransformedReport>();
+
+    original.problem_details.rest?.endpoint_ids.forEach(endpoint => {
+        endpointMap.set(endpoint, {
+            endpoint,
+            http_status_codes: [],
+            faults: []
+        });
+    });
+
+    original.faults.found_faults.forEach(fault => {
+        if (!fault.operation_id) {
+            return;
+        }
+
+        if (!endpointMap.has(fault.operation_id)) {
+            console.log(`Endpoint ${fault.operation_id} not found in endpoint_ids`);
+        }
+
+        const endpointData = endpointMap.get(fault.operation_id);
+
+        if (!endpointData) {
+            return;
+        }
+
+        fault.fault_categories.forEach(faultCat => {
+            let existingFault = endpointData.faults.find((f: { code: number; }) => f.code === faultCat.code);
+            if (!existingFault) {
+                existingFault = {code: faultCat.code, test_cases: []};
+                endpointData.faults.push(existingFault);
+            }
+            if (!existingFault.test_cases.includes(fault.test_case_id)) {
+                existingFault.test_cases.push(fault.test_case_id);
+            }
+        });
+    });
+
+    if (original.problem_details.rest == null) {
+        return Array.from([]);
+    }
+
+    original.problem_details.rest.covered_http_status.forEach(status => {
+        if (!endpointMap.has(status.endpoint_id)) {
+            console.log(`Endpoint ${status.endpoint_id} not found in endpoint_ids`);
+        }
+
+        const endpointData = endpointMap.get(status.endpoint_id);
+
+        status.http_status.forEach(code => {
+            if (!endpointData) {
+                return;
+            }
+            let existingStatus = endpointData.http_status_codes.find((s: { code: number; }) => s.code === code);
+            if (!existingStatus) {
+                existingStatus = {code, test_cases: []};
+                endpointData.http_status_codes.push(existingStatus);
+            }
+            if (!existingStatus.test_cases.includes(status.test_case_id)) {
+                existingStatus.test_cases.push(status.test_case_id);
+            }
+        });
+    });
+
+    return Array.from(endpointMap.values());
+}
+
+export const getText = (
+    text: string,
+    params?: Record<string, string | number>): string => {
+
+    return Object.entries(params || {}).reduce((result, [param, value]) => {
+        return result.replace(`{${param}}`, String(value));
+    }, text);
 }

@@ -1,22 +1,11 @@
 import {useState} from "react"
 import {StatusCodeFilterButton} from "./StatusCodeFilterButton"
+import {ITransformedReport} from "@/lib/utils.tsx";
 
 type FilterState = "inactive" | "active" | "removed"
 
-interface DataProps {
-    endpoint: string,
-    faults: {
-        code: number,
-        test_cases: string[]
-    }[],
-    http_status_codes: {
-        code: number
-        test_cases: string[]
-    }[]
-}
-
 interface StatusCodeFiltersProps {
-    data: DataProps[]
+    data: ITransformedReport[]
     onFiltersChange: (activeFilters: Record<number, FilterState>) => void
 }
 

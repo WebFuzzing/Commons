@@ -2,12 +2,16 @@ import {Card} from "@/components/ui/card.tsx";
 import {ShieldAlert} from "lucide-react";
 import React, {useState} from "react";
 import {Faults} from "@/types/GeneratedTypes.tsx";
-import {getFaultCounts} from "@/lib/utils";
+import {getFaultCounts, getText} from "@/lib/utils";
 import info from "@/assets/info.json";
 import {StatusCodeModal} from "@/components/StatusCodeModal.tsx";
 import {ReportTooltip} from "@/components/ui/report-tooltip.tsx";
+import {useAppContext} from "@/AppProvider.tsx";
 
 export const FaultsComponent: React.FC<Faults> = ({total_number, found_faults}) => {
+    const {data} = useAppContext();
+    const totalEndpointNumber = data?.problem_details.rest?.endpoint_ids.length;
+
     const faultCounts = getFaultCounts(found_faults);
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [currentStatus, setCurrentStatus] = useState(-1);
@@ -38,30 +42,59 @@ export const FaultsComponent: React.FC<Faults> = ({total_number, found_faults}) 
                         <ReportTooltip tooltipText={info.distinct_fault_types}>
                             <span className="text-lg font-bold">Distinct Fault Types:</span>
                         </ReportTooltip>
-                        <span className="text-lg font-bold" data-testid="faults-component-fault-counts">{faultCounts.size}</span>
+                        <span className="text-lg font-bold" data-testid="faults-component-fault-counts">{faultCounts.length}</span>
                     </div>
                 </div>
             </div>
 
-            <div className="mt-4">
-                <div className="flex justify-between font-bold border-b border-black pb-2">
-                    <ReportTooltip tooltipText={info.code_number_identifiers}>
-                        <span>Codes</span>
-                    </ReportTooltip>
-                    <ReportTooltip tooltipText={info.identifier_name}>
-                        <span>Name</span>
-                    </ReportTooltip>
-                    <ReportTooltip tooltipText={info.number_of_faults_per_code}>
-                        <span>#</span>
-                    </ReportTooltip>
+            {/*<div className="mt-6">*/}
+            {/*    <div className="grid grid-cols-4 gap-4 p-4 font-semibold text-gray-700 border-b">*/}
+            {/*        <ReportTooltip tooltipText={info.code_number_identifiers}>*/}
+            {/*            <span>Codes</span>*/}
+            {/*        </ReportTooltip>*/}
+            {/*        <ReportTooltip tooltipText={info.identifier_name}>*/}
+            {/*            <span>Name</span>*/}
+            {/*        </ReportTooltip>*/}
+            {/*        <ReportTooltip tooltipText={info.number_of_faults_per_code}>*/}
+            {/*            <span>Distribution</span>*/}
+            {/*        </ReportTooltip>*/}
+            {/*        <ReportTooltip tooltipText={info.number_of_faults_per_code}>*/}
+            {/*            <span>#</span>*/}
+            {/*        </ReportTooltip>*/}
+            {/*    </div>*/}
+            <div className="mt-6">
+                <div className="bg-gray-50 rounded-t-lg">
+                    <div className="grid grid-cols-12 gap-4 p-6 font-semibold text-gray-700 border-b">
+                        <ReportTooltip className="col-span-2 text-center" tooltipText={info.code_number_identifiers}>
+                            <div>Codes</div>
+                        </ReportTooltip>
+                        <ReportTooltip className="col-span-6 text-center" tooltipText={info.identifier_name}>
+                            <div>Name</div>
+                        </ReportTooltip>
+                        <ReportTooltip className="col-span-2 text-center" tooltipText={info.distribution_of_endpoints_per_code}>
+                            <div>Distribution</div>
+                        </ReportTooltip>
+                        <ReportTooltip className="col-span-2 text-center" tooltipText={info.number_of_faults_per_code}>
+                            <div>#</div>
+                        </ReportTooltip>
+                    </div>
                 </div>
-                <div className="border-2 border-black mt-2 p-2">
+                <div className="border border-t-0 rounded-b-lg overflow-hidden">
                     {
-                        Array.from(faultCounts).map(([code, count]) => (
-                            <div className="flex justify-between py-1" key={code}>
-                                <span className="font-bold cursor-help font-mono hover:text-green-300" onClick={() => handleOpenModal(code)}>{code}</span>
-                                <span className="font-mono  cursor-help hover:text-green-300"  onClick={() => handleOpenModal(code)}>{getShortNameOfCode(code)}</span>
-                                <span className="font-bold">{count}</span>
+                        faultCounts.map((fault) => (
+                            <div className="grid grid-cols-12 gap-4 p-6 transition-colors border-b border-gray-200" key={fault.code}>
+                                <div className="col-span-2 text-center font-bold cursor-help font-mono hover:text-green-300" onClick={() => handleOpenModal(fault.code)}>{fault.code}</div>
+                                <div className="col-span-6 text-left font-mono cursor-help hover:text-green-300"  onClick={() => handleOpenModal(fault.code)}>{getShortNameOfCode(fault.code)}</div>
+                                <ReportTooltip className="col-span-2 text-center font-mono" tooltipText={getText(info.distribution_tooltip,
+                                    {
+                                        operation_count: fault.operation_count,
+                                        endpoint_text: fault.operation_count > 1 ? "endpoints have" : "endpoint has",
+                                        code: fault.code,
+                                        totalEndpointNumber:totalEndpointNumber ? totalEndpointNumber : 0
+                                    })}>
+                                    <div>{fault.operation_count}/{totalEndpointNumber}</div>
+                                </ReportTooltip>
+                                <div className="col-span-2 text-center font-bold">{fault.count}</div>
                             </div>
                         ))
                     }

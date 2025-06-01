@@ -140,7 +140,7 @@ describe('App test', () => {
 
         await waitFor(() => {
             expect(screen.getByTestId('faults-component-total-faults')).toContainHTML(`${total_faults}`);
-            expect(screen.getByTestId('faults-component-fault-counts')).toContainHTML(faultCounts.size.toString());
+            expect(screen.getByTestId('faults-component-fault-counts')).toContainHTML(faultCounts.length.toString());
         });
     });
 });
