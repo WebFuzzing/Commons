@@ -107,7 +107,7 @@ describe('App test', () => {
             const overviewTab = screen.getByTestId('tab-overview');
 
             // check if the endpoints tab is active
-            expect(overviewTab).toHaveClass('data-[state=active]:bg-white');
+            expect(overviewTab).toHaveClass('data-[state=active]:bg-blue-100');
 
         });
         const endpointsTab = screen.getByTestId('tab-endpoints');
@@ -120,7 +120,7 @@ describe('App test', () => {
 
         await waitFor(() => {
             // check if the endpoints tab is active
-            expect(endpointsTab).toHaveClass('data-[state=active]:bg-white');
+            expect(endpointsTab).toHaveClass('data-[state=active]:bg-blue-100');
         });
 
         await waitFor(() => {
