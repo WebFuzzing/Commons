@@ -2,31 +2,22 @@ import {Card} from "@/components/ui/card.tsx";
 import type React from "react";
 import {Badge} from "@/components/ui/badge.tsx";
 import {CodeBlock} from "@/components/CodeBlock.tsx";
-import {FoundFault, RESTReport, TestCase} from "@/types/GeneratedTypes.tsx";
-import {extractCodeLines, getColor} from "@/lib/utils";
-import {ITestFiles} from "@/types/General.tsx";
+import {extractCodeLines, getColor, getLanguage} from "@/lib/utils";
+import {useAppContext} from "@/AppProvider.tsx";
 
 
 interface IProps {
     test_case_name: string;
-    test_cases: Array<TestCase>;
-    found_faults: Array<FoundFault>;
-    problem_details: {
-        rest?: RESTReport;
-        [k: string]: unknown;
-    };
-    test_files: Array<ITestFiles>;
 }
 
-export const TestResults: React.FC<IProps> = ({
-                                                  test_case_name,
-                                                  test_cases,
-                                                  found_faults,
-                                                  problem_details,
-                                                  test_files
-                                              }) => {
+export const TestResults: React.FC<IProps> = ({test_case_name}) => {
 
-    if(!problem_details.rest){
+    const {data, testFiles} = useAppContext();
+
+    const test_cases = data?.test_cases || [];
+    const found_faults = data?.faults.found_faults || [];
+    const problem_details = data?.problem_details || {};
+    if (!problem_details.rest) {
         return <div>We are only supporting REST results now. You need to provide rest results.</div>
     }
 
@@ -41,27 +32,10 @@ export const TestResults: React.FC<IProps> = ({
     const all_status_codes = related_http_status.map((status) =>
         status.http_status.map((s) => s)).flat();
     const unique_status_codes = [...new Set(all_status_codes)].sort((a, b) => a - b);
-    const current_file = test_files.find((file) => file.name === test_case?.file_path);
+    const current_file = testFiles.find((file) => file.name === test_case?.file_path);
 
 
     const extractedCode = current_file && test_case ? extractCodeLines(current_file.code, test_case?.start_line, test_case?.end_line) : "";
-
-    const fileExtension = current_file?.name.split('.').pop();
-
-    const getLanguage = (extension: string | undefined) => {
-        switch (extension) {
-            case 'java':
-                return 'java';
-            case 'js':
-                return 'javascript';
-            case 'py':
-                return 'python';
-            case 'ts':
-                return 'typescript';
-            default:
-                return 'plaintext';
-        }
-    }
 
     return (
         <div className="border-2 border-black p-6 rounded-none w-[80%] mx-auto">
@@ -115,10 +89,9 @@ export const TestResults: React.FC<IProps> = ({
                     <span>{test_case?.id}</span>
                 </div>
                 {
-
                     test_case && current_file && (
                         <pre className="p-4 overflow-auto max-h-[500px] text-sm text-left font-mono">
-                        <CodeBlock content={extractedCode} language={getLanguage(fileExtension)}/>
+                        <CodeBlock content={extractedCode} language={getLanguage(current_file?.name)}/>
                     </pre>
                     )
                 }

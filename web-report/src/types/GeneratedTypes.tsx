@@ -8,7 +8,7 @@
 /**
  * Schema Definition for Web Fuzzing Commons Reports
  */
-export interface WebFuzzingReport {
+export interface WebFuzzingCommonsReport {
   /**
    * The schema version of WFC needed to use to validate and process this document.
    */
@@ -50,7 +50,7 @@ export interface WebFuzzingReport {
 }
 export interface Faults {
   /**
-   * The total number of potential faults identified in the generated test suites.
+   * The total number of potential faults identified in the generated test suites. Each fault is uniquely identified with its 'code' category and 'context'. Note that different tests can detect the same fault, and a test case can detect several different faults.
    */
   total_number: number;
   /**

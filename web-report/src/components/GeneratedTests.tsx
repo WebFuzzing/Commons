@@ -1,7 +1,7 @@
 import {Card} from "@/components/ui/card.tsx";
 import {Target} from "lucide-react";
 import type React from "react";
-import {getFileColor} from "@/lib/utils";
+import {getFileColor, getText} from "@/lib/utils";
 import info from "@/assets/info.json";
 import {ReportTooltip} from "@/components/ui/report-tooltip.tsx";
 
@@ -46,7 +46,11 @@ export const GeneratedTests: React.FC<IGeneratedTests> = ({total_tests, test_fil
                                 test_files.map((file, index) => (
                                     <div className="flex items-center gap-2 text-sm text-gray-600" key={index}>
                                         <div className={`w-2 h-2 ${getFileColor(index, file.file_name)} rounded-full`}></div>
-                                        <ReportTooltip tooltipText={`${file.number_of_test_cases} test cases are located in ${file.file_name}`}>
+                                        <ReportTooltip tooltipText={getText(info.test_files_located,
+                                            {
+                                                file_name: file.file_name,
+                                                number_of_test_cases: file.number_of_test_cases
+                                            })}>
                                             <span>{file.file_name} (# {file.number_of_test_cases})</span>
                                         </ReportTooltip>
                                     </div>

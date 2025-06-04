@@ -8,20 +8,16 @@ import {Endpoints} from "@/pages/Endpoints.tsx";
 import {TestResults} from "@/pages/TestResults.tsx";
 
 import {ScrollArea, ScrollBar} from "@/components/ui/scroll-area.tsx";
-import {WebFuzzingReport} from "@/types/GeneratedTypes.tsx";
-import {ITestFiles} from "@/types/General.tsx";
+import {useAppContext} from "@/AppProvider.tsx";
 
 
 export interface ITestTabs {
     value: string;
 }
 
-export interface IDashboard {
-    data: WebFuzzingReport;
-    test_files: Array<ITestFiles>;
-}
+export const Dashboard: React.FC = () => {
+    const {data} = useAppContext();
 
-export const Dashboard: React.FC<IDashboard> = ({data, test_files}) => {
     const [activeTab, setActiveTab] = useState("overview")
 
     const [testTabs, setTestTabs] = useState<Array<ITestTabs>>([]);
@@ -44,6 +40,14 @@ export const Dashboard: React.FC<IDashboard> = ({data, test_files}) => {
         } else {
             setActiveTab(updatedTabs[0].value)
         }
+    }
+
+    if(!data) {
+        return (
+            <div className="flex items-center justify-center h-screen">
+                <p className="text-lg font-semibold">Loading...</p>
+            </div>
+        );
     }
 
     const numberOfTestCaseOfFiles = data.test_file_paths.map((test_file) => {
@@ -114,17 +118,13 @@ export const Dashboard: React.FC<IDashboard> = ({data, test_files}) => {
                 </TabsContent>
 
                 <TabsContent value="endpoints">
-                    <Endpoints addTestTab={addTestTab} data={data}/>
+                    <Endpoints addTestTab={addTestTab}/>
                 </TabsContent>
 
                 {
                     testTabs.map((test, index) => (
                         <TabsContent value={`${test.value}`} key={index}>
-                            <TestResults test_case_name={test.value}
-                                         test_cases={data.test_cases}
-                                         found_faults={data.faults.found_faults}
-                                         problem_details={data.problem_details}
-                                         test_files={test_files}/>
+                            <TestResults test_case_name={test.value} />
                         </TabsContent>
                     ))
                 }

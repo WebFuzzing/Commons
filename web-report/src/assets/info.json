@@ -3,7 +3,11 @@
   "number_of_http_calls": "Total number of HTTP calls in the generated test suites.",
   "code_number_identifiers": "Code number identifiers for detected fault types",
   "identifier_name": "Identifier name for the fault type.",
+  "test_files_located": "{number_of_test_cases} test cases are located in {file_name}",
+  "http_endpoint_codes": "{number_of_endpoints} endpoints have {code} HTTP code out of {total_endpoints} endpoints.",
   "number_of_faults_per_code": "Number of faults detected for each code.",
+  "distribution_of_endpoints_per_code": "Distribution of endpoints per code (Affected/Total Endpoints).",
+  "distribution_tooltip": "{operation_count} {endpoint_text} {code} error code out of {totalEndpointNumber} endpoints.",
   "generated_test_files": "Number of generated test files.",
   "generated_test_cases": "Number of generated test cases.",
   "total_faults": "Total number of faults detected in the API.",
@@ -11,10 +15,6 @@
   "creation_date": "Date when the report was generated.",
   "tool_name_version": "Name and version of the tool that generated the report.",
   "schema_version": "Version of the schema used for the report.",
-  "status_2xx": "Coverage of the 2xx status codes",
-  "status_3xx": "Coverage of the 3xx status codes",
-  "status_4xx": "Coverage of the 4xx status codes",
-  "status_5xx": "Coverage of the 5xx status codes",
   "fault_codes": [
     {
       "short_definition": "HTTP_STATUS_500",
