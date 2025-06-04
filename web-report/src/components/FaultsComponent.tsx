@@ -46,22 +46,6 @@ export const FaultsComponent: React.FC<Faults> = ({total_number, found_faults}) 
                     </div>
                 </div>
             </div>
-
-            {/*<div className="mt-6">*/}
-            {/*    <div className="grid grid-cols-4 gap-4 p-4 font-semibold text-gray-700 border-b">*/}
-            {/*        <ReportTooltip tooltipText={info.code_number_identifiers}>*/}
-            {/*            <span>Codes</span>*/}
-            {/*        </ReportTooltip>*/}
-            {/*        <ReportTooltip tooltipText={info.identifier_name}>*/}
-            {/*            <span>Name</span>*/}
-            {/*        </ReportTooltip>*/}
-            {/*        <ReportTooltip tooltipText={info.number_of_faults_per_code}>*/}
-            {/*            <span>Distribution</span>*/}
-            {/*        </ReportTooltip>*/}
-            {/*        <ReportTooltip tooltipText={info.number_of_faults_per_code}>*/}
-            {/*            <span>#</span>*/}
-            {/*        </ReportTooltip>*/}
-            {/*    </div>*/}
             <div className="mt-6">
                 <div className="bg-gray-50 rounded-t-lg">
                     <div className="grid grid-cols-12 gap-4 p-6 font-semibold text-gray-700 border-b">
@@ -72,7 +56,7 @@ export const FaultsComponent: React.FC<Faults> = ({total_number, found_faults}) 
                             <div>Name</div>
                         </ReportTooltip>
                         <ReportTooltip className="col-span-2 text-center" tooltipText={info.distribution_of_endpoints_per_code}>
-                            <div>Distribution</div>
+                            <div>Ratio</div>
                         </ReportTooltip>
                         <ReportTooltip className="col-span-2 text-center" tooltipText={info.number_of_faults_per_code}>
                             <div>#</div>
@@ -90,7 +74,7 @@ export const FaultsComponent: React.FC<Faults> = ({total_number, found_faults}) 
                                         operation_count: fault.operation_count,
                                         endpoint_text: fault.operation_count > 1 ? "endpoints have" : "endpoint has",
                                         code: fault.code,
-                                        totalEndpointNumber:totalEndpointNumber ? totalEndpointNumber : 0
+                                        total_endpoints:totalEndpointNumber ? totalEndpointNumber : 0
                                     })}>
                                     <div>{fault.operation_count}/{totalEndpointNumber}</div>
                                 </ReportTooltip>

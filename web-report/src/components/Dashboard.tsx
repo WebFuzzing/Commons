@@ -63,18 +63,18 @@ export const Dashboard: React.FC = () => {
                     schema_version={data.schema_version}
                     tool_name_version={`${data.tool_name}-${data.tool_version}`}/>
             <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-                <div className="flex justify-center mb-8 w-full">
+                <div className="flex justify-center mb-2 w-full">
                     <TabsList className={`flex gap-4 w-[80%] max-w-[700px] h-auto p-1 bg-transparent`}>
                         <TabsTrigger
                             value="overview"
-                            className="min-w-[150px] py-3 border border-gray-300 data-[state=active]:bg-white data-[state=active]:border-2 data-[state=active]:border-black data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                            className="min-w-[150px] py-3 border border-gray-500 data-[state=active]:bg-blue-100 data-[state=active]:border-2 data-[state=active]:border-black data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
                             data-testid="tab-overview"
                         >
                             Overview
                         </TabsTrigger>
                         <TabsTrigger
                             value="endpoints"
-                            className="min-w-[150px] py-3 border border-gray-300 data-[state=active]:bg-white data-[state=active]:border-2 data-[state=active]:border-black data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                            className="min-w-[150px] py-3 border border-gray-500 data-[state=active]:bg-blue-100 data-[state=active]:border-2 data-[state=active]:border-black data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
                             data-testid="tab-endpoints"
                         >
                             Endpoints
@@ -83,7 +83,7 @@ export const Dashboard: React.FC = () => {
                 </div>
                 <div className="border-t border-black my-2"></div>
 
-                <div className="flex justify-center mb-8 w-full">
+                <div className="flex justify-center w-full">
                     {
                         <TabsList className={`flex gap-4 w-[80%] max-w-[700px] h-auto p-1 bg-transparent`}>
                             <ScrollArea className="w-[130%] whitespace-nowrap py-3">
