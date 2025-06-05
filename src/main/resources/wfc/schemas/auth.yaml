@@ -125,4 +125,17 @@ $def:
     description: "Payload with username and password information. \
                   It will be automatically formatted in a proper payload based on content type."
     type: object
-    ### TODO
+    properties:
+      username:
+        description: "The id of the user."
+        type: string
+      password:
+        description: "The password of the user, in plain-text. This must NOT be hashed."
+        type: string
+      usernameField:
+        description: "The name of the field in the body payload containing the username."
+        type: string
+      passwordField:
+        description: "The name of the field in the body payload containing the password"
+        type: string
+    required: ["username","usernameField","password","passwordField"]
