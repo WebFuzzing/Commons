@@ -27,8 +27,102 @@ properties:
       type: string
 required: ["auth"]
 $def:
+  HttpVerb:
+    type: string
+    enum:
+      - POST
+      - GET
+      - PATCH
+      - DELETE
+      - PUT
+  Header:
+    description: "HTTP header information"
+    type: object
+    properties:
+      name:
+        description: "The header name, e.g., 'Authorization'."
+        type: string
+      value:
+        description: "The value of the header"
+        type: string
+    required: ["name","value"]
   AuthenticationInfo:
     type: object
-
-
-
+    properties:
+      name:
+        description: "The name given to this authentication info. \
+                      This works as a unique id for this authentication configuration."
+        type: string
+      requireMockHandling:
+        description: "Specify that the authentication for this user requires setting up mock responses from an external service. \
+                      This will be done as part of the fuzzing, although only possible for white-box testing. \
+                      One consequence here is that, even if we provide correct auth info as input, then a request might still \
+                      fail due to unauthorized access if the fuzzing process does not properly set up these mocked responses in the API itself."
+        type: boolean
+      fixedHeaders:
+        description: "The headers needed for authentication. \
+                      This is used to represent cases in which auth info is static/fixed, e.g., \
+                      when passing an id or username/password through a HTTP header (and not \
+                      using for example a dynamically generated token from a login endpoint first)."
+        type: array
+        items:
+          $ref: "#/$def/Header"
+      loginEndpointAuth:
+          $ref: "#/$def/LoginEndpoint"
+    required: ["name"]
+  ###
+  LoginEndpoint:
+    description: "Used to represent the case in which a login endpoint is used to obtain the authentication credentials. \
+                      These can be cookies, or a token extracted from the login endpoint's response. \
+                      This token can then be added to an HTTP header in the following requests."
+    type: object
+    properties:
+      endpoint:
+        description: "The endpoint path (eg '/login') where to execute the login. \
+                      It assumes it is on same server of API.\
+                      If not, rather use 'externalEndpointURL'."
+        type: string
+      externalEndpointURL:
+        description: "If the login endpoint is on a different server, here can rather specify the full URL for it."
+        type: string
+      payloadRaw:
+        description: "The raw payload to send, as a string."
+        type: string
+      payloadUserPwd:
+        $ref: "#/$def/PayloadUsernamePassword"  # TODO
+      headers:
+        description: "HTTP headers needed when calling the login endpoint. \
+                      Username/password could be passed by headers instead of by the body payload."
+        type: array
+        items:
+          $ref: "#/$def/Header"
+      verb:
+        description: "The verb used to connect to the login endpoint. \
+                      Most of the time, this will be a 'POST'."
+        allOf:
+          - $ref: "#/$def/HttpVerb"
+          - type: string
+      contentType:
+        description: "Specify the format in which the payload is sent to the login endpoint. \
+                      A common example is 'application/json'."
+      token:
+        $ref: "#/$def/TokenHandling" # TODO
+      expectCookies:
+        description: "Specify if we are expecting to get cookies from the login endpoint. \
+                      If so, a fuzzer can use those as auth info in following requests, instead of trying to extract \
+                      an auth token from the response payload."
+        type: boolean
+    required: ["verb"]
+  ###
+  TokenHandling:
+    description: "Specify how to extract token from response, and how to use it for auth in following requests. \
+                  Not needed if rather expect to get back a cookie."
+    type: object
+    properties:
+      ### TODO
+  ###
+  PayloadUsernamePassword:
+    description: "Payload with username and password information. \
+                  It will be automatically formatted in a proper payload based on content type."
+    type: object
+    ### TODO
