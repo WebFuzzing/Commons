@@ -1,0 +1,13 @@
+[ {
+  "code" : 100,
+  "testCaseLabel" : "causes500_internalServerError",
+  "fullDescription" : "TODO",
+  "descriptiveName" : "HTTP Status 500",
+  "label" : "F100:HTTP Status 500"
+}, {
+  "code" : 101,
+  "testCaseLabel" : "returnsSchemaInvalidResponse",
+  "fullDescription" : "TODO",
+  "descriptiveName" : "Received A Response From API That Is Not Valid According To Its Schema",
+  "label" : "F101:Received A Response From API That Is Not Valid According To Its Schema"
+} ]
