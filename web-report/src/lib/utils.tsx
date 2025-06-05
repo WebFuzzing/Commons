@@ -186,6 +186,8 @@ export const getLanguage = (file_name: string) => {
             return 'python';
         case 'ts':
             return 'typescript';
+        case 'kt':
+            return 'kotlin';
         default:
             return 'plaintext';
     }

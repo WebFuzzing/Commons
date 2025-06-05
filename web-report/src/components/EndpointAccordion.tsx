@@ -77,8 +77,8 @@ export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
                 </div>
             </AccordionTrigger>
             <AccordionContent className="p-4">
-                <div className="mb-6">
-                    <div className="font-bold text-lg mb-2">HTTP CODES</div>
+                <div className="flex mb-6">
+                    <div className="flex font-bold text-lg mb-2 mr-2">HTTP CODES:</div>
                     <div className="flex flex-wrap gap-2">
                         {
                             sortedStatusCodes.map((code, index) => (
@@ -86,7 +86,7 @@ export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
                                     setSelectedCode(code.code);
                                     setIsFault(false);
                                 }}
-                                       className={`${getColor(code.code, true, false)} ${getSelectedStyle(code.code, false)} hover:bg-green-600 cursor-pointer text-white px-4 py-2 text-base font-bold border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]`}>
+                                       className={`${getColor(code.code, true, false)} ${getSelectedStyle(code.code, false)} hover:bg-green-600 cursor-pointer text-white font-mono text-base border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]`}>
                                     {code.code}
                                 </Badge>
                             ))
@@ -98,8 +98,8 @@ export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
                     </div>
                 </div>
 
-                <div>
-                    <div className="font-bold text-lg mb-2 text-red-500">FAULT CODES</div>
+                <div className="flex mb-6">
+                    <div className="flex font-bold text-lg mb-2 mr-2 text-red-500">FAULT CODES:</div>
                     <div className="flex flex-wrap gap-2">
                         {
                             sortedFaults.map((fault, index) => (
@@ -107,7 +107,7 @@ export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
                                     setSelectedCode(fault.code)
                                     setIsFault(true);
                                 }}
-                                       className={`${faultColors[index % faultColors.length]} ${getSelectedStyle(fault.code, true)} hover:bg-red-400 cursor-pointer text-white px-4 py-2 text-base font-bold border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]`}>
+                                       className={`${faultColors[index % faultColors.length]} ${getSelectedStyle(fault.code, true)} hover:bg-red-400 cursor-pointer text-white text-base font-mono border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]`}>
                                     {fault.code}
                                 </Badge>
                             ))
