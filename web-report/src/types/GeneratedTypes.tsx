@@ -6,6 +6,20 @@
  */
 
 /**
+ * A unique identifier for an operation. For example, in REST, it would be a HTTP endpoint, including  verb, e.g., 'GET:/users/{id}'.
+ */
+export type OperationId = string;
+/**
+ * A unique identifier for a test case. It could include its name and file location.
+ */
+export type TestCaseId = string;
+export type HttpStatus = number;
+/**
+ * A relative path used to unique locate a test suite file.
+ */
+export type TestFilePath = string;
+
+/**
  * Schema Definition for Web Fuzzing Commons Reports
  */
 export interface WebFuzzingCommonsReport {
@@ -37,7 +51,7 @@ export interface WebFuzzingCommonsReport {
   /**
    * The list of relative paths (compared to this document) of all the generated test suite files.
    */
-  test_file_paths: string[];
+  test_file_paths: TestFilePath[];
   /**
    * Information on each generated test case.
    */
@@ -63,14 +77,8 @@ export interface Faults {
  * Data-structure to represent found faults, based on operations (e.g., HTTP endpoints in REST, and methods in GraphQL and RPC) and which tests find faults in them.
  */
 export interface FoundFault {
-  /**
-   * A unique identifier for an operation. For example, in REST, it would be a HTTP endpoint, including  verb, e.g., 'GET:/users/{id}'.
-   */
-  operation_id?: string;
-  /**
-   * A unique identifier for a test case. It could include its name and file location.
-   */
-  test_case_id: string;
+  operation_id?: OperationId;
+  test_case_id: TestCaseId;
   /**
    * @minItems 1
    */
@@ -99,7 +107,7 @@ export interface RESTReport {
   /**
    * Unique ids of all the endpoints in the tested API.
    */
-  endpoint_ids: string[];
+  endpoint_ids: OperationId[];
   /**
    * List of which HTTP status codes were covered, based on endpoints.
    */
@@ -110,31 +118,19 @@ export interface RESTReport {
  * Data-structure to represent which HTTP status code where covered on an endpoint by any of the generated tests.
  */
 export interface CoveredEndpoint {
-  /**
-   * A unique identifier for an operation. For example, in REST, it would be a HTTP endpoint, including  verb, e.g., 'GET:/users/{id}'.
-   */
-  endpoint_id: string;
-  /**
-   * A unique identifier for a test case. It could include its name and file location.
-   */
-  test_case_id: string;
+  endpoint_id: OperationId;
+  test_case_id: TestCaseId;
   /**
    * As in a test case the same endpoint could be called more than once, here we report all of the  obtained HTTP status codes
    *
    * @minItems 1
    */
-  http_status: [number, ...number[]];
+  http_status: [HttpStatus, ...HttpStatus[]];
   [k: string]: unknown;
 }
 export interface TestCase {
-  /**
-   * A unique identifier for a test case. It could include its name and file location.
-   */
-  id?: string;
-  /**
-   * A relative path used to unique locate a test suite file.
-   */
-  file_path?: string;
+  id?: TestCaseId;
+  file_path?: TestFilePath;
   /**
    * The name of the test case, as it appears in the generated test file.
    */
