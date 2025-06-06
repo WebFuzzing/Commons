@@ -1,5 +1,6 @@
 package com.webfuzzing.commons.faults;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -24,6 +25,8 @@ public class FaultsToJson {
 
     public static String getJsonFromClass(){
         ObjectMapper mapper = new ObjectMapper();
+        mapper.configOverride(DefinedFaultCategory.class)
+                .setFormat(JsonFormat.Value.forShape(JsonFormat.Shape.OBJECT));
 
         List<DefinedFaultCategory> faults = Arrays.stream(DefinedFaultCategory.values())
                 .sorted(Comparator.comparingInt(DefinedFaultCategory::getCode))

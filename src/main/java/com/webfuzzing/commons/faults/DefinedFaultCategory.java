@@ -1,10 +1,8 @@
 package com.webfuzzing.commons.faults;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.util.Objects;
 
-@JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum DefinedFaultCategory implements FaultCategory {
 
     /*
