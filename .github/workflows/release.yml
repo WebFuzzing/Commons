@@ -36,3 +36,5 @@ jobs:
           fail_on_unmatched_files: true
           files: |
             src/main/resources/wfc/schemas/report.yaml
+            src/main/resources/wfc/schemas/auth.yaml
+            src/main/resources/wfc/faults/fault_categories.json
