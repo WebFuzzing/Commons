@@ -181,6 +181,16 @@
                             <targetPackage>com.webfuzzing.commons.report</targetPackage>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>auth.yaml</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <sourceDirectory>${basedir}/src/main/resources/wfc/schemas/auth.yaml</sourceDirectory>
+                            <targetPackage>com.webfuzzing.commons.auth</targetPackage>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>

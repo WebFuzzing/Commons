@@ -19,18 +19,18 @@ properties:
     format: date-time
     description: "The timestamp of when this report file was created."
   faults:
-    $ref: "#/$def/Faults"
+    $ref: "#/$defs/Faults"
 #### Unfortunately, there is no support for oneOf in jsonschema2pojo
 #  problem_details:
 #    type: object
 #    oneOf:
-#      - $ref: "#/$def/RESTReport"
+#      - $ref: "#/$defs/RESTReport"
 #      # TODO GraphQL, RPC and Web
   problem_details:
     type: object
     properties:
       rest:
-        $ref: "#/$def/RESTReport"
+        $ref: "#/$defs/RESTReport"
       # TODO GraphQL, RPC and Web
       # expressing that only 1 should be present is possible, but super-verbose and convoluted
   total_tests:
@@ -40,24 +40,24 @@ properties:
   test_file_paths:
     type: array
     items:
-      $ref: "#/$def/TestFilePath"
+      $ref: "#/$defs/TestFilePath"
     uniqueItems: true
     description: "The list of relative paths (compared to this document) of all the generated test suite files."
   test_cases:
     description: "Information on each generated test case."
     type: array
     items:
-      $ref: "#/$def/TestCase"
+      $ref: "#/$defs/TestCase"
   #OPTIONAL
   extra:
     description: "Extra, optional coverage information, collected by different tools."
     type: array
     items:
-      $ref: "#/$def/Coverage"
+      $ref: "#/$defs/Coverage"
 
 required: ["schema_version","tool_name","tool_version","creation_time","faults","problem_details","total_tests","test_file_paths","test_cases"]
 
-$def:
+$defs:
   OperationId:
     description: "A unique identifier for an operation. For example, in REST, it would be a HTTP endpoint, including 
                   verb, e.g., 'GET:/users/{id}'."
@@ -85,15 +85,15 @@ $def:
     type: object
     properties:
       endpoint_id:
-        $ref: "#/$def/OperationId"
+        $ref: "#/$defs/OperationId"
       test_case_id:
-        $ref: "#/$def/TestCaseId"
+        $ref: "#/$defs/TestCaseId"
       http_status:
         description: "As in a test case the same endpoint could be called more than once, here we report all of the 
         obtained HTTP status codes"
         type: array
         items:
-          $ref: "#/$def/HttpStatus"
+          $ref: "#/$defs/HttpStatus"
         minItems: 1
         uniqueItems: true
     required: ["endpoint_id","test_case_id","http_status"]
@@ -107,13 +107,13 @@ $def:
     type: object
     properties:
       operation_id:
-        $ref: "#/$def/OperationId"
+        $ref: "#/$defs/OperationId"
       test_case_id:
-        $ref: "#/$def/TestCaseId"
+        $ref: "#/$defs/TestCaseId"
       fault_categories:
         type: array
         items:
-          $ref: "#/$def/FaultCategoryId"
+          $ref: "#/$defs/FaultCategoryId"
         minItems: 1
         uniqueItems: true
     required: ["endpoint_id","test_case_id","fault_categories"]
@@ -130,22 +130,22 @@ $def:
         description: "Unique ids of all the endpoints in the tested API."
         type: array
         items:
-          $ref: "#/$def/OperationId"
+          $ref: "#/$defs/OperationId"
         uniqueItems: true
       covered_http_status:
         description: "List of which HTTP status codes were covered, based on endpoints."
         type: array
         items:
-          $ref: "#/$def/CoveredEndpoint"
+          $ref: "#/$defs/CoveredEndpoint"
     required: ["total_http_calls","endpoint_ids","covered_http_status"]
 
   TestCase:
     type: object
     properties:
       id:
-        $ref: "#/$def/TestCaseId"
+        $ref: "#/$defs/TestCaseId"
       file_path:
-        $ref: "#/$def/TestFilePath"
+        $ref: "#/$defs/TestFilePath"
       name:
         description: "The name of the test case, as it appears in the generated test file."
         type: string
@@ -171,7 +171,7 @@ $def:
         description: "Information on all the identified potential faults."
         type: array
         items:
-          $ref: "#/$def/FoundFault"
+          $ref: "#/$defs/FoundFault"
     required: ["total_number","found_faults"]
 
   Coverage:
@@ -183,7 +183,7 @@ $def:
       criteria:
         type: array
         items:
-          $ref: "#/$def/CoverageCriterion"
+          $ref: "#/$defs/CoverageCriterion"
     required: ["tool_name","criteria"]
 
   CoverageCriterion:
