@@ -5,7 +5,7 @@
     <groupId>com.webfuzzing</groupId>
     <artifactId>commons</artifactId>
 
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.2</version>
 
     <inceptionYear>2024</inceptionYear>
     <name>WFC</name>
