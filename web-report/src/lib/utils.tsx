@@ -150,7 +150,7 @@ export const getFaultCounts = (found_faults: FoundFault[]) => {
             count: faultsWithCode.length,
             operation_count: uniqueOperationCounts,
         }
-    })
+    }).sort((a, b) => a.code - b.code);
 }
 
 export const getFileColor = (index: number, file: string) => {

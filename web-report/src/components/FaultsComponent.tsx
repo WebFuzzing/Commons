@@ -7,6 +7,7 @@ import info from "@/assets/info.json";
 import {StatusCodeModal} from "@/components/StatusCodeModal.tsx";
 import {ReportTooltip} from "@/components/ui/report-tooltip.tsx";
 import {useAppContext} from "@/AppProvider.tsx";
+import faults from "../../../src/main/resources/wfc/faults/fault_categories.json";
 
 export const FaultsComponent: React.FC<Faults> = ({total_number, found_faults}) => {
     const {data} = useAppContext();
@@ -22,10 +23,11 @@ export const FaultsComponent: React.FC<Faults> = ({total_number, found_faults}) 
     }
 
     const getShortNameOfCode = (code: number) => {
-        const codeInfo = info.fault_codes.find((fault) => fault.code === code);
+        const codeInfo = faults.find((fault) => fault.code === code);
         if (codeInfo) {
-            return codeInfo.short_definition;
+            return codeInfo.descriptiveName;
         }
+        return `Custom Code`;
     }
     return(
         <Card className="border-2 border-black p-6 rounded-none">

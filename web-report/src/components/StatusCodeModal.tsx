@@ -1,12 +1,13 @@
 import {useEffect, useRef, useState} from "react"
-import info from "@/assets/info.json";
 import {ChevronDown, ChevronUp} from "lucide-react";
+import faults from "../../../src/main/resources/wfc/faults/fault_categories.json";
 
 interface FaultCode {
-    short_definition: string
     code: number
-    description: string
-    test_case_name: string
+    descriptiveName: string
+    fullDescription: string
+    label: string
+    testCaseLabel: string
 }
 
 interface StatusCodeModalProps {
@@ -16,7 +17,6 @@ interface StatusCodeModalProps {
 }
 
 export function StatusCodeModal({ isOpen, onClose, statusCode }: StatusCodeModalProps) {
-    const faultCodes = info.fault_codes;
     const [expandedCode, setExpandedCode] = useState<number | null>(null)
     const selectedCodeRef = useRef<HTMLDivElement>(null)
     const modalContentRef = useRef<HTMLDivElement>(null)
@@ -42,7 +42,7 @@ export function StatusCodeModal({ isOpen, onClose, statusCode }: StatusCodeModal
 
     // Group fault codes by their first digit (category)
     const groupedFaultCodes: { [key: string]: FaultCode[] } = {}
-    faultCodes.forEach((fc) => {
+    faults.forEach((fc) => {
         const category = Math.floor(fc.code / 100) * 100
         if (!groupedFaultCodes[category]) {
             groupedFaultCodes[category] = []
@@ -136,7 +136,7 @@ export function StatusCodeModal({ isOpen, onClose, statusCode }: StatusCodeModal
                                                     onClick={() => toggleExpanded(fc.code)}
                                                 >
                                                     <div className="w-16 font-mono">{fc.code}</div>
-                                                    <div className="flex-1">{fc.short_definition}</div>
+                                                    <div className="flex-1">{fc.descriptiveName}</div>
                                                     <div className="flex items-center gap-2">
                                                         <div
                                                             className={`w-3 h-3 rounded-full ${
@@ -156,11 +156,12 @@ export function StatusCodeModal({ isOpen, onClose, statusCode }: StatusCodeModal
                                                     <div className="bg-gray-50 p-4 border-t">
                                                         <div className="space-y-4">
                                                             <div>
+                                                                <h4 className="font-semibold text-gray-800 mb-2">Label</h4>
+                                                                <p className="text-gray-600 mb-2">{fc.label}</p>
+                                                                <h4 className="font-semibold text-gray-800 mb-2">Test Case Name</h4>
+                                                                <p className="text-gray-600 mb-2">{fc.testCaseLabel}</p>
                                                                 <h4 className="font-semibold text-gray-800 mb-2">Description</h4>
-                                                                <p className="text-gray-700">{fc.description}</p>
-                                                                <p className="text-gray-600 mt-2">
-                                                                    <span className="font-medium">Test Case Name:</span> {fc.test_case_name}
-                                                                </p>
+                                                                <p className="text-gray-600 mb-2">{fc.fullDescription}</p>
                                                             </div>
                                                         </div>
                                                     </div>
