@@ -11,12 +11,12 @@ properties:
     description: "List of authentication information for different users."
     type: array
     items:
-      $ref: "#/$def/AuthenticationInfo"
+      $ref: "#/$defs/AuthenticationInfo"
   authTemplate:
     description: "Optional authentication information template. This is used to avoid duplication in the auth list. \
                  Entries defined in the template will be applied to all elements in the auth list that do not specify them."
     allOf:
-    - $ref: "#/$def/AuthenticationInfo"
+    - $ref: "#/$defs/AuthenticationInfo"
     - type: object
   configs:
     description: "Optional map of configuration parameters, in the form key:value strings. \
@@ -26,7 +26,9 @@ properties:
     additionalProperties:
       type: string
 required: ["auth"]
-$def:
+$defs:
+#  TODO unfortunately, tools like jsonschema2pojo-maven-plugin have major limitations when dealing with enums.
+#  This is not created as a top-level class
   HttpVerb:
     type: string
     enum:
@@ -66,9 +68,9 @@ $def:
                       using for example a dynamically generated token from a login endpoint first)."
         type: array
         items:
-          $ref: "#/$def/Header"
+          $ref: "#/$defs/Header"
       loginEndpointAuth:
-          $ref: "#/$def/LoginEndpoint"
+          $ref: "#/$defs/LoginEndpoint"
     required: ["name"]
   ###
   LoginEndpoint:
@@ -89,24 +91,36 @@ $def:
         description: "The raw payload to send, as a string."
         type: string
       payloadUserPwd:
-        $ref: "#/$def/PayloadUsernamePassword"  # TODO
+        $ref: "#/$defs/PayloadUsernamePassword"
       headers:
         description: "HTTP headers needed when calling the login endpoint. \
                       Username/password could be passed by headers instead of by the body payload."
         type: array
         items:
-          $ref: "#/$def/Header"
+          $ref: "#/$defs/Header"
       verb:
-        description: "The verb used to connect to the login endpoint. \
-                      Most of the time, this will be a 'POST'."
-        allOf:
-          - $ref: "#/$def/HttpVerb"
-          - type: string
+#        description: "The verb used to connect to the login endpoint. \
+#                     Most of the time, this will be a 'POST'."
+#        type: string
+#        enum:
+#            - POST
+#            - GET
+#            - PATCH
+#            - DELETE
+#            - PUT
+        $ref: "#/$defs/HttpVerb"
+        ## FIXME: unfortunately, plugin is not able to handle this... need new schema version with $ref not replacing everything
+#        description: "The verb used to connect to the login endpoint. \
+#                      Most of the time, this will be a 'POST'."
+#        allOf:
+#          - $ref: "#/$defs/HttpVerb"
+#          - type: string
       contentType:
         description: "Specify the format in which the payload is sent to the login endpoint. \
                       A common example is 'application/json'."
+        type: string
       token:
-        $ref: "#/$def/TokenHandling" # TODO
+        $ref: "#/$defs/TokenHandling"
       expectCookies:
         description: "Specify if we are expecting to get cookies from the login endpoint. \
                       If so, a fuzzer can use those as auth info in following requests, instead of trying to extract \
