@@ -41,7 +41,7 @@ export function StatusCodeFilters({data, onFiltersChange}: StatusCodeFiltersProp
     return (
         <div className="mb-6">
             <div className="items-center mb-2">
-                <h3 className="text-sm font-medium text-gray-700 mr-3">Filter by Status Code</h3>
+                <h3 className="text-sm font-medium text-gray-700 mr-3">Filter by HTTP Status Code</h3>
                 <div className="flex-wrap gap-2">
                     {allStatusCodes.map((code) => (
                         <StatusCodeFilterButton
