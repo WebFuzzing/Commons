@@ -24,10 +24,14 @@ export const FaultsComponent: React.FC<Faults> = ({total_number, found_faults}) 
 
     const getShortNameOfCode = (code: number) => {
         const codeInfo = faults.find((fault) => fault.code === code);
+        if(code >= 900 && code <= 999) {
+            return `Custom Code`;
+        }
+
         if (codeInfo) {
             return codeInfo.descriptiveName;
         }
-        return `Custom Code`;
+        return `Unrecognized Code`;
     }
     return(
         <Card className="border-2 border-black p-6 rounded-none">
@@ -70,7 +74,7 @@ export const FaultsComponent: React.FC<Faults> = ({total_number, found_faults}) 
                         faultCounts.map((fault) => (
                             <div className="grid grid-cols-12 gap-4 p-6 transition-colors border-b border-gray-200" key={fault.code}>
                                 <div className="col-span-2 text-center font-bold cursor-help font-mono hover:text-green-300" onClick={() => handleOpenModal(fault.code)}>{fault.code}</div>
-                                <div className="col-span-6 text-left font-mono cursor-help hover:text-green-300"  onClick={() => handleOpenModal(fault.code)}>{getShortNameOfCode(fault.code)}</div>
+                                <div className="col-span-6 text-center font-mono cursor-help hover:text-green-300"  onClick={() => handleOpenModal(fault.code)}>{getShortNameOfCode(fault.code)}</div>
                                 <ReportTooltip className="col-span-2 text-center font-mono" tooltipText={getText(info.distribution_tooltip,
                                     {
                                         operation_count: fault.operation_count,
