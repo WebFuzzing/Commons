@@ -24,12 +24,11 @@ export const FaultsComponent: React.FC<Faults> = ({total_number, found_faults}) 
 
     const getShortNameOfCode = (code: number) => {
         const codeInfo = faults.find((fault) => fault.code === code);
-        if(code >= 900 && code <= 999) {
-            return `Custom Code`;
-        }
-
         if (codeInfo) {
             return codeInfo.descriptiveName;
+        }
+        if(code >= 900 && code <= 999) {
+            return `Custom Code`;
         }
         return `Unrecognized Code`;
     }
