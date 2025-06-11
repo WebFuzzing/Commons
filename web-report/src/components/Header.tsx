@@ -11,7 +11,7 @@ interface IHeaderProps {
 export const Header: React.FC<IHeaderProps> = ({date, tool_name_version, schema_version}) => (
     <>
         <div className="justify-between border-b border-black pb-2 mb-4">
-            <div className="font-extrabold" data-testid="header-creation-date">WEB FUZZING COMMONS</div>
+            <div className="font-extrabold">WEB FUZZING COMMONS</div>
         </div>
         <div className="flex justify-between border-b border-black pb-2 mb-4">
             <ReportTooltip tooltipText={info.creation_date}>
