@@ -19,7 +19,23 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: '../target/classes/webreport'
+    outDir: '../target/classes/webreport',
+    rollupOptions: {
+      output: {
+        entryFileNames: `assets/report.js`,
+        chunkFileNames: `assets/[name].js`,
+        assetFileNames: (assetInfo: { name: string }) => {
+            const extType = assetInfo.name.split('.').pop();
+            if (extType === 'css') {
+                return `assets/report.css`;
+            }
+            if (extType === 'svg') {
+                return `assets/[name].svg`;
+            }
+            return `assets/[name].[ext]`;
+        },
+      }
+    }
   },
 
 } as UserConfig)
