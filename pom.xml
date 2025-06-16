@@ -210,7 +210,7 @@
                 <executions>
                     <execution>
                         <id>yarn install build</id>
-                        <phase>generate-sources</phase>
+                        <phase>generate-resources</phase>
                         <goals>
                             <goal>exec</goal>
                         </goals>

@@ -64,7 +64,7 @@ npm run debug
 yarn debug
 ```
 
-This will build the project and copy static test files from `tests/static` directory to `../target/generated-sources/webreport` before previewing.
+This will build the project and copy static test files from `tests/static` directory to `../target/classes/webreport` before previewing.
 
 ## Available Scripts
 
