@@ -10,4 +10,46 @@
   "fullDescription" : "A schema, like for example OpenAPI for REST, defines the structures not only of the inputs but also the outputs of the API. If what returned by an API is not conforming to its schema, then it is a clear fault. However, whether the fault is in the API (i.e., it does not conform to the schema) or in the schema itself (i.e., it is underspecified, or having mistakes) is something that cannot be known for sure without debugging the issue.",
   "descriptiveName" : "Received A Response From API That Is Not Valid According To Its Schema",
   "label" : "F101:Received A Response From API That Is Not Valid According To Its Schema"
+}, {
+  "code" : 102,
+  "testCaseLabel" : "successOnInvalidInputs",
+  "fullDescription" : "API inputs might have constraints (e.g., integers in a specific range, and strings matching a given regular expression). Also, they need be to of specific types (e.g., integers, booleans, strings, dates, arrays and objects). If some input data does not satisfy the type on constraints defined in the schema, then the API should mark the request as 'user error'. However, if for any reason the request is processed successfully, then it is a fault. Either the schema is incorrect, or the API is not properly discarding invalid data.",
+  "descriptiveName" : "Received Success Response When Sending Wrong Data",
+  "label" : "F102:Received Success Response When Sending Wrong Data"
+}, {
+  "code" : 103,
+  "testCaseLabel" : "deleteNotWorking",
+  "fullDescription" : "If a resource is deleted, and the API responds that such request was successful, then such resource should no longer being available. New requests to access it should fail. Otherwise, if it is still possible to access the resource, then it was not really deleted. Then, as such, it means that the delete operation is faulty.",
+  "descriptiveName" : "Resource Still Accessible After Being Deleted",
+  "label" : "F103:Resource Still Accessible After Being Deleted"
+}, {
+  "code" : 104,
+  "testCaseLabel" : "sideEffectsOnFailedCreation",
+  "fullDescription" : "The API might expose endpoints to create new resources. The creation of a new resource might fail due to non-satisfied input constraints, or based on constraints in the state of the backend. If the API reports that the creation operation failed, then such action should have no side-effects The resource (e.g., with partial data) should not be accessible.",
+  "descriptiveName" : "Failed Creation of Resource Has Side Effects on Backend",
+  "label" : "F104:Failed Creation of Resource Has Side Effects on Backend"
+}, {
+  "code" : 200,
+  "testCaseLabel" : "vulnerableToSQLInjection",
+  "fullDescription" : "Input data was not properly sanitized. Its use in SQL commands led to execute arbitrary commands on the database. See OWASP Top 10 for more information.",
+  "descriptiveName" : "SQL Injection (SQLi)",
+  "label" : "F200:SQL Injection (SQLi)"
+}, {
+  "code" : 201,
+  "testCaseLabel" : "vulnerableToXSS",
+  "fullDescription" : "XSS is an attack in which it is possible to inject malicious scripts into web pages viewed users. This works as well in APIs, if the malicious payload is stored as it is, and then read afterwards by a frontend web application. See OWASP Top 10 for more information.",
+  "descriptiveName" : "Cross-Site Scripting (XSS)",
+  "label" : "F201:Cross-Site Scripting (XSS)"
+}, {
+  "code" : 202,
+  "testCaseLabel" : "vulnerableToSSRF",
+  "fullDescription" : "Some inputs might be URLs, which are then used by the API to retrieve data from external services. However, if the hostnames of these URLs are not verified, the API could be tricked into making requests towards servers it should not to, like for example the 'localhost'. See OWASP Top 10 for more information.",
+  "descriptiveName" : "Server-Side Request Forgery (SSRF)",
+  "label" : "F202:Server-Side Request Forgery (SSRF)"
+}, {
+  "code" : 203,
+  "testCaseLabel" : "vulnerableToMassAssignment",
+  "fullDescription" : "This vulnerability exploits possible active record pattern misconfigurations to modify fields of  a record that should not be accessible via the API. See OWASP Top 10 for more information.",
+  "descriptiveName" : "Mass Assignment",
+  "label" : "F203:Mass Assignment"
 } ]
