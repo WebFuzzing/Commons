@@ -6,13 +6,13 @@ import {getColor} from "@/lib/utils";
 
 interface IStatusType {
     code: number | string;
-    test_cases: string[];
+    testCases: string[];
 }
 
 export interface IEndpointAccordionProps {
     endpoint: string;
     value: string;
-    status_codes: IStatusType[];
+    statusCodes: IStatusType[];
     faults: IStatusType[];
     addTestTab: (value: string, event: React.MouseEvent<HTMLElement>) => void;
 }
@@ -20,13 +20,13 @@ export interface IEndpointAccordionProps {
 export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
                                                                         endpoint,
                                                                         value,
-                                                                        status_codes,
+                                                                        statusCodes,
                                                                         faults,
                                                                         addTestTab
                                                                     }) => {
 
 
-    const sortedStatusCodes = status_codes.sort((a, b) =>
+    const sortedStatusCodes = statusCodes.sort((a, b) =>
         {
             const codeA = Number(a.code);
             const codeB = Number(b.code);
@@ -40,8 +40,8 @@ export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
     const [selectedCode, setSelectedCode] = useState<number | string>(sortedStatusCodes[0]?.code || 0);
     const [isFault, setIsFault] = useState(false);
 
-    const selectedTestCases = status_codes.find((code) => code.code === selectedCode)?.test_cases || [];
-    const selectedFaultTestCases = faults.find((code) => code.code === selectedCode)?.test_cases || [];
+    const selectedTestCases = statusCodes.find((code) => code.code === selectedCode)?.testCases || [];
+    const selectedFaultTestCases = faults.find((code) => code.code === selectedCode)?.testCases || [];
 
     const sortedFaults = faults.sort((a, b) => {
         const codeA = Number(a.code);
@@ -124,7 +124,7 @@ export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
                     (selectedTestCases.length > 0 || selectedFaultTestCases.length > 0) &&
                     <div className="mt-6">
                         <TestCases addTestTab={addTestTab} isFault={isFault} code={selectedCode}
-                                   test_cases={selectedTestCases.length > 0 && !isFault ? selectedTestCases : selectedFaultTestCases}/>
+                                   testCases={selectedTestCases.length > 0 && !isFault ? selectedTestCases : selectedFaultTestCases}/>
                     </div>
                 }
             </AccordionContent>

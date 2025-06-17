@@ -5,12 +5,12 @@ import {TestCaseButton} from "@/components/TestCaseButton.tsx";
 
 interface ITestCaseProps {
     code: string | number;
-    test_cases: Array<string>;
+    testCases: Array<string>;
     addTestTab: (value: string, event: React.MouseEvent<HTMLElement>) => void;
     isFault: boolean;
 }
 
-export const TestCases: React.FC<ITestCaseProps> = ({code, test_cases, addTestTab, isFault}) => {
+export const TestCases: React.FC<ITestCaseProps> = ({code, testCases, addTestTab, isFault}) => {
 
     return (
         <>
@@ -19,7 +19,7 @@ export const TestCases: React.FC<ITestCaseProps> = ({code, test_cases, addTestTa
                 <div className="max-h-[300px] overflow-auto">
                     {
                         // Test Cases
-                        test_cases.map((testCase, key) => (
+                        testCases.map((testCase, key) => (
                             <ReportTooltip key={key} tooltipText="Press CTRL while clicking to open without navigating it.">
                                 <TestCaseButton testName={testCase} statusCode={code} onClick={addTestTab} isFault={isFault}/>
                             </ReportTooltip>

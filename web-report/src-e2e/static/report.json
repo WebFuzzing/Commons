@@ -1,15 +1,15 @@
 {
-  "schema_version": "0.0.1",
-  "tool_name": "EvoMaster",
-  "tool_version": "unknown",
-  "creation_time": "2025-04-09T19:31:54.258Z",
+  "schemaVersion": "0.0.1",
+  "toolName": "EvoMaster",
+  "toolVersion": "unknown",
+  "creationTime": "2025-04-09T19:31:54.258Z",
   "faults": {
-    "total_number": 529,
-    "found_faults": [
+    "totalNumber": 529,
+    "foundFaults": [
       {
-        "operation_id": "GET:/app/api/credentials/",
-        "test_case_id": "faults.java#test_0",
-        "fault_categories": [
+        "operationId": "GET:/app/api/credentials/",
+        "testCaseId": "faults.java#test_0",
+        "faultCategories": [
           {
             "code": 200,
             "context": "GET:/app/api/credentials/ -> [Path '/collection/14/role'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
@@ -21,9 +21,9 @@
         ]
       },
       {
-        "operation_id": "GET:/app/api/projects",
-        "test_case_id": "faults.java#test_1",
-        "fault_categories": [
+        "operationId": "GET:/app/api/projects",
+        "testCaseId": "faults.java#test_1",
+        "faultCategories": [
           {
             "code": 200,
             "context": "GET:/app/api/projects -> [Path '/collection/9/endDate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
@@ -35,9 +35,9 @@
         ]
       },
       {
-        "operation_id": "GET:/app/api/projects",
-        "test_case_id": "faults.java#test_2",
-        "fault_categories": [
+        "operationId": "GET:/app/api/projects",
+        "testCaseId": "faults.java#test_2",
+        "faultCategories": [
           {
             "code": 200,
             "context": "GET:/app/api/projects -> [Path '/collection/9/endDate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
@@ -49,9 +49,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/departments",
-        "test_case_id": "faults.java#test_3",
-        "fault_categories": [
+        "operationId": "POST:/app/api/departments",
+        "testCaseId": "faults.java#test_3",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/departments -> [Path '/location/postalCode'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
@@ -59,9 +59,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/credentials/save",
-        "test_case_id": "faults.java#test_4",
-        "fault_categories": [
+        "operationId": "POST:/app/api/credentials/save",
+        "testCaseId": "faults.java#test_4",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/credentials/save -> [Path '/password'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
@@ -77,9 +77,9 @@
         ]
       },
       {
-        "operation_id": "GET:/app/api/employees/data/manager-project-data/{employeeId}",
-        "test_case_id": "faults.java#test_5",
-        "fault_categories": [
+        "operationId": "GET:/app/api/employees/data/manager-project-data/{employeeId}",
+        "testCaseId": "faults.java#test_5",
+        "faultCategories": [
           {
             "code": 200,
             "context": "GET:/app/api/employees/data/manager-project-data/{employeeId} -> [Path '/collection/0/title'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
@@ -95,9 +95,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/credentials",
-        "test_case_id": "faults.java#test_6",
-        "fault_categories": [
+        "operationId": "POST:/app/api/credentials",
+        "testCaseId": "faults.java#test_6",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/credentials -> [Path '/role'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
@@ -109,9 +109,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/credentials",
-        "test_case_id": "faults.java#test_7",
-        "fault_categories": [
+        "operationId": "POST:/app/api/credentials",
+        "testCaseId": "faults.java#test_7",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/credentials -> [Path '/password'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
@@ -119,9 +119,9 @@
         ]
       },
       {
-        "operation_id": "PUT:/app/api/credentials/update",
-        "test_case_id": "faults.java#test_8",
-        "fault_categories": [
+        "operationId": "PUT:/app/api/credentials/update",
+        "testCaseId": "faults.java#test_8",
+        "faultCategories": [
           {
             "code": 200,
             "context": "PUT:/app/api/credentials/update -> [Path '/username'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
@@ -129,9 +129,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/departments",
-        "test_case_id": "faults.java#test_9",
-        "fault_categories": [
+        "operationId": "POST:/app/api/departments",
+        "testCaseId": "faults.java#test_9",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/departments -> [Path '/location/adr'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
@@ -139,9 +139,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/projects",
-        "test_case_id": "faults.java#test_10",
-        "fault_categories": [
+        "operationId": "POST:/app/api/projects",
+        "testCaseId": "faults.java#test_10",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/projects -> [Path '/startDate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
@@ -149,9 +149,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/credentials",
-        "test_case_id": "faults.java#test_11",
-        "fault_categories": [
+        "operationId": "POST:/app/api/credentials",
+        "testCaseId": "faults.java#test_11",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/credentials -> Response status 400 not defined for path '/api/credentials'."
@@ -159,9 +159,9 @@
         ]
       },
       {
-        "operation_id": "GET:/app/api/credentials",
-        "test_case_id": "faults.java#test_11",
-        "fault_categories": [
+        "operationId": "GET:/app/api/credentials",
+        "testCaseId": "faults.java#test_11",
+        "faultCategories": [
           {
             "code": 200,
             "context": "GET:/app/api/credentials -> [Path '/collection/14/password'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
@@ -189,9 +189,9 @@
         ]
       },
       {
-        "operation_id": "GET:/app/api/employees",
-        "test_case_id": "faults.java#test_12",
-        "fault_categories": [
+        "operationId": "GET:/app/api/employees",
+        "testCaseId": "faults.java#test_12",
+        "faultCategories": [
           {
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/0/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
@@ -327,9 +327,9 @@
         ]
       },
       {
-        "operation_id": "GET:/app/api/employees/",
-        "test_case_id": "faults.java#test_13",
-        "fault_categories": [
+        "operationId": "GET:/app/api/employees/",
+        "testCaseId": "faults.java#test_13",
+        "faultCategories": [
           {
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/0/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
@@ -465,9 +465,9 @@
         ]
       },
       {
-        "operation_id": "PUT:/app/api/locations",
-        "test_case_id": "faults.java#test_14",
-        "fault_categories": [
+        "operationId": "PUT:/app/api/locations",
+        "testCaseId": "faults.java#test_14",
+        "faultCategories": [
           {
             "code": 200,
             "context": "PUT:/app/api/locations -> Response status 400 not defined for path '/api/locations'."
@@ -475,9 +475,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/projects",
-        "test_case_id": "faults.java#test_15",
-        "fault_categories": [
+        "operationId": "POST:/app/api/projects",
+        "testCaseId": "faults.java#test_15",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/projects -> [Path '/endDate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
@@ -489,9 +489,9 @@
         ]
       },
       {
-        "operation_id": "PUT:/app/api/projects",
-        "test_case_id": "faults.java#test_15",
-        "fault_categories": [
+        "operationId": "PUT:/app/api/projects",
+        "testCaseId": "faults.java#test_15",
+        "faultCategories": [
           {
             "code": 200,
             "context": "PUT:/app/api/projects -> Response status 400 not defined for path '/api/projects'."
@@ -499,9 +499,9 @@
         ]
       },
       {
-        "operation_id": "GET:/app/api/assignments",
-        "test_case_id": "faults.java#test_16",
-        "fault_categories": [
+        "operationId": "GET:/app/api/assignments",
+        "testCaseId": "faults.java#test_16",
+        "faultCategories": [
           {
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/0/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
@@ -1273,9 +1273,9 @@
         ]
       },
       {
-        "operation_id": "GET:/app/api/assignments/",
-        "test_case_id": "faults.java#test_17",
-        "fault_categories": [
+        "operationId": "GET:/app/api/assignments/",
+        "testCaseId": "faults.java#test_17",
+        "faultCategories": [
           {
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/0/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
@@ -2047,9 +2047,9 @@
         ]
       },
       {
-        "operation_id": "GET:/app/api/assignments/{employeeId}/{projectId}",
-        "test_case_id": "faults.java#test_18",
-        "fault_categories": [
+        "operationId": "GET:/app/api/assignments/{employeeId}/{projectId}",
+        "testCaseId": "faults.java#test_18",
+        "faultCategories": [
           {
             "code": 200,
             "context": "GET:/app/api/assignments/{employeeId}/{projectId} -> Response status 400 not defined for path '/api/assignments/{employeeId}/{projectId}'."
@@ -2057,9 +2057,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/projects",
-        "test_case_id": "faults.java#test_19",
-        "fault_categories": [
+        "operationId": "POST:/app/api/projects",
+        "testCaseId": "faults.java#test_19",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/projects -> Response status 400 not defined for path '/api/projects'."
@@ -2067,9 +2067,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/projects/save",
-        "test_case_id": "faults.java#test_20",
-        "fault_categories": [
+        "operationId": "POST:/app/api/projects/save",
+        "testCaseId": "faults.java#test_20",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/projects/save -> Response status 400 not defined for path '/api/projects/save'."
@@ -2077,9 +2077,9 @@
         ]
       },
       {
-        "operation_id": "DELETE:/app/api/assignments/delete/{employeeId}/{projectId}/{commitDate}",
-        "test_case_id": "faults.java#test_21",
-        "fault_categories": [
+        "operationId": "DELETE:/app/api/assignments/delete/{employeeId}/{projectId}/{commitDate}",
+        "testCaseId": "faults.java#test_21",
+        "faultCategories": [
           {
             "code": 200,
             "context": "DELETE:/app/api/assignments/delete/{employeeId}/{projectId}/{commitDate} -> Response status 400 not defined for path '/api/assignments/delete/{employeeId}/{projectId}/{commitDate}'."
@@ -2087,9 +2087,9 @@
         ]
       },
       {
-        "operation_id": "GET:/app/api/employees/data/department/{departmentId}",
-        "test_case_id": "faults.java#test_22",
-        "fault_categories": [
+        "operationId": "GET:/app/api/employees/data/department/{departmentId}",
+        "testCaseId": "faults.java#test_22",
+        "faultCategories": [
           {
             "code": 200,
             "context": "GET:/app/api/employees/data/department/{departmentId} -> Response status 400 not defined for path '/api/employees/data/department/{departmentId}'."
@@ -2097,9 +2097,9 @@
         ]
       },
       {
-        "operation_id": "DELETE:/app/api/departments/delete/{id}",
-        "test_case_id": "faults.java#test_23",
-        "fault_categories": [
+        "operationId": "DELETE:/app/api/departments/delete/{id}",
+        "testCaseId": "faults.java#test_23",
+        "faultCategories": [
           {
             "code": 200,
             "context": "DELETE:/app/api/departments/delete/{id} -> Response status 400 not defined for path '/api/departments/delete/{id}'."
@@ -2107,9 +2107,9 @@
         ]
       },
       {
-        "operation_id": "DELETE:/app/api/employees/{id}",
-        "test_case_id": "faults.java#test_24",
-        "fault_categories": [
+        "operationId": "DELETE:/app/api/employees/{id}",
+        "testCaseId": "faults.java#test_24",
+        "faultCategories": [
           {
             "code": 200,
             "context": "DELETE:/app/api/employees/{id} -> Response status 400 not defined for path '/api/employees/{id}'."
@@ -2117,9 +2117,9 @@
         ]
       },
       {
-        "operation_id": "DELETE:/app/api/locations/delete/{id}",
-        "test_case_id": "faults.java#test_25",
-        "fault_categories": [
+        "operationId": "DELETE:/app/api/locations/delete/{id}",
+        "testCaseId": "faults.java#test_25",
+        "faultCategories": [
           {
             "code": 200,
             "context": "DELETE:/app/api/locations/delete/{id} -> Response status 400 not defined for path '/api/locations/delete/{id}'."
@@ -2127,9 +2127,9 @@
         ]
       },
       {
-        "operation_id": "DELETE:/app/api/projects/delete/{id}",
-        "test_case_id": "faults.java#test_26",
-        "fault_categories": [
+        "operationId": "DELETE:/app/api/projects/delete/{id}",
+        "testCaseId": "faults.java#test_26",
+        "faultCategories": [
           {
             "code": 200,
             "context": "DELETE:/app/api/projects/delete/{id} -> Response status 400 not defined for path '/api/projects/delete/{id}'."
@@ -2137,9 +2137,9 @@
         ]
       },
       {
-        "operation_id": "GET:/app/api/departments/{id}",
-        "test_case_id": "faults.java#test_27",
-        "fault_categories": [
+        "operationId": "GET:/app/api/departments/{id}",
+        "testCaseId": "faults.java#test_27",
+        "faultCategories": [
           {
             "code": 200,
             "context": "GET:/app/api/departments/{id} -> Response status 400 not defined for path '/api/departments/{id}'."
@@ -2147,9 +2147,9 @@
         ]
       },
       {
-        "operation_id": "PUT:/app/api/projects",
-        "test_case_id": "faults.java#test_28",
-        "fault_categories": [
+        "operationId": "PUT:/app/api/projects",
+        "testCaseId": "faults.java#test_28",
+        "faultCategories": [
           {
             "code": 200,
             "context": "PUT:/app/api/projects -> Response status 400 not defined for path '/api/projects'."
@@ -2157,9 +2157,9 @@
         ]
       },
       {
-        "operation_id": "PUT:/app/api/projects",
-        "test_case_id": "faults.java#test_29",
-        "fault_categories": [
+        "operationId": "PUT:/app/api/projects",
+        "testCaseId": "faults.java#test_29",
+        "faultCategories": [
           {
             "code": 200,
             "context": "PUT:/app/api/projects -> Response status 400 not defined for path '/api/projects'."
@@ -2167,9 +2167,9 @@
         ]
       },
       {
-        "operation_id": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}",
-        "test_case_id": "faults.java#test_30",
-        "fault_categories": [
+        "operationId": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}",
+        "testCaseId": "faults.java#test_30",
+        "faultCategories": [
           {
             "code": 200,
             "context": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId} -> Response status 400 not defined for path '/api/assignments/data/project-commit/{employeeId}/{projectId}'."
@@ -2177,9 +2177,9 @@
         ]
       },
       {
-        "operation_id": "GET:/app/api/assignments/{employeeId}/{projectId}/{commitDate}",
-        "test_case_id": "faults.java#test_31",
-        "fault_categories": [
+        "operationId": "GET:/app/api/assignments/{employeeId}/{projectId}/{commitDate}",
+        "testCaseId": "faults.java#test_31",
+        "faultCategories": [
           {
             "code": 200,
             "context": "GET:/app/api/assignments/{employeeId}/{projectId}/{commitDate} -> Response status 400 not defined for path '/api/assignments/{employeeId}/{projectId}/{commitDate}'."
@@ -2187,9 +2187,9 @@
         ]
       },
       {
-        "operation_id": "GET:/app/api/employees/data/manager-project-data/{employeeId}",
-        "test_case_id": "faults.java#test_32",
-        "fault_categories": [
+        "operationId": "GET:/app/api/employees/data/manager-project-data/{employeeId}",
+        "testCaseId": "faults.java#test_32",
+        "faultCategories": [
           {
             "code": 200,
             "context": "GET:/app/api/employees/data/manager-project-data/{employeeId} -> Response status 400 not defined for path '/api/employees/data/manager-project-data/{employeeId}'."
@@ -2197,9 +2197,9 @@
         ]
       },
       {
-        "operation_id": "DELETE:/app/api/credentials/delete/{id}",
-        "test_case_id": "faults.java#test_33",
-        "fault_categories": [
+        "operationId": "DELETE:/app/api/credentials/delete/{id}",
+        "testCaseId": "faults.java#test_33",
+        "faultCategories": [
           {
             "code": 200,
             "context": "DELETE:/app/api/credentials/delete/{id} -> Response status 400 not defined for path '/api/credentials/delete/{id}'."
@@ -2207,9 +2207,9 @@
         ]
       },
       {
-        "operation_id": "GET:/app/api/credentials/{id}",
-        "test_case_id": "faults.java#test_34",
-        "fault_categories": [
+        "operationId": "GET:/app/api/credentials/{id}",
+        "testCaseId": "faults.java#test_34",
+        "faultCategories": [
           {
             "code": 200,
             "context": "GET:/app/api/credentials/{id} -> Response status 400 not defined for path '/api/credentials/{id}'."
@@ -2217,9 +2217,9 @@
         ]
       },
       {
-        "operation_id": "GET:/app/api/employees/{id}",
-        "test_case_id": "faults.java#test_35",
-        "fault_categories": [
+        "operationId": "GET:/app/api/employees/{id}",
+        "testCaseId": "faults.java#test_35",
+        "faultCategories": [
           {
             "code": 200,
             "context": "GET:/app/api/employees/{id} -> Response status 400 not defined for path '/api/employees/{id}'."
@@ -2227,9 +2227,9 @@
         ]
       },
       {
-        "operation_id": "GET:/app/api/projects/{id}",
-        "test_case_id": "faults.java#test_36",
-        "fault_categories": [
+        "operationId": "GET:/app/api/projects/{id}",
+        "testCaseId": "faults.java#test_36",
+        "faultCategories": [
           {
             "code": 200,
             "context": "GET:/app/api/projects/{id} -> Response status 400 not defined for path '/api/projects/{id}'."
@@ -2237,9 +2237,9 @@
         ]
       },
       {
-        "operation_id": "DELETE:/app/api/projects/{id}",
-        "test_case_id": "faults.java#test_37",
-        "fault_categories": [
+        "operationId": "DELETE:/app/api/projects/{id}",
+        "testCaseId": "faults.java#test_37",
+        "faultCategories": [
           {
             "code": 200,
             "context": "DELETE:/app/api/projects/{id} -> Response status 400 not defined for path '/api/projects/{id}'."
@@ -2247,9 +2247,9 @@
         ]
       },
       {
-        "operation_id": "DELETE:/app/api/credentials/username/{username}",
-        "test_case_id": "faults.java#test_38",
-        "fault_categories": [
+        "operationId": "DELETE:/app/api/credentials/username/{username}",
+        "testCaseId": "faults.java#test_38",
+        "faultCategories": [
           {
             "code": 200,
             "context": "DELETE:/app/api/credentials/username/{username} -> Response status 400 not defined for path '/api/credentials/username/{username}'."
@@ -2257,9 +2257,9 @@
         ]
       },
       {
-        "operation_id": "GET:/app/api/employees/username/{username}",
-        "test_case_id": "faults.java#test_39",
-        "fault_categories": [
+        "operationId": "GET:/app/api/employees/username/{username}",
+        "testCaseId": "faults.java#test_39",
+        "faultCategories": [
           {
             "code": 200,
             "context": "GET:/app/api/employees/username/{username} -> Response status 400 not defined for path '/api/employees/username/{username}'."
@@ -2267,9 +2267,9 @@
         ]
       },
       {
-        "operation_id": "GET:/app/api/credentials/username/{username}",
-        "test_case_id": "faults.java#test_40",
-        "fault_categories": [
+        "operationId": "GET:/app/api/credentials/username/{username}",
+        "testCaseId": "faults.java#test_40",
+        "faultCategories": [
           {
             "code": 200,
             "context": "GET:/app/api/credentials/username/{username} -> Response status 400 not defined for path '/api/credentials/username/{username}'."
@@ -2277,9 +2277,9 @@
         ]
       },
       {
-        "operation_id": "PUT:/app/api/assignments",
-        "test_case_id": "faults.java#test_41",
-        "fault_categories": [
+        "operationId": "PUT:/app/api/assignments",
+        "testCaseId": "faults.java#test_41",
+        "faultCategories": [
           {
             "code": 200,
             "context": "PUT:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
@@ -2287,9 +2287,9 @@
         ]
       },
       {
-        "operation_id": "GET:/app/api/credentials/username/{username}",
-        "test_case_id": "faults.java#test_42",
-        "fault_categories": [
+        "operationId": "GET:/app/api/credentials/username/{username}",
+        "testCaseId": "faults.java#test_42",
+        "faultCategories": [
           {
             "code": 200,
             "context": "GET:/app/api/credentials/username/{username} -> Response status 400 not defined for path '/api/credentials/username/{username}'."
@@ -2297,9 +2297,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/locations/save",
-        "test_case_id": "faults.java#test_43",
-        "fault_categories": [
+        "operationId": "POST:/app/api/locations/save",
+        "testCaseId": "faults.java#test_43",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/locations/save -> Response status 400 not defined for path '/api/locations/save'."
@@ -2307,9 +2307,9 @@
         ]
       },
       {
-        "operation_id": "PUT:/app/api/locations/update",
-        "test_case_id": "faults.java#test_44",
-        "fault_categories": [
+        "operationId": "PUT:/app/api/locations/update",
+        "testCaseId": "faults.java#test_44",
+        "faultCategories": [
           {
             "code": 200,
             "context": "PUT:/app/api/locations/update -> Response status 400 not defined for path '/api/locations/update'."
@@ -2317,9 +2317,9 @@
         ]
       },
       {
-        "operation_id": "PUT:/app/api/departments",
-        "test_case_id": "faults.java#test_45",
-        "fault_categories": [
+        "operationId": "PUT:/app/api/departments",
+        "testCaseId": "faults.java#test_45",
+        "faultCategories": [
           {
             "code": 200,
             "context": "PUT:/app/api/departments -> Response status 400 not defined for path '/api/departments'."
@@ -2327,9 +2327,9 @@
         ]
       },
       {
-        "operation_id": "PUT:/app/api/departments",
-        "test_case_id": "faults.java#test_46",
-        "fault_categories": [
+        "operationId": "PUT:/app/api/departments",
+        "testCaseId": "faults.java#test_46",
+        "faultCategories": [
           {
             "code": 200,
             "context": "PUT:/app/api/departments -> Response status 400 not defined for path '/api/departments'."
@@ -2337,9 +2337,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/authenticate",
-        "test_case_id": "faults.java#test_47",
-        "fault_categories": [
+        "operationId": "POST:/app/api/authenticate",
+        "testCaseId": "faults.java#test_47",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/authenticate -> Response status 400 not defined for path '/api/authenticate'."
@@ -2347,9 +2347,9 @@
         ]
       },
       {
-        "operation_id": "PUT:/app/api/departments",
-        "test_case_id": "faults.java#test_48",
-        "fault_categories": [
+        "operationId": "PUT:/app/api/departments",
+        "testCaseId": "faults.java#test_48",
+        "faultCategories": [
           {
             "code": 200,
             "context": "PUT:/app/api/departments -> Response status 400 not defined for path '/api/departments'."
@@ -2357,9 +2357,9 @@
         ]
       },
       {
-        "operation_id": "PUT:/app/api/employees",
-        "test_case_id": "faults.java#test_49",
-        "fault_categories": [
+        "operationId": "PUT:/app/api/employees",
+        "testCaseId": "faults.java#test_49",
+        "faultCategories": [
           {
             "code": 200,
             "context": "PUT:/app/api/employees -> Response status 400 not defined for path '/api/employees'."
@@ -2367,9 +2367,9 @@
         ]
       },
       {
-        "operation_id": "PUT:/app/api/employees/update",
-        "test_case_id": "faults.java#test_50",
-        "fault_categories": [
+        "operationId": "PUT:/app/api/employees/update",
+        "testCaseId": "faults.java#test_50",
+        "faultCategories": [
           {
             "code": 200,
             "context": "PUT:/app/api/employees/update -> Response status 400 not defined for path '/api/employees/update'."
@@ -2377,9 +2377,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/credentials",
-        "test_case_id": "faults.java#test_51",
-        "fault_categories": [
+        "operationId": "POST:/app/api/credentials",
+        "testCaseId": "faults.java#test_51",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/credentials -> Response status 400 not defined for path '/api/credentials'."
@@ -2387,9 +2387,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/employees/save",
-        "test_case_id": "faults.java#test_52",
-        "fault_categories": [
+        "operationId": "POST:/app/api/employees/save",
+        "testCaseId": "faults.java#test_52",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/employees/save -> Response status 400 not defined for path '/api/employees/save'."
@@ -2397,9 +2397,9 @@
         ]
       },
       {
-        "operation_id": "PUT:/app/api/assignments/update",
-        "test_case_id": "faults.java#test_53",
-        "fault_categories": [
+        "operationId": "PUT:/app/api/assignments/update",
+        "testCaseId": "faults.java#test_53",
+        "faultCategories": [
           {
             "code": 200,
             "context": "PUT:/app/api/assignments/update -> Response status 400 not defined for path '/api/assignments/update'."
@@ -2407,9 +2407,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/assignments",
-        "test_case_id": "faults.java#test_54",
-        "fault_categories": [
+        "operationId": "POST:/app/api/assignments",
+        "testCaseId": "faults.java#test_54",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
@@ -2417,9 +2417,9 @@
         ]
       },
       {
-        "operation_id": "GET:/app/api/assignments/data/project-commit/{projectId}",
-        "test_case_id": "faults.java#test_55",
-        "fault_categories": [
+        "operationId": "GET:/app/api/assignments/data/project-commit/{projectId}",
+        "testCaseId": "faults.java#test_55",
+        "faultCategories": [
           {
             "code": 200,
             "context": "GET:/app/api/assignments/data/project-commit/{projectId} -> Response status 400 not defined for path '/api/assignments/data/project-commit/{projectId}'."
@@ -2427,9 +2427,9 @@
         ]
       },
       {
-        "operation_id": "DELETE:/app/api/projects/{id}",
-        "test_case_id": "faults.java#test_56",
-        "fault_categories": [
+        "operationId": "DELETE:/app/api/projects/{id}",
+        "testCaseId": "faults.java#test_56",
+        "faultCategories": [
           {
             "code": 200,
             "context": "DELETE:/app/api/projects/{id} -> Response status 400 not defined for path '/api/projects/{id}'."
@@ -2437,9 +2437,9 @@
         ]
       },
       {
-        "operation_id": "GET:/app/api/locations/{id}",
-        "test_case_id": "faults.java#test_57",
-        "fault_categories": [
+        "operationId": "GET:/app/api/locations/{id}",
+        "testCaseId": "faults.java#test_57",
+        "faultCategories": [
           {
             "code": 200,
             "context": "GET:/app/api/locations/{id} -> Response status 400 not defined for path '/api/locations/{id}'."
@@ -2447,9 +2447,9 @@
         ]
       },
       {
-        "operation_id": "PUT:/app/api/projects",
-        "test_case_id": "faults.java#test_58",
-        "fault_categories": [
+        "operationId": "PUT:/app/api/projects",
+        "testCaseId": "faults.java#test_58",
+        "faultCategories": [
           {
             "code": 200,
             "context": "PUT:/app/api/projects -> Response status 400 not defined for path '/api/projects'."
@@ -2457,9 +2457,9 @@
         ]
       },
       {
-        "operation_id": "DELETE:/app/api/employees/username/{username}",
-        "test_case_id": "faults.java#test_59",
-        "fault_categories": [
+        "operationId": "DELETE:/app/api/employees/username/{username}",
+        "testCaseId": "faults.java#test_59",
+        "faultCategories": [
           {
             "code": 200,
             "context": "DELETE:/app/api/employees/username/{username} -> Response status 400 not defined for path '/api/employees/username/{username}'."
@@ -2467,9 +2467,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/projects/save",
-        "test_case_id": "faults.java#test_60",
-        "fault_categories": [
+        "operationId": "POST:/app/api/projects/save",
+        "testCaseId": "faults.java#test_60",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/projects/save -> Response status 400 not defined for path '/api/projects/save'."
@@ -2477,9 +2477,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/projects",
-        "test_case_id": "faults.java#test_61",
-        "fault_categories": [
+        "operationId": "POST:/app/api/projects",
+        "testCaseId": "faults.java#test_61",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/projects -> Response status 400 not defined for path '/api/projects'."
@@ -2487,9 +2487,9 @@
         ]
       },
       {
-        "operation_id": "DELETE:/app/api/employees/username/{username}",
-        "test_case_id": "faults.java#test_62",
-        "fault_categories": [
+        "operationId": "DELETE:/app/api/employees/username/{username}",
+        "testCaseId": "faults.java#test_62",
+        "faultCategories": [
           {
             "code": 200,
             "context": "DELETE:/app/api/employees/username/{username} -> Response status 400 not defined for path '/api/employees/username/{username}'."
@@ -2497,9 +2497,9 @@
         ]
       },
       {
-        "operation_id": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}/{commitDate}",
-        "test_case_id": "faults.java#test_63",
-        "fault_categories": [
+        "operationId": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}/{commitDate}",
+        "testCaseId": "faults.java#test_63",
+        "faultCategories": [
           {
             "code": 200,
             "context": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}/{commitDate} -> Response status 400 not defined for path '/api/assignments/data/project-commit/{employeeId}/{projectId}/{commitDate}'."
@@ -2507,9 +2507,9 @@
         ]
       },
       {
-        "operation_id": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}",
-        "test_case_id": "faults.java#test_64",
-        "fault_categories": [
+        "operationId": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}",
+        "testCaseId": "faults.java#test_64",
+        "faultCategories": [
           {
             "code": 200,
             "context": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId} -> Response status 400 not defined for path '/api/assignments/data/project-commit/{employeeId}/{projectId}'."
@@ -2517,9 +2517,9 @@
         ]
       },
       {
-        "operation_id": "DELETE:/app/api/assignments/{employeeId}/{projectId}/{commitDate}",
-        "test_case_id": "faults.java#test_65",
-        "fault_categories": [
+        "operationId": "DELETE:/app/api/assignments/{employeeId}/{projectId}/{commitDate}",
+        "testCaseId": "faults.java#test_65",
+        "faultCategories": [
           {
             "code": 200,
             "context": "DELETE:/app/api/assignments/{employeeId}/{projectId}/{commitDate} -> Response status 400 not defined for path '/api/assignments/{employeeId}/{projectId}/{commitDate}'."
@@ -2527,9 +2527,9 @@
         ]
       },
       {
-        "operation_id": "GET:/app/api/employees/data/employee-project-data/{employeeId}",
-        "test_case_id": "faults.java#test_66",
-        "fault_categories": [
+        "operationId": "GET:/app/api/employees/data/employee-project-data/{employeeId}",
+        "testCaseId": "faults.java#test_66",
+        "faultCategories": [
           {
             "code": 200,
             "context": "GET:/app/api/employees/data/employee-project-data/{employeeId} -> Response status 400 not defined for path '/api/employees/data/employee-project-data/{employeeId}'."
@@ -2537,9 +2537,9 @@
         ]
       },
       {
-        "operation_id": "DELETE:/app/api/departments/{id}",
-        "test_case_id": "faults.java#test_67",
-        "fault_categories": [
+        "operationId": "DELETE:/app/api/departments/{id}",
+        "testCaseId": "faults.java#test_67",
+        "faultCategories": [
           {
             "code": 200,
             "context": "DELETE:/app/api/departments/{id} -> Response status 400 not defined for path '/api/departments/{id}'."
@@ -2547,9 +2547,9 @@
         ]
       },
       {
-        "operation_id": "DELETE:/app/api/locations/{id}",
-        "test_case_id": "faults.java#test_68",
-        "fault_categories": [
+        "operationId": "DELETE:/app/api/locations/{id}",
+        "testCaseId": "faults.java#test_68",
+        "faultCategories": [
           {
             "code": 200,
             "context": "DELETE:/app/api/locations/{id} -> Response status 400 not defined for path '/api/locations/{id}'."
@@ -2557,9 +2557,9 @@
         ]
       },
       {
-        "operation_id": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}/{commitDate}",
-        "test_case_id": "faults.java#test_69",
-        "fault_categories": [
+        "operationId": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}/{commitDate}",
+        "testCaseId": "faults.java#test_69",
+        "faultCategories": [
           {
             "code": 200,
             "context": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}/{commitDate} -> Response status 400 not defined for path '/api/assignments/data/project-commit/{employeeId}/{projectId}/{commitDate}'."
@@ -2567,9 +2567,9 @@
         ]
       },
       {
-        "operation_id": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}",
-        "test_case_id": "faults.java#test_70",
-        "fault_categories": [
+        "operationId": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}",
+        "testCaseId": "faults.java#test_70",
+        "faultCategories": [
           {
             "code": 200,
             "context": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId} -> Response status 400 not defined for path '/api/assignments/data/project-commit/{employeeId}/{projectId}'."
@@ -2577,9 +2577,9 @@
         ]
       },
       {
-        "operation_id": "DELETE:/app/api/credentials/{id}",
-        "test_case_id": "faults.java#test_71",
-        "fault_categories": [
+        "operationId": "DELETE:/app/api/credentials/{id}",
+        "testCaseId": "faults.java#test_71",
+        "faultCategories": [
           {
             "code": 200,
             "context": "DELETE:/app/api/credentials/{id} -> Response status 400 not defined for path '/api/credentials/{id}'."
@@ -2587,9 +2587,9 @@
         ]
       },
       {
-        "operation_id": "DELETE:/app/api/employees/delete/{id}",
-        "test_case_id": "faults.java#test_72",
-        "fault_categories": [
+        "operationId": "DELETE:/app/api/employees/delete/{id}",
+        "testCaseId": "faults.java#test_72",
+        "faultCategories": [
           {
             "code": 200,
             "context": "DELETE:/app/api/employees/delete/{id} -> Response status 400 not defined for path '/api/employees/delete/{id}'."
@@ -2597,9 +2597,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/employees/save",
-        "test_case_id": "faults.java#test_73",
-        "fault_categories": [
+        "operationId": "POST:/app/api/employees/save",
+        "testCaseId": "faults.java#test_73",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/employees/save -> Response status 400 not defined for path '/api/employees/save'."
@@ -2607,9 +2607,9 @@
         ]
       },
       {
-        "operation_id": "PUT:/app/api/projects/update",
-        "test_case_id": "faults.java#test_74",
-        "fault_categories": [
+        "operationId": "PUT:/app/api/projects/update",
+        "testCaseId": "faults.java#test_74",
+        "faultCategories": [
           {
             "code": 200,
             "context": "PUT:/app/api/projects/update -> Response status 400 not defined for path '/api/projects/update'."
@@ -2617,9 +2617,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/locations",
-        "test_case_id": "faults.java#test_75",
-        "fault_categories": [
+        "operationId": "POST:/app/api/locations",
+        "testCaseId": "faults.java#test_75",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/locations -> Response status 400 not defined for path '/api/locations'."
@@ -2627,9 +2627,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/assignments",
-        "test_case_id": "faults.java#test_76",
-        "fault_categories": [
+        "operationId": "POST:/app/api/assignments",
+        "testCaseId": "faults.java#test_76",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
@@ -2637,9 +2637,9 @@
         ]
       },
       {
-        "operation_id": "PUT:/app/api/assignments/update",
-        "test_case_id": "faults.java#test_77",
-        "fault_categories": [
+        "operationId": "PUT:/app/api/assignments/update",
+        "testCaseId": "faults.java#test_77",
+        "faultCategories": [
           {
             "code": 200,
             "context": "PUT:/app/api/assignments/update -> Response status 400 not defined for path '/api/assignments/update'."
@@ -2647,9 +2647,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/assignments/save",
-        "test_case_id": "faults.java#test_78",
-        "fault_categories": [
+        "operationId": "POST:/app/api/assignments/save",
+        "testCaseId": "faults.java#test_78",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/assignments/save -> Response status 400 not defined for path '/api/assignments/save'."
@@ -2657,9 +2657,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/departments",
-        "test_case_id": "faults.java#test_79",
-        "fault_categories": [
+        "operationId": "POST:/app/api/departments",
+        "testCaseId": "faults.java#test_79",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/departments -> Response status 400 not defined for path '/api/departments'."
@@ -2667,9 +2667,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/assignments",
-        "test_case_id": "faults.java#test_80",
-        "fault_categories": [
+        "operationId": "POST:/app/api/assignments",
+        "testCaseId": "faults.java#test_80",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
@@ -2677,9 +2677,9 @@
         ]
       },
       {
-        "operation_id": "PUT:/app/api/credentials",
-        "test_case_id": "faults.java#test_81",
-        "fault_categories": [
+        "operationId": "PUT:/app/api/credentials",
+        "testCaseId": "faults.java#test_81",
+        "faultCategories": [
           {
             "code": 200,
             "context": "PUT:/app/api/credentials -> Response status 400 not defined for path '/api/credentials'."
@@ -2687,9 +2687,9 @@
         ]
       },
       {
-        "operation_id": "PUT:/app/api/projects/update",
-        "test_case_id": "faults.java#test_82",
-        "fault_categories": [
+        "operationId": "PUT:/app/api/projects/update",
+        "testCaseId": "faults.java#test_82",
+        "faultCategories": [
           {
             "code": 200,
             "context": "PUT:/app/api/projects/update -> Response status 400 not defined for path '/api/projects/update'."
@@ -2697,9 +2697,9 @@
         ]
       },
       {
-        "operation_id": "PUT:/app/api/projects",
-        "test_case_id": "faults.java#test_83",
-        "fault_categories": [
+        "operationId": "PUT:/app/api/projects",
+        "testCaseId": "faults.java#test_83",
+        "faultCategories": [
           {
             "code": 200,
             "context": "PUT:/app/api/projects -> Response status 400 not defined for path '/api/projects'."
@@ -2707,9 +2707,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/departments/save",
-        "test_case_id": "faults.java#test_84",
-        "fault_categories": [
+        "operationId": "POST:/app/api/departments/save",
+        "testCaseId": "faults.java#test_84",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/departments/save -> Response status 400 not defined for path '/api/departments/save'."
@@ -2717,9 +2717,9 @@
         ]
       },
       {
-        "operation_id": "PUT:/app/api/departments/update",
-        "test_case_id": "faults.java#test_85",
-        "fault_categories": [
+        "operationId": "PUT:/app/api/departments/update",
+        "testCaseId": "faults.java#test_85",
+        "faultCategories": [
           {
             "code": 200,
             "context": "PUT:/app/api/departments/update -> Response status 400 not defined for path '/api/departments/update'."
@@ -2727,9 +2727,9 @@
         ]
       },
       {
-        "operation_id": "PUT:/app/api/departments/update",
-        "test_case_id": "faults.java#test_86",
-        "fault_categories": [
+        "operationId": "PUT:/app/api/departments/update",
+        "testCaseId": "faults.java#test_86",
+        "faultCategories": [
           {
             "code": 200,
             "context": "PUT:/app/api/departments/update -> Response status 400 not defined for path '/api/departments/update'."
@@ -2737,9 +2737,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/credentials/save",
-        "test_case_id": "faults.java#test_87",
-        "fault_categories": [
+        "operationId": "POST:/app/api/credentials/save",
+        "testCaseId": "faults.java#test_87",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/credentials/save -> Response status 400 not defined for path '/api/credentials/save'."
@@ -2747,9 +2747,9 @@
         ]
       },
       {
-        "operation_id": "PUT:/app/api/credentials/update",
-        "test_case_id": "faults.java#test_88",
-        "fault_categories": [
+        "operationId": "PUT:/app/api/credentials/update",
+        "testCaseId": "faults.java#test_88",
+        "faultCategories": [
           {
             "code": 200,
             "context": "PUT:/app/api/credentials/update -> Response status 400 not defined for path '/api/credentials/update'."
@@ -2757,9 +2757,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/assignments",
-        "test_case_id": "faults.java#test_89",
-        "fault_categories": [
+        "operationId": "POST:/app/api/assignments",
+        "testCaseId": "faults.java#test_89",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
@@ -2767,9 +2767,9 @@
         ]
       },
       {
-        "operation_id": "PUT:/app/api/departments/update",
-        "test_case_id": "faults.java#test_90",
-        "fault_categories": [
+        "operationId": "PUT:/app/api/departments/update",
+        "testCaseId": "faults.java#test_90",
+        "faultCategories": [
           {
             "code": 200,
             "context": "PUT:/app/api/departments/update -> Response status 400 not defined for path '/api/departments/update'."
@@ -2777,9 +2777,9 @@
         ]
       },
       {
-        "operation_id": "DELETE:/app/api/credentials/{id}",
-        "test_case_id": "faults.java#test_91",
-        "fault_categories": [
+        "operationId": "DELETE:/app/api/credentials/{id}",
+        "testCaseId": "faults.java#test_91",
+        "faultCategories": [
           {
             "code": 200,
             "context": "DELETE:/app/api/credentials/{id} -> Response status 400 not defined for path '/api/credentials/{id}'."
@@ -2787,9 +2787,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/employees",
-        "test_case_id": "faults.java#test_92",
-        "fault_categories": [
+        "operationId": "POST:/app/api/employees",
+        "testCaseId": "faults.java#test_92",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/employees -> Response status 400 not defined for path '/api/employees'."
@@ -2797,9 +2797,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/locations",
-        "test_case_id": "faults.java#test_93",
-        "fault_categories": [
+        "operationId": "POST:/app/api/locations",
+        "testCaseId": "faults.java#test_93",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/locations -> Response status 400 not defined for path '/api/locations'."
@@ -2807,9 +2807,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/authenticate/",
-        "test_case_id": "faults.java#test_94",
-        "fault_categories": [
+        "operationId": "POST:/app/api/authenticate/",
+        "testCaseId": "faults.java#test_94",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/authenticate/ -> Response status 400 not defined for path '/api/authenticate/'."
@@ -2817,9 +2817,9 @@
         ]
       },
       {
-        "operation_id": "PUT:/app/api/projects",
-        "test_case_id": "faults.java#test_95",
-        "fault_categories": [
+        "operationId": "PUT:/app/api/projects",
+        "testCaseId": "faults.java#test_95",
+        "faultCategories": [
           {
             "code": 200,
             "context": "PUT:/app/api/projects -> Response status 400 not defined for path '/api/projects'."
@@ -2827,9 +2827,9 @@
         ]
       },
       {
-        "operation_id": "PUT:/app/api/locations/update",
-        "test_case_id": "faults.java#test_96",
-        "fault_categories": [
+        "operationId": "PUT:/app/api/locations/update",
+        "testCaseId": "faults.java#test_96",
+        "faultCategories": [
           {
             "code": 200,
             "context": "PUT:/app/api/locations/update -> Response status 400 not defined for path '/api/locations/update'."
@@ -2837,9 +2837,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/authenticate/",
-        "test_case_id": "faults.java#test_97",
-        "fault_categories": [
+        "operationId": "POST:/app/api/authenticate/",
+        "testCaseId": "faults.java#test_97",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/authenticate/ -> Response status 400 not defined for path '/api/authenticate/'."
@@ -2847,9 +2847,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/assignments/save",
-        "test_case_id": "faults.java#test_98",
-        "fault_categories": [
+        "operationId": "POST:/app/api/assignments/save",
+        "testCaseId": "faults.java#test_98",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/assignments/save -> Response status 400 not defined for path '/api/assignments/save'."
@@ -2857,9 +2857,9 @@
         ]
       },
       {
-        "operation_id": "PUT:/app/api/departments",
-        "test_case_id": "faults.java#test_99",
-        "fault_categories": [
+        "operationId": "PUT:/app/api/departments",
+        "testCaseId": "faults.java#test_99",
+        "faultCategories": [
           {
             "code": 200,
             "context": "PUT:/app/api/departments -> Response status 400 not defined for path '/api/departments'."
@@ -2867,9 +2867,9 @@
         ]
       },
       {
-        "operation_id": "PUT:/app/api/assignments/update",
-        "test_case_id": "faults.java#test_100",
-        "fault_categories": [
+        "operationId": "PUT:/app/api/assignments/update",
+        "testCaseId": "faults.java#test_100",
+        "faultCategories": [
           {
             "code": 200,
             "context": "PUT:/app/api/assignments/update -> Response status 400 not defined for path '/api/assignments/update'."
@@ -2877,9 +2877,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/assignments",
-        "test_case_id": "faults.java#test_101",
-        "fault_categories": [
+        "operationId": "POST:/app/api/assignments",
+        "testCaseId": "faults.java#test_101",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
@@ -2887,9 +2887,9 @@
         ]
       },
       {
-        "operation_id": "PUT:/app/api/locations",
-        "test_case_id": "faults.java#test_102",
-        "fault_categories": [
+        "operationId": "PUT:/app/api/locations",
+        "testCaseId": "faults.java#test_102",
+        "faultCategories": [
           {
             "code": 200,
             "context": "PUT:/app/api/locations -> Response status 400 not defined for path '/api/locations'."
@@ -2897,9 +2897,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/departments/save",
-        "test_case_id": "faults.java#test_103",
-        "fault_categories": [
+        "operationId": "POST:/app/api/departments/save",
+        "testCaseId": "faults.java#test_103",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/departments/save -> Response status 400 not defined for path '/api/departments/save'."
@@ -2907,9 +2907,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/projects",
-        "test_case_id": "faults.java#test_104",
-        "fault_categories": [
+        "operationId": "POST:/app/api/projects",
+        "testCaseId": "faults.java#test_104",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/projects -> Response status 400 not defined for path '/api/projects'."
@@ -2917,9 +2917,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/assignments",
-        "test_case_id": "faults.java#test_105",
-        "fault_categories": [
+        "operationId": "POST:/app/api/assignments",
+        "testCaseId": "faults.java#test_105",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
@@ -2927,9 +2927,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/departments",
-        "test_case_id": "faults.java#test_106",
-        "fault_categories": [
+        "operationId": "POST:/app/api/departments",
+        "testCaseId": "faults.java#test_106",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/departments -> Response status 400 not defined for path '/api/departments'."
@@ -2937,9 +2937,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/assignments",
-        "test_case_id": "faults.java#test_107",
-        "fault_categories": [
+        "operationId": "POST:/app/api/assignments",
+        "testCaseId": "faults.java#test_107",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
@@ -2947,9 +2947,9 @@
         ]
       },
       {
-        "operation_id": "PUT:/app/api/assignments",
-        "test_case_id": "faults.java#test_108",
-        "fault_categories": [
+        "operationId": "PUT:/app/api/assignments",
+        "testCaseId": "faults.java#test_108",
+        "faultCategories": [
           {
             "code": 200,
             "context": "PUT:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
@@ -2957,9 +2957,9 @@
         ]
       },
       {
-        "operation_id": "POST:/app/api/assignments",
-        "test_case_id": "faults.java#test_109",
-        "fault_categories": [
+        "operationId": "POST:/app/api/assignments",
+        "testCaseId": "faults.java#test_109",
+        "faultCategories": [
           {
             "code": 200,
             "context": "POST:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
@@ -2968,10 +2968,10 @@
       }
     ]
   },
-  "problem_details": {
+  "problemDetails": {
     "rest": {
-      "total_http_calls": 130,
-      "endpoint_ids": [
+      "totalHttpCalls": 130,
+      "endpointIds": [
         "GET:/app/api/assignments",
         "POST:/app/api/assignments",
         "PUT:/app/api/assignments",
@@ -3040,1819 +3040,1819 @@
         "GET:/app/api/projects/{id}",
         "DELETE:/app/api/projects/{id}"
       ],
-      "covered_http_status": [
+      "coveredHttpStatus": [
         {
-          "endpoint_id": "GET:/app/api/credentials/",
-          "test_case_id": "faults.java#test_0",
-          "http_status": [
+          "endpointId": "GET:/app/api/credentials/",
+          "testCaseId": "faults.java#test_0",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/projects",
-          "test_case_id": "faults.java#test_1",
-          "http_status": [
+          "endpointId": "GET:/app/api/projects",
+          "testCaseId": "faults.java#test_1",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/projects",
-          "test_case_id": "faults.java#test_2",
-          "http_status": [
+          "endpointId": "GET:/app/api/projects",
+          "testCaseId": "faults.java#test_2",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/departments",
-          "test_case_id": "faults.java#test_3",
-          "http_status": [
+          "endpointId": "POST:/app/api/departments",
+          "testCaseId": "faults.java#test_3",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/credentials/save",
-          "test_case_id": "faults.java#test_4",
-          "http_status": [
+          "endpointId": "POST:/app/api/credentials/save",
+          "testCaseId": "faults.java#test_4",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/employees/data/manager-project-data/{employeeId}",
-          "test_case_id": "faults.java#test_5",
-          "http_status": [
+          "endpointId": "GET:/app/api/employees/data/manager-project-data/{employeeId}",
+          "testCaseId": "faults.java#test_5",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/credentials",
-          "test_case_id": "faults.java#test_6",
-          "http_status": [
+          "endpointId": "POST:/app/api/credentials",
+          "testCaseId": "faults.java#test_6",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/credentials",
-          "test_case_id": "faults.java#test_7",
-          "http_status": [
+          "endpointId": "POST:/app/api/credentials",
+          "testCaseId": "faults.java#test_7",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/credentials/update",
-          "test_case_id": "faults.java#test_8",
-          "http_status": [
+          "endpointId": "PUT:/app/api/credentials/update",
+          "testCaseId": "faults.java#test_8",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/departments",
-          "test_case_id": "faults.java#test_9",
-          "http_status": [
+          "endpointId": "POST:/app/api/departments",
+          "testCaseId": "faults.java#test_9",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/projects",
-          "test_case_id": "faults.java#test_10",
-          "http_status": [
+          "endpointId": "POST:/app/api/projects",
+          "testCaseId": "faults.java#test_10",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/credentials",
-          "test_case_id": "faults.java#test_11",
-          "http_status": [
+          "endpointId": "POST:/app/api/credentials",
+          "testCaseId": "faults.java#test_11",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/credentials",
-          "test_case_id": "faults.java#test_11",
-          "http_status": [
+          "endpointId": "GET:/app/api/credentials",
+          "testCaseId": "faults.java#test_11",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/employees",
-          "test_case_id": "faults.java#test_12",
-          "http_status": [
+          "endpointId": "GET:/app/api/employees",
+          "testCaseId": "faults.java#test_12",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/employees/",
-          "test_case_id": "faults.java#test_13",
-          "http_status": [
+          "endpointId": "GET:/app/api/employees/",
+          "testCaseId": "faults.java#test_13",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/locations",
-          "test_case_id": "faults.java#test_14",
-          "http_status": [
+          "endpointId": "PUT:/app/api/locations",
+          "testCaseId": "faults.java#test_14",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/locations",
-          "test_case_id": "faults.java#test_14",
-          "http_status": [
+          "endpointId": "POST:/app/api/locations",
+          "testCaseId": "faults.java#test_14",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/projects",
-          "test_case_id": "faults.java#test_15",
-          "http_status": [
+          "endpointId": "POST:/app/api/projects",
+          "testCaseId": "faults.java#test_15",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/projects",
-          "test_case_id": "faults.java#test_15",
-          "http_status": [
+          "endpointId": "PUT:/app/api/projects",
+          "testCaseId": "faults.java#test_15",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/assignments",
-          "test_case_id": "faults.java#test_16",
-          "http_status": [
+          "endpointId": "GET:/app/api/assignments",
+          "testCaseId": "faults.java#test_16",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/assignments/",
-          "test_case_id": "faults.java#test_17",
-          "http_status": [
+          "endpointId": "GET:/app/api/assignments/",
+          "testCaseId": "faults.java#test_17",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/assignments/{employeeId}/{projectId}",
-          "test_case_id": "faults.java#test_18",
-          "http_status": [
+          "endpointId": "GET:/app/api/assignments/{employeeId}/{projectId}",
+          "testCaseId": "faults.java#test_18",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/projects",
-          "test_case_id": "faults.java#test_19",
-          "http_status": [
+          "endpointId": "POST:/app/api/projects",
+          "testCaseId": "faults.java#test_19",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/projects/save",
-          "test_case_id": "faults.java#test_20",
-          "http_status": [
+          "endpointId": "POST:/app/api/projects/save",
+          "testCaseId": "faults.java#test_20",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "DELETE:/app/api/assignments/delete/{employeeId}/{projectId}/{commitDate}",
-          "test_case_id": "faults.java#test_21",
-          "http_status": [
+          "endpointId": "DELETE:/app/api/assignments/delete/{employeeId}/{projectId}/{commitDate}",
+          "testCaseId": "faults.java#test_21",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/employees/data/department/{departmentId}",
-          "test_case_id": "faults.java#test_22",
-          "http_status": [
+          "endpointId": "GET:/app/api/employees/data/department/{departmentId}",
+          "testCaseId": "faults.java#test_22",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "DELETE:/app/api/departments/delete/{id}",
-          "test_case_id": "faults.java#test_23",
-          "http_status": [
+          "endpointId": "DELETE:/app/api/departments/delete/{id}",
+          "testCaseId": "faults.java#test_23",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "DELETE:/app/api/employees/{id}",
-          "test_case_id": "faults.java#test_24",
-          "http_status": [
+          "endpointId": "DELETE:/app/api/employees/{id}",
+          "testCaseId": "faults.java#test_24",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "DELETE:/app/api/locations/delete/{id}",
-          "test_case_id": "faults.java#test_25",
-          "http_status": [
+          "endpointId": "DELETE:/app/api/locations/delete/{id}",
+          "testCaseId": "faults.java#test_25",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "DELETE:/app/api/projects/delete/{id}",
-          "test_case_id": "faults.java#test_26",
-          "http_status": [
+          "endpointId": "DELETE:/app/api/projects/delete/{id}",
+          "testCaseId": "faults.java#test_26",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/departments/{id}",
-          "test_case_id": "faults.java#test_27",
-          "http_status": [
+          "endpointId": "GET:/app/api/departments/{id}",
+          "testCaseId": "faults.java#test_27",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/projects",
-          "test_case_id": "faults.java#test_28",
-          "http_status": [
+          "endpointId": "PUT:/app/api/projects",
+          "testCaseId": "faults.java#test_28",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/projects",
-          "test_case_id": "faults.java#test_29",
-          "http_status": [
+          "endpointId": "PUT:/app/api/projects",
+          "testCaseId": "faults.java#test_29",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}",
-          "test_case_id": "faults.java#test_30",
-          "http_status": [
+          "endpointId": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}",
+          "testCaseId": "faults.java#test_30",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/assignments/{employeeId}/{projectId}/{commitDate}",
-          "test_case_id": "faults.java#test_31",
-          "http_status": [
+          "endpointId": "GET:/app/api/assignments/{employeeId}/{projectId}/{commitDate}",
+          "testCaseId": "faults.java#test_31",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/employees/data/manager-project-data/{employeeId}",
-          "test_case_id": "faults.java#test_32",
-          "http_status": [
+          "endpointId": "GET:/app/api/employees/data/manager-project-data/{employeeId}",
+          "testCaseId": "faults.java#test_32",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "DELETE:/app/api/credentials/delete/{id}",
-          "test_case_id": "faults.java#test_33",
-          "http_status": [
+          "endpointId": "DELETE:/app/api/credentials/delete/{id}",
+          "testCaseId": "faults.java#test_33",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/credentials/{id}",
-          "test_case_id": "faults.java#test_34",
-          "http_status": [
+          "endpointId": "GET:/app/api/credentials/{id}",
+          "testCaseId": "faults.java#test_34",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/employees/{id}",
-          "test_case_id": "faults.java#test_35",
-          "http_status": [
+          "endpointId": "GET:/app/api/employees/{id}",
+          "testCaseId": "faults.java#test_35",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/projects/{id}",
-          "test_case_id": "faults.java#test_36",
-          "http_status": [
+          "endpointId": "GET:/app/api/projects/{id}",
+          "testCaseId": "faults.java#test_36",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "DELETE:/app/api/projects/{id}",
-          "test_case_id": "faults.java#test_37",
-          "http_status": [
+          "endpointId": "DELETE:/app/api/projects/{id}",
+          "testCaseId": "faults.java#test_37",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "DELETE:/app/api/credentials/username/{username}",
-          "test_case_id": "faults.java#test_38",
-          "http_status": [
+          "endpointId": "DELETE:/app/api/credentials/username/{username}",
+          "testCaseId": "faults.java#test_38",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/employees/username/{username}",
-          "test_case_id": "faults.java#test_39",
-          "http_status": [
+          "endpointId": "GET:/app/api/employees/username/{username}",
+          "testCaseId": "faults.java#test_39",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/credentials/username/{username}",
-          "test_case_id": "faults.java#test_40",
-          "http_status": [
+          "endpointId": "GET:/app/api/credentials/username/{username}",
+          "testCaseId": "faults.java#test_40",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/assignments",
-          "test_case_id": "faults.java#test_41",
-          "http_status": [
+          "endpointId": "PUT:/app/api/assignments",
+          "testCaseId": "faults.java#test_41",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/credentials/username/{username}",
-          "test_case_id": "faults.java#test_42",
-          "http_status": [
+          "endpointId": "GET:/app/api/credentials/username/{username}",
+          "testCaseId": "faults.java#test_42",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/locations/save",
-          "test_case_id": "faults.java#test_43",
-          "http_status": [
+          "endpointId": "POST:/app/api/locations/save",
+          "testCaseId": "faults.java#test_43",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/locations/update",
-          "test_case_id": "faults.java#test_44",
-          "http_status": [
+          "endpointId": "PUT:/app/api/locations/update",
+          "testCaseId": "faults.java#test_44",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/departments",
-          "test_case_id": "faults.java#test_45",
-          "http_status": [
+          "endpointId": "PUT:/app/api/departments",
+          "testCaseId": "faults.java#test_45",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/departments",
-          "test_case_id": "faults.java#test_46",
-          "http_status": [
+          "endpointId": "PUT:/app/api/departments",
+          "testCaseId": "faults.java#test_46",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/authenticate",
-          "test_case_id": "faults.java#test_47",
-          "http_status": [
+          "endpointId": "POST:/app/api/authenticate",
+          "testCaseId": "faults.java#test_47",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/departments",
-          "test_case_id": "faults.java#test_48",
-          "http_status": [
+          "endpointId": "PUT:/app/api/departments",
+          "testCaseId": "faults.java#test_48",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/employees",
-          "test_case_id": "faults.java#test_49",
-          "http_status": [
+          "endpointId": "PUT:/app/api/employees",
+          "testCaseId": "faults.java#test_49",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/employees/update",
-          "test_case_id": "faults.java#test_50",
-          "http_status": [
+          "endpointId": "PUT:/app/api/employees/update",
+          "testCaseId": "faults.java#test_50",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/credentials",
-          "test_case_id": "faults.java#test_51",
-          "http_status": [
+          "endpointId": "POST:/app/api/credentials",
+          "testCaseId": "faults.java#test_51",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/employees/save",
-          "test_case_id": "faults.java#test_52",
-          "http_status": [
+          "endpointId": "POST:/app/api/employees/save",
+          "testCaseId": "faults.java#test_52",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/assignments/update",
-          "test_case_id": "faults.java#test_53",
-          "http_status": [
+          "endpointId": "PUT:/app/api/assignments/update",
+          "testCaseId": "faults.java#test_53",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/assignments",
-          "test_case_id": "faults.java#test_54",
-          "http_status": [
+          "endpointId": "POST:/app/api/assignments",
+          "testCaseId": "faults.java#test_54",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/assignments/data/project-commit/{projectId}",
-          "test_case_id": "faults.java#test_55",
-          "http_status": [
+          "endpointId": "GET:/app/api/assignments/data/project-commit/{projectId}",
+          "testCaseId": "faults.java#test_55",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "DELETE:/app/api/projects/{id}",
-          "test_case_id": "faults.java#test_56",
-          "http_status": [
+          "endpointId": "DELETE:/app/api/projects/{id}",
+          "testCaseId": "faults.java#test_56",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/locations/{id}",
-          "test_case_id": "faults.java#test_57",
-          "http_status": [
+          "endpointId": "GET:/app/api/locations/{id}",
+          "testCaseId": "faults.java#test_57",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/projects",
-          "test_case_id": "faults.java#test_58",
-          "http_status": [
+          "endpointId": "PUT:/app/api/projects",
+          "testCaseId": "faults.java#test_58",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "DELETE:/app/api/employees/username/{username}",
-          "test_case_id": "faults.java#test_59",
-          "http_status": [
+          "endpointId": "DELETE:/app/api/employees/username/{username}",
+          "testCaseId": "faults.java#test_59",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/projects/save",
-          "test_case_id": "faults.java#test_60",
-          "http_status": [
+          "endpointId": "POST:/app/api/projects/save",
+          "testCaseId": "faults.java#test_60",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/projects",
-          "test_case_id": "faults.java#test_61",
-          "http_status": [
+          "endpointId": "POST:/app/api/projects",
+          "testCaseId": "faults.java#test_61",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "DELETE:/app/api/employees/username/{username}",
-          "test_case_id": "faults.java#test_62",
-          "http_status": [
+          "endpointId": "DELETE:/app/api/employees/username/{username}",
+          "testCaseId": "faults.java#test_62",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}/{commitDate}",
-          "test_case_id": "faults.java#test_63",
-          "http_status": [
+          "endpointId": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}/{commitDate}",
+          "testCaseId": "faults.java#test_63",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}",
-          "test_case_id": "faults.java#test_64",
-          "http_status": [
+          "endpointId": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}",
+          "testCaseId": "faults.java#test_64",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "DELETE:/app/api/assignments/{employeeId}/{projectId}/{commitDate}",
-          "test_case_id": "faults.java#test_65",
-          "http_status": [
+          "endpointId": "DELETE:/app/api/assignments/{employeeId}/{projectId}/{commitDate}",
+          "testCaseId": "faults.java#test_65",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/employees/data/employee-project-data/{employeeId}",
-          "test_case_id": "faults.java#test_66",
-          "http_status": [
+          "endpointId": "GET:/app/api/employees/data/employee-project-data/{employeeId}",
+          "testCaseId": "faults.java#test_66",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "DELETE:/app/api/departments/{id}",
-          "test_case_id": "faults.java#test_67",
-          "http_status": [
+          "endpointId": "DELETE:/app/api/departments/{id}",
+          "testCaseId": "faults.java#test_67",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "DELETE:/app/api/locations/{id}",
-          "test_case_id": "faults.java#test_68",
-          "http_status": [
+          "endpointId": "DELETE:/app/api/locations/{id}",
+          "testCaseId": "faults.java#test_68",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}/{commitDate}",
-          "test_case_id": "faults.java#test_69",
-          "http_status": [
+          "endpointId": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}/{commitDate}",
+          "testCaseId": "faults.java#test_69",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}",
-          "test_case_id": "faults.java#test_70",
-          "http_status": [
+          "endpointId": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}",
+          "testCaseId": "faults.java#test_70",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "DELETE:/app/api/credentials/{id}",
-          "test_case_id": "faults.java#test_71",
-          "http_status": [
+          "endpointId": "DELETE:/app/api/credentials/{id}",
+          "testCaseId": "faults.java#test_71",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "DELETE:/app/api/employees/delete/{id}",
-          "test_case_id": "faults.java#test_72",
-          "http_status": [
+          "endpointId": "DELETE:/app/api/employees/delete/{id}",
+          "testCaseId": "faults.java#test_72",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/employees/save",
-          "test_case_id": "faults.java#test_73",
-          "http_status": [
+          "endpointId": "POST:/app/api/employees/save",
+          "testCaseId": "faults.java#test_73",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/projects/update",
-          "test_case_id": "faults.java#test_74",
-          "http_status": [
+          "endpointId": "PUT:/app/api/projects/update",
+          "testCaseId": "faults.java#test_74",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/locations",
-          "test_case_id": "faults.java#test_75",
-          "http_status": [
+          "endpointId": "POST:/app/api/locations",
+          "testCaseId": "faults.java#test_75",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/assignments",
-          "test_case_id": "faults.java#test_76",
-          "http_status": [
+          "endpointId": "POST:/app/api/assignments",
+          "testCaseId": "faults.java#test_76",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/assignments/update",
-          "test_case_id": "faults.java#test_77",
-          "http_status": [
+          "endpointId": "PUT:/app/api/assignments/update",
+          "testCaseId": "faults.java#test_77",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/assignments/save",
-          "test_case_id": "faults.java#test_78",
-          "http_status": [
+          "endpointId": "POST:/app/api/assignments/save",
+          "testCaseId": "faults.java#test_78",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/departments",
-          "test_case_id": "faults.java#test_79",
-          "http_status": [
+          "endpointId": "POST:/app/api/departments",
+          "testCaseId": "faults.java#test_79",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/assignments",
-          "test_case_id": "faults.java#test_80",
-          "http_status": [
+          "endpointId": "POST:/app/api/assignments",
+          "testCaseId": "faults.java#test_80",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/credentials",
-          "test_case_id": "faults.java#test_81",
-          "http_status": [
+          "endpointId": "PUT:/app/api/credentials",
+          "testCaseId": "faults.java#test_81",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/projects/update",
-          "test_case_id": "faults.java#test_82",
-          "http_status": [
+          "endpointId": "PUT:/app/api/projects/update",
+          "testCaseId": "faults.java#test_82",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/projects",
-          "test_case_id": "faults.java#test_83",
-          "http_status": [
+          "endpointId": "PUT:/app/api/projects",
+          "testCaseId": "faults.java#test_83",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/departments/save",
-          "test_case_id": "faults.java#test_84",
-          "http_status": [
+          "endpointId": "POST:/app/api/departments/save",
+          "testCaseId": "faults.java#test_84",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/departments/update",
-          "test_case_id": "faults.java#test_85",
-          "http_status": [
+          "endpointId": "PUT:/app/api/departments/update",
+          "testCaseId": "faults.java#test_85",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/departments/update",
-          "test_case_id": "faults.java#test_86",
-          "http_status": [
+          "endpointId": "PUT:/app/api/departments/update",
+          "testCaseId": "faults.java#test_86",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/credentials/save",
-          "test_case_id": "faults.java#test_87",
-          "http_status": [
+          "endpointId": "POST:/app/api/credentials/save",
+          "testCaseId": "faults.java#test_87",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/credentials/update",
-          "test_case_id": "faults.java#test_88",
-          "http_status": [
+          "endpointId": "PUT:/app/api/credentials/update",
+          "testCaseId": "faults.java#test_88",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/assignments",
-          "test_case_id": "faults.java#test_89",
-          "http_status": [
+          "endpointId": "POST:/app/api/assignments",
+          "testCaseId": "faults.java#test_89",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/departments/update",
-          "test_case_id": "faults.java#test_90",
-          "http_status": [
+          "endpointId": "PUT:/app/api/departments/update",
+          "testCaseId": "faults.java#test_90",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "DELETE:/app/api/credentials/{id}",
-          "test_case_id": "faults.java#test_91",
-          "http_status": [
+          "endpointId": "DELETE:/app/api/credentials/{id}",
+          "testCaseId": "faults.java#test_91",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/employees",
-          "test_case_id": "faults.java#test_92",
-          "http_status": [
+          "endpointId": "POST:/app/api/employees",
+          "testCaseId": "faults.java#test_92",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/locations",
-          "test_case_id": "faults.java#test_93",
-          "http_status": [
+          "endpointId": "POST:/app/api/locations",
+          "testCaseId": "faults.java#test_93",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/authenticate/",
-          "test_case_id": "faults.java#test_94",
-          "http_status": [
+          "endpointId": "POST:/app/api/authenticate/",
+          "testCaseId": "faults.java#test_94",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/projects",
-          "test_case_id": "faults.java#test_95",
-          "http_status": [
+          "endpointId": "PUT:/app/api/projects",
+          "testCaseId": "faults.java#test_95",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/locations/update",
-          "test_case_id": "faults.java#test_96",
-          "http_status": [
+          "endpointId": "PUT:/app/api/locations/update",
+          "testCaseId": "faults.java#test_96",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/authenticate/",
-          "test_case_id": "faults.java#test_97",
-          "http_status": [
+          "endpointId": "POST:/app/api/authenticate/",
+          "testCaseId": "faults.java#test_97",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/assignments/save",
-          "test_case_id": "faults.java#test_98",
-          "http_status": [
+          "endpointId": "POST:/app/api/assignments/save",
+          "testCaseId": "faults.java#test_98",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/departments",
-          "test_case_id": "faults.java#test_99",
-          "http_status": [
+          "endpointId": "PUT:/app/api/departments",
+          "testCaseId": "faults.java#test_99",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/assignments/update",
-          "test_case_id": "faults.java#test_100",
-          "http_status": [
+          "endpointId": "PUT:/app/api/assignments/update",
+          "testCaseId": "faults.java#test_100",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/assignments",
-          "test_case_id": "faults.java#test_101",
-          "http_status": [
+          "endpointId": "POST:/app/api/assignments",
+          "testCaseId": "faults.java#test_101",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/locations",
-          "test_case_id": "faults.java#test_102",
-          "http_status": [
+          "endpointId": "PUT:/app/api/locations",
+          "testCaseId": "faults.java#test_102",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/departments/save",
-          "test_case_id": "faults.java#test_103",
-          "http_status": [
+          "endpointId": "POST:/app/api/departments/save",
+          "testCaseId": "faults.java#test_103",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/projects",
-          "test_case_id": "faults.java#test_104",
-          "http_status": [
+          "endpointId": "POST:/app/api/projects",
+          "testCaseId": "faults.java#test_104",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/assignments",
-          "test_case_id": "faults.java#test_105",
-          "http_status": [
+          "endpointId": "POST:/app/api/assignments",
+          "testCaseId": "faults.java#test_105",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/departments",
-          "test_case_id": "faults.java#test_106",
-          "http_status": [
+          "endpointId": "POST:/app/api/departments",
+          "testCaseId": "faults.java#test_106",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/assignments",
-          "test_case_id": "faults.java#test_107",
-          "http_status": [
+          "endpointId": "POST:/app/api/assignments",
+          "testCaseId": "faults.java#test_107",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/assignments",
-          "test_case_id": "faults.java#test_108",
-          "http_status": [
+          "endpointId": "PUT:/app/api/assignments",
+          "testCaseId": "faults.java#test_108",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/assignments",
-          "test_case_id": "faults.java#test_109",
-          "http_status": [
+          "endpointId": "POST:/app/api/assignments",
+          "testCaseId": "faults.java#test_109",
+          "httpStatus": [
             400
           ]
         },
         {
-          "endpoint_id": "GET:/app/v2/api-docs",
-          "test_case_id": "successes.java#test_0",
-          "http_status": [
+          "endpointId": "GET:/app/v2/api-docs",
+          "testCaseId": "successes.java#test_0",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/projects/",
-          "test_case_id": "successes.java#test_1",
-          "http_status": [
+          "endpointId": "GET:/app/api/projects/",
+          "testCaseId": "successes.java#test_1",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/locations",
-          "test_case_id": "successes.java#test_2",
-          "http_status": [
+          "endpointId": "GET:/app/api/locations",
+          "testCaseId": "successes.java#test_2",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/locations",
-          "test_case_id": "successes.java#test_3",
-          "http_status": [
+          "endpointId": "GET:/app/api/locations",
+          "testCaseId": "successes.java#test_3",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/departments",
-          "test_case_id": "successes.java#test_4",
-          "http_status": [
+          "endpointId": "GET:/app/api/departments",
+          "testCaseId": "successes.java#test_4",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/departments/",
-          "test_case_id": "successes.java#test_5",
-          "http_status": [
+          "endpointId": "GET:/app/api/departments/",
+          "testCaseId": "successes.java#test_5",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "DELETE:/app/api/employees/delete/{id}",
-          "test_case_id": "successes.java#test_6",
-          "http_status": [
+          "endpointId": "DELETE:/app/api/employees/delete/{id}",
+          "testCaseId": "successes.java#test_6",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "DELETE:/app/api/credentials/username/{username}",
-          "test_case_id": "successes.java#test_7",
-          "http_status": [
+          "endpointId": "DELETE:/app/api/credentials/username/{username}",
+          "testCaseId": "successes.java#test_7",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "DELETE:/app/api/employees/username/{username}",
-          "test_case_id": "successes.java#test_8",
-          "http_status": [
+          "endpointId": "DELETE:/app/api/employees/username/{username}",
+          "testCaseId": "successes.java#test_8",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/credentials",
-          "test_case_id": "successes.java#test_9",
-          "http_status": [
+          "endpointId": "GET:/app/api/credentials",
+          "testCaseId": "successes.java#test_9",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/credentials/",
-          "test_case_id": "successes.java#test_10",
-          "http_status": [
+          "endpointId": "GET:/app/api/credentials/",
+          "testCaseId": "successes.java#test_10",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/projects/{id}",
-          "test_case_id": "successes.java#test_11",
-          "http_status": [
+          "endpointId": "GET:/app/api/projects/{id}",
+          "testCaseId": "successes.java#test_11",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "GET:/app/api/locations/",
-          "test_case_id": "successes.java#test_12",
-          "http_status": [
+          "endpointId": "GET:/app/api/locations/",
+          "testCaseId": "successes.java#test_12",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/locations",
-          "test_case_id": "successes.java#test_13",
-          "http_status": [
+          "endpointId": "PUT:/app/api/locations",
+          "testCaseId": "successes.java#test_13",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "POST:/app/api/locations/save",
-          "test_case_id": "successes.java#test_14",
-          "http_status": [
+          "endpointId": "POST:/app/api/locations/save",
+          "testCaseId": "successes.java#test_14",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/credentials",
-          "test_case_id": "successes.java#test_15",
-          "http_status": [
+          "endpointId": "PUT:/app/api/credentials",
+          "testCaseId": "successes.java#test_15",
+          "httpStatus": [
             200
           ]
         },
         {
-          "endpoint_id": "PUT:/app/api/departments/update",
-          "test_case_id": "successes.java#test_16",
-          "http_status": [
+          "endpointId": "PUT:/app/api/departments/update",
+          "testCaseId": "successes.java#test_16",
+          "httpStatus": [
             200
           ]
         }
       ]
     }
   },
-  "total_tests": 127,
-  "test_file_paths": [
+  "totalTests": 127,
+  "testFilePaths": [
     "faults.java",
     "successes.java"
   ],
-  "test_cases": [
+  "testCases": [
     {
       "id": "faults.java#test_0",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_0",
-      "start_line": 85,
-      "end_line": 119
+      "startLine": 85,
+      "endLine": 119
     },
     {
       "id": "faults.java#test_1",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_1",
-      "start_line": 122,
-      "end_line": 206
+      "startLine": 122,
+      "endLine": 206
     },
     {
       "id": "faults.java#test_2",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_2",
-      "start_line": 209,
-      "end_line": 295
+      "startLine": 209,
+      "endLine": 295
     },
     {
       "id": "faults.java#test_3",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_3",
-      "start_line": 298,
-      "end_line": 329
+      "startLine": 298,
+      "endLine": 329
     },
     {
       "id": "faults.java#test_4",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_4",
-      "start_line": 332,
-      "end_line": 367
+      "startLine": 332,
+      "endLine": 367
     },
     {
       "id": "faults.java#test_5",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_5",
-      "start_line": 370,
-      "end_line": 412
+      "startLine": 370,
+      "endLine": 412
     },
     {
       "id": "faults.java#test_6",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_6",
-      "start_line": 415,
-      "end_line": 451
+      "startLine": 415,
+      "endLine": 451
     },
     {
       "id": "faults.java#test_7",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_7",
-      "start_line": 454,
-      "end_line": 490
+      "startLine": 454,
+      "endLine": 490
     },
     {
       "id": "faults.java#test_8",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_8",
-      "start_line": 493,
-      "end_line": 528
+      "startLine": 493,
+      "endLine": 528
     },
     {
       "id": "faults.java#test_9",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_9",
-      "start_line": 531,
-      "end_line": 570
+      "startLine": 531,
+      "endLine": 570
     },
     {
       "id": "faults.java#test_10",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_10",
-      "start_line": 573,
-      "end_line": 609
+      "startLine": 573,
+      "endLine": 609
     },
     {
       "id": "faults.java#test_11",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_11",
-      "start_line": 612,
-      "end_line": 668
+      "startLine": 612,
+      "endLine": 668
     },
     {
       "id": "faults.java#test_12",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_12",
-      "start_line": 671,
-      "end_line": 838
+      "startLine": 671,
+      "endLine": 838
     },
     {
       "id": "faults.java#test_13",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_13",
-      "start_line": 841,
-      "end_line": 1008
+      "startLine": 841,
+      "endLine": 1008
     },
     {
       "id": "faults.java#test_14",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_14",
-      "start_line": 1011,
-      "end_line": 1062
+      "startLine": 1011,
+      "endLine": 1062
     },
     {
       "id": "faults.java#test_15",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_15",
-      "start_line": 1065,
-      "end_line": 1121
+      "startLine": 1065,
+      "endLine": 1121
     },
     {
       "id": "faults.java#test_16",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_16",
-      "start_line": 1124,
-      "end_line": 1480
+      "startLine": 1124,
+      "endLine": 1480
     },
     {
       "id": "faults.java#test_17",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_17",
-      "start_line": 1483,
-      "end_line": 1839
+      "startLine": 1483,
+      "endLine": 1839
     },
     {
       "id": "faults.java#test_18",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_18",
-      "start_line": 1842,
-      "end_line": 1860
+      "startLine": 1842,
+      "endLine": 1860
     },
     {
       "id": "faults.java#test_19",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_19",
-      "start_line": 1863,
-      "end_line": 1910
+      "startLine": 1863,
+      "endLine": 1910
     },
     {
       "id": "faults.java#test_20",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_20",
-      "start_line": 1913,
-      "end_line": 1940
+      "startLine": 1913,
+      "endLine": 1940
     },
     {
       "id": "faults.java#test_21",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_21",
-      "start_line": 1943,
-      "end_line": 1961
+      "startLine": 1943,
+      "endLine": 1961
     },
     {
       "id": "faults.java#test_22",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_22",
-      "start_line": 1964,
-      "end_line": 1982
+      "startLine": 1964,
+      "endLine": 1982
     },
     {
       "id": "faults.java#test_23",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_23",
-      "start_line": 1985,
-      "end_line": 2003
+      "startLine": 1985,
+      "endLine": 2003
     },
     {
       "id": "faults.java#test_24",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_24",
-      "start_line": 2006,
-      "end_line": 2024
+      "startLine": 2006,
+      "endLine": 2024
     },
     {
       "id": "faults.java#test_25",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_25",
-      "start_line": 2027,
-      "end_line": 2045
+      "startLine": 2027,
+      "endLine": 2045
     },
     {
       "id": "faults.java#test_26",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_26",
-      "start_line": 2048,
-      "end_line": 2066
+      "startLine": 2048,
+      "endLine": 2066
     },
     {
       "id": "faults.java#test_27",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_27",
-      "start_line": 2069,
-      "end_line": 2087
+      "startLine": 2069,
+      "endLine": 2087
     },
     {
       "id": "faults.java#test_28",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_28",
-      "start_line": 2090,
-      "end_line": 2165
+      "startLine": 2090,
+      "endLine": 2165
     },
     {
       "id": "faults.java#test_29",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_29",
-      "start_line": 2168,
-      "end_line": 2245
+      "startLine": 2168,
+      "endLine": 2245
     },
     {
       "id": "faults.java#test_30",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_30",
-      "start_line": 2248,
-      "end_line": 2266
+      "startLine": 2248,
+      "endLine": 2266
     },
     {
       "id": "faults.java#test_31",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_31",
-      "start_line": 2269,
-      "end_line": 2287
+      "startLine": 2269,
+      "endLine": 2287
     },
     {
       "id": "faults.java#test_32",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_32",
-      "start_line": 2290,
-      "end_line": 2308
+      "startLine": 2290,
+      "endLine": 2308
     },
     {
       "id": "faults.java#test_33",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_33",
-      "start_line": 2311,
-      "end_line": 2329
+      "startLine": 2311,
+      "endLine": 2329
     },
     {
       "id": "faults.java#test_34",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_34",
-      "start_line": 2332,
-      "end_line": 2350
+      "startLine": 2332,
+      "endLine": 2350
     },
     {
       "id": "faults.java#test_35",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_35",
-      "start_line": 2353,
-      "end_line": 2371
+      "startLine": 2353,
+      "endLine": 2371
     },
     {
       "id": "faults.java#test_36",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_36",
-      "start_line": 2374,
-      "end_line": 2392
+      "startLine": 2374,
+      "endLine": 2392
     },
     {
       "id": "faults.java#test_37",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_37",
-      "start_line": 2395,
-      "end_line": 2413
+      "startLine": 2395,
+      "endLine": 2413
     },
     {
       "id": "faults.java#test_38",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_38",
-      "start_line": 2416,
-      "end_line": 2434
+      "startLine": 2416,
+      "endLine": 2434
     },
     {
       "id": "faults.java#test_39",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_39",
-      "start_line": 2437,
-      "end_line": 2455
+      "startLine": 2437,
+      "endLine": 2455
     },
     {
       "id": "faults.java#test_40",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_40",
-      "start_line": 2458,
-      "end_line": 2526
+      "startLine": 2458,
+      "endLine": 2526
     },
     {
       "id": "faults.java#test_41",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_41",
-      "start_line": 2529,
-      "end_line": 2568
+      "startLine": 2529,
+      "endLine": 2568
     },
     {
       "id": "faults.java#test_42",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_42",
-      "start_line": 2571,
-      "end_line": 2667
+      "startLine": 2571,
+      "endLine": 2667
     },
     {
       "id": "faults.java#test_43",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_43",
-      "start_line": 2670,
-      "end_line": 2692
+      "startLine": 2670,
+      "endLine": 2692
     },
     {
       "id": "faults.java#test_44",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_44",
-      "start_line": 2695,
-      "end_line": 2718
+      "startLine": 2695,
+      "endLine": 2718
     },
     {
       "id": "faults.java#test_45",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_45",
-      "start_line": 2721,
-      "end_line": 2794
+      "startLine": 2721,
+      "endLine": 2794
     },
     {
       "id": "faults.java#test_46",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_46",
-      "start_line": 2797,
-      "end_line": 2872
+      "startLine": 2797,
+      "endLine": 2872
     },
     {
       "id": "faults.java#test_47",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_47",
-      "start_line": 2875,
-      "end_line": 2897
+      "startLine": 2875,
+      "endLine": 2897
     },
     {
       "id": "faults.java#test_48",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_48",
-      "start_line": 2900,
-      "end_line": 2927
+      "startLine": 2900,
+      "endLine": 2927
     },
     {
       "id": "faults.java#test_49",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_49",
-      "start_line": 2930,
-      "end_line": 2959
+      "startLine": 2930,
+      "endLine": 2959
     },
     {
       "id": "faults.java#test_50",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_50",
-      "start_line": 2962,
-      "end_line": 2999
+      "startLine": 2962,
+      "endLine": 2999
     },
     {
       "id": "faults.java#test_51",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_51",
-      "start_line": 3002,
-      "end_line": 3026
+      "startLine": 3002,
+      "endLine": 3026
     },
     {
       "id": "faults.java#test_52",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_52",
-      "start_line": 3029,
-      "end_line": 3109
+      "startLine": 3029,
+      "endLine": 3109
     },
     {
       "id": "faults.java#test_53",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_53",
-      "start_line": 3112,
-      "end_line": 3135
+      "startLine": 3112,
+      "endLine": 3135
     },
     {
       "id": "faults.java#test_54",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_54",
-      "start_line": 3138,
-      "end_line": 3162
+      "startLine": 3138,
+      "endLine": 3162
     },
     {
       "id": "faults.java#test_55",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_55",
-      "start_line": 3165,
-      "end_line": 3191
+      "startLine": 3165,
+      "endLine": 3191
     },
     {
       "id": "faults.java#test_56",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_56",
-      "start_line": 3194,
-      "end_line": 3220
+      "startLine": 3194,
+      "endLine": 3220
     },
     {
       "id": "faults.java#test_57",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_57",
-      "start_line": 3223,
-      "end_line": 3249
+      "startLine": 3223,
+      "endLine": 3249
     },
     {
       "id": "faults.java#test_58",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_58",
-      "start_line": 3252,
-      "end_line": 3286
+      "startLine": 3252,
+      "endLine": 3286
     },
     {
       "id": "faults.java#test_59",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_59",
-      "start_line": 3289,
-      "end_line": 3315
+      "startLine": 3289,
+      "endLine": 3315
     },
     {
       "id": "faults.java#test_60",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_60",
-      "start_line": 3318,
-      "end_line": 3353
+      "startLine": 3318,
+      "endLine": 3353
     },
     {
       "id": "faults.java#test_61",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_61",
-      "start_line": 3356,
-      "end_line": 3390
+      "startLine": 3356,
+      "endLine": 3390
     },
     {
       "id": "faults.java#test_62",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_62",
-      "start_line": 3393,
-      "end_line": 3468
+      "startLine": 3393,
+      "endLine": 3468
     },
     {
       "id": "faults.java#test_63",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_63",
-      "start_line": 3471,
-      "end_line": 3497
+      "startLine": 3471,
+      "endLine": 3497
     },
     {
       "id": "faults.java#test_64",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_64",
-      "start_line": 3500,
-      "end_line": 3528
+      "startLine": 3500,
+      "endLine": 3528
     },
     {
       "id": "faults.java#test_65",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_65",
-      "start_line": 3531,
-      "end_line": 3557
+      "startLine": 3531,
+      "endLine": 3557
     },
     {
       "id": "faults.java#test_66",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_66",
-      "start_line": 3560,
-      "end_line": 3588
+      "startLine": 3560,
+      "endLine": 3588
     },
     {
       "id": "faults.java#test_67",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_67",
-      "start_line": 3591,
-      "end_line": 3617
+      "startLine": 3591,
+      "endLine": 3617
     },
     {
       "id": "faults.java#test_68",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_68",
-      "start_line": 3620,
-      "end_line": 3646
+      "startLine": 3620,
+      "endLine": 3646
     },
     {
       "id": "faults.java#test_69",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_69",
-      "start_line": 3649,
-      "end_line": 3691
+      "startLine": 3649,
+      "endLine": 3691
     },
     {
       "id": "faults.java#test_70",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_70",
-      "start_line": 3694,
-      "end_line": 3720
+      "startLine": 3694,
+      "endLine": 3720
     },
     {
       "id": "faults.java#test_71",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_71",
-      "start_line": 3723,
-      "end_line": 3749
+      "startLine": 3723,
+      "endLine": 3749
     },
     {
       "id": "faults.java#test_72",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_72",
-      "start_line": 3752,
-      "end_line": 3778
+      "startLine": 3752,
+      "endLine": 3778
     },
     {
       "id": "faults.java#test_73",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_73",
-      "start_line": 3781,
-      "end_line": 3816
+      "startLine": 3781,
+      "endLine": 3816
     },
     {
       "id": "faults.java#test_74",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_74",
-      "start_line": 3819,
-      "end_line": 3853
+      "startLine": 3819,
+      "endLine": 3853
     },
     {
       "id": "faults.java#test_75",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_75",
-      "start_line": 3856,
-      "end_line": 3884
+      "startLine": 3856,
+      "endLine": 3884
     },
     {
       "id": "faults.java#test_76",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_76",
-      "start_line": 3887,
-      "end_line": 3927
+      "startLine": 3887,
+      "endLine": 3927
     },
     {
       "id": "faults.java#test_77",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_77",
-      "start_line": 3930,
-      "end_line": 3981
+      "startLine": 3930,
+      "endLine": 3981
     },
     {
       "id": "faults.java#test_78",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_78",
-      "start_line": 3984,
-      "end_line": 4030
+      "startLine": 3984,
+      "endLine": 4030
     },
     {
       "id": "faults.java#test_79",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_79",
-      "start_line": 4033,
-      "end_line": 4061
+      "startLine": 4033,
+      "endLine": 4061
     },
     {
       "id": "faults.java#test_80",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_80",
-      "start_line": 4064,
-      "end_line": 4114
+      "startLine": 4064,
+      "endLine": 4114
     },
     {
       "id": "faults.java#test_81",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_81",
-      "start_line": 4117,
-      "end_line": 4147
+      "startLine": 4117,
+      "endLine": 4147
     },
     {
       "id": "faults.java#test_82",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_82",
-      "start_line": 4150,
-      "end_line": 4180
+      "startLine": 4150,
+      "endLine": 4180
     },
     {
       "id": "faults.java#test_83",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_83",
-      "start_line": 4183,
-      "end_line": 4213
+      "startLine": 4183,
+      "endLine": 4213
     },
     {
       "id": "faults.java#test_84",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_84",
-      "start_line": 4216,
-      "end_line": 4247
+      "startLine": 4216,
+      "endLine": 4247
     },
     {
       "id": "faults.java#test_85",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_85",
-      "start_line": 4250,
-      "end_line": 4281
+      "startLine": 4250,
+      "endLine": 4281
     },
     {
       "id": "faults.java#test_86",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_86",
-      "start_line": 4284,
-      "end_line": 4326
+      "startLine": 4284,
+      "endLine": 4326
     },
     {
       "id": "faults.java#test_87",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_87",
-      "start_line": 4329,
-      "end_line": 4361
+      "startLine": 4329,
+      "endLine": 4361
     },
     {
       "id": "faults.java#test_88",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_88",
-      "start_line": 4364,
-      "end_line": 4396
+      "startLine": 4364,
+      "endLine": 4396
     },
     {
       "id": "faults.java#test_89",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_89",
-      "start_line": 4399,
-      "end_line": 4427
+      "startLine": 4399,
+      "endLine": 4427
     },
     {
       "id": "faults.java#test_90",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_90",
-      "start_line": 4430,
-      "end_line": 4460
+      "startLine": 4430,
+      "endLine": 4460
     },
     {
       "id": "faults.java#test_91",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_91",
-      "start_line": 4463,
-      "end_line": 4489
+      "startLine": 4463,
+      "endLine": 4489
     },
     {
       "id": "faults.java#test_92",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_92",
-      "start_line": 4492,
-      "end_line": 4535
+      "startLine": 4492,
+      "endLine": 4535
     },
     {
       "id": "faults.java#test_93",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_93",
-      "start_line": 4538,
-      "end_line": 4571
+      "startLine": 4538,
+      "endLine": 4571
     },
     {
       "id": "faults.java#test_94",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_94",
-      "start_line": 4574,
-      "end_line": 4632
+      "startLine": 4574,
+      "endLine": 4632
     },
     {
       "id": "faults.java#test_95",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_95",
-      "start_line": 4635,
-      "end_line": 4668
+      "startLine": 4635,
+      "endLine": 4668
     },
     {
       "id": "faults.java#test_96",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_96",
-      "start_line": 4671,
-      "end_line": 4704
+      "startLine": 4671,
+      "endLine": 4704
     },
     {
       "id": "faults.java#test_97",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_97",
-      "start_line": 4707,
-      "end_line": 4767
+      "startLine": 4707,
+      "endLine": 4767
     },
     {
       "id": "faults.java#test_98",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_98",
-      "start_line": 4770,
-      "end_line": 4820
+      "startLine": 4770,
+      "endLine": 4820
     },
     {
       "id": "faults.java#test_99",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_99",
-      "start_line": 4823,
-      "end_line": 4857
+      "startLine": 4823,
+      "endLine": 4857
     },
     {
       "id": "faults.java#test_100",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_100",
-      "start_line": 4860,
-      "end_line": 4910
+      "startLine": 4860,
+      "endLine": 4910
     },
     {
       "id": "faults.java#test_101",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_101",
-      "start_line": 4913,
-      "end_line": 4956
+      "startLine": 4913,
+      "endLine": 4956
     },
     {
       "id": "faults.java#test_102",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_102",
-      "start_line": 4959,
-      "end_line": 4991
+      "startLine": 4959,
+      "endLine": 4991
     },
     {
       "id": "faults.java#test_103",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_103",
-      "start_line": 4994,
-      "end_line": 5029
+      "startLine": 4994,
+      "endLine": 5029
     },
     {
       "id": "faults.java#test_104",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_104",
-      "start_line": 5032,
-      "end_line": 5062
+      "startLine": 5032,
+      "endLine": 5062
     },
     {
       "id": "faults.java#test_105",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_105",
-      "start_line": 5065,
-      "end_line": 5096
+      "startLine": 5065,
+      "endLine": 5096
     },
     {
       "id": "faults.java#test_106",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_106",
-      "start_line": 5099,
-      "end_line": 5134
+      "startLine": 5099,
+      "endLine": 5134
     },
     {
       "id": "faults.java#test_107",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_107",
-      "start_line": 5137,
-      "end_line": 5192
+      "startLine": 5137,
+      "endLine": 5192
     },
     {
       "id": "faults.java#test_108",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_108",
-      "start_line": 5195,
-      "end_line": 5235
+      "startLine": 5195,
+      "endLine": 5235
     },
     {
       "id": "faults.java#test_109",
-      "file_path": "faults.java",
+      "filePath": "faults.java",
       "name": "test_109",
-      "start_line": 5238,
-      "end_line": 5281
+      "startLine": 5238,
+      "endLine": 5281
     },
     {
       "id": "successes.java#test_0",
-      "file_path": "successes.java",
+      "filePath": "successes.java",
       "name": "test_0",
-      "start_line": 85,
-      "end_line": 96
+      "startLine": 85,
+      "endLine": 96
     },
     {
       "id": "successes.java#test_1",
-      "file_path": "successes.java",
+      "filePath": "successes.java",
       "name": "test_1",
-      "start_line": 99,
-      "end_line": 130
+      "startLine": 99,
+      "endLine": 130
     },
     {
       "id": "successes.java#test_2",
-      "file_path": "successes.java",
+      "filePath": "successes.java",
       "name": "test_2",
-      "start_line": 133,
-      "end_line": 156
+      "startLine": 133,
+      "endLine": 156
     },
     {
       "id": "successes.java#test_3",
-      "file_path": "successes.java",
+      "filePath": "successes.java",
       "name": "test_3",
-      "start_line": 159,
-      "end_line": 194
+      "startLine": 159,
+      "endLine": 194
     },
     {
       "id": "successes.java#test_4",
-      "file_path": "successes.java",
+      "filePath": "successes.java",
       "name": "test_4",
-      "start_line": 197,
-      "end_line": 230
+      "startLine": 197,
+      "endLine": 230
     },
     {
       "id": "successes.java#test_5",
-      "file_path": "successes.java",
+      "filePath": "successes.java",
       "name": "test_5",
-      "start_line": 233,
-      "end_line": 266
+      "startLine": 233,
+      "endLine": 266
     },
     {
       "id": "successes.java#test_6",
-      "file_path": "successes.java",
+      "filePath": "successes.java",
       "name": "test_6",
-      "start_line": 269,
-      "end_line": 284
+      "startLine": 269,
+      "endLine": 284
     },
     {
       "id": "successes.java#test_7",
-      "file_path": "successes.java",
+      "filePath": "successes.java",
       "name": "test_7",
-      "start_line": 287,
-      "end_line": 310
+      "startLine": 287,
+      "endLine": 310
     },
     {
       "id": "successes.java#test_8",
-      "file_path": "successes.java",
+      "filePath": "successes.java",
       "name": "test_8",
-      "start_line": 313,
-      "end_line": 336
+      "startLine": 313,
+      "endLine": 336
     },
     {
       "id": "successes.java#test_9",
-      "file_path": "successes.java",
+      "filePath": "successes.java",
       "name": "test_9",
-      "start_line": 339,
-      "end_line": 378
+      "startLine": 339,
+      "endLine": 378
     },
     {
       "id": "successes.java#test_10",
-      "file_path": "successes.java",
+      "filePath": "successes.java",
       "name": "test_10",
-      "start_line": 381,
-      "end_line": 420
+      "startLine": 381,
+      "endLine": 420
     },
     {
       "id": "successes.java#test_11",
-      "file_path": "successes.java",
+      "filePath": "successes.java",
       "name": "test_11",
-      "start_line": 423,
-      "end_line": 450
+      "startLine": 423,
+      "endLine": 450
     },
     {
       "id": "successes.java#test_12",
-      "file_path": "successes.java",
+      "filePath": "successes.java",
       "name": "test_12",
-      "start_line": 453,
-      "end_line": 529
+      "startLine": 453,
+      "endLine": 529
     },
     {
       "id": "successes.java#test_13",
-      "file_path": "successes.java",
+      "filePath": "successes.java",
       "name": "test_13",
-      "start_line": 532,
-      "end_line": 564
+      "startLine": 532,
+      "endLine": 564
     },
     {
       "id": "successes.java#test_14",
-      "file_path": "successes.java",
+      "filePath": "successes.java",
       "name": "test_14",
-      "start_line": 567,
-      "end_line": 600
+      "startLine": 567,
+      "endLine": 600
     },
     {
       "id": "successes.java#test_15",
-      "file_path": "successes.java",
+      "filePath": "successes.java",
       "name": "test_15",
-      "start_line": 603,
-      "end_line": 638
+      "startLine": 603,
+      "endLine": 638
     },
     {
       "id": "successes.java#test_16",
-      "file_path": "successes.java",
+      "filePath": "successes.java",
       "name": "test_16",
-      "start_line": 641,
-      "end_line": 679
+      "startLine": 641,
+      "endLine": 679
     }
   ],
   "extra": [
     {
-      "tool_name": "EvoMaster",
+      "toolName": "EvoMaster",
       "criteria": [
         {
           "name": "Line Coverage",

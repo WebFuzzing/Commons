@@ -22,18 +22,18 @@ export const Dashboard: React.FC = () => {
 
     const [testTabs, setTestTabs] = useState<Array<ITestTabs>>([]);
 
-    const addTestTab = (test_name: string, event: React.MouseEvent<HTMLElement>) => {
-        if (!testTabs.find((t) => t.value === test_name)) {
-            setTestTabs([{value: test_name}, ...testTabs]);
+    const addTestTab = (testName: string, event: React.MouseEvent<HTMLElement>) => {
+        if (!testTabs.find((t) => t.value === testName)) {
+            setTestTabs([{value: testName}, ...testTabs]);
         }
 
         if (!event.ctrlKey) {
-            setActiveTab(test_name);
+            setActiveTab(testName);
         }
     }
 
-    const handleCloseTestsTab = (test_name: string) => {
-        const updatedTabs = testTabs.filter((t) => t.value !== test_name);
+    const handleCloseTestsTab = (testName: string) => {
+        const updatedTabs = testTabs.filter((t) => t.value !== testName);
         setTestTabs(updatedTabs);
         if (updatedTabs.length === 0) {
             setActiveTab("endpoints")
@@ -50,18 +50,18 @@ export const Dashboard: React.FC = () => {
         );
     }
 
-    const numberOfTestCaseOfFiles = data.test_file_paths.map((test_file) => {
+    const numberOfTestCaseOfFiles = data.testFilePaths.map((testFile) => {
         return {
-            "file_name":  test_file,
-            "number_of_test_cases": data.test_cases.filter((test_case) => test_case.file_path === test_file).length
+            "fileName":  testFile,
+            "numberOfTestCases": data.testCases.filter((testCase) => testCase.filePath === testFile).length
         }
     });
 
     return (
         <div className="border border-black p-4 w-[80%] mx-auto bg-white">
-            <Header date={data.creation_time}
-                    schema_version={data.schema_version}
-                    tool_name_version={`${data.tool_name}-${data.tool_version}`}/>
+            <Header date={data.creationTime}
+                    schemaVersion={data.schemaVersion}
+                    toolNameVersion={`${data.toolName}-${data.toolVersion}`}/>
             <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
                 <div className="flex justify-center mb-2 w-full">
                     <TabsList className={`flex gap-4 w-[80%] max-w-[700px] h-auto p-1 bg-transparent`}>
@@ -111,9 +111,9 @@ export const Dashboard: React.FC = () => {
                 </div>
 
                 <TabsContent value="overview" className="mt-0">
-                    <Overview rest={data.problem_details.rest}
-                              test_cases={data.test_cases}
-                              test_files={numberOfTestCaseOfFiles}
+                    <Overview rest={data.problemDetails.rest}
+                              testCases={data.testCases}
+                              testFiles={numberOfTestCaseOfFiles}
                               faults={data.faults}/>
                 </TabsContent>
 
@@ -124,7 +124,7 @@ export const Dashboard: React.FC = () => {
                 {
                     testTabs.map((test, index) => (
                         <TabsContent value={`${test.value}`} key={index}>
-                            <TestResults test_case_name={test.value} />
+                            <TestResults testCaseName={test.value} />
                         </TabsContent>
                     ))
                 }

@@ -47,8 +47,8 @@ export const AppProvider = ({ children }: AppProviderProps) => {
     }, []);
 
     useEffect(() => {
-        if(data?.test_file_paths){
-            data.test_file_paths.map(file => {
+        if(data?.testFilePaths){
+            data.testFilePaths.map(file => {
                 fetchFileContent(file).then((content) => {
                     if (typeof content === "string") {
                         setTestFiles(prev => [...prev, {
@@ -85,7 +85,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
             }
 
             // Check if any status code or fault code is marked as "removed"
-            const hasRemovedStatusCode = endpoint.http_status_codes.some(code =>
+            const hasRemovedStatusCode = endpoint.httpStatusCodes.some(code =>
                 activeFilters[code.code] === "removed"
             );
             const hasRemovedFaultCode = endpoint.faults.some(code =>
@@ -93,7 +93,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
             );
 
             // Check if any status code or fault code is marked as "active"
-            const hasActiveStatusCode = endpoint.http_status_codes.some(code =>
+            const hasActiveStatusCode = endpoint.httpStatusCodes.some(code =>
                 activeFilters[code.code] === "active"
             );
             const hasActiveFaultCode = endpoint.faults.some(code =>

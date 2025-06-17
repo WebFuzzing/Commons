@@ -13,7 +13,7 @@ export function StatusCodeFilters({data, onFiltersChange}: StatusCodeFiltersProp
 
     // Extract all unique status codes from endpoints
     const allStatusCodes = [...new Map(
-        data.flatMap(endpoint => endpoint.http_status_codes)
+        data.flatMap(endpoint => endpoint.httpStatusCodes)
             .map(item => [item.code, item])
     ).values()].sort((a, b) => a.code - b.code);
 

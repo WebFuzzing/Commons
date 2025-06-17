@@ -26,7 +26,7 @@ export const Endpoints: React.FC<IProps> = ({addTestTab}) => {
                     filteredEndpoints.map((item, index) => (
                         <EndpointAccordion data-testid="endpoint" key={index} value={`_${index}`}
                                            endpoint={item.endpoint}
-                                           status_codes={item.http_status_codes} faults={item.faults}
+                                           statusCodes={item.httpStatusCodes} faults={item.faults}
                                            addTestTab={addTestTab}/>
                     ))
                 }
