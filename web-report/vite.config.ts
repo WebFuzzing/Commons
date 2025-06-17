@@ -19,8 +19,8 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: '../target/classes/webreport',
-    rollupOptions: {
+      outDir: '../target/classes/webreport',
+      rollupOptions: {
       output: {
         entryFileNames: `assets/report.js`,
         chunkFileNames: `assets/[name].js`,
@@ -33,7 +33,7 @@ export default defineConfig({
                 return `assets/[name].svg`;
             }
             return `assets/[name].[ext]`;
-        },
+        }
       }
     }
   },

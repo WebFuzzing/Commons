@@ -8,10 +8,10 @@
     "generate": "json2ts ../src/main/resources/wfc/schemas/report.yaml src/types/GeneratedTypes.tsx && ts-to-zod src/types/GeneratedTypes.tsx src/types/GeneratedTypesZod.ts",
     "build": "tsc -b && vite build",
     "installAndBuild": "yarn install && yarn generate && vitest --no-watch && tsc -b && vite build && yarn copyRunFiles",
-    "copyRunFiles": "cpx webreport.bat ../target/classes/webreport && cpx webreport.command ../target/classes/webreport && cpx webreport.py ../target/classes/webreport",
+    "copyRunFiles": "cpx webreport.bat ../target/classes/webreport && cpx webreport.command ../target/classes/webreport && cpx webreport.py ../target/classes/webreport && cpx src-e2e/static/robots.txt ../target/classes/webreport",
     "lint": "eslint .",
     "preview": "vite preview",
-    "debug": "vite build && cpx \"src-e2e/static/*\" ../target/classes/webreport && vite preview",
+    "debug": "vite build && cpx src-e2e/static/* ../target/classes/webreport && vite preview",
     "test": "vitest"
   },
   "dependencies": {
