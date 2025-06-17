@@ -163,6 +163,7 @@
                 <artifactId>jsonschema2pojo-maven-plugin</artifactId>
                 <version>1.2.2</version>
                 <configuration>
+                    <!--  https://joelittlejohn.github.io/jsonschema2pojo/site/1.0.2/generate-mojo.html  -->
                     <annotationStyle>none</annotationStyle>
                     <includeGeneratedAnnotation>false</includeGeneratedAnnotation>
                     <sourceType>yamlschema</sourceType>
@@ -170,6 +171,9 @@
                     <formatDateTimes>true</formatDateTimes>
                     <formatDates>true</formatDates>
                     <formatTimes>true</formatTimes>
+                    <dateType>java.lang.String</dateType>
+                    <dateTimeType>java.lang.String</dateTimeType>
+                    <timeType>java.lang.String</timeType>
                 </configuration>
                 <executions>
                     <execution>
