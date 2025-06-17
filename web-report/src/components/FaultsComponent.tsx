@@ -9,11 +9,11 @@ import {ReportTooltip} from "@/components/ui/report-tooltip.tsx";
 import {useAppContext} from "@/AppProvider.tsx";
 import faults from "../../../src/main/resources/wfc/faults/fault_categories.json";
 
-export const FaultsComponent: React.FC<Faults> = ({total_number, found_faults}) => {
+export const FaultsComponent: React.FC<Faults> = ({totalNumber, foundFaults}) => {
     const {data} = useAppContext();
-    const totalEndpointNumber = data?.problem_details.rest?.endpoint_ids.length;
+    const totalEndpointNumber = data?.problemDetails.rest?.endpointIds.length;
 
-    const faultCounts = getFaultCounts(found_faults);
+    const faultCounts = getFaultCounts(foundFaults);
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [currentStatus, setCurrentStatus] = useState(-1);
 
@@ -38,13 +38,13 @@ export const FaultsComponent: React.FC<Faults> = ({total_number, found_faults}) 
                 <ShieldAlert className="w-6 h-6 text-gray-500" />
                 <div className="flex-1">
                     <div className="flex justify-between">
-                        <ReportTooltip tooltipText={info.total_faults}>
+                        <ReportTooltip tooltipText={info.totalFaults}>
                             <span className="text-lg font-bold">Total Faults:</span>
                         </ReportTooltip>
-                        <span className="text-lg font-bold" data-testid="faults-component-total-faults">{total_number}</span>
+                        <span className="text-lg font-bold" data-testid="faults-component-total-faults">{totalNumber}</span>
                     </div>
                     <div className="flex justify-between">
-                        <ReportTooltip tooltipText={info.distinct_fault_types}>
+                        <ReportTooltip tooltipText={info.distinctFaultTypes}>
                             <span className="text-lg font-bold">Distinct Fault Types:</span>
                         </ReportTooltip>
                         <span className="text-lg font-bold" data-testid="faults-component-fault-counts">{faultCounts.length}</span>
@@ -54,16 +54,16 @@ export const FaultsComponent: React.FC<Faults> = ({total_number, found_faults}) 
             <div className="mt-6">
                 <div className="bg-gray-50 rounded-t-lg">
                     <div className="grid grid-cols-12 gap-4 p-6 font-semibold text-gray-700 border-b">
-                        <ReportTooltip className="col-span-2 text-center" tooltipText={info.code_number_identifiers}>
+                        <ReportTooltip className="col-span-2 text-center" tooltipText={info.codeNumberIdentifiers}>
                             <div>Codes</div>
                         </ReportTooltip>
-                        <ReportTooltip className="col-span-6 text-center" tooltipText={info.identifier_name}>
+                        <ReportTooltip className="col-span-6 text-center" tooltipText={info.identifierName}>
                             <div>Name</div>
                         </ReportTooltip>
-                        <ReportTooltip className="col-span-2 text-center" tooltipText={info.distribution_of_endpoints_per_code}>
+                        <ReportTooltip className="col-span-2 text-center" tooltipText={info.distributionOfEndpointsPerCode}>
                             <div>Ratio</div>
                         </ReportTooltip>
-                        <ReportTooltip className="col-span-2 text-center" tooltipText={info.number_of_faults_per_code}>
+                        <ReportTooltip className="col-span-2 text-center" tooltipText={info.numberOfFaultsPerCode}>
                             <div>#</div>
                         </ReportTooltip>
                     </div>
@@ -74,14 +74,14 @@ export const FaultsComponent: React.FC<Faults> = ({total_number, found_faults}) 
                             <div className="grid grid-cols-12 gap-4 p-6 transition-colors border-b border-gray-200" key={fault.code}>
                                 <div className="col-span-2 text-center font-bold cursor-help font-mono hover:text-green-300" onClick={() => handleOpenModal(fault.code)}>{fault.code}</div>
                                 <div className="col-span-6 text-center font-mono cursor-help hover:text-green-300"  onClick={() => handleOpenModal(fault.code)}>{getShortNameOfCode(fault.code)}</div>
-                                <ReportTooltip className="col-span-2 text-center font-mono" tooltipText={getText(info.distribution_tooltip,
+                                <ReportTooltip className="col-span-2 text-center font-mono" tooltipText={getText(info.distributionTooltip,
                                     {
-                                        operation_count: fault.operation_count,
-                                        endpoint_text: fault.operation_count > 1 ? "endpoints have" : "endpoint has",
+                                        operationCount: fault.operationCount,
+                                        endpointText: fault.operationCount > 1 ? "endpoints have" : "endpoint has",
                                         code: fault.code,
-                                        total_endpoints:totalEndpointNumber ? totalEndpointNumber : 0
+                                        totalEndpoints:totalEndpointNumber ? totalEndpointNumber : 0
                                     })}>
-                                    <div>{fault.operation_count}/{totalEndpointNumber}</div>
+                                    <div>{fault.operationCount}/{totalEndpointNumber}</div>
                                 </ReportTooltip>
                                 <div className="col-span-2 text-center font-bold">{fault.count}</div>
                             </div>

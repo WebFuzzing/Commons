@@ -68,22 +68,22 @@ describe('App test', () => {
         render(<App />);
         expect(screen.getByText(/Please wait, files are loading.../)).toBeInTheDocument();
         await waitFor(() => {
-            expect(screen.getByTestId('header-creation-date')).toContainHTML(new Date(reportData.creation_time).toUTCString());
-            expect(screen.getByTestId('header-tool-name-version')).toContainHTML(`${reportData.tool_name}`);
-            expect(screen.getByTestId('header-tool-name-version')).toContainHTML(`${reportData.tool_version}`);
-            expect(screen.getByTestId('header-schema-version')).toContainHTML(reportData.schema_version);
+            expect(screen.getByTestId('header-creation-date')).toContainHTML(new Date(reportData.creationTime).toUTCString());
+            expect(screen.getByTestId('header-tool-name-version')).toContainHTML(`${reportData.toolName}`);
+            expect(screen.getByTestId('header-tool-name-version')).toContainHTML(`${reportData.toolVersion}`);
+            expect(screen.getByTestId('header-schema-version')).toContainHTML(reportData.schemaVersion);
         });
     });
 
     it('check rest report', async () => {
         render(<App />);
         expect(screen.getByText(/Please wait, files are loading.../)).toBeInTheDocument();
-        const total = reportData.problem_details.rest.endpoint_ids.length;
-        const total_http_calls = reportData.problem_details.rest.total_http_calls;
+        const total = reportData.problemDetails.rest.endpointIds.length;
+        const totalHttpCalls = reportData.problemDetails.rest.totalHttpCalls;
 
         await waitFor(() => {
             expect(screen.getByTestId('rest-report-endpoint')).toContainHTML(`${total}`);
-            expect(screen.getByTestId('rest-report-http-calls')).toContainHTML(`${total_http_calls}`);
+            expect(screen.getByTestId('rest-report-http-calls')).toContainHTML(`${totalHttpCalls}`);
         });
 
     });
@@ -91,11 +91,11 @@ describe('App test', () => {
     it('check generated tests', async () => {
         render(<App />);
         expect(screen.getByText(/Please wait, files are loading.../)).toBeInTheDocument();
-        const total_tests = reportData.total_tests;
-        const total_test_files = reportData.test_file_paths.length;
+        const totalTests = reportData.totalTests;
+        const totalTestFiles = reportData.testFilePaths.length;
         await waitFor(() => {
-            expect(screen.getByTestId('generated-tests-total-tests')).toContainHTML(`${total_tests}`);
-            expect(screen.getByTestId('generated-tests-total-test-files')).toContainHTML(`${total_test_files}`);
+            expect(screen.getByTestId('generated-tests-total-tests')).toContainHTML(`${totalTests}`);
+            expect(screen.getByTestId('generated-tests-total-test-files')).toContainHTML(`${totalTestFiles}`);
         });
     });
 
@@ -125,7 +125,7 @@ describe('App test', () => {
 
         await waitFor(() => {
             // check if the endpoints are displayed
-            reportData.problem_details.rest.endpoint_ids.forEach((endpoint: string) => {
+            reportData.problemDetails.rest.endpointIds.forEach((endpoint: string) => {
                 // const testId = convertEndpointToTestId(endpoint);
                 expect(screen.getByTestId(endpoint)).toBeInTheDocument();
             });
@@ -135,11 +135,11 @@ describe('App test', () => {
     it('check faults component', async () => {
         render(<App />);
         expect(screen.getByText(/Please wait, files are loading.../)).toBeInTheDocument();
-        const total_faults = reportData.faults.total_number;
-        const faultCounts = getFaultCounts(reportData.faults.found_faults);
+        const totalFaults = reportData.faults.totalNumber;
+        const faultCounts = getFaultCounts(reportData.faults.foundFaults);
 
         await waitFor(() => {
-            expect(screen.getByTestId('faults-component-total-faults')).toContainHTML(`${total_faults}`);
+            expect(screen.getByTestId('faults-component-total-faults')).toContainHTML(`${totalFaults}`);
             expect(screen.getByTestId('faults-component-fault-counts')).toContainHTML(faultCounts.length.toString());
         });
     });

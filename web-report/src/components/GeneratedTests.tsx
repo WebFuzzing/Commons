@@ -6,52 +6,52 @@ import info from "@/assets/info.json";
 import {ReportTooltip} from "@/components/ui/report-tooltip.tsx";
 
 interface IGeneratedTests {
-    total_tests: number
-    test_files: Array<{
-        file_name: string,
-        number_of_test_cases: number
+    totalTests: number
+    testFiles: Array<{
+        fileName: string,
+        numberOfTestCases: number
     }>
-    total_http_calls?: number
+    totalHttpCalls?: number
 }
 
-export const GeneratedTests: React.FC<IGeneratedTests> = ({total_tests, test_files, total_http_calls}) => (
+export const GeneratedTests: React.FC<IGeneratedTests> = ({totalTests, testFiles, totalHttpCalls}) => (
     <Card className="border-2 border-black p-6 rounded-none">
         <div className="flex items-start gap-4">
             <Target className="w-6 h-6 text-gray-500"/>
             <div className="flex-1">
                 <div className="flex justify-between">
-                    <ReportTooltip tooltipText={info.generated_test_files}>
+                    <ReportTooltip tooltipText={info.generatedTestFiles}>
                         <span className="text-lg font-bold">Generated Test Files:</span>
                     </ReportTooltip>
-                    <span className="text-lg font-bold" data-testid="generated-tests-total-test-files">{test_files.length}</span>
+                    <span className="text-lg font-bold" data-testid="generated-tests-total-test-files">{testFiles.length}</span>
                 </div>
                 <div className="flex justify-between">
-                    <ReportTooltip tooltipText={info.generated_test_cases}>
+                    <ReportTooltip tooltipText={info.generatedTestCases}>
                         <span className="text-lg font-bold">Generated Tests Cases:</span>
                     </ReportTooltip>
-                    <span className="text-lg font-bold" data-testid="generated-tests-total-tests">{total_tests}</span>
+                    <span className="text-lg font-bold" data-testid="generated-tests-total-tests">{totalTests}</span>
                 </div>
                 <div className="flex justify-between">
-                    <ReportTooltip tooltipText={info.number_of_http_calls}>
+                    <ReportTooltip tooltipText={info.numberOfHttpCalls}>
                         <span className="text-lg font-bold"># HTTP Calls:</span>
                     </ReportTooltip>
-                    <span className="text-lg font-bold" data-testid="rest-report-http-calls">{total_http_calls}</span>
+                    <span className="text-lg font-bold" data-testid="rest-report-http-calls">{totalHttpCalls}</span>
                 </div>
 
                 <div className="mt-4 pt-4 border-t border-gray-200">
                     <div className="text-sm font-medium text-gray-700 mb-2">Test Files</div>
                     <div className="space-y-1">
                         {
-                            test_files.length > 0 ? (
-                                test_files.map((file, index) => (
+                            testFiles.length > 0 ? (
+                                testFiles.map((file, index) => (
                                     <div className="flex items-center gap-2 text-sm text-gray-600" key={index}>
-                                        <div className={`w-2 h-2 ${getFileColor(index, file.file_name)} rounded-full`}></div>
-                                        <ReportTooltip tooltipText={getText(info.test_files_located,
+                                        <div className={`w-2 h-2 ${getFileColor(index, file.fileName)} rounded-full`}></div>
+                                        <ReportTooltip tooltipText={getText(info.testFilesLocated,
                                             {
-                                                file_name: file.file_name,
-                                                number_of_test_cases: file.number_of_test_cases
+                                                fileName: file.fileName,
+                                                numberOfTestCases: file.numberOfTestCases
                                             })}>
-                                            <span>{file.file_name} (# {file.number_of_test_cases})</span>
+                                            <span>{file.fileName} (# {file.numberOfTestCases})</span>
                                         </ReportTooltip>
                                     </div>
                                 ))

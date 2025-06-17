@@ -67,7 +67,7 @@ export const extractCodeLines = (
     return lines.slice(startIndex, endIndex + 2).join('\n');
 };
 
-export const calculateAllStatusCounts = (covered_http_status: CoveredEndpoint[], endpoint_ids:string[]) => {
+export const calculateAllStatusCounts = (coveredHttpStatus: CoveredEndpoint[], endpointIds:string[]) => {
     const allStatusCounts ={
         "2XX": 0,
         "3XX": 0,
@@ -75,11 +75,11 @@ export const calculateAllStatusCounts = (covered_http_status: CoveredEndpoint[],
         "5XX": 0
     }
 
-    endpoint_ids.map(
+    endpointIds.map(
         (endpoint) => {
-            const allStatusCodes = covered_http_status.filter(status => status.endpoint_id === endpoint)
+            const allStatusCodes = coveredHttpStatus.filter(status => status.endpointId === endpoint)
                 .map(
-                    (status) => status.http_status
+                    (status) => status.httpStatus
                 ).flat()
             const uniqueStatusCodes = [...new Set(allStatusCodes)];
 
@@ -121,20 +121,20 @@ export const calculateAllStatusCounts = (covered_http_status: CoveredEndpoint[],
     return allStatusCounts;
 }
 
-export const getFaultCounts = (found_faults: FoundFault[]) => {
+export const getFaultCounts = (foundFaults: FoundFault[]) => {
     const faultCounts = new Map();
-    // A fault defines a unique operation_id, code, and context. To define a unique fault, we can use a combination of these three properties.
+    // A fault defines a unique operationId, code, and context. To define a unique fault, we can use a combination of these three properties.
 
-    found_faults.forEach(fault => {
-        fault.fault_categories.forEach(category => {
-            faultCounts.set(`${fault.operation_id}|${category.code}|${category.context}`, (faultCounts.get(category.code) || 0) + 1);
+    foundFaults.forEach(fault => {
+        fault.faultCategories.forEach(category => {
+            faultCounts.set(`${fault.operationId}|${category.code}|${category.context}`, (faultCounts.get(category.code) || 0) + 1);
         });
     });
 
     const uniqueFaults = Array.from(faultCounts.keys()).map(key => {
         const [operationId, code, context] = key.split('|');
         return {
-            operation_id: operationId,
+            operationId: operationId,
             code: parseInt(code, 10),
             context: context || '',
             count: faultCounts.get(key)
@@ -144,11 +144,11 @@ export const getFaultCounts = (found_faults: FoundFault[]) => {
     
     return Array.from(uniqueCodes).map(code => {
         const faultsWithCode = uniqueFaults.filter(fault => fault.code === code);
-        const uniqueOperationCounts = new Set(faultsWithCode.map(fault => fault.operation_id)).size;
+        const uniqueOperationCounts = new Set(faultsWithCode.map(fault => fault.operationId)).size;
         return {
             code: code,
             count: faultsWithCode.length,
-            operation_count: uniqueOperationCounts,
+            operationCount: uniqueOperationCounts,
         }
     }).sort((a, b) => a.code - b.code);
 }
@@ -175,9 +175,9 @@ export const getFileColor = (index: number, file: string) => {
     return colorList[index % colorList.length];
 }
 
-export const getLanguage = (file_name: string) => {
+export const getLanguage = (fileName: string) => {
 
-    switch (file_name.split('.').pop()) {
+    switch (fileName.split('.').pop()) {
         case 'java':
             return 'java';
         case 'js':
@@ -197,79 +197,79 @@ export interface ITransformedReport {
     endpoint: string;
     faults: {
         code: number;
-        test_cases: string[];
+        testCases: string[];
     }[];
-    http_status_codes: {
+    httpStatusCodes: {
         code: number;
-        test_cases: string[];
+        testCases: string[];
     }[];
 }
 
 export const transformWebFuzzingReport = (original: WebFuzzingCommonsReport | null): Array<ITransformedReport> => {
 
-    if (!original || !original.problem_details || !original.problem_details.rest) {
+    if (!original || !original.problemDetails || !original.problemDetails.rest) {
         return [];
     }
 
     const endpointMap = new Map<string, ITransformedReport>();
 
-    original.problem_details.rest?.endpoint_ids.forEach(endpoint => {
+    original.problemDetails.rest?.endpointIds.forEach(endpoint => {
         endpointMap.set(endpoint, {
             endpoint,
-            http_status_codes: [],
+            httpStatusCodes: [],
             faults: []
         });
     });
 
-    original.faults.found_faults.forEach(fault => {
-        if (!fault.operation_id) {
+    original.faults.foundFaults.forEach(fault => {
+        if (!fault.operationId) {
             return;
         }
 
-        if (!endpointMap.has(fault.operation_id)) {
-            console.log(`Endpoint ${fault.operation_id} not found in endpoint_ids`);
+        if (!endpointMap.has(fault.operationId)) {
+            console.log(`Endpoint ${fault.operationId} not found in endpointIds`);
         }
 
-        const endpointData = endpointMap.get(fault.operation_id);
+        const endpointData = endpointMap.get(fault.operationId);
 
         if (!endpointData) {
             return;
         }
 
-        fault.fault_categories.forEach(faultCat => {
+        fault.faultCategories.forEach(faultCat => {
             let existingFault = endpointData.faults.find((f: { code: number; }) => f.code === faultCat.code);
             if (!existingFault) {
-                existingFault = {code: faultCat.code, test_cases: []};
+                existingFault = {code: faultCat.code, testCases: []};
                 endpointData.faults.push(existingFault);
             }
-            if (!existingFault.test_cases.includes(fault.test_case_id)) {
-                existingFault.test_cases.push(fault.test_case_id);
+            if (!existingFault.testCases.includes(fault.testCaseId)) {
+                existingFault.testCases.push(fault.testCaseId);
             }
         });
     });
 
-    if (original.problem_details.rest == null) {
+    if (original.problemDetails.rest == null) {
         return Array.from([]);
     }
 
-    original.problem_details.rest.covered_http_status.forEach(status => {
-        if (!endpointMap.has(status.endpoint_id)) {
-            console.log(`Endpoint ${status.endpoint_id} not found in endpoint_ids`);
+    original.problemDetails.rest.coveredHttpStatus.forEach(status => {
+        if (!endpointMap.has(status.endpointId)) {
+            console.log(`Endpoint ${status.endpointId} not found in endpointIds`);
         }
 
-        const endpointData = endpointMap.get(status.endpoint_id);
+        const endpointData = endpointMap.get(status.endpointId);
 
-        status.http_status.forEach(code => {
+        status.httpStatus.forEach(code => {
             if (!endpointData) {
                 return;
             }
-            let existingStatus = endpointData.http_status_codes.find((s: { code: number; }) => s.code === code);
+            let existingStatus = endpointData.httpStatusCodes.find((s: { code: number; }) => s.code === code);
             if (!existingStatus) {
-                existingStatus = {code, test_cases: []};
-                endpointData.http_status_codes.push(existingStatus);
+                existingStatus = {code, testCases: []};
+                endpointData.httpStatusCodes.push(existingStatus);
             }
-            if (!existingStatus.test_cases.includes(status.test_case_id)) {
-                existingStatus.test_cases.push(status.test_case_id);
+            if (!existingStatus.testCases.includes(status.testCaseId)) {
+                existingStatus.testCases.push(status.testCaseId);
             }
         });
     });
