@@ -4,7 +4,7 @@ title: "Web Fuzzing Commons Authentication"
 description: "Schema Definition for Web Fuzzing Commons Authentication"
 type: object
 properties:
-  schema_version:
+  schemaVersion:
     type: string
     description: "The schema version of WFC needed to use to validate and process this document."
   auth:
