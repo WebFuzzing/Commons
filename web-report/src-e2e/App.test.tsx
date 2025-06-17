@@ -4,7 +4,7 @@ import {resolve} from "path";
 import {readFileSync} from "fs";
 import {vi} from "vitest";
 import App from "../src/App";
-import {fetchFileContent, getFaultCounts} from "@/lib/utils";
+import {fetchFileContent, getFaultCounts} from "../src/lib/utils";
 
 // Read the report.json file
 const reportJsonPath = resolve(__dirname, './static/report.json');
