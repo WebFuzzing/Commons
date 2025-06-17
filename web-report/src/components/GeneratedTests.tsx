@@ -21,13 +21,13 @@ export const GeneratedTests: React.FC<IGeneratedTests> = ({totalTests, testFiles
             <div className="flex-1">
                 <div className="flex justify-between">
                     <ReportTooltip tooltipText={info.generatedTestFiles}>
-                        <span className="text-lg font-bold">Generated Test Files:</span>
+                        <span className="text-lg font-bold"># Generated Test Files:</span>
                     </ReportTooltip>
                     <span className="text-lg font-bold" data-testid="generated-tests-total-test-files">{testFiles.length}</span>
                 </div>
                 <div className="flex justify-between">
                     <ReportTooltip tooltipText={info.generatedTestCases}>
-                        <span className="text-lg font-bold">Generated Tests Cases:</span>
+                        <span className="text-lg font-bold"># Generated Tests Cases:</span>
                     </ReportTooltip>
                     <span className="text-lg font-bold" data-testid="generated-tests-total-tests">{totalTests}</span>
                 </div>
