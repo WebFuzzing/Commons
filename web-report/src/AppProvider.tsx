@@ -2,6 +2,7 @@ import {createContext, useContext, useState, ReactNode, useEffect} from 'react';
 import {WebFuzzingCommonsReport} from "@/types/GeneratedTypes.tsx";
 import {ITestFiles} from "@/types/General.tsx";
 import {fetchFileContent, ITransformedReport, transformWebFuzzingReport} from "@/lib/utils.tsx";
+import {webFuzzingCommonsReportSchema} from "@/types/GeneratedTypesZod.ts";
 
 type AppContextType = {
     data: WebFuzzingCommonsReport | null;
@@ -31,10 +32,17 @@ export const AppProvider = ({ children }: AppProviderProps) => {
         const fetchData = async () => {
             try {
                 const jsonData = await fetchFileContent('./report.json') as WebFuzzingCommonsReport;
+
+                // Validate the JSON data against the schema
+                const report = webFuzzingCommonsReportSchema.safeParse(jsonData);
+                if (!report.success) {
+                    setError("Invalid report format. Please ensure the report is generated correctly.");
+                    return;
+                }
                 setData(jsonData);
             } catch (error: Error | unknown) {
                 if (error instanceof Error) {
-                    setError("Could not load the report file. Please check if the file exists and is accessible in /public folder.");
+                    setError("Could not load the report file. Please check if the file exists and is accessible in main folder.");
                 } else {
                     console.error(error);
                 }
