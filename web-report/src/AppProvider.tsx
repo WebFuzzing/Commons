@@ -3,6 +3,7 @@ import {WebFuzzingCommonsReport} from "@/types/GeneratedTypes.tsx";
 import {ITestFiles} from "@/types/General.tsx";
 import {fetchFileContent, ITransformedReport, transformWebFuzzingReport} from "@/lib/utils.tsx";
 import {webFuzzingCommonsReportSchema} from "@/types/GeneratedTypesZod.ts";
+import {ZodIssue} from "zod";
 
 type AppContextType = {
     data: WebFuzzingCommonsReport | null;
@@ -12,6 +13,7 @@ type AppContextType = {
     transformedReport: ITransformedReport[];
     filterEndpoints: (activeFilters: Record<number, string>) => ITransformedReport[];
     filteredEndpoints: ITransformedReport[];
+    invalidReportErrors: ZodIssue[] | null;
 };
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -25,6 +27,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
     const [data, setData] = useState<WebFuzzingCommonsReport | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+    const [invalidReportErrors, setInvalidReportErrors] = useState<ZodIssue[] | null>(null);
     const [testFiles, setTestFiles] = useState<ITestFiles[]>([]);
     const transformedReport = transformWebFuzzingReport(data);
 
@@ -35,8 +38,10 @@ export const AppProvider = ({ children }: AppProviderProps) => {
 
                 // Validate the JSON data against the schema
                 const report = webFuzzingCommonsReportSchema.safeParse(jsonData);
+                console.log(report)
                 if (!report.success) {
                     setError("Invalid report format. Please ensure the report is generated correctly.");
+                    setInvalidReportErrors(report.error.issues);
                     return;
                 }
                 setData(jsonData);
@@ -143,7 +148,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
         return filtered;
     }
 
-    const value: AppContextType = { data, loading, error, testFiles, transformedReport, filterEndpoints, filteredEndpoints };
+    const value: AppContextType = { data, loading, error, testFiles, transformedReport, filterEndpoints, filteredEndpoints, invalidReportErrors };
 
     return (
         <AppContext.Provider value={value}>
