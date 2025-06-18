@@ -103,6 +103,8 @@
                    mvn  -P release -DskipTests  deploy
                    git tag v<x.y.z>
                    git push origin v<x.y.z>
+
+                   Don't forget to update release_notes.md before preparing a new release
               -->
             <id>release</id>
             <build>
