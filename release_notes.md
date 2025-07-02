@@ -1,5 +1,9 @@
 # SNAPSHOT
 
+Under development in `master` branch.
+
+# 0.0.5
+
 - New security fault categories
 
 # 0.0.4
