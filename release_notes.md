@@ -1,4 +1,4 @@
-# 0.0.5
+# SNAPSHOT
 
 - New security fault categories
 
@@ -9,10 +9,10 @@
 - Provided fault category descriptions
 
 # 0.0.3
-Removing all annotations in generated DTOs
+- Removing all annotations in generated DTOs
 
 # 0.0.2
-Support for auth
+- Support for auth
 
 # 0.0.1
-First draft version
+- First draft version
