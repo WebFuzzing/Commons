@@ -52,4 +52,22 @@
   "fullDescription" : "This vulnerability exploits possible active record pattern misconfigurations to modify fields of  a record that should not be accessible via the API. See OWASP Top 10 for more information.",
   "descriptiveName" : "Mass Assignment",
   "label" : "F203:Mass Assignment"
+}, {
+  "code" : 204,
+  "testCaseLabel" : "allowsUnauthorizedAccessToProtectedResource",
+  "fullDescription" : "When accessing a protected resource, could get as a response a 403 not-authorized status code. If the resource does not exist, then returning a 404 would be a security leak, as now the client would know if resources, they have no access to, do exist or not. In these cases, to avoid unauthorized information leakage, a server should consistently either always return 403 or 404 for protected resources, regardless of whether they exist or not.",
+  "descriptiveName" : "Leakage Information Existence of Protected Resource",
+  "label" : "F204:Leakage Information Existence of Protected Resource"
+}, {
+  "code" : 205,
+  "testCaseLabel" : "authenticatedButWronglyToldNot",
+  "fullDescription" : "If the user is providing valid credentials, and if they try to access a protected resource, they should get a status code 403 (not authorized), and not 401 (not authenticated). With a 401, the user might wrongly think there is a problem with their credentials, and not that they have no right to access to that resource. However, to avoid false positives related to misconfigured credentials, these credentials should be first successfully validated on some other resources before flagging a returned 401 as a server fault.",
+  "descriptiveName" : "Wrongly Not Recognized as Authenticated",
+  "label" : "F205:Wrongly Not Recognized as Authenticated"
+}, {
+  "code" : 206,
+  "testCaseLabel" : "missedAuthorizationCheck",
+  "fullDescription" : "BOLA and BFLA are major security vulnerabilities. To avoid users accessing protected resources, authorization mechanisms are usually put in place. However, it can happen that, on some endpoints, these authorization mechanisms are missing or misconfigured by mistake. This can have disastrous consequences, e.g., a regular user deleting all data from all other users. However, access policies could be arbitrarily complex, where some users might validly interact with some resources of other users. A common example is 'administrator' users. Without a formal specification describing in details the access policies in place, it is hard to say automatically if we are in the case of a BOLA/BFLA vulnerability. Still, some heuristics could be used to flag highly suspicious cases. For example, if a user is blocked with a 403 to do a PUT and a PATCH on a resource, it would be quite suspicious if a DELETE would work just fine on that resource.",
+  "descriptiveName" : "Allowed To Modify Resource That Likely Should Had Been Protected",
+  "label" : "F206:Allowed To Modify Resource That Likely Should Had Been Protected"
 } ]
