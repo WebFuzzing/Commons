@@ -26,8 +26,8 @@ public enum DefinedFaultCategory implements FaultCategory {
                     " As such, although there is high chances that a 500 status code might point to the presence of a" +
                     " software fault in the tested application, they still need to be manually checked due to possible 'false-positive'."),
 
-    SCHEMA_INVALID_RESPONSE(101, "Received A Response From API That Is Not Valid According To Its Schema",
-            "returnsSchemaInvalidResponse",
+    SCHEMA_INVALID_RESPONSE(101, "Received A Response From API With A Structure/Data That Is Not Matching Its Schema",
+            "returnsMismatchResponseWithSchema",
             "A schema, like for example OpenAPI for REST, defines the structures not only of the inputs but" +
                     " also the outputs of the API." +
                     " If what returned by an API is not conforming to its schema, then it is a clear fault." +

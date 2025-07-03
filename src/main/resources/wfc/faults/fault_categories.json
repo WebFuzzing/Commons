@@ -6,10 +6,10 @@
   "label" : "F100:HTTP Status 500"
 }, {
   "code" : 101,
-  "testCaseLabel" : "returnsSchemaInvalidResponse",
+  "testCaseLabel" : "returnsMismatchResponseWithSchema",
   "fullDescription" : "A schema, like for example OpenAPI for REST, defines the structures not only of the inputs but also the outputs of the API. If what returned by an API is not conforming to its schema, then it is a clear fault. However, whether the fault is in the API (i.e., it does not conform to the schema) or in the schema itself (i.e., it is underspecified, or having mistakes) is something that cannot be known for sure without debugging the issue.",
-  "descriptiveName" : "Received A Response From API That Is Not Valid According To Its Schema",
-  "label" : "F101:Received A Response From API That Is Not Valid According To Its Schema"
+  "descriptiveName" : "Received A Response From API With A Structure/Data That Is Not Matching Its Schema",
+  "label" : "F101:Received A Response From API With A Structure/Data That Is Not Matching Its Schema"
 }, {
   "code" : 102,
   "testCaseLabel" : "successOnInvalidInputs",
