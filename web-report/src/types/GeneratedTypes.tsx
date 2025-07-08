@@ -59,7 +59,7 @@ export interface WebFuzzingCommonsReport {
   /**
    * Extra, optional coverage information, collected by different tools.
    */
-  extra?: Coverage[];
+  extra?: Coverage[] | null;
   [k: string]: unknown;
 }
 export interface Faults {
@@ -96,7 +96,7 @@ export interface FaultCategoryId {
   /**
    * An optional context for the fault. The same fault type could be manifested in different ways, and we use this property to differentiate among them.
    */
-  context?: string;
+  context?: string | null;
   [k: string]: unknown;
 }
 export interface RESTReport {
@@ -165,6 +165,6 @@ export interface CoverageCriterion {
   /**
    * Optional number of all testing targets for this criterion. For some criteria, this number can be unknown.
    */
-  total?: number;
+  total?: number | null;
   [k: string]: unknown;
 }

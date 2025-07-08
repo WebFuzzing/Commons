@@ -22,7 +22,7 @@ export const testCaseSchema = z.record(z.unknown()).and(
 export const faultCategoryIdSchema = z.record(z.unknown()).and(
   z.object({
     code: z.number(),
-    context: z.string().optional(),
+    context: z.string().optional().nullable(),
   }),
 );
 
@@ -38,7 +38,7 @@ export const coverageCriterionSchema = z.record(z.unknown()).and(
   z.object({
     name: z.string(),
     covered: z.number(),
-    total: z.number().optional(),
+    total: z.number().optional().nullable(),
   }),
 );
 
@@ -89,6 +89,6 @@ export const webFuzzingCommonsReportSchema = z.record(z.unknown()).and(
     totalTests: z.number(),
     testFilePaths: z.array(testFilePathSchema),
     testCases: z.array(testCaseSchema),
-    extra: z.array(coverageSchema).optional(),
+    extra: z.array(coverageSchema).optional().nullable(),
   }),
 );
