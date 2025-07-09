@@ -30,7 +30,7 @@ export const coveredEndpointSchema = z.record(z.unknown()).and(
   z.object({
     endpointId: operationIdSchema,
     testCaseId: testCaseIdSchema,
-    httpStatus: z.tuple([httpStatusSchema]).rest(httpStatusSchema),
+    httpStatus: z.array(httpStatusSchema).nullable(),
   }),
 );
 

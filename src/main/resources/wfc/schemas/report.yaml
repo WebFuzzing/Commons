@@ -89,12 +89,13 @@ $defs:
       testCaseId:
         $ref: "#/$defs/TestCaseId"
       httpStatus:
-        description: "As in a test case the same endpoint could be called more than once, here we report all of the 
-        obtained HTTP status codes"
-        type: array
+        description: "As in a test case the same endpoint could be called more than once, here we report all of the \
+          obtained HTTP status codes. If for any reason a call does not return any response (e.g., the TCP connection \ 
+          does timeout), then this HTTP status array would be either null or empty."
+        type: [array,"null"]
         items:
           $ref: "#/$defs/HttpStatus"
-        minItems: 1
+        minItems: 0
         uniqueItems: true
     required: ["endpointId","testCaseId","httpStatus"]
   HttpStatus:

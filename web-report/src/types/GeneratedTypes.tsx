@@ -121,11 +121,11 @@ export interface CoveredEndpoint {
   endpointId: OperationId;
   testCaseId: TestCaseId;
   /**
-   * As in a test case the same endpoint could be called more than once, here we report all of the  obtained HTTP status codes
+   * As in a test case the same endpoint could be called more than once, here we report all of the obtained HTTP status codes. If for any reason a call does not return any response (e.g., the TCP connection   does timeout), then this HTTP status array would be either null or empty.
    *
-   * @minItems 1
+   * @minItems 0
    */
-  httpStatus: [HttpStatus, ...HttpStatus[]];
+  httpStatus: HttpStatus[] | null;
   [k: string]: unknown;
 }
 export interface TestCase {
