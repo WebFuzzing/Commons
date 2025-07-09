@@ -99,7 +99,7 @@ $defs:
         uniqueItems: true
     required: ["endpointId","testCaseId","httpStatus"]
   HttpStatus:
-    type: integer
+    type: [integer,"null"]
     minimum: 0
     maximum: 599
   FoundFault:

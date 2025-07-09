@@ -13,7 +13,7 @@ export type OperationId = string;
  * A unique identifier for a test case. It could include its name and file location.
  */
 export type TestCaseId = string;
-export type HttpStatus = number;
+export type HttpStatus = number | null;
 /**
  * A relative path used to unique locate a test suite file.
  */

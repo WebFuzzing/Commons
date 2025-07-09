@@ -5,7 +5,7 @@ export const operationIdSchema = z.string();
 
 export const testCaseIdSchema = z.string();
 
-export const httpStatusSchema = z.number();
+export const httpStatusSchema = z.number().nullable();
 
 export const testFilePathSchema = z.string();
 

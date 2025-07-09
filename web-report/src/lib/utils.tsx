@@ -6,10 +6,15 @@ export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs))
 }
 
-export const getColor = (code: string | number, isBackground: boolean, isFault: boolean) => {
+export const getColor = (code: string | number | null | undefined, isBackground: boolean, isFault: boolean) => {
     if (isFault) {
         return isBackground ? "bg-red-500" : "text-red-500";
     }
+
+    if(code === null || code === undefined || code === "") {
+        return isBackground ? "bg-gray-500" : "text-gray-500";
+    }
+
     if (typeof code === "number") {
         return getColorNumber(code, isBackground);
     }
@@ -69,6 +74,7 @@ export const extractCodeLines = (
 
 export const calculateAllStatusCounts = (coveredHttpStatus: CoveredEndpoint[], endpointIds:string[]) => {
     const allStatusCounts ={
+        "NO_RESPONSE": 0,
         "2XX": 0,
         "3XX": 0,
         "4XX": 0,
@@ -84,6 +90,7 @@ export const calculateAllStatusCounts = (coveredHttpStatus: CoveredEndpoint[], e
             const uniqueStatusCodes = [...new Set(allStatusCodes)];
 
             const isContainStatusCode = {
+                "NO_RESPONSE": false,
                 "2XX": false,
                 "3XX": false,
                 "4XX": false,
@@ -92,7 +99,10 @@ export const calculateAllStatusCounts = (coveredHttpStatus: CoveredEndpoint[], e
 
             uniqueStatusCodes.map(
                 (status) => {
-                    if (status >= 200 && status < 300) {
+                    if(status == null) {
+                        isContainStatusCode["NO_RESPONSE"] = true;
+                    }
+                    else if (status >= 200 && status < 300) {
                         isContainStatusCode["2XX"] = true;
                     } else if (status >= 300 && status < 400) {
                         isContainStatusCode["3XX"] = true;
@@ -103,7 +113,9 @@ export const calculateAllStatusCounts = (coveredHttpStatus: CoveredEndpoint[], e
                     }
                 }
             )
-
+            if(isContainStatusCode["NO_RESPONSE"]){
+                allStatusCounts["NO_RESPONSE"]++;
+            }
             if (isContainStatusCode["2XX"]) {
                 allStatusCounts["2XX"]++;
             }
@@ -259,12 +271,15 @@ export const transformWebFuzzingReport = (original: WebFuzzingCommonsReport | nu
 
         const endpointData = endpointMap.get(status.endpointId);
 
-        status.httpStatus.forEach(code => {
+        status.httpStatus?.forEach(code => {
             if (!endpointData) {
                 return;
             }
             let existingStatus = endpointData.httpStatusCodes.find((s: { code: number; }) => s.code === code);
             if (!existingStatus) {
+                if(code === null || code === undefined) {
+                    code = -1;
+                }
                 existingStatus = {code, testCases: []};
                 endpointData.httpStatusCodes.push(existingStatus);
             }

@@ -31,7 +31,7 @@ export function TestCaseButton({ testName, statusCode, onClick, isFault }: TestC
                 <span className="font-mono text-sm text-left">{testName}</span>
             </div>
             <div className="flex items-center">
-                <span className={`font-bold mr-2 ${getColor(statusCode, false, isFault)}`}>{statusCode}</span>
+                <span className={`font-bold mr-2 ${getColor(statusCode, false, isFault)}`}>{statusCode == -1 ? "NO-RESPONSE" : statusCode}</span>
                 <ChevronRight
                     className={`${
                         isHovered ? "text-blue-600 transform translate-x-1" : "text-gray-400"

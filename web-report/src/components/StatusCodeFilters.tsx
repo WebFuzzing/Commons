@@ -1,6 +1,7 @@
 import {useState} from "react"
 import {StatusCodeFilterButton} from "./StatusCodeFilterButton"
 import {ITransformedReport} from "@/lib/utils.tsx";
+import {StatusCodeModal} from "@/components/StatusCodeModal.tsx";
 
 type FilterState = "inactive" | "active" | "removed"
 
@@ -38,6 +39,9 @@ export function StatusCodeFilters({data, onFiltersChange}: StatusCodeFiltersProp
         onFiltersChange(newFilters)
     }
 
+    const [isModalOpen, setIsModalOpen] = useState(false)
+
+
     return (
         <div className="mb-6">
             <div className="items-center mb-2">
@@ -68,7 +72,11 @@ export function StatusCodeFilters({data, onFiltersChange}: StatusCodeFiltersProp
                 </div>
             </div>
             <div className="text-xs text-gray-500 mt-1">Click to toggle: Default → Active → Removed → Default</div>
+            <div className="items-center mb-2 flex justify-end">
+                <div className="text-sm font-mono text-red-500 mt-1 cursor-help hover:text-green-300" onClick={() => setIsModalOpen(true)}>Code Documentation</div>
+            </div>
             <div className="border-t border-black my-2"></div>
+            <StatusCodeModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} statusCode={-1} />
         </div>
     )
 }
