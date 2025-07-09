@@ -13,7 +13,7 @@ export type OperationId = string;
  * A unique identifier for a test case. It could include its name and file location.
  */
 export type TestCaseId = string;
-export type HttpStatus = number;
+export type HttpStatus = number | null;
 /**
  * A relative path used to unique locate a test suite file.
  */
@@ -59,7 +59,7 @@ export interface WebFuzzingCommonsReport {
   /**
    * Extra, optional coverage information, collected by different tools.
    */
-  extra?: Coverage[];
+  extra?: Coverage[] | null;
   [k: string]: unknown;
 }
 export interface Faults {
@@ -96,7 +96,7 @@ export interface FaultCategoryId {
   /**
    * An optional context for the fault. The same fault type could be manifested in different ways, and we use this property to differentiate among them.
    */
-  context?: string;
+  context?: string | null;
   [k: string]: unknown;
 }
 export interface RESTReport {
@@ -121,11 +121,11 @@ export interface CoveredEndpoint {
   endpointId: OperationId;
   testCaseId: TestCaseId;
   /**
-   * As in a test case the same endpoint could be called more than once, here we report all of the  obtained HTTP status codes
+   * As in a test case the same endpoint could be called more than once, here we report all of the obtained HTTP status codes. If for any reason a call does not return any response (e.g., the TCP connection   does timeout), then this HTTP status array would be either null or empty.
    *
-   * @minItems 1
+   * @minItems 0
    */
-  httpStatus: [HttpStatus, ...HttpStatus[]];
+  httpStatus: HttpStatus[] | null;
   [k: string]: unknown;
 }
 export interface TestCase {
@@ -165,6 +165,6 @@ export interface CoverageCriterion {
   /**
    * Optional number of all testing targets for this criterion. For some criteria, this number can be unknown.
    */
-  total?: number;
+  total?: number | null;
   [k: string]: unknown;
 }

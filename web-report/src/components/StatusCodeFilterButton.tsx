@@ -17,7 +17,7 @@ export function StatusCodeFilterButton({ code, initialState = "inactive", onChan
         if(isFault) {
             return "bg-red-500"
         }
-
+        if (code == -1) return "bg-gray-500"
         if (code >= 200 && code < 300) return "bg-green-500"
         if (code >= 300 && code < 400) return "bg-blue-500"
         if (code >= 400 && code < 500) return "bg-orange-500"
@@ -49,7 +49,7 @@ export function StatusCodeFilterButton({ code, initialState = "inactive", onChan
 
     return (
         <Badge className={getStyles()} onClick={toggleState}>
-            {isFault ? `F${-1 * code}`: `H${code}`}
+            {isFault ? `F${-1 * code}`: code == -1 ? `NO-RESPONSE`:`H${code}`}
         </Badge>
     )
 }

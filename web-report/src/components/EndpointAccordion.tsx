@@ -66,7 +66,7 @@ export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
                 <div className="flex flex-wrap justify-end gap-2 mr-4">
                     {sortedStatusCodes.map((code, idx) => (
                         <Badge key={`_${idx}`} className={`${getColor(code.code, true, false)} font-mono`}>
-                            H{code.code}
+                            {code.code == -1 ? "NO-RESPONSE" : `H${code.code}`}
                         </Badge>
                     ))}
                     {sortedFaults.map((code, idx) => (
@@ -87,7 +87,7 @@ export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
                                     setIsFault(false);
                                 }}
                                        className={`${getColor(code.code, true, false)} ${getSelectedStyle(code.code, false)} hover:bg-green-600 cursor-pointer text-white font-mono text-base border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]`}>
-                                    {code.code}
+                                    {code.code == -1 ? "NO-RESPONSE" : `H${code.code}`}
                                 </Badge>
                             ))
                         }

@@ -51,7 +51,7 @@ properties:
   #OPTIONAL
   extra:
     description: "Extra, optional coverage information, collected by different tools."
-    type: array
+    type: [array, "null"]
     items:
       $ref: "#/$defs/Coverage"
 
@@ -75,7 +75,7 @@ $defs:
       context:
         description: "An optional context for the fault. The same fault type could be manifested in different ways, \
                       and we use this property to differentiate among them."
-        type: string
+        type: [string, "null"]
     required: ["code"]
   TestFilePath:
     description: "A relative path used to unique locate a test suite file."
@@ -89,16 +89,17 @@ $defs:
       testCaseId:
         $ref: "#/$defs/TestCaseId"
       httpStatus:
-        description: "As in a test case the same endpoint could be called more than once, here we report all of the 
-        obtained HTTP status codes"
-        type: array
+        description: "As in a test case the same endpoint could be called more than once, here we report all of the \
+          obtained HTTP status codes. If for any reason a call does not return any response (e.g., the TCP connection \ 
+          does timeout), then this HTTP status array would be either null or empty."
+        type: [array,"null"]
         items:
           $ref: "#/$defs/HttpStatus"
-        minItems: 1
+        minItems: 0
         uniqueItems: true
     required: ["endpointId","testCaseId","httpStatus"]
   HttpStatus:
-    type: integer
+    type: [integer,"null"]
     minimum: 0
     maximum: 599
   FoundFault:
@@ -198,6 +199,6 @@ $defs:
         minimum: 0
       total:
         description: "Optional number of all testing targets for this criterion. For some criteria, this number can be unknown."
-        type: integer
+        type: [integer, "null"]
         minimum: 0
     required: ["name","covered"]

@@ -28,10 +28,16 @@ export const TestResults: React.FC<IProps> = ({testCaseName}) => {
     const allFaultCodes = relatedFaults.map((fault) =>
         fault.faultCategories.map((f) => f.code)).flat();
     const uniqueFaultCodes = [...new Set(allFaultCodes)].sort((a, b) => a - b);
-
     const allStatusCodes = relatedHttpStatus.map((status) =>
-        status.httpStatus.map((s) => s)).flat();
-    const uniqueStatusCodes = [...new Set(allStatusCodes)].sort((a, b) => a - b);
+        status.httpStatus?.map((s) => s)).flat();
+    const uniqueStatusCodes = [...new Set(allStatusCodes)].sort((a, b) => {
+        const codeA = Number(a);
+        const codeB = Number(b);
+        if (isNaN(codeA) || isNaN(codeB)) {
+            return String(a).localeCompare(String(b));
+        }
+        return codeA - codeB;
+    });
     const currentFile = testFiles.find((file) => file.name === testCase?.filePath);
 
 

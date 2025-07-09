@@ -44,7 +44,29 @@ export const AppProvider = ({ children }: AppProviderProps) => {
                     setInvalidReportErrors(report.error.issues);
                     return;
                 }
-                setData(jsonData);
+
+                const result = jsonData?.problemDetails?.rest?.coveredHttpStatus?.map(status => {
+                    const httpStatus = status?.httpStatus ?? [null];
+                    const httpStatusArray = Array.isArray(httpStatus) ? httpStatus : [httpStatus];
+                    const updatedHttpStatus = httpStatusArray.map(code => code === null ? -1 : code);
+                    return {
+                        ...status,
+                        httpStatus: updatedHttpStatus
+                    };
+                }) ?? [];
+
+                const updatedJsonData = {
+                    ...jsonData,
+                    problemDetails: {
+                        ...jsonData.problemDetails,
+                        rest: {
+                            ...jsonData.problemDetails.rest,
+                            coveredHttpStatus: result
+                        }
+                    }
+                } as WebFuzzingCommonsReport;
+
+                setData(updatedJsonData);
             } catch (error: Error | unknown) {
                 if (error instanceof Error) {
                     setError("Could not load the report file. Please check if the file exists and is accessible in main folder.");
