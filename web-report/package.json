@@ -7,11 +7,11 @@
     "dev": "vite",
     "generate": "json2ts ../src/main/resources/wfc/schemas/report.yaml src/types/GeneratedTypes.tsx && ts-to-zod src/types/GeneratedTypes.tsx src/types/GeneratedTypesZod.ts",
     "build": "tsc -b && vite build",
-    "installAndBuild": "yarn install && yarn generate && vitest --no-watch && tsc -b && vite build && yarn copyRunFiles",
-    "copyRunFiles": "cpx webreport.bat ../target/classes/webreport && cpx webreport.command ../target/classes/webreport && cpx webreport.py ../target/classes/webreport && cpx src-e2e/static/robots.txt ../target/classes/webreport",
+    "installAndBuild": "npm install && npm run generate && vitest --no-watch && tsc -b && vite build && npm run copyRunFiles",
+    "copyRunFiles": "cpx webreport.bat '../target/classes/webreport' && cpx webreport.command '../target/classes/webreport' && cpx webreport.py '../target/classes/webreport' && cpx 'src-e2e/static/robots.txt' '../target/classes/webreport'",
     "lint": "eslint .",
     "preview": "vite preview",
-    "debug": "vite build && cpx src-e2e/static/* ../target/classes/webreport && vite preview",
+    "debug": "vite build && cpx 'src-e2e/static/*' '../target/classes/webreport' && vite preview",
     "test": "vitest"
   },
   "dependencies": {
@@ -34,6 +34,14 @@
     "tailwindcss": "^4.0.14",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.25.67"
+  },
+  "optionalDependencies": {
+    "@tailwindcss/oxide-linux-arm64-gnu": "^4.0.1",
+    "@tailwindcss/oxide-linux-arm64-musl": "^4.0.1",
+    "@tailwindcss/oxide-linux-x64-musl": "^4.0.1",
+    "lightningcss-linux-arm64-gnu": "^1.29.1",
+    "lightningcss-linux-arm64-musl": "^1.29.1",
+    "lightningcss-linux-x64-musl": "^1.29.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

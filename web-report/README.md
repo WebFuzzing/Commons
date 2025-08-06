@@ -72,5 +72,5 @@ This will build the project and copy static test files from `tests/static` direc
 - `build` - Build for production
 - `preview` - Preview production build
 - `lint` - Run ESLint
-- `installAndBuild` - Install dependencies, run tests and build (Yarn only)
+- `installAndBuild` - Install dependencies, run tests and build
 - `debug` - Build the project and run in debug mode using static test files from `tests/static` directory

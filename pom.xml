@@ -220,14 +220,15 @@
                 <version>3.1.0</version>
                 <executions>
                     <execution>
-                        <id>yarn install build</id>
+                        <id>npm install build</id>
                         <phase>generate-resources</phase>
                         <goals>
                             <goal>exec</goal>
                         </goals>
                         <configuration>
-                            <executable>yarn</executable>
+                            <executable>npm</executable>
                             <arguments>
+                                <argument>run</argument>
                                 <argument>installAndBuild</argument>
                             </arguments>
                             <workingDirectory>${project.basedir}/web-report</workingDirectory>
