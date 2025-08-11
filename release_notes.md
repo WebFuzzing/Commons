@@ -2,6 +2,12 @@
 
 Under development in `master` branch.
 
+# 0.0.6
+
+- removed yarn
+- HTTP status can now be optional (needed when HTTP calls timeout)
+- better description for schema errors
+
 # 0.0.5
 
 - New security fault categories
