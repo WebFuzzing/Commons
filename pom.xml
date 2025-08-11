@@ -100,16 +100,25 @@
             <!--
                    This profile is needed when making a deployment to Maven Central.
 
-                   1) update version.
-                      Git push.
-                      Don't forget to update release_notes.md before preparing a new release
+                   1) update release_notes.md before preparing a new release
 
-                   2) run:
-                   mvn  -P release -DskipTests  deploy
-                   git tag v<x.y.z>
-                   git push origin v<x.y.z>
+                   2) manually update <version> in thi file. Typically just remove the -SNAPSHOT tag.
+                      Git commit/push.
 
-                   3) put back -SNAPSHOT
+                   3) run:
+                      mvn  -P release -DskipTests  deploy
+
+                      make sure it is visible at:
+                      https://central.sonatype.com/artifact/com.webfuzzing/commons
+                      if not, check publishing status at
+                      https://central.sonatype.com/publishing/deployments (requires login)
+
+                   4) run:
+                      git tag v<x.y.z>
+                      git push origin v<x.y.z>
+
+                   5) increase version number, and put back -SNAPSHOT.
+                      Git commit/push.
               -->
             <id>release</id>
             <build>
