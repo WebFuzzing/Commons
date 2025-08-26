@@ -3,3 +3,4 @@ Web Fuzzing Commons (WFC): A set of standards and library support for facilitati
 
 ## THIS REPOSITORY IS CURRENTLY IN EARLY STAGE
 
+Documentation will be provided soon. 
