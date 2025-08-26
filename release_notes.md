@@ -2,6 +2,11 @@
 
 Under development in `master` branch.
 
+# 0.1.0
+
+- first public release
+- integration with Zenodo
+
 # 0.0.6
 
 - removed yarn
