@@ -15,7 +15,7 @@ More will be added in the next coming weeks.
 
 ## Overview
 
-WFC is for developers of Web API fuzzers, by providing utilies and library support for tasks that are common for all fuzzers. 
+WFC is aimed at developers of Web API fuzzers, by providing utilities and library support for tasks that are common for all fuzzers. 
 Currently, we focus on REST APIs. 
 But future versions of WFC will likely be extended to support GraphQL and RPC as well. 
 
@@ -44,7 +44,7 @@ If you are a developer of a Web API fuzzer, there are 3 ways in which you can co
 ## Fuzzers Supporting WFC
 
 WFC has been initially developed by the authors of [EvoMaster](https://github.com/WebFuzzing/EvoMaster). 
-If your fuzzer supports now WFC (e.g., implements authentication mechanisms based on WFC schema definition, and can output results in WFC report format), create a PR (or send us a message) and we will add it here.
+If your fuzzer supports now WFC (e.g., implements authentication mechanisms based on WFC schema definition, and can output results in WFC report format), create a PR (or send us a message) and we will add information about it here.
 
 Current fuzzers (fully/partially) supporting WFC:
 * [EvoMaster](https://github.com/WebFuzzing/EvoMaster)
