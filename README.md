@@ -41,6 +41,15 @@ If you are a developer of a Web API fuzzer, there are 3 ways in which you can co
 3) If you tried to integrate WFC in your fuzzer, but got stuck with some issues, let us know! We welcome contributions and people that want to join the development and standardization of WFC.  
 
 
+## Citation
+
+If you are using WFC in an academic work, you can cite the following:
+
+> O. Sahin, M. Zhang, A. Arcuri.
+**WFC/WFD: Web Fuzzing Commons, Dataset and Guidelines to Support Experimentation in REST API Fuzzing**.
+[arxiv 2509.01612](https://arxiv.org/abs/2509.01612)
+
+
 ## Fuzzers Supporting WFC
 
 WFC has been initially developed by the authors of [EvoMaster](https://github.com/WebFuzzing/EvoMaster). 
