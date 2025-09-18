@@ -122,7 +122,17 @@ public enum DefinedFaultCategory implements FaultCategory {
                     " Still, some heuristics could be used to flag highly suspicious cases." +
                     " For example, if a user is blocked with a 403 to do a PUT and a PATCH on a resource, it would" +
                     " be quite suspicious if a DELETE would work just fine on that resource."),
-
+    SECURITY_FORGOTTEN_AUTHENTICATION(207, "A Protected Resource Is Accessible Without Providing Any Authentication",
+            "forgottenAuthentication",
+            "Endpoints that require authentication must never succeed without it. If the same verb and path return 401/403 " +
+                    "when invalid credentials are used, this shows the endpoint is meant to be protected. But if a call to " +
+                    "the same endpoint with no authentication at all still returns 2xx, this is a forgotten authentication bug. " +
+                    "It means a resource that should be locked is accessible anonymously, exposing or modifying data without any " +
+                    "identity checks. " +
+                    "Detection relies on identifying endpoints that demonstrate protection (i.e., return 401/403 when accessed with " +
+                    "invalid credentials), and then verifying whether the same request, when executed without any authentication, " +
+                    "still results in a successful 2xx response. If this occurs, it reveals a critical lapse in the authentication " +
+                    "mechanism.")
     ;
 
     private final int code;
