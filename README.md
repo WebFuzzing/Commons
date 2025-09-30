@@ -21,7 +21,7 @@ But future versions of WFC will likely be extended to support GraphQL and RPC as
 
 There are 4 main contributions in WFC:
 
-1) _WFC Authentication_: a JSON Schema definition to represent authentication information for fuzzers. Currently under [src/main/resources/wfc/schemas/auth.yaml](src/main/resources/wfc/schemas/auth.yaml). Documentation on how to use is can be found at [UNDER-CONSTRUCTION]. Examples of configurations files can be found in the [Web Fuzzing Dataset (WFD) repository](https://github.com/WebFuzzing/Dataset).   
+1) _WFC Authentication_: a JSON Schema definition to represent authentication information for fuzzers. Currently under [src/main/resources/wfc/schemas/auth.yaml](src/main/resources/wfc/schemas/auth.yaml). Documentation on how to use it [can be found here](./auth.md). Examples of configurations files can be found in the [Web Fuzzing Dataset (WFD) repository](https://github.com/WebFuzzing/Dataset).   
 
 2) _WFC Faults_: classification of existing automated oracles proposed in the literature of fuzzing web APIs. Currently under [src/main/resources/wfc/faults/fault_categories.json](src/main/resources/wfc/faults/fault_categories.json).
 
