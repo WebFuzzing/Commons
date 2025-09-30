@@ -7,11 +7,6 @@
 # Commons
 Web Fuzzing Commons (WFC): A set of standards and library support for facilitating fuzzing Web APIs.
 
-## DISCLAIMER
-
-This is a new project, for which we are writing documentation now. 
-More will be added in the next coming weeks. 
-
 
 ## Overview
 
