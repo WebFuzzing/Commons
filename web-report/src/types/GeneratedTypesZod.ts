@@ -44,7 +44,8 @@ export const coverageCriterionSchema = z.record(z.unknown()).and(
 
 export const rESTReportSchema = z.record(z.unknown()).and(
   z.object({
-    totalHttpCalls: z.number(),
+    outputHttpCalls: z.number(),
+    evaluatedHttpCalls: z.number(),
     endpointIds: z.array(operationIdSchema),
     coveredHttpStatus: z.array(coveredEndpointSchema),
   }),
@@ -89,6 +90,7 @@ export const webFuzzingCommonsReportSchema = z.record(z.unknown()).and(
     totalTests: z.number(),
     testFilePaths: z.array(testFilePathSchema),
     testCases: z.array(testCaseSchema),
+    executionTimeInSeconds: z.number(),
     extra: z.array(coverageSchema).optional().nullable(),
   }),
 );

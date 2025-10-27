@@ -57,6 +57,10 @@ export interface WebFuzzingCommonsReport {
    */
   testCases: TestCase[];
   /**
+   * For how long, in seconds, the tool was running in total.
+   */
+  executionTimeInSeconds: number;
+  /**
    * Extra, optional coverage information, collected by different tools.
    */
   extra?: Coverage[] | null;
@@ -101,9 +105,13 @@ export interface FaultCategoryId {
 }
 export interface RESTReport {
   /**
-   * Total number of HTTP calls made in all the test cases. A test case could contain several HTTP calls, e.g., a POST followed by a GET and then a DELETE.
+   * Total number of HTTP calls made in all the generated test cases given as output.   A test case could contain several HTTP calls, e.g., a POST followed by a GET and then a DELETE.
    */
-  totalHttpCalls: number;
+  outputHttpCalls: number;
+  /**
+   * Total number of all HTTP calls made during the whole fuzzing session. If the fuzzing was left running for hours, millions of HTTP could have been made. The output generated tests will only contain a tiny subset of these evaluated calls.
+   */
+  evaluatedHttpCalls: number;
   /**
    * Unique ids of all the endpoints in the tested API.
    */

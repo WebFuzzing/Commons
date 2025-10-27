@@ -79,11 +79,11 @@ describe('App test', () => {
         render(<App />);
         expect(screen.getByText(/Please wait, files are loading.../)).toBeInTheDocument();
         const total = reportData.problemDetails.rest.endpointIds.length;
-        const totalHttpCalls = reportData.problemDetails.rest.totalHttpCalls;
+        const outputHttpCalls = reportData.problemDetails.rest.outputHttpCalls;
 
         await waitFor(() => {
             expect(screen.getByTestId('rest-report-endpoint')).toContainHTML(`${total}`);
-            expect(screen.getByTestId('rest-report-http-calls')).toContainHTML(`${totalHttpCalls}`);
+            expect(screen.getByTestId('rest-report-http-calls')).toContainHTML(`${outputHttpCalls}`);
         });
 
     });

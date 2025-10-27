@@ -2970,7 +2970,7 @@
   },
   "problemDetails": {
     "rest": {
-      "totalHttpCalls": 130,
+      "outputHttpCalls": 130,
       "endpointIds": [
         "GET:/app/api/assignments",
         "POST:/app/api/assignments",

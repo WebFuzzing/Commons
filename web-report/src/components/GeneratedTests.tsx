@@ -11,10 +11,10 @@ interface IGeneratedTests {
         fileName: string,
         numberOfTestCases: number
     }>
-    totalHttpCalls?: number
+    outputHttpCalls?: number
 }
 
-export const GeneratedTests: React.FC<IGeneratedTests> = ({totalTests, testFiles, totalHttpCalls}) => (
+export const GeneratedTests: React.FC<IGeneratedTests> = ({totalTests, testFiles, outputHttpCalls}) => (
     <Card className="border-2 border-black p-6 rounded-none">
         <div className="flex items-start gap-4">
             <Target className="w-6 h-6 text-gray-500"/>
@@ -35,7 +35,7 @@ export const GeneratedTests: React.FC<IGeneratedTests> = ({totalTests, testFiles
                     <ReportTooltip tooltipText={info.numberOfHttpCalls}>
                         <span className="text-lg font-bold"># HTTP Calls:</span>
                     </ReportTooltip>
-                    <span className="text-lg font-bold" data-testid="rest-report-http-calls">{totalHttpCalls}</span>
+                    <span className="text-lg font-bold" data-testid="rest-report-http-calls">{outputHttpCalls}</span>
                 </div>
 
                 <div className="mt-4 pt-4 border-t border-gray-200">
