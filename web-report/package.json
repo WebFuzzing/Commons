@@ -11,7 +11,7 @@
     "copyRunFiles": "cpx webreport.bat '../target/classes/webreport' && cpx webreport.command '../target/classes/webreport' && cpx webreport.py '../target/classes/webreport' && cpx 'src-e2e/static/robots.txt' '../target/classes/webreport'",
     "lint": "eslint .",
     "preview": "vite preview",
-    "debug": "vite build && cpx 'src-e2e/static/*' '../target/classes/webreport' && vite preview",
+    "debug": "vite build && cpx src-e2e/static/* ../target/classes/webreport && vite preview",
     "test": "vitest"
   },
   "dependencies": {

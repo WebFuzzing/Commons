@@ -41,10 +41,10 @@ describe('App test', () => {
 
     it('handles successful data loading', async () => {
         render(<App />);
-        
+
         // Initially shows loading state
         expect(screen.getByText(/Please wait, files are loading.../)).toBeInTheDocument();
-        
+
         // Wait for loading to complete and verify header data
         await waitFor(() => {
             expect(screen.queryByText(/Please wait, files are loading.../)).toBeNull();
@@ -80,10 +80,12 @@ describe('App test', () => {
         expect(screen.getByText(/Please wait, files are loading.../)).toBeInTheDocument();
         const total = reportData.problemDetails.rest.endpointIds.length;
         const outputHttpCalls = reportData.problemDetails.rest.outputHttpCalls;
+        const evaluatedHttpCalls = reportData.problemDetails.rest.evaluatedHttpCalls;
 
         await waitFor(() => {
             expect(screen.getByTestId('rest-report-endpoint')).toContainHTML(`${total}`);
-            expect(screen.getByTestId('rest-report-http-calls')).toContainHTML(`${outputHttpCalls}`);
+            expect(screen.getByTestId('rest-report-output-http-calls')).toContainHTML(`${outputHttpCalls}`);
+            expect(screen.getByTestId('rest-report-evaluated-http-calls')).toContainHTML(`${evaluatedHttpCalls}`);
         });
 
     });
