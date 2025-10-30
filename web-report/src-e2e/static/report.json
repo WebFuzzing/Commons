@@ -3,6 +3,7 @@
   "toolName": "EvoMaster",
   "toolVersion": "unknown",
   "creationTime": "2025-04-09T19:31:54.258Z",
+  "executionTimeInSeconds": 6780000,
   "faults": {
     "totalNumber": 529,
     "foundFaults": [
@@ -2970,7 +2971,7 @@
   },
   "problemDetails": {
     "rest": {
-      "totalHttpCalls": 130,
+      "outputHttpCalls": 25,
       "endpointIds": [
         "GET:/app/api/assignments",
         "POST:/app/api/assignments",
@@ -3951,7 +3952,8 @@
             200
           ]
         }
-      ]
+      ],
+      "evaluatedHttpCalls": 132
     }
   },
   "totalTests": 127,

@@ -114,7 +114,9 @@ export const Dashboard: React.FC = () => {
                     <Overview rest={data.problemDetails.rest}
                               testCases={data.testCases}
                               testFiles={numberOfTestCaseOfFiles}
-                              faults={data.faults}/>
+                              faults={data.faults}
+                              executionTimeInSeconds={data.executionTimeInSeconds}
+                    />
                 </TabsContent>
 
                 <TabsContent value="endpoints">

@@ -1,6 +1,8 @@
 {
   "numberOfEndpoints": "Number of endpoints (verb:path) in the API.",
-  "numberOfHttpCalls": "Total number of HTTP calls in the generated test suites.",
+  "outputHttpCalls": "Total number of HTTP calls contained in all generated test cases - a single test case may include multiple calls (e.g., a POST followed by a GET and then a DELETE).",
+  "evaluatedHttpCalls": "Total number of all HTTP calls made during the entire fuzzing session - in long runs, this can reach millions, while the generated tests include only a small subset of these calls.",
+  "executionTimeInSeconds": "For how long, in seconds, the tool was running in total.",
   "codeNumberIdentifiers": "Code number identifiers for detected fault types",
   "identifierName": "Identifier name for the fault type.",
   "testFilesLocated": "{numberOfTestCases} test cases are located in {fileName}",

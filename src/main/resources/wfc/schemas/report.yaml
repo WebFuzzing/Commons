@@ -48,6 +48,10 @@ properties:
     type: array
     items:
       $ref: "#/$defs/TestCase"
+  executionTimeInSeconds:
+      type: integer
+      minimum: 0
+      description: "For how long, in seconds, the tool was running in total."
   #OPTIONAL
   extra:
     description: "Extra, optional coverage information, collected by different tools."
@@ -55,7 +59,17 @@ properties:
     items:
       $ref: "#/$defs/Coverage"
 
-required: ["schemaVersion","toolName","toolVersion","creationTime","faults","problemDetails","totalTests","testFilePaths","testCases"]
+required:
+  - "schemaVersion"
+  - "toolName"
+  - "toolVersion"
+  - "creationTime"
+  - "faults"
+  - "problemDetails"
+  - "totalTests"
+  - "testFilePaths"
+  - "testCases"
+  - "executionTimeInSeconds"
 
 $defs:
   OperationId:
@@ -122,9 +136,16 @@ $defs:
   RESTReport:
     type: object
     properties:
-      totalHttpCalls:
-        description: "Total number of HTTP calls made in all the test cases. A test case could contain several HTTP calls, \
+      outputHttpCalls:
+        description: "Total number of HTTP calls made in all the generated test cases given as output. \ 
+                      A test case could contain several HTTP calls, \
                       e.g., a POST followed by a GET and then a DELETE."
+        type: integer
+        minimum: 0
+      evaluatedHttpCalls:
+        description: "Total number of all HTTP calls made during the whole fuzzing session. \
+                      If the fuzzing was left running for hours, millions of HTTP could have been made.
+                      The output generated tests will only contain a tiny subset of these evaluated calls."
         type: integer
         minimum: 0
       endpointIds:
@@ -138,7 +159,7 @@ $defs:
         type: array
         items:
           $ref: "#/$defs/CoveredEndpoint"
-    required: ["totalHttpCalls","endpointIds","coveredHttpStatus"]
+    required: ["outputHttpCalls","evaluatedHttpCalls","endpointIds","coveredHttpStatus"]
 
   TestCase:
     type: object

@@ -12,9 +12,10 @@ interface IOverviewType {
         numberOfTestCases: number
     }>,
     faults: Faults
+    executionTimeInSeconds: number;
 }
 
-export const Overview: React.FC<IOverviewType> = ({rest, testCases, testFiles, faults}) => {
+export const Overview: React.FC<IOverviewType> = ({rest, testCases, testFiles, faults, executionTimeInSeconds}) => {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Left Panel */}
@@ -22,7 +23,11 @@ export const Overview: React.FC<IOverviewType> = ({rest, testCases, testFiles, f
             {/* Right Panel */}
             <div className="flex flex-col gap-6">
                 {/* Generated Tests */}
-                <GeneratedTests totalTests={testCases.length} testFiles={testFiles} totalHttpCalls={rest?.totalHttpCalls}/>
+                <GeneratedTests totalTests={testCases.length} testFiles={testFiles}
+                                outputHttpCalls={rest?.outputHttpCalls}
+                                evaluatedHttpCalls={rest?.evaluatedHttpCalls}
+                                executionTimeInSeconds={executionTimeInSeconds}
+                />
                 {/* Faults */}
                 <FaultsComponent {...faults}/>
             </div>
