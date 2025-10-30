@@ -2,6 +2,8 @@
 
 Under development in `master` branch.
 
+- in report, added info on _executionTimeInSeconds_ and _evaluatedHttpCalls_
+
 # 0.1.0
 
 - first public release
