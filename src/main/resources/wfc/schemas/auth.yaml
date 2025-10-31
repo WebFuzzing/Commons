@@ -137,12 +137,20 @@ $defs:
         description: "How to extract the token from a JSON response, as such JSON could have few fields, possibly nested. \
                       It is expressed as a JSON Pointer (RFC 6901)."
         type: string
+      extractFromHeader:
+        description: "If the token is sent by the auth server in a HTTP header of the response, specify the name of the \
+                      HTTP header (e.g., 'X-Auth-Token') where the token should be extracted from."
       httpHeaderName:
         description: "When sending a token in an HTTP header, specify to which header to add it (e.g., 'Authorization')."
         type: string
       headerPrefix:
-        description: " When sending out the obtained token in an HTTP header, specify if there should be any \ 
+        description: "When sending out the obtained token in an HTTP header, specify if there should be any \ 
                        prefix (e.g., 'Bearer ' or 'JWT '). If needed, make sure it has trailing space(s)."
+        type: string
+      headerPostfix:
+        description: "When sending out the obtained token in an HTTP header, specify if there should be any predefined \
+                      postfix string to append after the token. For example, if the token value must be inside quotes '',
+                      then the closing quote ' can be specified in this postfix."
         type: string
   ###
   PayloadUsernamePassword:
