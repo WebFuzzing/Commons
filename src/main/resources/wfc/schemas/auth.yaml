@@ -129,29 +129,45 @@ $defs:
     required: ["verb"]
   ###
   TokenHandling:
-    description: "Specify how to extract token from response, and how to use it for auth in following requests. \
+    description: "Specify how to extract the token from the HTTP response, and how to use it for auth in following requests. \
                   Not needed if rather expect to get back a cookie."
     type: object
     properties:
-      extractFromField:
-        description: "How to extract the token from a JSON response, as such JSON could have few fields, possibly nested. \
-                      It is expressed as a JSON Pointer (RFC 6901)."
+      extractFrom:
+        description: "Specify from where the token should be extracted in the HTTP response."
         type: string
-      extractFromHeader:
-        description: "If the token is sent by the auth server in a HTTP header of the response, specify the name of the \
-                      HTTP header (e.g., 'X-Auth-Token') where the token should be extracted from."
-      httpHeaderName:
-        description: "When sending a token in an HTTP header, specify to which header to add it (e.g., 'Authorization')."
+        enum: ["body", "header"]
+      extractSelector:
+        description: "How to extract the token from the HTTP response. \
+                      This depends on where the token is located. \ 
+                      For a 'body' location, the returned body payload like a JSON could have few fields, possibly nested. \ 
+                      In this case, this selector is expressed as a JSON Pointer (RFC 6901). \
+                      For a 'header' location, this selector would represent the name of the HTTP header (e.g., 'X-Auth-Token')."
         type: string
-      headerPrefix:
-        description: "When sending out the obtained token in an HTTP header, specify if there should be any \ 
-                       prefix (e.g., 'Bearer ' or 'JWT '). If needed, make sure it has trailing space(s)."
+      sendIn:
+        description: "The obtained auth token could be send for authentication in following requests in different ways. \
+                      For example, in a HTTP header (e.g., 'Authorization') or a query parameter."
         type: string
-      headerPostfix:
-        description: "When sending out the obtained token in an HTTP header, specify if there should be any predefined \
-                      postfix string to append after the token. For example, if the token value must be inside quotes '',
-                      then the closing quote ' can be specified in this postfix."
+        enum: ["header", "query"]
+      sendName:
+        description: "Header or query name where the token should be put in the authenticated requests. \
+                      Typically, for a header, this would be 'Authorization'."
         type: string
+        examples:
+          - "Authorization"
+      sendFormat:
+        description: "Template with {token} placeholder. \ 
+                      The placeholder will be interpolated with the actual token value.  \
+                      When sending out the obtained token in an HTTP request, specify if there should be any other \
+                      text information around it. \    
+                      For example, when sending the token in an 'Authorization' header, possible \
+                      values could be 'Bearer {token}' and 'JWT {token}'."
+        type: string
+        default: "{token}"
+        examples:
+          - "Bearer {token}"
+          - "JWT {token}"
+    required: ["extractFrom", "extractSelector", "sendIn", "sendName"]
   ###
   PayloadUsernamePassword:
     description: "Payload with username and password information. \
