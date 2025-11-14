@@ -155,7 +155,7 @@ $defs:
         type: string
         examples:
           - "Authorization"
-      sendFormat:
+      sendTemplate:
         description: "Template with {token} placeholder. \ 
                       The placeholder will be interpolated with the actual token value.  \
                       When sending out the obtained token in an HTTP request, specify if there should be any other \
