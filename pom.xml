@@ -5,7 +5,7 @@
     <groupId>com.webfuzzing</groupId>
     <artifactId>commons</artifactId>
 
-    <version>0.1.1-SNAPSHOT</version>
+    <version>0.2.0</version>
 
     <inceptionYear>2024</inceptionYear>
     <name>WFC</name>
@@ -107,6 +107,8 @@
 
                    3) run:
                       mvn  -P release -DskipTests  deploy
+
+                      IMPORTANT: must make sure you are building with JDK 8!!!
 
                       make sure it is visible at:
                       https://central.sonatype.com/artifact/com.webfuzzing/commons

@@ -2,6 +2,9 @@
 
 Under development in `master` branch.
 
+# 0.2.0
+
+- breaking changes: refactored how _TokenHandling_ is defined in auth schema
 - in report, added info on _executionTimeInSeconds_ and _evaluatedHttpCalls_
 
 # 0.1.0
