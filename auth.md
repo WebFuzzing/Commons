@@ -111,12 +111,14 @@ auth:
   loginEndpointAuth:
      # ... other data here
      token:
-        headerPrefix="Bearer "
-        extractFromField = "/token/authToken"
-        httpHeaderName="Authorization"
+        extractFrom="body"
+        extractSelector="/token/authToken"
+        sendIn="header"
+        sendName="Authorization"
+        sendTemplate="Bearer {token}"
 ```
 
-What will happen here is that a fuzzer will make a POST to `/login` and then extract the field `token.authToken` from the JSON response (the entry `extractFromField` is treated as a JSON Pointer (RFC 6901)).
+What will happen here is that a fuzzer will make a POST to `/login` and then extract the field `token.authToken` from the JSON response (the entry `extractSelector` is treated as a JSON Pointer (RFC 6901)).
 Assume for example we have `token.authToken = 123456`.
 In the following auth requests, then the fuzzer will make requests with HTTP header: `Authorization:Bearer 123456`.
 
