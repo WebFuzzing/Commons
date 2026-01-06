@@ -5,7 +5,7 @@
     <groupId>com.webfuzzing</groupId>
     <artifactId>commons</artifactId>
 
-    <version>0.2.0</version>
+    <version>0.2.1-SNAPSHOT</version>
 
     <inceptionYear>2024</inceptionYear>
     <name>WFC</name>
@@ -99,6 +99,8 @@
         <profile>
             <!--
                    This profile is needed when making a deployment to Maven Central.
+
+                   0) make sure you are on the "master" branch
 
                    1) update release_notes.md before preparing a new release
 
