@@ -121,6 +121,7 @@ auth:
 What will happen here is that a fuzzer will make a POST to `/login` and then extract the field `token.authToken` from the JSON response (the entry `extractSelector` is treated as a JSON Pointer (RFC 6901)).
 Assume for example we have `token.authToken = 123456`.
 In the following auth requests, then the fuzzer will make requests with HTTP header: `Authorization:Bearer 123456`.
+The `sendTemplate` is interpolated, where the string `{token}` is replaced with the actual token value we extract. 
 
 
 ## Fuzzer Configurations
