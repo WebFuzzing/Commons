@@ -123,6 +123,7 @@ Assume for example we have `token.authToken = 123456`.
 In the following auth requests, then the fuzzer will make requests with HTTP header: `Authorization:Bearer 123456`.
 The `sendTemplate` is interpolated, where the string `{token}` is replaced with the actual token value we extract. 
 
+Note that, if `extractFrom` is `header`, then `extractSelector` will represent the name of the HTTP header the token is extracted from.
 
 ## Fuzzer Configurations
 
