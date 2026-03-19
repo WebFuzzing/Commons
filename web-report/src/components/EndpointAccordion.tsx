@@ -108,7 +108,7 @@ export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
                                     setIsFault(true);
                                 }}
                                        className={`${faultColors[index % faultColors.length]} ${getSelectedStyle(fault.code, true)} hover:bg-red-400 cursor-pointer text-white text-base font-mono border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]`}>
-                                    {fault.code}
+                                    F{fault.code}
                                 </Badge>
                             ))
                         }
