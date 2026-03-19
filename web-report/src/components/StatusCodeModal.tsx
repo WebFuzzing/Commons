@@ -57,14 +57,6 @@ export function StatusCodeModal({ isOpen, onClose, statusCode }: StatusCodeModal
                 return "REST/HTTP Faults"
             case 200:
                 return "Security Faults"
-            case 300:
-                return "GraphQL Issues"
-            case 400:
-                return "RPC Issues"
-            case 500:
-                return "Web Issues"
-            case 800:
-                return "Security Issues"
             case 900:
                 return "Custom Faults"
             default:
@@ -78,14 +70,6 @@ export function StatusCodeModal({ isOpen, onClose, statusCode }: StatusCodeModal
                 return "1xx"
             case 200:
                 return "2xx"
-            case 300:
-                return "3xx"
-            case 400:
-                return "4xx"
-            case 500:
-                return "5xx"
-            case 800:
-                return "8xx"
             case 900:
                 return "9xx"
             default:
