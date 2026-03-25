@@ -54,17 +54,11 @@ export function StatusCodeModal({ isOpen, onClose, statusCode }: StatusCodeModal
     const getCategoryName = (category: number): string => {
         switch (category) {
             case 100:
-                return "HTTP Issues"
+                return "REST/HTTP Faults"
             case 200:
-                return "Schema Issues"
-            case 300:
-                return "GraphQL Issues"
-            case 400:
-                return "RPC Issues"
-            case 500:
-                return "Web Issues"
-            case 800:
-                return "Security Issues"
+                return "Security Faults"
+            case 900:
+                return "Custom Faults"
             default:
                 return "Other Issues"
         }
@@ -76,18 +70,14 @@ export function StatusCodeModal({ isOpen, onClose, statusCode }: StatusCodeModal
                 return "1xx"
             case 200:
                 return "2xx"
-            case 300:
-                return "3xx"
-            case 400:
-                return "4xx"
-            case 500:
-                return "5xx"
-            case 800:
-                return "8xx"
+            case 900:
+                return "9xx"
             default:
                 return "xxx"
         }
     }
+
+    const isCustomCode = statusCode >= 900 && statusCode <= 999
 
     const toggleExpanded = (code: number) => {
         setExpandedCode(expandedCode === code ? null : code)
@@ -171,6 +161,30 @@ export function StatusCodeModal({ isOpen, onClose, statusCode }: StatusCodeModal
                                     </div>
                                 </div>
                             ))}
+
+                        {/* 9XX Custom Code Section */}
+                        {isCustomCode && (
+                            <div className="border rounded-lg overflow-hidden">
+                                <div className="p-3 font-medium bg-blue-100 text-blue-800">
+                                    Custom Faults (9xx)
+                                </div>
+                                <div className="divide-y">
+                                    <div id={`fault-code-${statusCode}`}>
+                                        <div
+                                            ref={selectedCodeRef}
+                                            className="p-3 flex items-center bg-blue-50"
+                                        >
+                                            <div className="w-16 font-mono">{statusCode}</div>
+                                            <div className="flex-1">Custom Code</div>
+                                            <div className="flex items-center gap-2">
+                                                <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
