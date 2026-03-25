@@ -41,9 +41,6 @@ export function StatusCodeFilterButton({ code, initialState = "inactive", onChan
     const toggleState = () => {
         const newState: FilterState = state === "inactive" ? "active" : state === "active" ? "removed" : "inactive"
         setState(newState)
-        if(isFault){
-            onChange(code, newState)
-        }
         onChange(code, newState)
     }
 
