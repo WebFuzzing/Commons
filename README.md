@@ -54,7 +54,7 @@ If you are using WFC in an academic work, you can cite the following:
 WFC has been initially developed by the authors of [EvoMaster](https://github.com/WebFuzzing/EvoMaster). 
 If your fuzzer supports  WFC (e.g., implements authentication mechanisms based on WFC schema definition, or can output results in WFC report format), or it is in the process of supporting it, create a PR (or send us a message) and we will add information about it here.
 
-Current fuzzers involved with WFC (in alphabetic order):
+Existing fuzzers that have been involved with WFC (in alphabetic order):
 * [CATS](https://github.com/Endava/cats)
 * [EvoMaster](https://github.com/WebFuzzing/EvoMaster)
 * [Schemathesis](https://github.com/schemathesis/schemathesis)
