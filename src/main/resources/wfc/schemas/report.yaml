@@ -86,6 +86,16 @@ $defs:
       code:
         description: "Identifying fault 'code', based on WFC classification."
         type: integer
+        anyOf:
+          - type: integer
+            minimum: 100
+            maximum: 104
+          - type: integer
+            minimum: 200
+            maximum: 206
+          - type: integer
+            minimum: 900
+            maximum: 999
       context:
         description: "An optional context for the fault. The same fault type could be manifested in different ways, \
                       and we use this property to differentiate among them."

@@ -21,7 +21,7 @@ export const testCaseSchema = z.record(z.unknown()).and(
 
 export const faultCategoryIdSchema = z.record(z.unknown()).and(
   z.object({
-    code: z.number(),
+    code: z.union([z.number(), z.number(), z.number()]).and(z.number()),
     context: z.string().optional().nullable(),
   }),
 );

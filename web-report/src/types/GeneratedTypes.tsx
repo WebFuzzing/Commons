@@ -96,7 +96,7 @@ export interface FaultCategoryId {
   /**
    * Identifying fault 'code', based on WFC classification.
    */
-  code: number;
+  code: (number | number | number) & number;
   /**
    * An optional context for the fault. The same fault type could be manifested in different ways, and we use this property to differentiate among them.
    */
