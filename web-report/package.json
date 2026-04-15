@@ -11,7 +11,7 @@
     "copyRunFiles": "cpx webreport.bat '../target/classes/webreport' && cpx webreport.command '../target/classes/webreport' && cpx webreport.py '../target/classes/webreport' && cpx 'src-e2e/static/robots.txt' '../target/classes/webreport'",
     "lint": "eslint .",
     "preview": "vite preview",
-    "debug": "vite build && cpx 'src-e2e/static/*' '../target/classes/webreport' && vite preview",
+    "debug": "vite build && cpx src-e2e/static/* ../target/classes/webreport && vite preview",
     "test": "vitest"
   },
   "dependencies": {
@@ -19,6 +19,7 @@
     "@radix-ui/react-progress": "^1.1.3",
     "@radix-ui/react-scroll-area": "^1.2.3",
     "@radix-ui/react-slot": "^1.1.2",
+    "@radix-ui/react-switch": "^1.2.6",
     "@radix-ui/react-tabs": "^1.1.3",
     "@radix-ui/react-tooltip": "^1.2.7",
     "@tailwindcss/vite": "^4.0.14",
@@ -26,6 +27,7 @@
     "clsx": "^2.1.1",
     "json-schema-to-typescript": "^15.0.4",
     "lucide-react": "^0.483.0",
+    "radix-ui": "^1.4.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-syntax-highlighter": "^15.6.1",
@@ -36,13 +38,13 @@
     "zod": "^3.25.67"
   },
   "optionalDependencies": {
+    "@esbuild/darwin-arm64": "0.19.12",
     "@tailwindcss/oxide-linux-arm64-gnu": "^4.0.1",
     "@tailwindcss/oxide-linux-arm64-musl": "^4.0.1",
     "@tailwindcss/oxide-linux-x64-musl": "^4.0.1",
     "lightningcss-linux-arm64-gnu": "^1.29.1",
     "lightningcss-linux-arm64-musl": "^1.29.1",
-    "lightningcss-linux-x64-musl": "^1.29.1",
-    "@esbuild/darwin-arm64": "0.19.12"
+    "lightningcss-linux-x64-musl": "^1.29.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

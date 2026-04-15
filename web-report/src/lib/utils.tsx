@@ -72,6 +72,27 @@ export const extractCodeLines = (
     return lines.slice(startIndex, endIndex + 2).join('\n');
 };
 
+export const extractComments = (code: string): string => {
+    const blockRegex = /\/\*\*[\s\S]*?\*\//g;
+    const blocks = code.match(blockRegex);
+    if (!blocks || blocks.length === 0) {
+        return "";
+    }
+
+    return blocks
+        .map(block => {
+            const inner = block.replace(/^\/\*\*/, "").replace(/\*\/$/, "");
+            return inner
+                .split("\n")
+                .map(line => line.replace(/^\s*\*\s?/, ""))
+                .join("\n")
+                .replace(/^\n+/, "")
+                .replace(/\n+$/, "");
+        })
+        .filter(text => text.length > 0)
+        .join("\n\n");
+};
+
 export const calculateAllStatusCounts = (coveredHttpStatus: CoveredEndpoint[], endpointIds:string[]) => {
     const allStatusCounts ={
         "NO_RESPONSE": 0,
