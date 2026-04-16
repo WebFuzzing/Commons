@@ -86,8 +86,7 @@ export const extractComments = (code: string): string => {
                 .split("\n")
                 .map(line => line.replace(/^\s*\*\s?/, ""))
                 .join("\n")
-                .replace(/^\n+/, "")
-                .replace(/\n+$/, "");
+                .trim();
         })
         .filter(text => text.length > 0)
         .join("\n\n");
