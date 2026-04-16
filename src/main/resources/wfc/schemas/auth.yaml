@@ -1,3 +1,12 @@
+#####################################################################################################################
+## We use a JSON Schema to validate JSON/YAML configuration files with auth info.
+## However, such files need to be post-processed to handle merge of keys from 'authTemplate'.
+## In the past, YAML had native support for this in the form of templates, but this is no longer the case.
+## A concrete side-effect of this issue is that we cannot use "required" constraints, as those would be applied
+## to the document as it is, before the template resolution.
+## A pragmatic compromise is to avoid "required", and rather use "x-required".
+## The validation of required constraints would then be delegated to whatever is used to resolve the templates.
+#####################################################################################################################
 $schema: "https://json-schema.org/draft/2020-12/schema"
 $id: "https://github.com/WebFuzzing/Commons/blob/master/src/main/resources/wfc/schemas/auth.yaml"
 title: "Web Fuzzing Commons Authentication"
@@ -45,7 +54,7 @@ $defs:
       value:
         description: "The value of the header"
         type: string
-    required: ["name","value"]
+    x-required: ["name","value"]
   AuthenticationInfo:
     type: object
     properties:
@@ -69,7 +78,7 @@ $defs:
           $ref: "#/$defs/Header"
       loginEndpointAuth:
           $ref: "#/$defs/LoginEndpoint"
-    required: ["name"]
+    x-required: ["name"]
   ###
   LoginEndpoint:
     description: "Used to represent the case in which a login endpoint is used to obtain the authentication credentials. \
@@ -115,7 +124,7 @@ $defs:
                       If so, a fuzzer can use those as auth info in following requests, instead of trying to extract \
                       an auth token from the response payload."
         type: boolean
-    required: ["verb"]
+    x-required: ["verb"]
   ###
   TokenHandling:
     description: "Specify how to extract the token from the HTTP response, and how to use it for auth in following requests. \
@@ -156,7 +165,7 @@ $defs:
         examples:
           - "Bearer {token}"
           - "JWT {token}"
-    required: ["extractFrom", "extractSelector", "sendIn", "sendName"]
+    x-required: ["extractFrom", "extractSelector", "sendIn", "sendName"]
   ###
   PayloadUsernamePassword:
     description: "Payload with username and password information. \
@@ -175,4 +184,4 @@ $defs:
       passwordField:
         description: "The name of the field in the body payload containing the password"
         type: string
-    required: ["username","usernameField","password","passwordField"]
+    x-required: ["username","usernameField","password","passwordField"]
