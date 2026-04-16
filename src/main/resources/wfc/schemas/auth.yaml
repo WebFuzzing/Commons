@@ -27,8 +27,6 @@ properties:
       type: string
 required: ["auth"]
 $defs:
-#  TODO unfortunately, tools like jsonschema2pojo-maven-plugin have major limitations when dealing with enums.
-#  This is not created as a top-level class
   HttpVerb:
     type: string
     enum:
@@ -99,17 +97,8 @@ $defs:
         items:
           $ref: "#/$defs/Header"
       verb:
-#        description: "The verb used to connect to the login endpoint. \
-#                     Most of the time, this will be a 'POST'."
-#        type: string
-#        enum:
-#            - POST
-#            - GET
-#            - PATCH
-#            - DELETE
-#            - PUT
         $ref: "#/$defs/HttpVerb"
-        ## FIXME: unfortunately, plugin is not able to handle this... need new schema version with $ref not replacing everything
+        ## FIXME: need to schema version with $ref not replacing everything
 #        description: "The verb used to connect to the login endpoint. \
 #                      Most of the time, this will be a 'POST'."
 #        allOf:
