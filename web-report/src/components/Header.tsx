@@ -4,6 +4,8 @@ import {Switch} from "@/components/ui/switch.tsx";
 import info from "@/assets/info.json";
 import {useAppContext} from "@/AppProvider.tsx";
 
+const ICON_URL = "/assets/icon.svg";
+
 interface IHeaderProps {
     date: string;
     toolNameVersion: string;
@@ -37,7 +39,15 @@ export const Header: React.FC<IHeaderProps> = ({date, toolNameVersion, schemaVer
                     <div className="font-bold" data-testid="header-creation-date">Creation Date: {new Date(date).toUTCString()}</div>
                 </ReportTooltip>
                 <ReportTooltip tooltipText={info.toolNameVersion}>
-                    <div className="font-bold text-center" data-testid="header-tool-name-version">Tool: {toolNameVersion}</div>
+                    <div className="font-bold text-center flex items-center justify-center gap-2" data-testid="header-tool-name-version">
+                        <span>Tool: {toolNameVersion}</span>
+                        <img
+                            src={ICON_URL}
+                            alt=""
+                            className="h-8 w-8 object-contain"
+                            onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+                        />
+                    </div>
                 </ReportTooltip>
                 <ReportTooltip tooltipText={info.schemaVersion}>
                     <div className="font-bold text-right" data-testid="header-schema-version">Schema Version: {schemaVersion}</div>
