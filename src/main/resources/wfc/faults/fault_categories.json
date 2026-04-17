@@ -70,4 +70,28 @@
   "fullDescription" : "BOLA and BFLA are major security vulnerabilities. To avoid users accessing protected resources, authorization mechanisms are usually put in place. However, it can happen that, on some endpoints, these authorization mechanisms are missing or misconfigured by mistake. This can have disastrous consequences, e.g., a regular user deleting all data from all other users. However, access policies could be arbitrarily complex, where some users might validly interact with some resources of other users. A common example is 'administrator' users. Without a formal specification describing in details the access policies in place, it is hard to say automatically if we are in the case of a BOLA/BFLA vulnerability. Still, some heuristics could be used to flag highly suspicious cases. For example, if a user is blocked with a 403 to do a PUT and a PATCH on a resource, it would be quite suspicious if a DELETE would work just fine on that resource.",
   "descriptiveName" : "Allowed To Modify Resource That Likely Should Had Been Protected",
   "label" : "F206:Allowed To Modify Resource That Likely Should Had Been Protected"
+}, {
+  "code" : 207,
+  "testCaseLabel" : "ignoreAnonymous",
+  "fullDescription" : "Protected resources would return a 403 status code when a user that has no rights to them tries to access them. Without providing a formal specification, it might not be possible to know which users have rights or not on a resource. However, being able to access it with no authentication, while some authenticated users are blocked, would be a major security vulnerability. Blocked users could simply drop their authentication credentials to access those protected resources.",
+  "descriptiveName" : "A Protected Resource Is Accessible Without Providing Any Authentication",
+  "label" : "F207:A Protected Resource Is Accessible Without Providing Any Authentication"
+}, {
+  "code" : 208,
+  "testCaseLabel" : "anonymousModifications",
+  "fullDescription" : "Not all systems require authentication when reading data, or creating new ones. Without a formal specification, a fuzzer cannot know if a resource is expected to be public or not. However, 'modifying' data (e.g., with DELETE, PUT and PATCH) with no credentials is problematic.  A user could delete all existing data, or change any new data as soon as it is created by others.",
+  "descriptiveName" : "Anonymous Modifications",
+  "label" : "F208:Anonymous Modifications"
+}, {
+  "code" : 209,
+  "testCaseLabel" : "leakedStackTrace",
+  "fullDescription" : "In case of bugs, the internal business logic of the tested application could throw exceptions. For debugging reasons, the responses from the HTTP server could contain the stack-trace of those thrown exceptions. Albeit useful for debugging, those stack-traces could reveal internal details of the system. This would be a security leak if those debugging settings are left in production.",
+  "descriptiveName" : "Leaked Stack Trace",
+  "label" : "F209:Leaked Stack Trace"
+}, {
+  "code" : 210,
+  "testCaseLabel" : "hiddenAccessible",
+  "fullDescription" : "To test an API, there is the need of a schema that specifies what endpoints can be called. Being able to call endpoints that are not declared in the schema is a potential risk, as those might be either forgotten endpoints, work-in-progress, admin-only endpoints, etc., whose security protections might not be fully tested or in place. Either the call should fail for auth reasons (e.g., 401 and 403 in REST APIs), or the system should respond that the endpoint does not exist (e.g., 405 and 501).",
+  "descriptiveName" : "Hidden Accessible Endpoint",
+  "label" : "F210:Hidden Accessible Endpoint"
 } ]
