@@ -14,6 +14,8 @@ type AppContextType = {
     filterEndpoints: (activeFilters: Record<number, string>) => ITransformedReport[];
     filteredEndpoints: ITransformedReport[];
     invalidReportErrors: ZodIssue[] | null;
+    lowCodeMode: boolean;
+    setLowCodeMode: (v: boolean) => void;
 };
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -24,11 +26,14 @@ type AppProviderProps = {
 
 export const AppProvider = ({ children }: AppProviderProps) => {
 
+    const initialLowCode = (window as unknown as { __WFC_LOW_CODE__?: boolean }).__WFC_LOW_CODE__ === true;
+
     const [data, setData] = useState<WebFuzzingCommonsReport | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [invalidReportErrors, setInvalidReportErrors] = useState<ZodIssue[] | null>(null);
     const [testFiles, setTestFiles] = useState<ITestFiles[]>([]);
+    const [lowCodeMode, setLowCodeMode] = useState<boolean>(initialLowCode);
     const transformedReport = transformWebFuzzingReport(data);
 
     useEffect(() => {
@@ -170,7 +175,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
         return filtered;
     }
 
-    const value: AppContextType = { data, loading, error, testFiles, transformedReport, filterEndpoints, filteredEndpoints, invalidReportErrors };
+    const value: AppContextType = { data, loading, error, testFiles, transformedReport, filterEndpoints, filteredEndpoints, invalidReportErrors, lowCodeMode, setLowCodeMode };
 
     return (
         <AppContext.Provider value={value}>

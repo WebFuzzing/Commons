@@ -2,7 +2,7 @@ import {Card} from "@/components/ui/card.tsx";
 import type React from "react";
 import {Badge} from "@/components/ui/badge.tsx";
 import {CodeBlock} from "@/components/CodeBlock.tsx";
-import {extractCodeLines, getColor, getLanguage} from "@/lib/utils";
+import {extractCodeLines, extractComments, getColor, getLanguage} from "@/lib/utils";
 import {useAppContext} from "@/AppProvider.tsx";
 
 
@@ -12,7 +12,7 @@ interface IProps {
 
 export const TestResults: React.FC<IProps> = ({testCaseName}) => {
 
-    const {data, testFiles} = useAppContext();
+    const {data, testFiles, lowCodeMode} = useAppContext();
 
     const testCases = data?.testCases || [];
     const foundFaults = data?.faults.foundFaults || [];
@@ -42,6 +42,8 @@ export const TestResults: React.FC<IProps> = ({testCaseName}) => {
 
 
     const extractedCode = currentFile && testCase ? extractCodeLines(currentFile.code, testCase?.startLine, testCase?.endLine) : "";
+    const displayedCode = lowCodeMode ? extractComments(extractedCode) : extractedCode;
+    const displayedLanguage = lowCodeMode ? "markdown" : getLanguage(currentFile?.name ?? "");
 
     return (
         <div className="border-2 border-black p-6 rounded-none w-[80%] mx-auto">
@@ -97,7 +99,11 @@ export const TestResults: React.FC<IProps> = ({testCaseName}) => {
                 {
                     testCase && currentFile && (
                         <pre className="p-4 overflow-auto max-h-[500px] text-sm text-left font-mono">
-                        <CodeBlock content={extractedCode} language={getLanguage(currentFile?.name)}/>
+                        {lowCodeMode && displayedCode.length === 0 ? (
+                            <div className="text-gray-600 italic">No documentation comments found for this test case.</div>
+                        ) : (
+                            <CodeBlock content={displayedCode} language={displayedLanguage}/>
+                        )}
                     </pre>
                     )
                 }
