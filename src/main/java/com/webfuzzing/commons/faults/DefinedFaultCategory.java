@@ -121,7 +121,36 @@ public enum DefinedFaultCategory implements FaultCategory {
                     " automatically if we are in the case of a BOLA/BFLA vulnerability." +
                     " Still, some heuristics could be used to flag highly suspicious cases." +
                     " For example, if a user is blocked with a 403 to do a PUT and a PATCH on a resource, it would" +
-                    " be quite suspicious if a DELETE would work just fine on that resource.")
+                    " be quite suspicious if a DELETE would work just fine on that resource."),
+
+    SECURITY_IGNORE_ANONYMOUS(207, "A Protected Resource Is Accessible Without Providing Any Authentication",
+            "ignoreAnonymous",
+            "Protected resources would return a 403 status code when a user that has no rights to them tries" +
+                    " to access them. Without providing a formal specification, it might not be possible to know which users" +
+                    " have rights or not on a resource. However, being able to access it with no authentication, while some" +
+                    " authenticated users are blocked, would be a major security vulnerability. Blocked users could simply" +
+                    " drop their authentication credentials to access those protected resources."),
+    SECURITY_ANONYMOUS_MODIFICATIONS(208, "Anonymous Modifications",
+            "anonymousModifications",
+            "Not all systems require authentication when reading data, or creating new ones." +
+                    " Without a formal specification, a fuzzer cannot know if a resource is expected to be public or not." +
+                    " However, 'modifying' data (e.g., with DELETE, PUT and PATCH) with no credentials is problematic. " +
+                    " A user could delete all existing data, or change any new data as soon as it is created by others."),
+    SECURITY_LEAKED_STACK_TRACES(209, "Leaked Stack Trace",
+            "leakedStackTrace",
+            "In case of bugs, the internal business logic of the tested application could throw exceptions." +
+                    " For debugging reasons, the responses from the HTTP server could contain the stack-trace of those" +
+                    " thrown exceptions." +
+                    " Albeit useful for debugging, those stack-traces could reveal internal details of the system." +
+                    " This would be a security leak if those debugging settings are left in production."),
+    SECURITY_HIDDEN_ACCESSIBLE_ENDPOINT(210, "Hidden Accessible Endpoint",
+            "hiddenAccessible",
+            "To test an API, there is the need of a schema that specifies what endpoints can be called." +
+                    " Being able to call endpoints that are not declared in the schema is a potential risk, as those" +
+                    " might be either forgotten endpoints, work-in-progress, admin-only endpoints, etc., whose security" +
+                    " protections might not be fully tested or in place." +
+                    " Either the call should fail for auth reasons (e.g., 401 and 403 in REST APIs), or the system" +
+                    " should respond that the endpoint does not exist (e.g., 405 and 501)."),
     ;
 
     private final int code;
