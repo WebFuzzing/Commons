@@ -2,6 +2,9 @@
 
 Under development in `master` branch.
 
+- Web Report: displayed icon, and fixed some coloring and description issues
+- Added 4 new fault categories related to latest security work
+
 # 0.2.0
 
 - breaking changes: refactored how _TokenHandling_ is defined in auth schema
