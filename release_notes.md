@@ -2,6 +2,8 @@
 
 Under development in `master` branch.
 
+# 0.3.0
+
 - Web Report: displayed icon, and fixed some coloring and description issues
 - Added 4 new fault categories related to latest security work
 
