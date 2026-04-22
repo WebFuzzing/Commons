@@ -14,6 +14,19 @@ import {
     TestReview,
 } from "@/types/Review.ts";
 
+type FileSystemApiHandle = {
+    createWritable: () => Promise<{write: (data: string) => Promise<void>; close: () => Promise<void>}>;
+    queryPermission?: (opts: {mode: 'read' | 'readwrite'}) => Promise<'granted' | 'denied' | 'prompt'>;
+    requestPermission?: (opts: {mode: 'read' | 'readwrite'}) => Promise<'granted' | 'denied' | 'prompt'>;
+};
+
+type WindowWithFileSystemApi = Window & {
+    showSaveFilePicker?: (opts: {
+        suggestedName?: string;
+        types?: Array<{description: string; accept: Record<string, string[]>}>;
+    }) => Promise<FileSystemApiHandle>;
+};
+
 type AppContextType = {
     data: WebFuzzingCommonsReport | null;
     loading: boolean;
@@ -204,7 +217,9 @@ export const AppProvider = ({ children }: AppProviderProps) => {
         applyReviews({...prev, [testId]: {...existing, comment}});
     }, [applyReviews]);
 
-    const saveReviews = useCallback(() => {
+    const fileHandleRef = useRef<FileSystemApiHandle | null>(null);
+
+    const saveReviews = useCallback(async () => {
         // Flush any pending textarea edits (local-state rows commit on blur)
         const active = document.activeElement;
         if (active instanceof HTMLElement && (active.tagName === 'TEXTAREA' || active.tagName === 'INPUT')) {
@@ -222,7 +237,54 @@ export const AppProvider = ({ children }: AppProviderProps) => {
                 file.reviews[id] = {state: r.state, comment: r.comment ?? ""};
             }
         }
-        const blob = new Blob([JSON.stringify(file, null, 2)], {type: "application/json"});
+        const json = JSON.stringify(file, null, 2);
+        const reviewCount = Object.keys(file.reviews).length;
+
+        const commitBaseline = () => {
+            baselineRef.current = {...source};
+            setIsDirty(false);
+        };
+
+        // Preferred path: File System Access API (Chrome/Edge, secure context).
+        // Lets subsequent saves overwrite the same file without the OS appending (1), (2)...
+        const showSaveFilePicker = (window as WindowWithFileSystemApi).showSaveFilePicker;
+        if (typeof showSaveFilePicker === 'function') {
+            try {
+                let handle = fileHandleRef.current;
+                if (handle) {
+                    const perm = (await handle.queryPermission?.({mode: 'readwrite'})) ?? 'granted';
+                    if (perm !== 'granted') {
+                        const req = (await handle.requestPermission?.({mode: 'readwrite'})) ?? 'denied';
+                        if (req !== 'granted') handle = null;
+                    }
+                }
+                if (!handle) {
+                    handle = await showSaveFilePicker({
+                        suggestedName: REVIEW_FILE_NAME,
+                        types: [{description: 'JSON', accept: {'application/json': ['.json']}}],
+                    });
+                    fileHandleRef.current = handle;
+                }
+                const writable = await handle.createWritable();
+                await writable.write(json);
+                await writable.close();
+                commitBaseline();
+                setReviewMessage({
+                    type: "info",
+                    text: `Saved ${reviewCount} review(s). Subsequent saves will overwrite this file silently.`,
+                });
+                return;
+            } catch (e) {
+                // User cancelled the picker — bail without downloading.
+                if (e instanceof DOMException && e.name === 'AbortError') return;
+                console.warn('File System Access API failed, falling back to download:', e);
+                fileHandleRef.current = null;
+            }
+        }
+
+        // Fallback: anchor download. On Windows this may auto-rename to report-review(1).json
+        // when "Ask where to save each file" is disabled — unavoidable without the API above.
+        const blob = new Blob([json], {type: "application/json"});
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
@@ -231,11 +293,10 @@ export const AppProvider = ({ children }: AppProviderProps) => {
         a.click();
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
-        baselineRef.current = {...source};
-        setIsDirty(false);
+        commitBaseline();
         setReviewMessage({
             type: "info",
-            text: `Saved ${Object.keys(file.reviews).length} review(s). Place the downloaded ${REVIEW_FILE_NAME} next to report.json.`,
+            text: `Saved ${reviewCount} review(s). Place the downloaded ${REVIEW_FILE_NAME} next to report.json.`,
         });
     }, []);
 
