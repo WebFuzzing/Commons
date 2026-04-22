@@ -1,9 +1,19 @@
-import {createContext, useContext, useState, ReactNode, useEffect} from 'react';
+import {createContext, useContext, useState, ReactNode, useEffect, useRef, useCallback} from 'react';
 import {WebFuzzingCommonsReport} from "@/types/GeneratedTypes.tsx";
 import {ITestFiles} from "@/types/General.tsx";
 import {fetchFileContent, ITransformedReport, transformWebFuzzingReport} from "@/lib/utils.tsx";
 import {webFuzzingCommonsReportSchema} from "@/types/GeneratedTypesZod.ts";
 import {ZodIssue} from "zod";
+import {
+    DEFAULT_REVIEW,
+    parseReviewFile,
+    REVIEW_FILE_NAME,
+    REVIEW_SCHEMA_VERSION,
+    ReviewFile,
+    ReviewState,
+    reviewsEqual,
+    TestReview,
+} from "@/types/Review.ts";
 
 type AppContextType = {
     data: WebFuzzingCommonsReport | null;
@@ -16,6 +26,15 @@ type AppContextType = {
     invalidReportErrors: ZodIssue[] | null;
     lowCodeMode: boolean;
     setLowCodeMode: (v: boolean) => void;
+    reviews: Record<string, TestReview>;
+    getReview: (testId: string) => TestReview;
+    setReviewState: (testId: string, state: ReviewState) => void;
+    setReviewComment: (testId: string, comment: string) => void;
+    isDirty: boolean;
+    saveReviews: () => void;
+    loadReviews: (file: File) => Promise<void>;
+    reviewMessage: {type: "info" | "error"; text: string} | null;
+    clearReviewMessage: () => void;
 };
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -35,6 +54,15 @@ export const AppProvider = ({ children }: AppProviderProps) => {
     const [testFiles, setTestFiles] = useState<ITestFiles[]>([]);
     const [lowCodeMode, setLowCodeMode] = useState<boolean>(initialLowCode);
     const transformedReport = transformWebFuzzingReport(data);
+
+    const [reviews, setReviews] = useState<Record<string, TestReview>>({});
+    const baselineRef = useRef<Record<string, TestReview>>({});
+    const [isDirty, setIsDirty] = useState(false);
+    const [reviewMessage, setReviewMessage] = useState<{type: "info" | "error"; text: string} | null>(null);
+
+    useEffect(() => {
+        setIsDirty(!reviewsEqual(reviews, baselineRef.current));
+    }, [reviews]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -106,6 +134,113 @@ export const AppProvider = ({ children }: AppProviderProps) => {
         }
     }, [data]);
 
+    useEffect(() => {
+        if (!data) return;
+        if (window.location.protocol === 'file:') {
+            setReviewMessage({
+                type: "info",
+                text: `Auto-loading ${REVIEW_FILE_NAME} is not possible when opening this page directly from disk. Either launch the report via webreport.py, or click "Load reviews" to import the file manually.`,
+            });
+            return;
+        }
+        let cancelled = false;
+        fetchFileContent('./' + REVIEW_FILE_NAME)
+            .then(parsed => {
+                if (cancelled || !parsed) return;
+                try {
+                    const loaded = parseReviewFile(parsed);
+                    setReviews(loaded);
+                    baselineRef.current = loaded;
+                    setIsDirty(false);
+                    setReviewMessage({
+                        type: "info",
+                        text: `Auto-loaded ${Object.keys(loaded).length} review(s) from ${REVIEW_FILE_NAME}.`,
+                    });
+                } catch (e) {
+                    console.warn("Auto-load of reviews failed:", e);
+                }
+            })
+            .catch(() => { /* silent — expected when no review file is present or under file:// */ });
+        return () => { cancelled = true; };
+    }, [data]);
+
+    useEffect(() => {
+        if (!isDirty) return;
+        const handler = (e: BeforeUnloadEvent) => {
+            e.preventDefault();
+            e.returnValue = "";
+        };
+        window.addEventListener("beforeunload", handler);
+        return () => window.removeEventListener("beforeunload", handler);
+    }, [isDirty]);
+
+    const getReview = useCallback(
+        (testId: string): TestReview => reviews[testId] ?? DEFAULT_REVIEW,
+        [reviews],
+    );
+
+    const setReviewState = useCallback((testId: string, state: ReviewState) => {
+        setReviews(prev => {
+            const existing = prev[testId] ?? DEFAULT_REVIEW;
+            return {...prev, [testId]: {...existing, state}};
+        });
+    }, []);
+
+    const setReviewComment = useCallback((testId: string, comment: string) => {
+        setReviews(prev => {
+            const existing = prev[testId] ?? DEFAULT_REVIEW;
+            return {...prev, [testId]: {...existing, comment}};
+        });
+    }, []);
+
+    const saveReviews = useCallback(() => {
+        const file: ReviewFile = {
+            schemaVersion: REVIEW_SCHEMA_VERSION,
+            reviews: {},
+        };
+        for (const [id, r] of Object.entries(reviews)) {
+            const comment = (r.comment ?? "").trim();
+            if (r.state !== "NOT-REVIEWED" || comment !== "") {
+                file.reviews[id] = {state: r.state, comment: r.comment ?? ""};
+            }
+        }
+        const blob = new Blob([JSON.stringify(file, null, 2)], {type: "application/json"});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = REVIEW_FILE_NAME;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        baselineRef.current = {...reviews};
+        setIsDirty(false);
+        setReviewMessage({
+            type: "info",
+            text: `Saved ${Object.keys(file.reviews).length} review(s). Place the downloaded ${REVIEW_FILE_NAME} next to report.json.`,
+        });
+    }, [reviews]);
+
+    const loadReviews = useCallback(async (file: File) => {
+        try {
+            const text = await file.text();
+            const parsed = JSON.parse(text);
+            const loaded = parseReviewFile(parsed);
+            setReviews(loaded);
+            baselineRef.current = loaded;
+            setIsDirty(false);
+            setReviewMessage({
+                type: "info",
+                text: `Loaded ${Object.keys(loaded).length} review(s) from ${file.name}.`,
+            });
+        } catch (e) {
+            const msg = e instanceof Error ? e.message : String(e);
+            setReviewMessage({type: "error", text: `Failed to load reviews: ${msg}`});
+        }
+    }, []);
+
+    const clearReviewMessage = useCallback(() => setReviewMessage(null), []);
+
     const [filteredEndpoints, setFilteredEndpoints] = useState(transformedReport);
 
     useEffect(() => {
@@ -175,7 +310,27 @@ export const AppProvider = ({ children }: AppProviderProps) => {
         return filtered;
     }
 
-    const value: AppContextType = { data, loading, error, testFiles, transformedReport, filterEndpoints, filteredEndpoints, invalidReportErrors, lowCodeMode, setLowCodeMode };
+    const value: AppContextType = {
+        data,
+        loading,
+        error,
+        testFiles,
+        transformedReport,
+        filterEndpoints,
+        filteredEndpoints,
+        invalidReportErrors,
+        lowCodeMode,
+        setLowCodeMode,
+        reviews,
+        getReview,
+        setReviewState,
+        setReviewComment,
+        isDirty,
+        saveReviews,
+        loadReviews,
+        reviewMessage,
+        clearReviewMessage,
+    };
 
     return (
         <AppContext.Provider value={value}>

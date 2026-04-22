@@ -6,6 +6,7 @@ import {Header} from "@/components/Header.tsx";
 import {Overview} from "@/pages/Overview.tsx";
 import {Endpoints} from "@/pages/Endpoints.tsx";
 import {TestResults} from "@/pages/TestResults.tsx";
+import {Tests} from "@/pages/Tests.tsx";
 
 import {ScrollArea, ScrollBar} from "@/components/ui/scroll-area.tsx";
 import {useAppContext} from "@/AppProvider.tsx";
@@ -16,7 +17,7 @@ export interface ITestTabs {
 }
 
 export const Dashboard: React.FC = () => {
-    const {data} = useAppContext();
+    const {data, isDirty} = useAppContext();
 
     const [activeTab, setActiveTab] = useState("overview")
 
@@ -79,6 +80,13 @@ export const Dashboard: React.FC = () => {
                         >
                             Endpoints
                         </TabsTrigger>
+                        <TabsTrigger
+                            value="tests"
+                            className="min-w-[150px] py-3 border border-gray-500 data-[state=active]:bg-blue-100 data-[state=active]:border-2 data-[state=active]:border-black data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                            data-testid="tab-tests"
+                        >
+                            Tests{isDirty && <span className="ml-1 text-orange-600" title="Unsaved review changes">•</span>}
+                        </TabsTrigger>
                     </TabsList>
                 </div>
                 <div className="border-t border-black my-2"></div>
@@ -121,6 +129,10 @@ export const Dashboard: React.FC = () => {
 
                 <TabsContent value="endpoints">
                     <Endpoints addTestTab={addTestTab}/>
+                </TabsContent>
+
+                <TabsContent value="tests">
+                    <Tests/>
                 </TabsContent>
 
                 {

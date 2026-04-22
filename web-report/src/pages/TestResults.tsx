@@ -8,9 +8,10 @@ import {useAppContext} from "@/AppProvider.tsx";
 
 interface IProps {
     testCaseName: string;
+    embedded?: boolean;
 }
 
-export const TestResults: React.FC<IProps> = ({testCaseName}) => {
+export const TestResults: React.FC<IProps> = ({testCaseName, embedded = false}) => {
 
     const {data, testFiles, lowCodeMode} = useAppContext();
 
@@ -46,7 +47,7 @@ export const TestResults: React.FC<IProps> = ({testCaseName}) => {
     const displayedLanguage = lowCodeMode ? "markdown" : getLanguage(currentFile?.name ?? "");
 
     return (
-        <div className="border-2 border-black p-6 rounded-none w-[80%] mx-auto">
+        <div className={embedded ? "p-4" : "border-2 border-black p-6 rounded-none w-[80%] mx-auto"}>
             <div className="gap-6 mb-6">
 
                 {/* Others Section */}
