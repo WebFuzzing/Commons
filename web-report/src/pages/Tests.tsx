@@ -1,6 +1,7 @@
 import React, {useCallback, useMemo, useRef, useState} from "react";
 import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion.tsx";
 import {Button} from "@/components/ui/button.tsx";
+import {Progress} from "@/components/ui/progress.tsx";
 import {useAppContext} from "@/AppProvider.tsx";
 import {REVIEW_STATES, ReviewState} from "@/types/Review.ts";
 import {TestReviewRow} from "@/components/TestReviewRow.tsx";
@@ -19,7 +20,7 @@ const filterButtonClass = (active: boolean) =>
 export const Tests: React.FC = () => {
     const {
         data,
-        getReview,
+        reviews,
         isDirty,
         saveReviews,
         loadReviews,
@@ -47,23 +48,26 @@ export const Tests: React.FC = () => {
         };
         for (const tc of testCases) {
             if (!tc.id) continue;
-            c[getReview(tc.id).state]++;
+            c[(reviews[tc.id] ?? {state: "NOT-REVIEWED"}).state]++;
         }
         return c;
-    }, [testCases, getReview]);
+    }, [testCases, reviews]);
 
     const grouped = useMemo(() => {
         const map = new Map<string, Array<{id: string; name: string}>>();
         for (const file of testFilePaths) map.set(file, []);
         for (const tc of testCases) {
             if (!tc.id || !tc.filePath) continue;
-            if (filter !== "ALL" && getReview(tc.id).state !== filter) continue;
+            if (filter !== "ALL") {
+                const state = (reviews[tc.id] ?? {state: "NOT-REVIEWED"}).state;
+                if (state !== filter) continue;
+            }
             const arr = map.get(tc.filePath) ?? [];
             arr.push({id: tc.id, name: tc.name ?? tc.id});
             map.set(tc.filePath, arr);
         }
         return map;
-    }, [testCases, testFilePaths, filter, getReview]);
+    }, [testCases, testFilePaths, filter, reviews]);
 
     const triggerLoad = () => fileInputRef.current?.click();
     const onFileChange: React.ChangeEventHandler<HTMLInputElement> = async (e) => {
@@ -73,7 +77,7 @@ export const Tests: React.FC = () => {
     };
 
     return (
-        <div className="border-2 border-black p-6 rounded-none w-[80%] mx-auto">
+        <div className="border-2 border-black p-6 rounded-none">
             <div className="flex flex-wrap items-center gap-2 mb-4">
                 <Button onClick={saveReviews} className="bg-black text-white hover:bg-gray-800" data-testid="reviews-save">
                     <Download className="w-4 h-4 mr-1"/> Save reviews
@@ -118,6 +122,21 @@ export const Tests: React.FC = () => {
                     </button>
                 </div>
             )}
+
+            {testCases.length > 0 && (() => {
+                const total = testCases.length;
+                const reviewed = total - counts["NOT-REVIEWED"];
+                const pct = total === 0 ? 0 : Math.round((reviewed / total) * 100);
+                return (
+                    <div className="mb-4" data-testid="reviews-progress">
+                        <div className="flex items-center justify-between text-xs font-mono mb-1">
+                            <span>Reviewed: {reviewed}/{total}</span>
+                            <span>{pct}%</span>
+                        </div>
+                        <Progress value={pct} className="h-2 bg-gray-200"/>
+                    </div>
+                );
+            })()}
 
             <div className="flex flex-wrap items-center gap-2 mb-4">
                 <span className="text-sm font-bold">Filter:</span>

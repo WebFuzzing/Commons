@@ -13,7 +13,7 @@ export const Endpoints: React.FC<IProps> = ({addTestTab}) => {
     const {transformedReport, filteredEndpoints, filterEndpoints} = useAppContext();
 
     return (
-        <div className="border-2 border-black p-6 rounded-none w-[80%] mx-auto">
+        <div className="border-2 border-black p-6 rounded-none">
             <StatusCodeFilters data={transformedReport} onFiltersChange={filterEndpoints}/>
             <div className="flex items-center mb-2">
                 <h3 className="text-sm font-medium text-gray-700 mr-3"># Endpoints:</h3>

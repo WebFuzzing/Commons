@@ -1,5 +1,5 @@
 import type React from "react"
-import {useState} from "react"
+import {useMemo, useState} from "react"
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs"
 import {X} from "lucide-react"
 import {Header} from "@/components/Header.tsx";
@@ -17,7 +17,20 @@ export interface ITestTabs {
 }
 
 export const Dashboard: React.FC = () => {
-    const {data, isDirty} = useAppContext();
+    const {data, isDirty, reviews} = useAppContext();
+
+    const reviewRatio = useMemo(() => {
+        if (!data) return null;
+        const total = data.testCases.length;
+        if (total === 0) return null;
+        let reviewed = 0;
+        for (const tc of data.testCases) {
+            if (!tc.id) continue;
+            const state = reviews[tc.id]?.state ?? "NOT-REVIEWED";
+            if (state !== "NOT-REVIEWED") reviewed++;
+        }
+        return {reviewed, total};
+    }, [data, reviews]);
 
     const [activeTab, setActiveTab] = useState("overview")
 
@@ -59,7 +72,7 @@ export const Dashboard: React.FC = () => {
     });
 
     return (
-        <div className="border border-black p-4 w-[80%] mx-auto bg-white">
+        <div className="border border-black p-4 max-w-7xl mx-auto bg-white">
             <Header date={data.creationTime}
                     schemaVersion={data.schemaVersion}
                     toolNameVersion={`${data.toolName}-${data.toolVersion}`}/>
@@ -85,7 +98,13 @@ export const Dashboard: React.FC = () => {
                             className="min-w-[150px] py-3 border border-gray-500 data-[state=active]:bg-blue-100 data-[state=active]:border-2 data-[state=active]:border-black data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
                             data-testid="tab-tests"
                         >
-                            Tests{isDirty && <span className="ml-1 text-orange-600" title="Unsaved review changes">•</span>}
+                            Tests
+                            {reviewRatio && (
+                                <span className="ml-2 text-xs font-mono text-gray-600" data-testid="tab-tests-ratio">
+                                    {reviewRatio.reviewed}/{reviewRatio.total}
+                                </span>
+                            )}
+                            {isDirty && <span className="ml-1 text-orange-600" title="Unsaved review changes">•</span>}
                         </TabsTrigger>
                     </TabsList>
                 </div>

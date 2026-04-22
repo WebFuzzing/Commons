@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Code, ChevronRight} from "lucide-react";
 import {useAppContext} from "@/AppProvider.tsx";
 import {ReviewState, SELECTABLE_REVIEW_STATES} from "@/types/Review.ts";
@@ -25,9 +25,16 @@ const stateBadgeClass = (state: ReviewState): string => {
     }
 };
 
-export const TestReviewRow: React.FC<IProps> = ({testId, testName, onOpen}) => {
+const TestReviewRowInner: React.FC<IProps> = ({testId, testName, onOpen}) => {
     const {getReview, setReviewState, setReviewComment} = useAppContext();
     const review = getReview(testId);
+
+    // Local state for the comment textarea keeps typing from re-rendering the entire
+    // list on every keystroke; we only commit to the shared context on blur.
+    const [localComment, setLocalComment] = useState(review.comment);
+    useEffect(() => {
+        setLocalComment(review.comment);
+    }, [review.comment]);
 
     return (
         <div
@@ -61,8 +68,13 @@ export const TestReviewRow: React.FC<IProps> = ({testId, testName, onOpen}) => {
             </select>
 
             <textarea
-                value={review.comment}
-                onChange={(e) => setReviewComment(testId, e.target.value)}
+                value={localComment}
+                onChange={(e) => setLocalComment(e.target.value)}
+                onBlur={() => {
+                    if (localComment !== review.comment) {
+                        setReviewComment(testId, localComment);
+                    }
+                }}
                 placeholder="Comment (optional)"
                 rows={2}
                 className="w-full border border-gray-400 p-2 text-sm font-mono resize-y bg-white"
@@ -71,3 +83,5 @@ export const TestReviewRow: React.FC<IProps> = ({testId, testName, onOpen}) => {
         </div>
     );
 };
+
+export const TestReviewRow = React.memo(TestReviewRowInner);

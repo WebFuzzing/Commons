@@ -1,6 +1,5 @@
-import {createContext, useContext, useState, ReactNode, useEffect, useRef, useCallback} from 'react';
+import {createContext, useContext, useState, ReactNode, useEffect, useRef, useCallback, useMemo} from 'react';
 import {WebFuzzingCommonsReport} from "@/types/GeneratedTypes.tsx";
-import {ITestFiles} from "@/types/General.tsx";
 import {fetchFileContent, ITransformedReport, transformWebFuzzingReport} from "@/lib/utils.tsx";
 import {webFuzzingCommonsReportSchema} from "@/types/GeneratedTypesZod.ts";
 import {ZodIssue} from "zod";
@@ -19,7 +18,8 @@ type AppContextType = {
     data: WebFuzzingCommonsReport | null;
     loading: boolean;
     error: string | null;
-    testFiles: ITestFiles[];
+    testFiles: Record<string, string>;
+    loadTestFile: (path: string) => Promise<void>;
     transformedReport: ITransformedReport[];
     filterEndpoints: (activeFilters: Record<number, string>) => ITransformedReport[];
     filteredEndpoints: ITransformedReport[];
@@ -51,18 +51,22 @@ export const AppProvider = ({ children }: AppProviderProps) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [invalidReportErrors, setInvalidReportErrors] = useState<ZodIssue[] | null>(null);
-    const [testFiles, setTestFiles] = useState<ITestFiles[]>([]);
+    const [testFiles, setTestFiles] = useState<Record<string, string>>({});
+    const inFlightFilesRef = useRef<Map<string, Promise<void>>>(new Map());
     const [lowCodeMode, setLowCodeMode] = useState<boolean>(initialLowCode);
-    const transformedReport = transformWebFuzzingReport(data);
+    const transformedReport = useMemo(() => transformWebFuzzingReport(data), [data]);
 
     const [reviews, setReviews] = useState<Record<string, TestReview>>({});
+    const reviewsRef = useRef<Record<string, TestReview>>({});
     const baselineRef = useRef<Record<string, TestReview>>({});
     const [isDirty, setIsDirty] = useState(false);
     const [reviewMessage, setReviewMessage] = useState<{type: "info" | "error"; text: string} | null>(null);
 
-    useEffect(() => {
-        setIsDirty(!reviewsEqual(reviews, baselineRef.current));
-    }, [reviews]);
+    const applyReviews = useCallback((next: Record<string, TestReview>) => {
+        reviewsRef.current = next;
+        setReviews(next);
+        setIsDirty(!reviewsEqual(next, baselineRef.current));
+    }, []);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -114,25 +118,31 @@ export const AppProvider = ({ children }: AppProviderProps) => {
         fetchData();
     }, []);
 
-    useEffect(() => {
-        if(data?.testFilePaths){
-            data.testFilePaths.map(file => {
-                fetchFileContent(file).then((content) => {
-                    if (typeof content === "string") {
-                        setTestFiles(prev => [...prev, {
-                            name: file,
-                            code: content
-                        }]);
-                    } else {
-                        setError("Could not load the test file. Please check if the file exists and is accessible.");
-                    }
-                }).catch((error) => {
-                    console.error(error);
+    const loadTestFile = useCallback(async (path: string): Promise<void> => {
+        if (!path) return;
+        if (testFiles[path] !== undefined) return;
+        const existing = inFlightFilesRef.current.get(path);
+        if (existing) return existing;
+
+        const promise = (async () => {
+            try {
+                const content = await fetchFileContent(path);
+                if (typeof content === "string") {
+                    setTestFiles(prev => (prev[path] !== undefined ? prev : {...prev, [path]: content}));
+                } else {
                     setError("Could not load the test file. Please check if the file exists and is accessible.");
-                })
-            })
-        }
-    }, [data]);
+                }
+            } catch (e) {
+                console.error(e);
+                setError("Could not load the test file. Please check if the file exists and is accessible.");
+            } finally {
+                inFlightFilesRef.current.delete(path);
+            }
+        })();
+
+        inFlightFilesRef.current.set(path, promise);
+        return promise;
+    }, [testFiles]);
 
     useEffect(() => {
         if (!data) return;
@@ -149,8 +159,9 @@ export const AppProvider = ({ children }: AppProviderProps) => {
                 if (cancelled || !parsed) return;
                 try {
                     const loaded = parseReviewFile(parsed);
-                    setReviews(loaded);
+                    reviewsRef.current = loaded;
                     baselineRef.current = loaded;
+                    setReviews(loaded);
                     setIsDirty(false);
                     setReviewMessage({
                         type: "info",
@@ -175,30 +186,37 @@ export const AppProvider = ({ children }: AppProviderProps) => {
     }, [isDirty]);
 
     const getReview = useCallback(
-        (testId: string): TestReview => reviews[testId] ?? DEFAULT_REVIEW,
-        [reviews],
+        (testId: string): TestReview => reviewsRef.current[testId] ?? DEFAULT_REVIEW,
+        [],
     );
 
     const setReviewState = useCallback((testId: string, state: ReviewState) => {
-        setReviews(prev => {
-            const existing = prev[testId] ?? DEFAULT_REVIEW;
-            return {...prev, [testId]: {...existing, state}};
-        });
-    }, []);
+        const prev = reviewsRef.current;
+        const existing = prev[testId] ?? DEFAULT_REVIEW;
+        if (existing.state === state) return;
+        applyReviews({...prev, [testId]: {...existing, state}});
+    }, [applyReviews]);
 
     const setReviewComment = useCallback((testId: string, comment: string) => {
-        setReviews(prev => {
-            const existing = prev[testId] ?? DEFAULT_REVIEW;
-            return {...prev, [testId]: {...existing, comment}};
-        });
-    }, []);
+        const prev = reviewsRef.current;
+        const existing = prev[testId] ?? DEFAULT_REVIEW;
+        if (existing.comment === comment) return;
+        applyReviews({...prev, [testId]: {...existing, comment}});
+    }, [applyReviews]);
 
     const saveReviews = useCallback(() => {
+        // Flush any pending textarea edits (local-state rows commit on blur)
+        const active = document.activeElement;
+        if (active instanceof HTMLElement && (active.tagName === 'TEXTAREA' || active.tagName === 'INPUT')) {
+            active.blur();
+        }
+
+        const source = reviewsRef.current;
         const file: ReviewFile = {
             schemaVersion: REVIEW_SCHEMA_VERSION,
             reviews: {},
         };
-        for (const [id, r] of Object.entries(reviews)) {
+        for (const [id, r] of Object.entries(source)) {
             const comment = (r.comment ?? "").trim();
             if (r.state !== "NOT-REVIEWED" || comment !== "") {
                 file.reviews[id] = {state: r.state, comment: r.comment ?? ""};
@@ -213,21 +231,22 @@ export const AppProvider = ({ children }: AppProviderProps) => {
         a.click();
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
-        baselineRef.current = {...reviews};
+        baselineRef.current = {...source};
         setIsDirty(false);
         setReviewMessage({
             type: "info",
             text: `Saved ${Object.keys(file.reviews).length} review(s). Place the downloaded ${REVIEW_FILE_NAME} next to report.json.`,
         });
-    }, [reviews]);
+    }, []);
 
     const loadReviews = useCallback(async (file: File) => {
         try {
             const text = await file.text();
             const parsed = JSON.parse(text);
             const loaded = parseReviewFile(parsed);
-            setReviews(loaded);
+            reviewsRef.current = loaded;
             baselineRef.current = loaded;
+            setReviews(loaded);
             setIsDirty(false);
             setReviewMessage({
                 type: "info",
@@ -244,12 +263,10 @@ export const AppProvider = ({ children }: AppProviderProps) => {
     const [filteredEndpoints, setFilteredEndpoints] = useState(transformedReport);
 
     useEffect(() => {
-        // Transform the report data into a format suitable for filtering
         if (data) {
-            const transformed = transformWebFuzzingReport(data);
-            setFilteredEndpoints(transformed);
+            setFilteredEndpoints(transformedReport);
         }
-    }, [data]);
+    }, [data, transformedReport]);
 
     const filterEndpoints = (activeFilters: Record<number, string>) => {
         // Filter the endpoints based on the active filters
@@ -330,6 +347,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
         loadReviews,
         reviewMessage,
         clearReviewMessage,
+        loadTestFile,
     };
 
     return (
