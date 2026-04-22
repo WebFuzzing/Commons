@@ -55,7 +55,7 @@ export const TestResults: React.FC<IProps> = ({testCaseName, embedded = false}) 
     const displayedLanguage = lowCodeMode ? "markdown" : getLanguage(filePath ?? "");
 
     return (
-        <div className={embedded ? "p-4" : "border-2 border-black p-6 rounded-none"}>
+        <div className={embedded ? "p-2 sm:p-4" : "border-2 border-black p-3 sm:p-6 rounded-none"}>
             <div className="gap-6 mb-6">
 
                 {/* Others Section */}

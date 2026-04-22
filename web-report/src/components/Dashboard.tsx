@@ -72,30 +72,30 @@ export const Dashboard: React.FC = () => {
     });
 
     return (
-        <div className="border border-black p-4 max-w-7xl mx-auto bg-white">
+        <div className="border border-black p-2 sm:p-4 max-w-7xl mx-auto bg-white">
             <Header date={data.creationTime}
                     schemaVersion={data.schemaVersion}
                     toolNameVersion={`${data.toolName}-${data.toolVersion}`}/>
             <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
                 <div className="flex justify-center mb-2 w-full">
-                    <TabsList className={`flex gap-4 w-[80%] max-w-[700px] h-auto p-1 bg-transparent`}>
+                    <TabsList className={`flex gap-2 sm:gap-4 w-full max-w-[700px] h-auto p-1 bg-transparent`}>
                         <TabsTrigger
                             value="overview"
-                            className="min-w-[150px] py-3 border border-gray-500 data-[state=active]:bg-blue-100 data-[state=active]:border-2 data-[state=active]:border-black data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                            className="flex-1 sm:flex-none sm:min-w-[150px] py-3 text-xs sm:text-sm border border-gray-500 data-[state=active]:bg-blue-100 data-[state=active]:border-2 data-[state=active]:border-black data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
                             data-testid="tab-overview"
                         >
                             Overview
                         </TabsTrigger>
                         <TabsTrigger
                             value="endpoints"
-                            className="min-w-[150px] py-3 border border-gray-500 data-[state=active]:bg-blue-100 data-[state=active]:border-2 data-[state=active]:border-black data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                            className="flex-1 sm:flex-none sm:min-w-[150px] py-3 text-xs sm:text-sm border border-gray-500 data-[state=active]:bg-blue-100 data-[state=active]:border-2 data-[state=active]:border-black data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
                             data-testid="tab-endpoints"
                         >
                             Endpoints
                         </TabsTrigger>
                         <TabsTrigger
                             value="tests"
-                            className="min-w-[150px] py-3 border border-gray-500 data-[state=active]:bg-blue-100 data-[state=active]:border-2 data-[state=active]:border-black data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                            className="flex-1 sm:flex-none sm:min-w-[150px] py-3 text-xs sm:text-sm border border-gray-500 data-[state=active]:bg-blue-100 data-[state=active]:border-2 data-[state=active]:border-black data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
                             data-testid="tab-tests"
                         >
                             Tests
@@ -112,7 +112,7 @@ export const Dashboard: React.FC = () => {
 
                 <div className="flex justify-center w-full">
                     {
-                        <TabsList className={`flex gap-4 w-[80%] max-w-[700px] h-auto p-1 bg-transparent`}>
+                        <TabsList className={`flex gap-2 sm:gap-4 w-full max-w-[700px] h-auto p-1 bg-transparent`}>
                             <ScrollArea className="w-[130%] whitespace-nowrap py-3">
                                 {
                                     testTabs.map((test, index) => (

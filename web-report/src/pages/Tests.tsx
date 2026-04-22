@@ -77,7 +77,7 @@ export const Tests: React.FC = () => {
     };
 
     return (
-        <div className="border-2 border-black p-6 rounded-none">
+        <div className="border-2 border-black p-3 sm:p-6 rounded-none">
             <div className="flex flex-wrap items-center gap-2 mb-4">
                 <Button onClick={saveReviews} className="bg-black text-white hover:bg-gray-800" data-testid="reviews-save">
                     <Download className="w-4 h-4 mr-1"/> Save reviews

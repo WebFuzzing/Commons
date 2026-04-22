@@ -34,12 +34,12 @@ export const Header: React.FC<IHeaderProps> = ({date, toolNameVersion, schemaVer
                     </label>
                 </ReportTooltip>
             </div>
-            <div className="flex justify-between border-b border-black pb-2 mb-4">
+            <div className="flex flex-col gap-1 sm:flex-row sm:justify-between sm:items-center border-b border-black pb-2 mb-4 text-xs sm:text-base">
                 <ReportTooltip tooltipText={info.creationDate}>
-                    <div className="font-bold" data-testid="header-creation-date">Creation Date: {new Date(date).toUTCString()}</div>
+                    <div className="font-bold break-words" data-testid="header-creation-date">Creation Date: {new Date(date).toUTCString()}</div>
                 </ReportTooltip>
                 <ReportTooltip tooltipText={info.toolNameVersion}>
-                    <div className="font-bold text-center flex items-center justify-center gap-2" data-testid="header-tool-name-version">
+                    <div className="font-bold flex items-center sm:justify-center gap-2" data-testid="header-tool-name-version">
                         <span>Tool: {toolNameVersion}</span>
                         <img
                             src={ICON_URL}
@@ -50,7 +50,7 @@ export const Header: React.FC<IHeaderProps> = ({date, toolNameVersion, schemaVer
                     </div>
                 </ReportTooltip>
                 <ReportTooltip tooltipText={info.schemaVersion}>
-                    <div className="font-bold text-right" data-testid="header-schema-version">Schema Version: {schemaVersion}</div>
+                    <div className="font-bold sm:text-right" data-testid="header-schema-version">Schema Version: {schemaVersion}</div>
                 </ReportTooltip>
             </div>
         </>

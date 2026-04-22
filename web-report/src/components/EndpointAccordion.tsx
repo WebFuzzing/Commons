@@ -61,24 +61,24 @@ export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
     const faultColors = ["bg-red-300", "bg-red-500", "bg-red-700"];
     return (
         <AccordionItem value={value} className="border-2 border-black mb-4 overflow-hidden" data-testid={endpoint}>
-            <AccordionTrigger className="bg-blue-100 px-4 py-3 text-lg font-bold hover:no-underline hover:bg-blue-200">
-                <div className="flex-1 font-mono">{endpoint}</div>
-                <div className="flex flex-wrap justify-end gap-2 mr-4">
+            <AccordionTrigger className="bg-blue-100 px-3 sm:px-4 py-3 text-sm sm:text-lg font-bold hover:no-underline hover:bg-blue-200">
+                <div className="flex-1 font-mono break-all text-left">{endpoint}</div>
+                <div className="flex flex-wrap justify-end gap-1 sm:gap-2 mr-2 sm:mr-4">
                     {sortedStatusCodes.map((code, idx) => (
-                        <Badge key={`_${idx}`} className={`${getColor(code.code, true, false)} font-mono`}>
+                        <Badge key={`_${idx}`} className={`${getColor(code.code, true, false)} font-mono text-xs`}>
                             {code.code == -1 ? "NO-RESPONSE" : `H${code.code}`}
                         </Badge>
                     ))}
                     {sortedFaults.map((code, idx) => (
-                        <Badge key={`_${idx}`} className={`${getColor(code.code, true, true)} font-mono`}>
+                        <Badge key={`_${idx}`} className={`${getColor(code.code, true, true)} font-mono text-xs`}>
                             F{code.code}
                         </Badge>
                     ))}
                 </div>
             </AccordionTrigger>
-            <AccordionContent className="p-4">
-                <div className="flex mb-6">
-                    <div className="flex font-bold text-lg mb-2 mr-2">HTTP CODES:</div>
+            <AccordionContent className="p-3 sm:p-4">
+                <div className="flex flex-col sm:flex-row mb-6">
+                    <div className="flex font-bold text-base sm:text-lg mb-2 mr-2">HTTP CODES:</div>
                     <div className="flex flex-wrap gap-2">
                         {
                             sortedStatusCodes.map((code, index) => (
@@ -98,8 +98,8 @@ export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
                     </div>
                 </div>
 
-                <div className="flex mb-6">
-                    <div className="flex font-bold text-lg mb-2 mr-2 text-red-500">FAULT CODES:</div>
+                <div className="flex flex-col sm:flex-row mb-6">
+                    <div className="flex font-bold text-base sm:text-lg mb-2 mr-2 text-red-500">FAULT CODES:</div>
                     <div className="flex flex-wrap gap-2">
                         {
                             sortedFaults.map((fault, index) => (
