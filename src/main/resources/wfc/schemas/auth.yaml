@@ -6,6 +6,9 @@
 ## to the document as it is, before the template resolution.
 ## A pragmatic compromise is to avoid "required" for fields that can be merged, and rather use "x-required".
 ## The validation of x-required constraints would then be delegated to whatever is used to resolve the templates.
+##
+## An "x-required" custom entry can be either an array of strings (with same semantic of "required") or an object (with
+## fields such as  "allOf" and "oneOf" to express more fine-grained constraints)
 #####################################################################################################################
 $schema: "https://json-schema.org/draft/2020-12/schema"
 $id: "https://github.com/WebFuzzing/Commons/blob/master/src/main/resources/wfc/schemas/auth.yaml"
@@ -124,7 +127,9 @@ $defs:
                       If so, a fuzzer can use those as auth info in following requests, instead of trying to extract \
                       an auth token from the response payload."
         type: boolean
-    x-required: ["verb"]
+    x-required:
+      allOf: ["verb"]
+      oneOf: ["endpoint","externalEndpointURL"]
   ###
   TokenHandling:
     description: "Specify how to extract the token from the HTTP response, and how to use it for auth in following requests. \
