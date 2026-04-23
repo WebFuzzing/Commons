@@ -1,3 +1,15 @@
+#####################################################################################################################
+## We use a JSON Schema to validate JSON/YAML configuration files with auth info.
+## However, such files need to be post-processed to handle merge of keys from 'authTemplate'.
+## In the past, YAML had native support for this in the form of templates, but this is no longer the case.
+## A concrete side-effect of this issue is that we cannot use "required" constraints, as those would be applied
+## to the document as it is, before the template resolution.
+## A pragmatic compromise is to avoid "required" for fields that can be merged, and rather use "x-required".
+## The validation of x-required constraints would then be delegated to whatever is used to resolve the templates.
+##
+## An "x-required" custom entry can be either an array of strings (with same semantic of "required") or an object (with
+## fields such as  "allOf" and "oneOf" to express more fine-grained constraints)
+#####################################################################################################################
 $schema: "https://json-schema.org/draft/2020-12/schema"
 $id: "https://github.com/WebFuzzing/Commons/blob/master/src/main/resources/wfc/schemas/auth.yaml"
 title: "Web Fuzzing Commons Authentication"
@@ -27,8 +39,6 @@ properties:
       type: string
 required: ["auth"]
 $defs:
-#  TODO unfortunately, tools like jsonschema2pojo-maven-plugin have major limitations when dealing with enums.
-#  This is not created as a top-level class
   HttpVerb:
     type: string
     enum:
@@ -71,7 +81,7 @@ $defs:
           $ref: "#/$defs/Header"
       loginEndpointAuth:
           $ref: "#/$defs/LoginEndpoint"
-    required: ["name"]
+    x-required: ["name"]
   ###
   LoginEndpoint:
     description: "Used to represent the case in which a login endpoint is used to obtain the authentication credentials. \
@@ -99,17 +109,8 @@ $defs:
         items:
           $ref: "#/$defs/Header"
       verb:
-#        description: "The verb used to connect to the login endpoint. \
-#                     Most of the time, this will be a 'POST'."
-#        type: string
-#        enum:
-#            - POST
-#            - GET
-#            - PATCH
-#            - DELETE
-#            - PUT
         $ref: "#/$defs/HttpVerb"
-        ## FIXME: unfortunately, plugin is not able to handle this... need new schema version with $ref not replacing everything
+        ## FIXME: need to schema version with $ref not replacing everything
 #        description: "The verb used to connect to the login endpoint. \
 #                      Most of the time, this will be a 'POST'."
 #        allOf:
@@ -126,7 +127,9 @@ $defs:
                       If so, a fuzzer can use those as auth info in following requests, instead of trying to extract \
                       an auth token from the response payload."
         type: boolean
-    required: ["verb"]
+    x-required:
+      allOf: ["verb"]
+      oneOf: ["endpoint","externalEndpointURL"]
   ###
   TokenHandling:
     description: "Specify how to extract the token from the HTTP response, and how to use it for auth in following requests. \
@@ -167,7 +170,7 @@ $defs:
         examples:
           - "Bearer {token}"
           - "JWT {token}"
-    required: ["extractFrom", "extractSelector", "sendIn", "sendName"]
+    x-required: ["extractFrom", "extractSelector", "sendIn", "sendName"]
   ###
   PayloadUsernamePassword:
     description: "Payload with username and password information. \
@@ -186,4 +189,4 @@ $defs:
       passwordField:
         description: "The name of the field in the body payload containing the password"
         type: string
-    required: ["username","usernameField","password","passwordField"]
+    x-required: ["username","usernameField","password","passwordField"]
