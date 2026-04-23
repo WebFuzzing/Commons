@@ -31,7 +31,7 @@ jobs:
         uses: actions/setup-java@v5
         with:
           java-version: 8
-          distribution: temurin
+          distribution: corretto
 # TODO: likely will need caching for JS deps as well
       - name: Cache Maven packages
         uses: actions/cache@v3
