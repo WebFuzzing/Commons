@@ -28,9 +28,10 @@ jobs:
       - uses: actions/checkout@v4
       # Build/test for JDK
       - name: Setup JDK 8
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v5
         with:
-          java-version: 1.8
+          java-version: 8
+          distribution: corretto
 # TODO: likely will need caching for JS deps as well
       - name: Cache Maven packages
         uses: actions/cache@v3
