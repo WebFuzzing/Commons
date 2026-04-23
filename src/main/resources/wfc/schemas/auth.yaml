@@ -4,8 +4,8 @@
 ## In the past, YAML had native support for this in the form of templates, but this is no longer the case.
 ## A concrete side-effect of this issue is that we cannot use "required" constraints, as those would be applied
 ## to the document as it is, before the template resolution.
-## A pragmatic compromise is to avoid "required", and rather use "x-required".
-## The validation of required constraints would then be delegated to whatever is used to resolve the templates.
+## A pragmatic compromise is to avoid "required" for fields that can be merged, and rather use "x-required".
+## The validation of x-required constraints would then be delegated to whatever is used to resolve the templates.
 #####################################################################################################################
 $schema: "https://json-schema.org/draft/2020-12/schema"
 $id: "https://github.com/WebFuzzing/Commons/blob/master/src/main/resources/wfc/schemas/auth.yaml"
@@ -54,7 +54,7 @@ $defs:
       value:
         description: "The value of the header"
         type: string
-    x-required: ["name","value"]
+    required: ["name","value"]
   AuthenticationInfo:
     type: object
     properties:
