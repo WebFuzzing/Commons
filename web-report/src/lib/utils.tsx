@@ -29,6 +29,18 @@ const getColorNumber = (code: number, isBackground: boolean) => {
     if (code >= 500) return isBackground ? "bg-red-500" : "text-red-500";
 };
 
+export const getHoverColor = (code: string | number | null | undefined, isFault: boolean): string => {
+    if (isFault) return "hover:bg-red-400";
+    if (code === null || code === undefined || code === "") return "hover:bg-gray-400";
+    const num = Number(code);
+    if (isNaN(num)) return "hover:bg-red-400";
+    if (num >= 200 && num < 300) return "hover:bg-green-600";
+    if (num >= 300 && num < 400) return "hover:bg-blue-600";
+    if (num >= 400 && num < 500) return "hover:bg-orange-600";
+    if (num >= 500) return "hover:bg-red-600";
+    return "hover:bg-gray-400";
+};
+
 export const fetchFileContent = async (filePath: string): Promise<string | object> => {
     try {
         const response = await fetch(filePath);
@@ -70,6 +82,26 @@ export const extractCodeLines = (
     }
 
     return lines.slice(startIndex, endIndex + 2).join('\n');
+};
+
+export const extractComments = (code: string): string => {
+    const blockRegex = /\/\*\*[\s\S]*?\*\//g;
+    const blocks = code.match(blockRegex);
+    if (!blocks || blocks.length === 0) {
+        return "";
+    }
+
+    return blocks
+        .map(block => {
+            const inner = block.replace(/^\/\*\*/, "").replace(/\*\/$/, "");
+            return inner
+                .split("\n")
+                .map(line => line.replace(/^\s*\*\s?/, ""))
+                .join("\n")
+                .trim();
+        })
+        .filter(text => text.length > 0)
+        .join("\n\n");
 };
 
 export const calculateAllStatusCounts = (coveredHttpStatus: CoveredEndpoint[], endpointIds:string[]) => {

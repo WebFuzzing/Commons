@@ -2,7 +2,7 @@ import {AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui
 import {Badge} from "@/components/ui/badge.tsx";
 import React, {useState} from "react";
 import {TestCases} from "@/components/TestCases.tsx";
-import {getColor} from "@/lib/utils";
+import {getColor, getHoverColor} from "@/lib/utils";
 
 interface IStatusType {
     code: number | string;
@@ -86,7 +86,7 @@ export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
                                     setSelectedCode(code.code);
                                     setIsFault(false);
                                 }}
-                                       className={`${getColor(code.code, true, false)} ${getSelectedStyle(code.code, false)} hover:bg-green-600 cursor-pointer text-white font-mono text-base border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]`}>
+                                       className={`${getColor(code.code, true, false)} ${getSelectedStyle(code.code, false)} ${getHoverColor(code.code, false)} cursor-pointer text-white font-mono text-base border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]`}>
                                     {code.code == -1 ? "NO-RESPONSE" : `H${code.code}`}
                                 </Badge>
                             ))
