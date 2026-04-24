@@ -8,6 +8,7 @@ import {
     parseReviewFile,
     REVIEW_FILE_NAME,
     REVIEW_SCHEMA_VERSION,
+    REVIEW_STATE,
     ReviewFile,
     ReviewState,
     reviewsEqual,
@@ -233,7 +234,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
         };
         for (const [id, r] of Object.entries(source)) {
             const comment = (r.comment ?? "").trim();
-            if (r.state !== "NOT-REVIEWED" || comment !== "") {
+            if (r.state !== REVIEW_STATE.NOT_REVIEWED || comment !== "") {
                 file.reviews[id] = {state: r.state, comment: r.comment ?? ""};
             }
         }

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {Code, ChevronRight} from "lucide-react";
 import {useAppContext} from "@/AppProvider.tsx";
-import {ReviewState, SELECTABLE_REVIEW_STATES} from "@/types/Review.ts";
+import {REVIEW_STATE, ReviewState, SELECTABLE_REVIEW_STATES} from "@/types/Review.ts";
 
 interface IProps {
     testId: string;
@@ -11,15 +11,15 @@ interface IProps {
 
 const stateBadgeClass = (state: ReviewState): string => {
     switch (state) {
-        case "ACCEPTED":
+        case REVIEW_STATE.ACCEPTED:
             return "bg-green-100 border-green-500 text-green-800";
-        case "REJECTED":
+        case REVIEW_STATE.REJECTED:
             return "bg-red-100 border-red-500 text-red-800";
-        case "PREVIOUSLY-ACCEPTED":
+        case REVIEW_STATE.PREVIOUSLY_ACCEPTED:
             return "bg-green-50 border-green-300 text-green-700";
-        case "PREVIOUSLY-REJECTED":
+        case REVIEW_STATE.PREVIOUSLY_REJECTED:
             return "bg-red-50 border-red-300 text-red-700";
-        case "NOT-REVIEWED":
+        case REVIEW_STATE.NOT_REVIEWED:
         default:
             return "bg-gray-100 border-gray-400 text-gray-700";
     }

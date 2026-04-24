@@ -1,17 +1,19 @@
-export const REVIEW_STATES = [
-    "NOT-REVIEWED",
-    "ACCEPTED",
-    "REJECTED",
-    "PREVIOUSLY-ACCEPTED",
-    "PREVIOUSLY-REJECTED",
-] as const;
+export const REVIEW_STATE = {
+    NOT_REVIEWED: "NOT-REVIEWED",
+    ACCEPTED: "ACCEPTED",
+    REJECTED: "REJECTED",
+    PREVIOUSLY_ACCEPTED: "PREVIOUSLY-ACCEPTED",
+    PREVIOUSLY_REJECTED: "PREVIOUSLY-REJECTED",
+} as const;
 
-export type ReviewState = typeof REVIEW_STATES[number];
+export type ReviewState = typeof REVIEW_STATE[keyof typeof REVIEW_STATE];
+
+export const REVIEW_STATES: readonly ReviewState[] = Object.values(REVIEW_STATE);
 
 export const SELECTABLE_REVIEW_STATES: readonly ReviewState[] = [
-    "NOT-REVIEWED",
-    "ACCEPTED",
-    "REJECTED",
+    REVIEW_STATE.NOT_REVIEWED,
+    REVIEW_STATE.ACCEPTED,
+    REVIEW_STATE.REJECTED,
 ];
 
 export interface TestReview {
@@ -19,7 +21,7 @@ export interface TestReview {
     comment: string;
 }
 
-export const DEFAULT_REVIEW: TestReview = {state: "NOT-REVIEWED", comment: ""};
+export const DEFAULT_REVIEW: TestReview = {state: REVIEW_STATE.NOT_REVIEWED, comment: ""};
 
 export interface ReviewFile {
     schemaVersion: string;
@@ -27,7 +29,7 @@ export interface ReviewFile {
 }
 
 export const REVIEW_FILE_NAME = "report-review.json";
-export const REVIEW_SCHEMA_VERSION = "1.0";
+export const REVIEW_SCHEMA_VERSION = __WFC_VERSION__;
 
 export const isReviewState = (v: unknown): v is ReviewState =>
     typeof v === "string" && (REVIEW_STATES as readonly string[]).includes(v);
@@ -38,7 +40,7 @@ export const normalizeReviews = (
     const out: Record<string, TestReview> = {};
     for (const [id, r] of Object.entries(reviews)) {
         const comment = (r.comment ?? "").trim();
-        if (r.state !== "NOT-REVIEWED" || comment !== "") {
+        if (r.state !== REVIEW_STATE.NOT_REVIEWED || comment !== "") {
             out[id] = {state: r.state, comment: r.comment ?? ""};
         }
     }

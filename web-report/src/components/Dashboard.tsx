@@ -10,6 +10,7 @@ import {Tests} from "@/pages/Tests.tsx";
 
 import {ScrollArea, ScrollBar} from "@/components/ui/scroll-area.tsx";
 import {useAppContext} from "@/AppProvider.tsx";
+import {REVIEW_STATE} from "@/types/Review.ts";
 
 
 export interface ITestTabs {
@@ -26,8 +27,8 @@ export const Dashboard: React.FC = () => {
         let reviewed = 0;
         for (const tc of data.testCases) {
             if (!tc.id) continue;
-            const state = reviews[tc.id]?.state ?? "NOT-REVIEWED";
-            if (state !== "NOT-REVIEWED") reviewed++;
+            const state = reviews[tc.id]?.state ?? REVIEW_STATE.NOT_REVIEWED;
+            if (state !== REVIEW_STATE.NOT_REVIEWED) reviewed++;
         }
         return {reviewed, total};
     }, [data, reviews]);

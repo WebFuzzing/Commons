@@ -3,7 +3,7 @@ import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/co
 import {Button} from "@/components/ui/button.tsx";
 import {Progress} from "@/components/ui/progress.tsx";
 import {useAppContext} from "@/AppProvider.tsx";
-import {REVIEW_STATES, ReviewState} from "@/types/Review.ts";
+import {REVIEW_STATE, REVIEW_STATES, ReviewState, SELECTABLE_REVIEW_STATES} from "@/types/Review.ts";
 import {TestReviewRow} from "@/components/TestReviewRow.tsx";
 import {TestDetailDialog} from "@/components/TestDetailDialog.tsx";
 import {Download, Upload, X} from "lucide-react";
@@ -39,16 +39,10 @@ export const Tests: React.FC = () => {
     const testFilePaths = useMemo(() => data?.testFilePaths ?? [], [data]);
 
     const counts = useMemo(() => {
-        const c: Record<ReviewState, number> = {
-            "NOT-REVIEWED": 0,
-            "ACCEPTED": 0,
-            "REJECTED": 0,
-            "PREVIOUSLY-ACCEPTED": 0,
-            "PREVIOUSLY-REJECTED": 0,
-        };
+        const c = Object.fromEntries(REVIEW_STATES.map(s => [s, 0])) as Record<ReviewState, number>;
         for (const tc of testCases) {
             if (!tc.id) continue;
-            c[(reviews[tc.id] ?? {state: "NOT-REVIEWED"}).state]++;
+            c[(reviews[tc.id] ?? {state: REVIEW_STATE.NOT_REVIEWED}).state]++;
         }
         return c;
     }, [testCases, reviews]);
@@ -59,7 +53,7 @@ export const Tests: React.FC = () => {
         for (const tc of testCases) {
             if (!tc.id || !tc.filePath) continue;
             if (filter !== "ALL") {
-                const state = (reviews[tc.id] ?? {state: "NOT-REVIEWED"}).state;
+                const state = (reviews[tc.id] ?? {state: REVIEW_STATE.NOT_REVIEWED}).state;
                 if (state !== filter) continue;
             }
             const arr = map.get(tc.filePath) ?? [];
@@ -125,7 +119,7 @@ export const Tests: React.FC = () => {
 
             {testCases.length > 0 && (() => {
                 const total = testCases.length;
-                const reviewed = total - counts["NOT-REVIEWED"];
+                const reviewed = total - counts[REVIEW_STATE.NOT_REVIEWED];
                 const pct = total === 0 ? 0 : Math.round((reviewed / total) * 100);
                 return (
                     <div className="mb-4" data-testid="reviews-progress">
@@ -147,7 +141,7 @@ export const Tests: React.FC = () => {
                 >
                     ALL ({testCases.length})
                 </button>
-                {REVIEW_STATES.filter(s => s !== "PREVIOUSLY-ACCEPTED" && s !== "PREVIOUSLY-REJECTED").map(s => (
+                {SELECTABLE_REVIEW_STATES.map(s => (
                     <button
                         key={s}
                         className={filterButtonClass(filter === s)}
