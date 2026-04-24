@@ -1,4 +1,4 @@
-import {render, waitFor, screen, act, fireEvent} from '@testing-library/react';
+import {render, waitFor, screen, act, fireEvent, within} from '@testing-library/react';
 import '@testing-library/jest-dom';
 import {resolve} from "path";
 import {readFileSync} from "fs";
@@ -18,7 +18,7 @@ vi.mock('@/lib/utils.tsx', async (importOriginal) => {
         fetchFileContent: vi.fn(async (filePath: string) => {
             const folderPath = resolve(__dirname, './static/');
             const fullPath = resolve(folderPath, filePath);
-            if (fullPath.endsWith('.json')) {
+            if (fullPath.endsWith('report.json')) {
                 return reportData;
             } else if (filePath.endsWith('.java')) {
                 return readFileSync(fullPath, 'utf-8');
@@ -131,6 +131,83 @@ describe('App test', () => {
                 // const testId = convertEndpointToTestId(endpoint);
                 expect(screen.getByTestId(endpoint)).toBeInTheDocument();
             });
+        });
+    });
+
+    it('changing a review state marks it dirty and updates counts', async () => {
+        render(<App/>);
+        await waitFor(() => {
+            expect(screen.getByTestId('tab-tests')).toBeInTheDocument();
+        });
+
+        act(() => {
+            fireEvent.focus(screen.getByTestId('tab-tests'));
+        });
+
+        await waitFor(() => {
+            expect(screen.getByTestId('test-file-0')).toBeInTheDocument();
+        });
+
+        act(() => {
+            fireEvent.click(within(screen.getByTestId('test-file-0')).getByRole('button'));
+        });
+
+        const firstTestId = reportData.testCases[0].id as string;
+        await waitFor(() => {
+            expect(screen.getByTestId(`test-review-state-${firstTestId}`)).toBeInTheDocument();
+        });
+
+        act(() => {
+            fireEvent.change(screen.getByTestId(`test-review-state-${firstTestId}`), {
+                target: {value: 'ACCEPTED'},
+            });
+        });
+
+        await waitFor(() => {
+            expect(screen.getByTestId('reviews-unsaved-banner')).toBeInTheDocument();
+            expect(screen.getByTestId('reviews-filter-ACCEPTED')).toHaveTextContent('ACCEPTED (1)');
+            expect(screen.getByTestId('reviews-filter-NOT-REVIEWED'))
+                .toHaveTextContent(`NOT-REVIEWED (${reportData.testCases.length - 1})`);
+        });
+    });
+
+    it('clicking a test opens the detail dialog and close dismisses it', async () => {
+        render(<App/>);
+        await waitFor(() => {
+            expect(screen.getByTestId('tab-tests')).toBeInTheDocument();
+        });
+
+        act(() => {
+            fireEvent.focus(screen.getByTestId('tab-tests'));
+        });
+
+        await waitFor(() => {
+            expect(screen.getByTestId('test-file-0')).toBeInTheDocument();
+        });
+
+        act(() => {
+            fireEvent.click(within(screen.getByTestId('test-file-0')).getByRole('button'));
+        });
+
+        const firstTestId = reportData.testCases[0].id as string;
+        await waitFor(() => {
+            expect(screen.getByTestId(`test-review-open-${firstTestId}`)).toBeInTheDocument();
+        });
+
+        act(() => {
+            fireEvent.click(screen.getByTestId(`test-review-open-${firstTestId}`));
+        });
+
+        await waitFor(() => {
+            expect(screen.getByTestId('test-detail-dialog')).toBeInTheDocument();
+        });
+
+        act(() => {
+            fireEvent.click(screen.getByTestId('test-detail-dialog-close'));
+        });
+
+        await waitFor(() => {
+            expect(screen.queryByTestId('test-detail-dialog')).toBeNull();
         });
     });
 

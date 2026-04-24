@@ -1,5 +1,5 @@
 import {Card} from "@/components/ui/card.tsx";
-import type React from "react";
+import React, {useEffect} from "react";
 import {Badge} from "@/components/ui/badge.tsx";
 import {CodeBlock} from "@/components/CodeBlock.tsx";
 import {extractCodeLines, extractComments, getColor, getLanguage} from "@/lib/utils";
@@ -8,20 +8,28 @@ import {useAppContext} from "@/AppProvider.tsx";
 
 interface IProps {
     testCaseName: string;
+    embedded?: boolean;
 }
 
-export const TestResults: React.FC<IProps> = ({testCaseName}) => {
+export const TestResults: React.FC<IProps> = ({testCaseName, embedded = false}) => {
 
-    const {data, testFiles, lowCodeMode} = useAppContext();
+    const {data, testFiles, loadTestFile, lowCodeMode} = useAppContext();
 
     const testCases = data?.testCases || [];
     const foundFaults = data?.faults.foundFaults || [];
     const problemDetails = data?.problemDetails || {};
+
+    const testCase = testCases.find((test) => test.id === testCaseName);
+    const filePath = testCase?.filePath;
+
+    useEffect(() => {
+        if (filePath) loadTestFile(filePath);
+    }, [filePath, loadTestFile]);
+
     if (!problemDetails.rest) {
         return <div>We are only supporting REST results now. You need to provide rest results.</div>
     }
 
-    const testCase = testCases.find((test) => test.id === testCaseName);
     const relatedFaults = foundFaults.filter(fault => fault.testCaseId === testCaseName);
     const relatedHttpStatus = problemDetails.rest.coveredHttpStatus.filter(status => status.testCaseId === testCaseName);
 
@@ -38,15 +46,16 @@ export const TestResults: React.FC<IProps> = ({testCaseName}) => {
         }
         return codeA - codeB;
     });
-    const currentFile = testFiles.find((file) => file.name === testCase?.filePath);
+    const currentFileCode = filePath ? testFiles[filePath] : undefined;
+    const isLoadingFile = !!filePath && currentFileCode === undefined;
 
 
-    const extractedCode = currentFile && testCase ? extractCodeLines(currentFile.code, testCase?.startLine, testCase?.endLine) : "";
+    const extractedCode = currentFileCode && testCase ? extractCodeLines(currentFileCode, testCase?.startLine, testCase?.endLine) : "";
     const displayedCode = lowCodeMode ? extractComments(extractedCode) : extractedCode;
-    const displayedLanguage = lowCodeMode ? "markdown" : getLanguage(currentFile?.name ?? "");
+    const displayedLanguage = lowCodeMode ? "markdown" : getLanguage(filePath ?? "");
 
     return (
-        <div className="border-2 border-black p-6 rounded-none w-[80%] mx-auto">
+        <div className={embedded ? "p-2 sm:p-4" : "border-2 border-black p-3 sm:p-6 rounded-none"}>
             <div className="gap-6 mb-6">
 
                 {/* Others Section */}
@@ -97,7 +106,14 @@ export const TestResults: React.FC<IProps> = ({testCaseName}) => {
                     <span>{testCase?.id}</span>
                 </div>
                 {
-                    testCase && currentFile && (
+                    testCase && isLoadingFile && (
+                        <div className="p-4 text-gray-500 italic" data-testid="test-results-loading">
+                            Loading source code...
+                        </div>
+                    )
+                }
+                {
+                    testCase && currentFileCode !== undefined && (
                         <pre className="p-4 overflow-auto max-h-[500px] text-sm text-left font-mono">
                         {lowCodeMode && displayedCode.length === 0 ? (
                             <div className="text-gray-600 italic">No documentation comments found for this test case.</div>

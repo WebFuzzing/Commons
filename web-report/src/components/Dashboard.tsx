@@ -1,14 +1,16 @@
 import type React from "react"
-import {useState} from "react"
+import {useMemo, useState} from "react"
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs"
 import {X} from "lucide-react"
 import {Header} from "@/components/Header.tsx";
 import {Overview} from "@/pages/Overview.tsx";
 import {Endpoints} from "@/pages/Endpoints.tsx";
 import {TestResults} from "@/pages/TestResults.tsx";
+import {Tests} from "@/pages/Tests.tsx";
 
 import {ScrollArea, ScrollBar} from "@/components/ui/scroll-area.tsx";
 import {useAppContext} from "@/AppProvider.tsx";
+import {REVIEW_STATE} from "@/types/Review.ts";
 
 
 export interface ITestTabs {
@@ -16,7 +18,20 @@ export interface ITestTabs {
 }
 
 export const Dashboard: React.FC = () => {
-    const {data} = useAppContext();
+    const {data, isDirty, reviews} = useAppContext();
+
+    const reviewRatio = useMemo(() => {
+        if (!data) return null;
+        const total = data.testCases.length;
+        if (total === 0) return null;
+        let reviewed = 0;
+        for (const tc of data.testCases) {
+            if (!tc.id) continue;
+            const state = reviews[tc.id]?.state ?? REVIEW_STATE.NOT_REVIEWED;
+            if (state !== REVIEW_STATE.NOT_REVIEWED) reviewed++;
+        }
+        return {reviewed, total};
+    }, [data, reviews]);
 
     const [activeTab, setActiveTab] = useState("overview")
 
@@ -58,26 +73,39 @@ export const Dashboard: React.FC = () => {
     });
 
     return (
-        <div className="border border-black p-4 w-[80%] mx-auto bg-white">
+        <div className="border border-black p-2 sm:p-4 max-w-7xl mx-auto bg-white">
             <Header date={data.creationTime}
                     schemaVersion={data.schemaVersion}
                     toolNameVersion={`${data.toolName}-${data.toolVersion}`}/>
             <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
                 <div className="flex justify-center mb-2 w-full">
-                    <TabsList className={`flex gap-4 w-[80%] max-w-[700px] h-auto p-1 bg-transparent`}>
+                    <TabsList className={`flex gap-2 sm:gap-4 w-full max-w-[700px] h-auto p-1 bg-transparent`}>
                         <TabsTrigger
                             value="overview"
-                            className="min-w-[150px] py-3 border border-gray-500 data-[state=active]:bg-blue-100 data-[state=active]:border-2 data-[state=active]:border-black data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                            className="flex-1 sm:flex-none sm:min-w-[150px] py-3 text-xs sm:text-sm border border-gray-500 data-[state=active]:bg-blue-100 data-[state=active]:border-2 data-[state=active]:border-black data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
                             data-testid="tab-overview"
                         >
                             Overview
                         </TabsTrigger>
                         <TabsTrigger
                             value="endpoints"
-                            className="min-w-[150px] py-3 border border-gray-500 data-[state=active]:bg-blue-100 data-[state=active]:border-2 data-[state=active]:border-black data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                            className="flex-1 sm:flex-none sm:min-w-[150px] py-3 text-xs sm:text-sm border border-gray-500 data-[state=active]:bg-blue-100 data-[state=active]:border-2 data-[state=active]:border-black data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
                             data-testid="tab-endpoints"
                         >
                             Endpoints
+                        </TabsTrigger>
+                        <TabsTrigger
+                            value="tests"
+                            className="flex-1 sm:flex-none sm:min-w-[150px] py-3 text-xs sm:text-sm border border-gray-500 data-[state=active]:bg-blue-100 data-[state=active]:border-2 data-[state=active]:border-black data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                            data-testid="tab-tests"
+                        >
+                            Tests
+                            {reviewRatio && (
+                                <span className="ml-2 text-xs font-mono text-gray-600" data-testid="tab-tests-ratio">
+                                    {reviewRatio.reviewed}/{reviewRatio.total}
+                                </span>
+                            )}
+                            {isDirty && <span className="ml-1 text-orange-600" title="Unsaved review changes">•</span>}
                         </TabsTrigger>
                     </TabsList>
                 </div>
@@ -85,7 +113,7 @@ export const Dashboard: React.FC = () => {
 
                 <div className="flex justify-center w-full">
                     {
-                        <TabsList className={`flex gap-4 w-[80%] max-w-[700px] h-auto p-1 bg-transparent`}>
+                        <TabsList className={`flex gap-2 sm:gap-4 w-full max-w-[700px] h-auto p-1 bg-transparent`}>
                             <ScrollArea className="w-[130%] whitespace-nowrap py-3">
                                 {
                                     testTabs.map((test, index) => (
@@ -121,6 +149,10 @@ export const Dashboard: React.FC = () => {
 
                 <TabsContent value="endpoints">
                     <Endpoints addTestTab={addTestTab}/>
+                </TabsContent>
+
+                <TabsContent value="tests">
+                    <Tests/>
                 </TabsContent>
 
                 {
