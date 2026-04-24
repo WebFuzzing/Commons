@@ -2,6 +2,11 @@
 
 Under development in `master` branch.
 
+# 0.4.0
+
+- Auth Schema: replaced 'required' with 'x-required' in few places to deal with issue with template resolution
+- Web Report: added first version of test case manual validation
+
 # 0.3.0
 
 - Web Report: displayed icon, and fixed some coloring and description issues
