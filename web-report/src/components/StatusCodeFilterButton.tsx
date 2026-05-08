@@ -1,17 +1,15 @@
-import { useState } from "react"
 import {Badge} from "@/components/ui/badge.tsx";
 
 type FilterState = "inactive" | "active" | "removed"
 
 interface StatusCodeFilterButtonProps {
     code: number
-    initialState?: FilterState
+    state: FilterState
     onChange: (code: number, state: FilterState) => void,
     isFault?: boolean
 }
 
-export function StatusCodeFilterButton({ code, initialState = "inactive", onChange, isFault }: StatusCodeFilterButtonProps) {
-    const [state, setState] = useState<FilterState>(initialState)
+export function StatusCodeFilterButton({ code, state, onChange, isFault }: StatusCodeFilterButtonProps) {
 
     const getBackgroundColor = () => {
         if(isFault) {
@@ -40,7 +38,6 @@ export function StatusCodeFilterButton({ code, initialState = "inactive", onChan
 
     const toggleState = () => {
         const newState: FilterState = state === "inactive" ? "active" : state === "active" ? "removed" : "inactive"
-        setState(newState)
         onChange(code, newState)
     }
 

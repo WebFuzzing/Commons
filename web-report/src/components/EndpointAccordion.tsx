@@ -37,11 +37,14 @@ export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
         }
     );
 
-    const [selectedCode, setSelectedCode] = useState<number | string>(sortedStatusCodes[0]?.code || 0);
-    const [isFault, setIsFault] = useState(false);
+    type Selection = {code: number | string; isFault: boolean};
+    const [selection, setSelection] = useState<Selection | null>(null);
 
-    const selectedTestCases = statusCodes.find((code) => code.code === selectedCode)?.testCases || [];
-    const selectedFaultTestCases = faults.find((code) => code.code === selectedCode)?.testCases || [];
+    const toggleSelection = (code: number | string, fault: boolean) => {
+        setSelection(prev =>
+            prev && prev.code === code && prev.isFault === fault ? null : {code, isFault: fault}
+        );
+    };
 
     const sortedFaults = faults.sort((a, b) => {
         const codeA = Number(a.code);
@@ -51,12 +54,21 @@ export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
         }
         return codeA - codeB;
     });
+
     const getSelectedStyle = (code: number | string, fault: boolean) => {
-
-        const isSelected = selectedCode === code && isFault === fault;
+        const isSelected = selection?.code === code && selection?.isFault === fault;
         return isSelected ? "ring-2 ring-offset-2 ring-offset-white ring-blue-400 shadow-md" : "";
-
     }
+
+    const selectedGroup = selection
+        ? (selection.isFault
+            ? sortedFaults.find(f => f.code === selection.code)
+            : sortedStatusCodes.find(s => s.code === selection.code))
+        : null;
+
+    const nonEmptyStatusGroups = sortedStatusCodes.filter(c => c.testCases.length > 0);
+    const nonEmptyFaultGroups = sortedFaults.filter(f => f.testCases.length > 0);
+    const hasAnyTestCases = nonEmptyStatusGroups.length > 0 || nonEmptyFaultGroups.length > 0;
 
     const faultColors = ["bg-red-300", "bg-red-500", "bg-red-700"];
     return (
@@ -82,10 +94,7 @@ export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
                     <div className="flex flex-wrap gap-2">
                         {
                             sortedStatusCodes.map((code, index) => (
-                                <Badge key={index} onClick={() => {
-                                    setSelectedCode(code.code);
-                                    setIsFault(false);
-                                }}
+                                <Badge key={index} onClick={() => toggleSelection(code.code, false)}
                                        className={`${getColor(code.code, true, false)} ${getSelectedStyle(code.code, false)} ${getHoverColor(code.code, false)} cursor-pointer text-white font-mono text-base border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]`}>
                                     {code.code == -1 ? "NO-RESPONSE" : `H${code.code}`}
                                 </Badge>
@@ -103,10 +112,7 @@ export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
                     <div className="flex flex-wrap gap-2">
                         {
                             sortedFaults.map((fault, index) => (
-                                <Badge key={index} onClick={() => {
-                                    setSelectedCode(fault.code)
-                                    setIsFault(true);
-                                }}
+                                <Badge key={index} onClick={() => toggleSelection(fault.code, true)}
                                        className={`${faultColors[index % faultColors.length]} ${getSelectedStyle(fault.code, true)} hover:bg-red-400 cursor-pointer text-white text-base font-mono border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]`}>
                                     F{fault.code}
                                 </Badge>
@@ -118,15 +124,30 @@ export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
                         }
                     </div>
                 </div>
-                <div className="text-xs text-gray-500 mt-1">Click to show test cases.</div>
+                <div className="text-xs text-gray-500 mt-1">
+                    {selection ? "Click the highlighted code again to clear the filter." : "Showing all test cases. Click a code to filter."}
+                </div>
 
-                {
-                    (selectedTestCases.length > 0 || selectedFaultTestCases.length > 0) &&
+                {hasAnyTestCases && (
                     <div className="mt-6">
-                        <TestCases addTestTab={addTestTab} isFault={isFault} code={selectedCode}
-                                   testCases={selectedTestCases.length > 0 && !isFault ? selectedTestCases : selectedFaultTestCases}/>
+                        {selection && selectedGroup && selectedGroup.testCases.length > 0 && (
+                            <TestCases addTestTab={addTestTab} isFault={selection.isFault} code={selection.code}
+                                       testCases={selectedGroup.testCases}/>
+                        )}
+                        {!selection && (
+                            <>
+                                {nonEmptyStatusGroups.map(c => (
+                                    <TestCases key={`s-${c.code}`} addTestTab={addTestTab} isFault={false}
+                                               code={c.code} testCases={c.testCases}/>
+                                ))}
+                                {nonEmptyFaultGroups.map(f => (
+                                    <TestCases key={`f-${f.code}`} addTestTab={addTestTab} isFault={true}
+                                               code={f.code} testCases={f.testCases}/>
+                                ))}
+                            </>
+                        )}
                     </div>
-                }
+                )}
             </AccordionContent>
         </AccordionItem>
     )

@@ -28,6 +28,9 @@ type WindowWithFileSystemApi = Window & {
     }) => Promise<FileSystemApiHandle>;
 };
 
+export type StatusFilterState = "inactive" | "active" | "removed";
+export type StatusFilterMap = Record<number, StatusFilterState>;
+
 type AppContextType = {
     data: WebFuzzingCommonsReport | null;
     loading: boolean;
@@ -35,7 +38,8 @@ type AppContextType = {
     testFiles: Record<string, string>;
     loadTestFile: (path: string) => Promise<void>;
     transformedReport: ITransformedReport[];
-    filterEndpoints: (activeFilters: Record<number, string>) => ITransformedReport[];
+    statusFilters: StatusFilterMap;
+    setStatusFilters: (filters: StatusFilterMap) => void;
     filteredEndpoints: ITransformedReport[];
     invalidReportErrors: ZodIssue[] | null;
     lowCodeMode: boolean;
@@ -322,31 +326,19 @@ export const AppProvider = ({ children }: AppProviderProps) => {
 
     const clearReviewMessage = useCallback(() => setReviewMessage(null), []);
 
-    const [filteredEndpoints, setFilteredEndpoints] = useState(transformedReport);
+    const [statusFilters, setStatusFilters] = useState<StatusFilterMap>({});
 
-    useEffect(() => {
-        if (data) {
-            setFilteredEndpoints(transformedReport);
-        }
-    }, [data, transformedReport]);
+    const filteredEndpoints = useMemo(() => {
+        const activeFilters = statusFilters;
+        return transformedReport.filter(endpoint => {
+            if (Object.keys(activeFilters).length === 0) return true;
 
-    const filterEndpoints = (activeFilters: Record<number, string>) => {
-        // Filter the endpoints based on the active filters
-        const filtered = transformedReport.filter(endpoint => {
-            // If no filters are active, show all endpoints
-            if (Object.keys(activeFilters).length === 0) {
-                return true;
-            }
-
-            // Check if any status code or fault code is marked as "removed"
             const hasRemovedStatusCode = endpoint.httpStatusCodes.some(code =>
                 activeFilters[code.code] === "removed"
             );
             const hasRemovedFaultCode = endpoint.faults.some(code =>
                 activeFilters[-code.code] === "removed"
             );
-
-            // Check if any status code or fault code is marked as "active"
             const hasActiveStatusCode = endpoint.httpStatusCodes.some(code =>
                 activeFilters[code.code] === "active"
             );
@@ -354,40 +346,18 @@ export const AppProvider = ({ children }: AppProviderProps) => {
                 activeFilters[-code.code] === "active"
             );
 
-            const hasActiveFilter = activeFilters && Object.values(activeFilters).some((value) => value === "active");
-            const hasRemovedFilter = activeFilters && Object.values(activeFilters).some((value) => value === "removed");
+            const hasActiveFilter = Object.values(activeFilters).some(v => v === "active");
+            const hasRemovedFilter = Object.values(activeFilters).some(v => v === "removed");
 
-            if (!hasActiveFilter && !hasRemovedFilter) {
-                // If no filters are active, show all endpoints
-                return true;
-            }
+            if (!hasActiveFilter && !hasRemovedFilter) return true;
 
             if (hasActiveFilter) {
-                if (hasRemovedFilter) {
-                    // If there are both active and removed filters, check if the endpoint matches any of them
-                    if(hasRemovedFaultCode || hasRemovedStatusCode) {
-                        return false;
-                    }
-
-                    return !!(hasActiveStatusCode || hasActiveFaultCode);
-
-                } else {
-                    // If there are only active filters, check if the endpoint matches any of them
-                    return !!(hasActiveStatusCode || hasActiveFaultCode);
-
-                }
-            } else if (hasRemovedFilter) {
-                // If there are only removed filters, check if the endpoint matches any of them
-                return !(hasRemovedStatusCode || hasRemovedFaultCode);
-
-            } else {
-                // If there are no active or removed filters, show all endpoints
-                return true;
+                if (hasRemovedFilter && (hasRemovedStatusCode || hasRemovedFaultCode)) return false;
+                return hasActiveStatusCode || hasActiveFaultCode;
             }
+            return !(hasRemovedStatusCode || hasRemovedFaultCode);
         });
-        setFilteredEndpoints(filtered)
-        return filtered;
-    }
+    }, [statusFilters, transformedReport]);
 
     const value: AppContextType = {
         data,
@@ -395,7 +365,8 @@ export const AppProvider = ({ children }: AppProviderProps) => {
         error,
         testFiles,
         transformedReport,
-        filterEndpoints,
+        statusFilters,
+        setStatusFilters,
         filteredEndpoints,
         invalidReportErrors,
         lowCodeMode,
