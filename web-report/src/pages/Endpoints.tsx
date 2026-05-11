@@ -10,11 +10,11 @@ interface IProps {
 
 export const Endpoints: React.FC<IProps> = ({addTestTab}) => {
 
-    const {transformedReport, filteredEndpoints, filterEndpoints} = useAppContext();
+    const {transformedReport, filteredEndpoints, statusFilters, setStatusFilters} = useAppContext();
 
     return (
         <div className="border-2 border-black p-3 sm:p-6 rounded-none">
-            <StatusCodeFilters data={transformedReport} onFiltersChange={filterEndpoints}/>
+            <StatusCodeFilters data={transformedReport} filters={statusFilters} onFiltersChange={setStatusFilters}/>
             <div className="flex items-center mb-2">
                 <h3 className="text-sm font-medium text-gray-700 mr-3"># Endpoints:</h3>
                 <div className="flex flex-wrap gap-2 font-bold font-mono">

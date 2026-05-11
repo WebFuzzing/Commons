@@ -1,4 +1,4 @@
-import {useState} from "react"
+import {useState, useMemo} from "react"
 import {StatusCodeFilterButton} from "./StatusCodeFilterButton"
 import {ITransformedReport} from "@/lib/utils.tsx";
 import {StatusCodeModal} from "@/components/StatusCodeModal.tsx";
@@ -7,36 +7,27 @@ type FilterState = "inactive" | "active" | "removed"
 
 interface StatusCodeFiltersProps {
     data: ITransformedReport[]
+    filters: Record<number, FilterState>
     onFiltersChange: (activeFilters: Record<number, FilterState>) => void
 }
 
-export function StatusCodeFilters({data, onFiltersChange}: StatusCodeFiltersProps) {
+export function StatusCodeFilters({data, filters, onFiltersChange}: StatusCodeFiltersProps) {
 
-    // Extract all unique status codes from endpoints
-    const allStatusCodes = [...new Map(
-        data.flatMap(endpoint => endpoint.httpStatusCodes)
-            .map(item => [item.code, item])
-    ).values()].sort((a, b) => a.code - b.code);
+    const allStatusCodes = useMemo(() =>
+        [...new Map(
+            data.flatMap(endpoint => endpoint.httpStatusCodes)
+                .map(item => [item.code, item])
+        ).values()].sort((a, b) => a.code - b.code),
+        [data]
+    );
 
-    const allFaultCodes = [...new Set(data.map(item => {
-        return item.faults.map(fault => fault.code)
-    }).flat())].sort((a, b) => a - b);
+    const allFaultCodes = useMemo(() =>
+        [...new Set(data.flatMap(item => item.faults.map(fault => fault.code)))].sort((a, b) => a - b),
+        [data]
+    );
 
-    const initialFilters = allStatusCodes.reduce((acc, code) => {
-        acc[code.code] = "inactive"
-        return acc
-    }, {} as Record<number, FilterState>)
-    allFaultCodes.forEach(code => {
-        initialFilters[-code] = "inactive"
-    })
-    const [filters, setFilters] = useState<Record<number, FilterState>>(initialFilters)
-
-    // Handle filter state change
     const handleFilterChange = (code: number, state: FilterState) => {
-        const newFilters = {...filters, [code]: state}
-
-        setFilters(newFilters)
-        onFiltersChange(newFilters)
+        onFiltersChange({...filters, [code]: state});
     }
 
     const [isModalOpen, setIsModalOpen] = useState(false)
@@ -51,7 +42,7 @@ export function StatusCodeFilters({data, onFiltersChange}: StatusCodeFiltersProp
                         <StatusCodeFilterButton
                             key={code.code}
                             code={code.code}
-                            initialState={filters[code.code] || "inactive"}
+                            state={filters[code.code] ?? "inactive"}
                             onChange={handleFilterChange}
                         />
                     ))}
@@ -64,7 +55,7 @@ export function StatusCodeFilters({data, onFiltersChange}: StatusCodeFiltersProp
                         <StatusCodeFilterButton
                             key={-code}
                             code={-code}
-                            initialState={filters[-code] || "inactive"}
+                            state={filters[-code] ?? "inactive"}
                             onChange={handleFilterChange}
                             isFault={true}
                         />
