@@ -2,6 +2,8 @@
 
 Under development in `master` branch.
 
+- Fixed bugs in Web Report related to endpoint filters when changing tab.
+
 # 0.4.0
 
 - Auth Schema: replaced 'required' with 'x-required' in few places to deal with issue with template resolution
