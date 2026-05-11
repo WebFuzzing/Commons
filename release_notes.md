@@ -2,6 +2,8 @@
 
 Under development in `master` branch.
 
+# 0.4.1
+
 - Fixed bugs in Web Report related to endpoint filters when changing tab.
 
 # 0.4.0
