@@ -197,6 +197,13 @@ $defs:
         description: "The line number in the generated test suite file where the code of this test case ends."
         type: integer
         minimum: 0
+      namedExamples:
+        description: "Optional list of 'named examples' used in the test cases. These typically represent
+                      user test data that need to be tracked in the generated test suite."
+        type: [array, "null"]
+        items:
+          type: string
+          uniqueItems: true
 
   Faults:
     type: object
@@ -256,3 +263,4 @@ $defs:
                       more important. This is ONLY meant to be used for display purposes, e.g., when
                       sorting the list of warnings to show to user."
         type: integer
+        minimum: 0
