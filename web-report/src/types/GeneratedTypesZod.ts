@@ -16,6 +16,15 @@ export const testCaseSchema = z.record(z.unknown()).and(
     name: z.string().optional(),
     startLine: z.number().optional(),
     endLine: z.number().optional(),
+    namedExamples: z.array(z.string()).optional().nullable(),
+  }),
+);
+
+export const warningSchema = z.record(z.unknown()).and(
+  z.object({
+    message: z.string().optional(),
+    category: z.string().optional(),
+    displayPriority: z.number().optional(),
   }),
 );
 
@@ -92,5 +101,6 @@ export const webFuzzingCommonsReportSchema = z.record(z.unknown()).and(
     testCases: z.array(testCaseSchema),
     executionTimeInSeconds: z.number(),
     extra: z.array(coverageSchema).optional().nullable(),
+    warnings: z.array(warningSchema).optional().nullable(),
   }),
 );

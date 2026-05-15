@@ -64,6 +64,10 @@ export interface WebFuzzingCommonsReport {
    * Extra, optional coverage information, collected by different tools.
    */
   extra?: Coverage[] | null;
+  /**
+   * Optional list of general 'warnings' regarding the fuzzing process. These are general, and not specific to any generated test case. For example, problems in the schema would be reported here, as well as possible misconfigurations of the fuzzer.
+   */
+  warnings?: Warning[] | null;
   [k: string]: unknown;
 }
 export interface Faults {
@@ -151,6 +155,10 @@ export interface TestCase {
    * The line number in the generated test suite file where the code of this test case ends.
    */
   endLine?: number;
+  /**
+   * Optional list of 'named examples' used in the test cases. These typically represent user test data that need to be tracked in the generated test suite.
+   */
+  namedExamples?: string[] | null;
   [k: string]: unknown;
 }
 export interface Coverage {
@@ -174,5 +182,20 @@ export interface CoverageCriterion {
    * Optional number of all testing targets for this criterion. For some criteria, this number can be unknown.
    */
   total?: number | null;
+  [k: string]: unknown;
+}
+export interface Warning {
+  /**
+   * The textual content of the warning message.
+   */
+  message?: string;
+  /**
+   * Label to specify the type of warning, e.g., if related to the schema or  fuzzer misconfiguration.
+   */
+  category?: string;
+  /**
+   * Hint on the priority of this warning message, where lowest (eg, 1) values mean more important. This is ONLY meant to be used for display purposes, e.g., when sorting the list of warnings to show to user.
+   */
+  displayPriority?: number;
   [k: string]: unknown;
 }
