@@ -8,6 +8,7 @@ import {Endpoints} from "@/pages/Endpoints.tsx";
 import {TestResults} from "@/pages/TestResults.tsx";
 import {Tests} from "@/pages/Tests.tsx";
 import {Warnings} from "@/pages/Warnings.tsx";
+import {Examples} from "@/pages/Examples.tsx";
 
 import {ScrollArea, ScrollBar} from "@/components/ui/scroll-area.tsx";
 import {useAppContext} from "@/AppProvider.tsx";
@@ -16,12 +17,25 @@ import {REVIEW_STATE} from "@/types/Review.ts";
 
 export interface ITestTabs {
     value: string;
+    origin: string;
 }
+
+const MAIN_TABS = new Set(["overview", "endpoints", "examples", "tests", "warnings"]);
 
 export const Dashboard: React.FC = () => {
     const {data, isDirty, reviews} = useAppContext();
 
     const warningCount = data?.warnings?.length ?? 0;
+
+    const examplesCount = useMemo(() => {
+        const set = new Set<string>();
+        for (const tc of data?.testCases ?? []) {
+            for (const ex of tc.namedExamples ?? []) {
+                if (ex) set.add(ex);
+            }
+        }
+        return set.size;
+    }, [data]);
 
     const reviewRatio = useMemo(() => {
         if (!data) return null;
@@ -41,8 +55,11 @@ export const Dashboard: React.FC = () => {
     const [testTabs, setTestTabs] = useState<Array<ITestTabs>>([]);
 
     const addTestTab = (testName: string, event: React.MouseEvent<HTMLElement>) => {
+        const origin = MAIN_TABS.has(activeTab)
+            ? activeTab
+            : (testTabs.find(t => t.value === activeTab)?.origin ?? "endpoints");
         if (!testTabs.find((t) => t.value === testName)) {
-            setTestTabs([{value: testName}, ...testTabs]);
+            setTestTabs([{value: testName, origin}, ...testTabs]);
         }
 
         if (!event.ctrlKey) {
@@ -51,12 +68,15 @@ export const Dashboard: React.FC = () => {
     }
 
     const handleCloseTestsTab = (testName: string) => {
+        const closing = testTabs.find(t => t.value === testName);
         const updatedTabs = testTabs.filter((t) => t.value !== testName);
         setTestTabs(updatedTabs);
+        if (activeTab !== testName) return;
         if (updatedTabs.length === 0) {
-            setActiveTab("endpoints")
+            const fallback = closing?.origin ?? "endpoints";
+            setActiveTab(MAIN_TABS.has(fallback) ? fallback : "endpoints");
         } else {
-            setActiveTab(updatedTabs[0].value)
+            setActiveTab(updatedTabs[0].value);
         }
     }
 
@@ -82,7 +102,7 @@ export const Dashboard: React.FC = () => {
                     toolNameVersion={`${data.toolName}-${data.toolVersion}`}/>
             <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
                 <div className="flex justify-center mb-2 w-full">
-                    <TabsList className={`flex gap-2 sm:gap-4 w-full max-w-[850px] h-auto p-1 bg-transparent`}>
+                    <TabsList className={`flex gap-2 sm:gap-4 w-full max-w-[1000px] h-auto p-1 bg-transparent`}>
                         <TabsTrigger
                             value="overview"
                             className="flex-1 sm:flex-none sm:min-w-[150px] py-3 text-xs sm:text-sm border border-gray-500 data-[state=active]:bg-blue-100 data-[state=active]:border-2 data-[state=active]:border-black data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
@@ -96,6 +116,18 @@ export const Dashboard: React.FC = () => {
                             data-testid="tab-endpoints"
                         >
                             Endpoints
+                        </TabsTrigger>
+                        <TabsTrigger
+                            value="examples"
+                            className="flex-1 sm:flex-none sm:min-w-[150px] py-3 text-xs sm:text-sm border border-gray-500 data-[state=active]:bg-blue-100 data-[state=active]:border-2 data-[state=active]:border-black data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                            data-testid="tab-examples"
+                        >
+                            Examples
+                            {examplesCount > 0 && (
+                                <span className="ml-2 text-xs font-mono text-gray-600" data-testid="tab-examples-count">
+                                    {examplesCount}
+                                </span>
+                            )}
                         </TabsTrigger>
                         <TabsTrigger
                             value="tests"
@@ -128,7 +160,7 @@ export const Dashboard: React.FC = () => {
 
                 <div className="flex justify-center w-full">
                     {
-                        <TabsList className={`flex gap-2 sm:gap-4 w-full max-w-[850px] h-auto p-1 bg-transparent`}>
+                        <TabsList className={`flex gap-2 sm:gap-4 w-full max-w-[1000px] h-auto p-1 bg-transparent`}>
                             <ScrollArea className="w-[130%] whitespace-nowrap py-3">
                                 {
                                     testTabs.map((test, index) => (
@@ -164,6 +196,10 @@ export const Dashboard: React.FC = () => {
 
                 <TabsContent value="endpoints">
                     <Endpoints addTestTab={addTestTab}/>
+                </TabsContent>
+
+                <TabsContent value="examples">
+                    <Examples addTestTab={addTestTab}/>
                 </TabsContent>
 
                 <TabsContent value="tests">
