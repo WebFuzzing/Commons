@@ -7,6 +7,7 @@ import {Overview} from "@/pages/Overview.tsx";
 import {Endpoints} from "@/pages/Endpoints.tsx";
 import {TestResults} from "@/pages/TestResults.tsx";
 import {Tests} from "@/pages/Tests.tsx";
+import {Warnings} from "@/pages/Warnings.tsx";
 
 import {ScrollArea, ScrollBar} from "@/components/ui/scroll-area.tsx";
 import {useAppContext} from "@/AppProvider.tsx";
@@ -19,6 +20,8 @@ export interface ITestTabs {
 
 export const Dashboard: React.FC = () => {
     const {data, isDirty, reviews} = useAppContext();
+
+    const warningCount = data?.warnings?.length ?? 0;
 
     const reviewRatio = useMemo(() => {
         if (!data) return null;
@@ -79,7 +82,7 @@ export const Dashboard: React.FC = () => {
                     toolNameVersion={`${data.toolName}-${data.toolVersion}`}/>
             <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
                 <div className="flex justify-center mb-2 w-full">
-                    <TabsList className={`flex gap-2 sm:gap-4 w-full max-w-[700px] h-auto p-1 bg-transparent`}>
+                    <TabsList className={`flex gap-2 sm:gap-4 w-full max-w-[850px] h-auto p-1 bg-transparent`}>
                         <TabsTrigger
                             value="overview"
                             className="flex-1 sm:flex-none sm:min-w-[150px] py-3 text-xs sm:text-sm border border-gray-500 data-[state=active]:bg-blue-100 data-[state=active]:border-2 data-[state=active]:border-black data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
@@ -107,13 +110,25 @@ export const Dashboard: React.FC = () => {
                             )}
                             {isDirty && <span className="ml-1 text-orange-600" title="Unsaved review changes">•</span>}
                         </TabsTrigger>
+                        <TabsTrigger
+                            value="warnings"
+                            className="flex-1 sm:flex-none sm:min-w-[150px] py-3 text-xs sm:text-sm border border-gray-500 data-[state=active]:bg-orange-100 data-[state=active]:border-2 data-[state=active]:border-black data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                            data-testid="tab-warnings"
+                        >
+                            Warnings
+                            {warningCount > 0 && (
+                                <span className="ml-2 text-xs font-mono px-1.5 py-0.5 border border-orange-600 bg-orange-50 text-orange-700" data-testid="tab-warnings-count">
+                                    {warningCount}
+                                </span>
+                            )}
+                        </TabsTrigger>
                     </TabsList>
                 </div>
                 <div className="border-t border-black my-2"></div>
 
                 <div className="flex justify-center w-full">
                     {
-                        <TabsList className={`flex gap-2 sm:gap-4 w-full max-w-[700px] h-auto p-1 bg-transparent`}>
+                        <TabsList className={`flex gap-2 sm:gap-4 w-full max-w-[850px] h-auto p-1 bg-transparent`}>
                             <ScrollArea className="w-[130%] whitespace-nowrap py-3">
                                 {
                                     testTabs.map((test, index) => (
@@ -153,6 +168,10 @@ export const Dashboard: React.FC = () => {
 
                 <TabsContent value="tests">
                     <Tests/>
+                </TabsContent>
+
+                <TabsContent value="warnings">
+                    <Warnings/>
                 </TabsContent>
 
                 {
