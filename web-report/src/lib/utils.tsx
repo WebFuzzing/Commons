@@ -85,23 +85,57 @@ export const extractCodeLines = (
 };
 
 export const extractComments = (code: string): string => {
-    const blockRegex = /\/\*\*[\s\S]*?\*\//g;
-    const blocks = code.match(blockRegex);
-    if (!blocks || blocks.length === 0) {
-        return "";
-    }
+    const lines = code.split("\n");
+    const groups: string[] = [];
+    let current: string[] = [];
+    let inBlock = false;
 
-    return blocks
-        .map(block => {
-            const inner = block.replace(/^\/\*\*/, "").replace(/\*\/$/, "");
-            return inner
-                .split("\n")
-                .map(line => line.replace(/^\s*\*\s?/, ""))
-                .join("\n")
-                .trim();
-        })
-        .filter(text => text.length > 0)
-        .join("\n\n");
+    const flush = () => {
+        if (current.length === 0) return;
+        const text = current.join("\n").trim();
+        if (text.length > 0) groups.push(text);
+        current = [];
+    };
+
+    for (const raw of lines) {
+        const trimmed = raw.trim();
+
+        if (inBlock) {
+            const endIdx = trimmed.indexOf("*/");
+            const body = (endIdx >= 0 ? trimmed.slice(0, endIdx) : trimmed).replace(/^\*+\s?/, "");
+            if (body.length > 0) current.push(body);
+            if (endIdx >= 0) {
+                inBlock = false;
+                flush();
+            }
+            continue;
+        }
+
+        if (trimmed.startsWith("/*")) {
+            const afterOpen = trimmed.replace(/^\/\*+\s?/, "");
+            const endIdx = afterOpen.indexOf("*/");
+            if (endIdx >= 0) {
+                const body = afterOpen.slice(0, endIdx).trim();
+                if (body) current.push(body);
+                flush();
+            } else {
+                inBlock = true;
+                if (afterOpen.length > 0) current.push(afterOpen);
+            }
+            continue;
+        }
+
+        const lineMatch = trimmed.match(/^(?:#|\/\/)\s?(.*)$/);
+        if (lineMatch) {
+            current.push(lineMatch[1]);
+            continue;
+        }
+
+        flush();
+    }
+    flush();
+
+    return groups.join("\n\n");
 };
 
 export const calculateAllStatusCounts = (coveredHttpStatus: CoveredEndpoint[], endpointIds:string[]) => {
