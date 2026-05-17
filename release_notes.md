@@ -2,6 +2,12 @@
 
 Under development in `master` branch.
 
+# 0.5.0
+
+- Web Report: added new "Warnings" tab to show all general warnings reported by the fuzzer
+- Web Report: added new "Examples" tab to filter tests by the named examples they use (if any)
+- Web Report: fixed bug in which accordions' state was not saved when changing tab.
+
 # 0.4.1
 
 - Fixed bugs in Web Report related to endpoint filters when changing tab.
