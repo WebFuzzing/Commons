@@ -54,6 +54,10 @@ export const Dashboard: React.FC = () => {
 
     const [testTabs, setTestTabs] = useState<Array<ITestTabs>>([]);
 
+    const [openExamples, setOpenExamples] = useState<string[]>([]);
+    const [openEndpoint, setOpenEndpoint] = useState<string>("");
+    const [openTestFiles, setOpenTestFiles] = useState<string[]>([]);
+
     const addTestTab = (testName: string, event: React.MouseEvent<HTMLElement>) => {
         const origin = MAIN_TABS.has(activeTab)
             ? activeTab
@@ -195,15 +199,15 @@ export const Dashboard: React.FC = () => {
                 </TabsContent>
 
                 <TabsContent value="endpoints">
-                    <Endpoints addTestTab={addTestTab}/>
+                    <Endpoints addTestTab={addTestTab} openEndpoint={openEndpoint} setOpenEndpoint={setOpenEndpoint}/>
                 </TabsContent>
 
                 <TabsContent value="examples">
-                    <Examples addTestTab={addTestTab}/>
+                    <Examples addTestTab={addTestTab} openExamples={openExamples} setOpenExamples={setOpenExamples}/>
                 </TabsContent>
 
                 <TabsContent value="tests">
-                    <Tests/>
+                    <Tests openTestFiles={openTestFiles} setOpenTestFiles={setOpenTestFiles}/>
                 </TabsContent>
 
                 <TabsContent value="warnings">

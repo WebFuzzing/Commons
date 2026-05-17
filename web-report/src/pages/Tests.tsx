@@ -17,7 +17,12 @@ const filterButtonClass = (active: boolean) =>
             : "bg-white hover:bg-gray-100"
     }`;
 
-export const Tests: React.FC = () => {
+interface IProps {
+    openTestFiles: string[];
+    setOpenTestFiles: (value: string[]) => void;
+}
+
+export const Tests: React.FC<IProps> = ({openTestFiles, setOpenTestFiles}) => {
     const {
         data,
         reviews,
@@ -153,13 +158,13 @@ export const Tests: React.FC = () => {
                 ))}
             </div>
 
-            <Accordion type="multiple" className="w-full">
+            <Accordion type="multiple" value={openTestFiles} onValueChange={setOpenTestFiles} className="w-full">
                 {testFilePaths.map((file, idx) => {
                     const items = grouped.get(file) ?? [];
                     return (
                         <AccordionItem
                             key={file}
-                            value={`file-${idx}`}
+                            value={file}
                             className="border-2 border-black mb-4 overflow-hidden"
                             data-testid={`test-file-${idx}`}
                         >

@@ -5,6 +5,8 @@ import {ChevronRight, Code} from "lucide-react";
 
 interface IProps {
     addTestTab: (testName: string, event: React.MouseEvent<HTMLElement>) => void;
+    openExamples: string[];
+    setOpenExamples: (value: string[]) => void;
 }
 
 interface ExampleEntry {
@@ -12,7 +14,7 @@ interface ExampleEntry {
     cases: Array<{id: string; name: string}>;
 }
 
-export const Examples: React.FC<IProps> = ({addTestTab}) => {
+export const Examples: React.FC<IProps> = ({addTestTab, openExamples, setOpenExamples}) => {
     const {data} = useAppContext();
     const testCases = useMemo(() => data?.testCases ?? [], [data]);
 
@@ -75,11 +77,11 @@ export const Examples: React.FC<IProps> = ({addTestTab}) => {
             ) : filteredExamples.length === 0 ? (
                 <div className="text-gray-500 italic text-sm">No named examples match the current filter.</div>
             ) : (
-                <Accordion type="multiple" className="w-full">
+                <Accordion type="multiple" value={openExamples} onValueChange={setOpenExamples} className="w-full">
                     {filteredExamples.map((ex, idx) => (
                         <AccordionItem
                             key={ex.name}
-                            value={`example-${idx}`}
+                            value={ex.name}
                             className="border-2 border-black mb-4 overflow-hidden"
                             data-testid={`example-${idx}`}
                         >

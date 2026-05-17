@@ -6,9 +6,11 @@ import {useAppContext} from "@/AppProvider.tsx";
 
 interface IProps {
     addTestTab: (value: string, event: React.MouseEvent<HTMLElement>) => void;
+    openEndpoint: string;
+    setOpenEndpoint: (value: string) => void;
 }
 
-export const Endpoints: React.FC<IProps> = ({addTestTab}) => {
+export const Endpoints: React.FC<IProps> = ({addTestTab, openEndpoint, setOpenEndpoint}) => {
 
     const {transformedReport, filteredEndpoints, statusFilters, setStatusFilters} = useAppContext();
 
@@ -21,10 +23,10 @@ export const Endpoints: React.FC<IProps> = ({addTestTab}) => {
                     <p className="text-black-400">{filteredEndpoints.length}</p> / <p className="text-red-400">{transformedReport.length}</p>
                 </div>
             </div>
-            <Accordion type="single" collapsible className="w-full">
+            <Accordion type="single" collapsible value={openEndpoint} onValueChange={setOpenEndpoint} className="w-full">
                 {
                     filteredEndpoints.map((item, index) => (
-                        <EndpointAccordion data-testid="endpoint" key={index} value={`_${index}`}
+                        <EndpointAccordion data-testid="endpoint" key={index} value={item.endpoint}
                                            endpoint={item.endpoint}
                                            statusCodes={item.httpStatusCodes} faults={item.faults}
                                            addTestTab={addTestTab}/>
