@@ -4868,5 +4868,13 @@
         }
       ]
     }
+  ],
+  "warnings": [
+    {
+      "message": "No authentication info was provided. Unless you are testing an example API, you should setup some authentication info for different users. If this is the first time you are using EvoMaster, and you just want to get a feeling of how it works, then ignore this warning. However, to get better results, you will need setup authentication info, eventually. More info is currently available at https://github.com/WebFuzzing/EvoMaster/blob/master/docs/auth.md",
+      "category": "FUZZER",
+      "displayPriority": 1,
+      "additionalProperties": {}
+    }
   ]
 }
