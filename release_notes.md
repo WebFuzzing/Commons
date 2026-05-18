@@ -2,6 +2,10 @@
 
 Under development in `master` branch.
 
+# 0.5.1
+
+- Web Report: fixed bug in which low-code view did not work for test comments written in Python and JavaScript
+
 # 0.5.0
 
 - Web Report: added new "Warnings" tab to show all general warnings reported by the fuzzer
