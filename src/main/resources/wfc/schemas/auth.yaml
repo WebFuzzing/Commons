@@ -113,12 +113,46 @@ $defs:
       generators:
         description: "List of generators for unique/random names to use in payload template resolution."
         type: array
+        minLength: 1
         items:
-          @ref
-        TODO
+          $ref: "#/$defs/Generator"
     x-required:
-      allOf: ["verb","contentType","payloadRaw"]
+      allOf: ["verb","contentType","payloadRaw","generators"]
       oneOf: ["endpoint","externalEndpointURL"]
+
+  Generator:
+    description: "Parametric producer of unique string values. \
+                  This is needed for example when creating user-names dynamically in the authentication configurations."
+    type: object
+    properties:
+      placeHolder:
+        description: "Placeholder tag used to represent a value generated with this generator. \
+                      String interpolation will be applied to the raw payloads to replace any found instance of \
+                      this placeholder with the generated value."
+        type: string
+        examples:
+        - "{$username}"
+        - "{$email}"
+      minLength:
+        description: "Minimum length of the generated string"
+        type: number
+        min: 0
+      maxLength:
+        description: "Maximum length of the generated string"
+        type: number
+        min: 0
+      prefix:
+        description: "Fixed prefix shared by all generated strings"
+        type: string
+        examples:
+        - "user_"
+      postfix:
+        description: "Fixed postfix shared by all generated strings"
+        type: string
+        examples:
+          - "@example.com"
+    x-required: ["placeHolder"]
+
   LoginEndpoint:
     description: "Used to represent the case in which a login endpoint is used to obtain the authentication credentials. \
                       These can be cookies, or a token extracted from the login endpoint's response. \
