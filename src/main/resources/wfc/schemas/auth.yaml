@@ -130,6 +130,7 @@ $defs:
                       String interpolation will be applied to the raw payloads to replace any found instance of \
                       this placeholder with the generated value."
         type: string
+        minLength: 1
         examples:
         - "{$username}"
         - "{$email}"
