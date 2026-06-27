@@ -136,11 +136,11 @@ $defs:
         - "{$email}"
       minLength:
         description: "Minimum length of the generated string"
-        type: number
+        type: integer
         min: 0
       maxLength:
         description: "Maximum length of the generated string"
-        type: number
+        type: integer
         min: 0
       prefix:
         description: "Fixed prefix shared by all generated strings"
