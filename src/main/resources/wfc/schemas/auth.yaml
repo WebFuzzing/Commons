@@ -81,8 +81,79 @@ $defs:
           $ref: "#/$defs/Header"
       loginEndpointAuth:
           $ref: "#/$defs/LoginEndpoint"
+      createUsers:
+          $ref: "#/$defs/CreateUsers"
     x-required: ["name"]
   ###
+  CreateUsers:
+    description: "For some example APIs, it might be possible to create new users with a single HTTP request. \
+                      In these cases, instead of relying on knowledge of existing users, the fuzzer can create them on \
+                      the fly. This can be useful when endpoints might modify data of existing users, whose auth info \
+                      could get invalidated during the fuzzing session."
+    type: object
+    properties:
+      endpoint:
+        description: "The endpoint path (eg '/users') where to execute the create user action. \
+                      It assumes it is on same server of API.\
+                      If not, rather use 'externalEndpointURL'."
+        type: string
+      externalEndpointURL:
+        description: "If the create endpoint is on a different server, here can rather specify the full URL for it."
+        type: string
+      payloadRaw:
+        description: "The raw payload to send, as a string. This will need to contain the template placeholders \
+                      defined in the generators. "
+        type: string
+      verb:
+        $ref: "#/$defs/HttpVerb"
+      contentType:
+        description: "Specify the format in which the payload is sent to the login endpoint. \
+                      A common example is 'application/json'."
+        type: string
+      generators:
+        description: "List of generators for unique/random names to use in payload template resolution."
+        type: array
+        minLength: 1
+        items:
+          $ref: "#/$defs/Generator"
+    x-required:
+      allOf: ["verb","contentType","payloadRaw","generators"]
+      oneOf: ["endpoint","externalEndpointURL"]
+
+  Generator:
+    description: "Parametric producer of unique string values. \
+                  This is needed for example when creating user-names dynamically in the authentication configurations."
+    type: object
+    properties:
+      placeHolder:
+        description: "Placeholder tag used to represent a value generated with this generator. \
+                      String interpolation will be applied to the raw payloads to replace any found instance of \
+                      this placeholder with the generated value."
+        type: string
+        minLength: 1
+        examples:
+        - "{$username}"
+        - "{$email}"
+      minLength:
+        description: "Minimum length of the generated string"
+        type: integer
+        min: 0
+      maxLength:
+        description: "Maximum length of the generated string"
+        type: integer
+        min: 0
+      prefix:
+        description: "Fixed prefix shared by all generated strings"
+        type: string
+        examples:
+        - "user_"
+      postfix:
+        description: "Fixed postfix shared by all generated strings"
+        type: string
+        examples:
+          - "@example.com"
+    x-required: ["placeHolder"]
+
   LoginEndpoint:
     description: "Used to represent the case in which a login endpoint is used to obtain the authentication credentials. \
                       These can be cookies, or a token extracted from the login endpoint's response. \
