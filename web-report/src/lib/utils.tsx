@@ -199,7 +199,7 @@ export const calculateAllStatusCounts = (coveredHttpStatus: CoveredEndpoint[], e
     return allStatusCounts;
 }
 
-export const getFaultCounts = (foundFaults: FoundFault[]) => {
+export const getFaultCounts = (foundFaults: FoundFault[], endpointIds?: string[]) => {
     const faultCounts = new Map();
     // A fault defines a unique operationId, code, and context. To define a unique fault, we can use a combination of these three properties.
 
@@ -222,11 +222,17 @@ export const getFaultCounts = (foundFaults: FoundFault[]) => {
     
     return Array.from(uniqueCodes).map(code => {
         const faultsWithCode = uniqueFaults.filter(fault => fault.code === code);
-        const uniqueOperationCounts = new Set(faultsWithCode.map(fault => fault.operationId)).size;
+        const uniqueOperations = new Set(faultsWithCode.map(fault => fault.operationId));
+        // Operations not declared in the schema must not skew the endpoint ratio,
+        // so they are reported separately instead of being counted in operationCount
+        const undeclaredOperationCount = endpointIds
+            ? [...uniqueOperations].filter(operation => !endpointIds.includes(operation)).length
+            : 0;
         return {
             code: code,
             count: faultsWithCode.length,
-            operationCount: uniqueOperationCounts,
+            operationCount: uniqueOperations.size - undeclaredOperationCount,
+            undeclaredOperationCount: undeclaredOperationCount,
         }
     }).sort((a, b) => a.code - b.code);
 }
@@ -273,6 +279,9 @@ export const getLanguage = (fileName: string) => {
 
 export interface ITransformedReport {
     endpoint: string;
+    // false when the operation is not declared in the API schema (endpointIds),
+    // but faults were still detected on it (e.g. an undocumented OPTIONS handler)
+    declared: boolean;
     faults: {
         code: number;
         testCases: string[];
@@ -294,6 +303,7 @@ export const transformWebFuzzingReport = (original: WebFuzzingCommonsReport | nu
     original.problemDetails.rest?.endpointIds.forEach(endpoint => {
         endpointMap.set(endpoint, {
             endpoint,
+            declared: true,
             httpStatusCodes: [],
             faults: []
         });
@@ -305,7 +315,12 @@ export const transformWebFuzzingReport = (original: WebFuzzingCommonsReport | nu
         }
 
         if (!endpointMap.has(fault.operationId)) {
-            console.log(`Endpoint ${fault.operationId} not found in endpointIds`);
+            endpointMap.set(fault.operationId, {
+                endpoint: fault.operationId,
+                declared: false,
+                httpStatusCodes: [],
+                faults: []
+            });
         }
 
         const endpointData = endpointMap.get(fault.operationId);

@@ -3,6 +3,7 @@ import {Badge} from "@/components/ui/badge.tsx";
 import React, {useState} from "react";
 import {TestCases} from "@/components/TestCases.tsx";
 import {getColor, getHoverColor} from "@/lib/utils";
+import info from "@/assets/info.json";
 
 interface IStatusType {
     code: number | string;
@@ -12,6 +13,7 @@ interface IStatusType {
 export interface IEndpointAccordionProps {
     endpoint: string;
     value: string;
+    declared?: boolean;
     statusCodes: IStatusType[];
     faults: IStatusType[];
     addTestTab: (value: string, event: React.MouseEvent<HTMLElement>) => void;
@@ -20,6 +22,7 @@ export interface IEndpointAccordionProps {
 export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
                                                                         endpoint,
                                                                         value,
+                                                                        declared = true,
                                                                         statusCodes,
                                                                         faults,
                                                                         addTestTab
@@ -73,9 +76,14 @@ export const EndpointAccordion: React.FC<IEndpointAccordionProps> = ({
     const faultColors = ["bg-red-300", "bg-red-500", "bg-red-700"];
     return (
         <AccordionItem value={value} className="border-2 border-black mb-4 overflow-hidden" data-testid={endpoint}>
-            <AccordionTrigger className="bg-blue-100 px-3 sm:px-4 py-3 text-sm sm:text-lg font-bold hover:no-underline hover:bg-blue-200">
+            <AccordionTrigger className={`px-3 sm:px-4 py-3 text-sm sm:text-lg font-bold hover:no-underline ${declared ? "bg-blue-100 hover:bg-blue-200" : "bg-amber-100 hover:bg-amber-200"}`}>
                 <div className="flex-1 font-mono break-all text-left">{endpoint}</div>
                 <div className="flex flex-wrap justify-end gap-1 sm:gap-2 mr-2 sm:mr-4">
+                    {!declared && (
+                        <Badge className="bg-amber-500 font-mono text-xs" title={info.notInSchema}>
+                            NOT IN SCHEMA
+                        </Badge>
+                    )}
                     {sortedStatusCodes.map((code, idx) => (
                         <Badge key={`_${idx}`} className={`${getColor(code.code, true, false)} font-mono text-xs`}>
                             {code.code == -1 ? "NO-RESPONSE" : `H${code.code}`}

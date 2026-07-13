@@ -10,6 +10,8 @@
   "numberOfFaultsPerCode": "Number of faults detected for each code.",
   "distributionOfEndpointsPerCode": "Faulty endpoints per code (Affected/Total Endpoints).",
   "distributionTooltip": "{operationCount} {endpointText} {code} error code out of {totalEndpoints} endpoints.",
+  "undeclaredOperationsTooltip": "In addition, {undeclaredCount} operation(s) with this fault are not declared in the API schema, and so are not counted in the endpoint totals.",
+  "notInSchema": "Faults were detected on this operation, but it is not declared in the API schema. It is not counted in the endpoint statistics.",
   "generatedTestFiles": "Number of generated test files.",
   "generatedTestCases": "Number of generated test cases.",
   "totalFaults": "Total number of faults detected in the API.",
