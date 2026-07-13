@@ -11,9 +11,10 @@ import faults from "../../../src/main/resources/wfc/faults/fault_categories.json
 
 export const FaultsComponent: React.FC<Faults> = ({totalNumber, foundFaults}) => {
     const {data} = useAppContext();
-    const totalEndpointNumber = data?.problemDetails.rest?.endpointIds.length;
+    const endpointIds = data?.problemDetails.rest?.endpointIds;
+    const totalEndpointNumber = endpointIds?.length;
 
-    const faultCounts = getFaultCounts(foundFaults);
+    const faultCounts = getFaultCounts(foundFaults, endpointIds);
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [currentStatus, setCurrentStatus] = useState(-1);
 
@@ -80,8 +81,14 @@ export const FaultsComponent: React.FC<Faults> = ({totalNumber, foundFaults}) =>
                                         endpointText: fault.operationCount > 1 ? "endpoints have" : "endpoint has",
                                         code: fault.code,
                                         totalEndpoints:totalEndpointNumber ? totalEndpointNumber : 0
-                                    })}>
-                                    <div>{fault.operationCount}/{totalEndpointNumber}</div>
+                                    }) + (fault.undeclaredOperationCount > 0
+                                        ? " " + getText(info.undeclaredOperationsTooltip, {undeclaredCount: fault.undeclaredOperationCount})
+                                        : "")}>
+                                    <div>
+                                        {fault.operationCount}/{totalEndpointNumber}
+                                        {fault.undeclaredOperationCount > 0 &&
+                                            <span className="text-amber-600 font-bold"> +{fault.undeclaredOperationCount}</span>}
+                                    </div>
                                 </ReportTooltip>
                                 <div className="col-span-2 text-center font-bold">{fault.count}</div>
                             </div>
