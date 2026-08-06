@@ -84,20 +84,71 @@ export const extractCodeLines = (
     return lines.slice(startIndex, endIndex + 2).join('\n');
 };
 
+// A line that opens with a "continuation" token (a leading '.', ',' or closing bracket) is, in
+// virtually every mainstream language's formatting convention, the tail end of a statement that
+// started on an earlier physical line (a chained method call, a wrapped argument list, ...) -
+// never the start of a new one.
+const isContinuationLine = (trimmed: string): boolean => /^[.,)\]}]/.test(trimmed);
+
+// Distinguishes a documentation comment (which introduces the statement that follows it) from a
+// comment embedded in the middle of one (e.g. a disabled/commented-out line inside a call chain):
+//
+//   // this explains the call below
+//   doSomething()
+//           .step1()
+//           // .step2()   <- the next real line of code continues the previous statement,
+//           .step3()         so this comment is part of that statement, not documentation
+//
+// A comment group is kept unless the nearest code line that follows it is a continuation line;
+// in that case the comment sits inside an ongoing statement and is dropped along with it. This
+// only looks at leading punctuation, so it holds regardless of source language or code style.
 export const extractComments = (code: string): string => {
     const lines = code.split("\n");
+    const lineCount = lines.length;
+
+    const isCodeLine: boolean[] = new Array(lineCount).fill(false);
+    {
+        let inBlock = false;
+        for (let i = 0; i < lineCount; i++) {
+            const trimmed = lines[i].trim();
+            if (inBlock) {
+                if (trimmed.indexOf("*/") >= 0) inBlock = false;
+                continue;
+            }
+            if (trimmed.startsWith("/*")) {
+                if (trimmed.indexOf("*/", 2) < 0) inBlock = true;
+                continue;
+            }
+            if (/^(?:#|\/\/)/.test(trimmed)) continue;
+            if (trimmed.length > 0) isCodeLine[i] = true;
+        }
+    }
+
+    const nextCodeLine = (fromIndex: number): string | null => {
+        for (let i = fromIndex; i < lineCount; i++) {
+            if (isCodeLine[i]) return lines[i].trim();
+        }
+        return null;
+    };
+
     const groups: string[] = [];
     let current: string[] = [];
     let inBlock = false;
 
-    const flush = () => {
+    const flush = (endedAtLine: number) => {
         if (current.length === 0) return;
         const text = current.join("\n").trim();
-        if (text.length > 0) groups.push(text);
+        if (text.length > 0) {
+            const following = nextCodeLine(endedAtLine);
+            if (!(following !== null && isContinuationLine(following))) {
+                groups.push(text);
+            }
+        }
         current = [];
     };
 
-    for (const raw of lines) {
+    for (let i = 0; i < lineCount; i++) {
+        const raw = lines[i];
         const trimmed = raw.trim();
 
         if (inBlock) {
@@ -106,7 +157,7 @@ export const extractComments = (code: string): string => {
             if (body.length > 0) current.push(body);
             if (endIdx >= 0) {
                 inBlock = false;
-                flush();
+                flush(i + 1);
             }
             continue;
         }
@@ -117,7 +168,7 @@ export const extractComments = (code: string): string => {
             if (endIdx >= 0) {
                 const body = afterOpen.slice(0, endIdx).trim();
                 if (body) current.push(body);
-                flush();
+                flush(i + 1);
             } else {
                 inBlock = true;
                 if (afterOpen.length > 0) current.push(afterOpen);
@@ -131,9 +182,9 @@ export const extractComments = (code: string): string => {
             continue;
         }
 
-        flush();
+        flush(i);
     }
-    flush();
+    flush(lineCount);
 
     return groups.join("\n\n");
 };
