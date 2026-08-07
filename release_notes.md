@@ -4,6 +4,8 @@ Under development in `master` branch.
 
 - Web Report: showing calls not in schema that find faults. E.g., a case for this are OPTIONS calls. Such endpoints are displayed with special color to distinguish from regular endpoints in the schema. 
 
+- Web Report: fixed issue in which test comments wrongly appear in the low-code view
+
 # 0.6.0
 
 - Added CreateUsers option in auth specs. This is useful to specify how to create new users on the fly during the fuzzing process.  
