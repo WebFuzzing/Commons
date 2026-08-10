@@ -2,7 +2,9 @@
 
 Under development in `master` branch.
 
-- Now each component in WFC has its own version number, so that they can be upgraded independently (e.g., a change in the report schema would not force a change in the auth schema version)
+# 0.7.0
+
+- Now each component in WFC has its own version number, so that they can be upgraded independently (e.g., a change in the report schema would not force a change in the auth schema version number)
 
 - Web Report: showing calls not in schema that find faults. E.g., a case for this are OPTIONS calls. Such endpoints are displayed with special color to distinguish from regular endpoints in the schema. 
 
