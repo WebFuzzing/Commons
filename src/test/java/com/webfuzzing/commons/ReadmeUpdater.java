@@ -31,9 +31,8 @@ public class ReadmeUpdater {
         File file = new File(filePath);
         String content = readFile(file);
 
-        // Build the regex pattern: <!-- M1 --> (.*?) <!-- M1 -->
-        // Using DOTALL flag to handle multiline content between markers
-        String regex = "<!-- " + Pattern.quote(marker) + " -->(.*?)<!-- " + Pattern.quote(marker) + " -->";
+        // Build the regex pattern: <!--M1-->(.*?)<!--M1-->
+        String regex = "<!--" + Pattern.quote(marker) + "-->(.*?)<!--" + Pattern.quote(marker) + "-->";
         Pattern pattern = Pattern.compile(regex, Pattern.DOTALL);
         Matcher matcher = pattern.matcher(content);
 
@@ -42,7 +41,7 @@ public class ReadmeUpdater {
         }
 
         matcher.reset();
-        String replacement = "<!-- " + marker + " -->" + newText + "<!-- " + marker + " -->";
+        String replacement = "<!--" + marker + "-->" + newText + "<!--" + marker + "-->";
         String updatedContent = matcher.replaceAll(Matcher.quoteReplacement(replacement));
 
         writeFile(file, updatedContent);
