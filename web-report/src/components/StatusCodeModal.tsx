@@ -54,8 +54,10 @@ export function StatusCodeModal({ isOpen, onClose, statusCode }: StatusCodeModal
     const getCategoryName = (category: number): string => {
         switch (category) {
             case 100:
-                return "REST/HTTP Faults"
+                return "HTTP Faults"
             case 200:
+                return "Schema Faults"
+            case 300:
                 return "Security Faults"
             case 900:
                 return "Custom Faults"
@@ -70,6 +72,8 @@ export function StatusCodeModal({ isOpen, onClose, statusCode }: StatusCodeModal
                 return "1xx"
             case 200:
                 return "2xx"
+            case 300:
+                return "3xx"
             case 900:
                 return "9xx"
             default:
