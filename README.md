@@ -18,11 +18,11 @@ There are 4 main contributions in WFC:
 
 1) _WFC Authentication_ (<!--M1-->0.7.0<!--M1-->): a JSON Schema definition to represent authentication information for fuzzers. Currently under [src/main/resources/wfc/schemas/auth.yaml](src/main/resources/wfc/schemas/auth.yaml). Documentation on how to use it [can be found here](./auth.md). Examples of configurations files can be found in the [Web Fuzzing Dataset (WFD) repository](https://github.com/WebFuzzing/Dataset).   
 
-2) _WFC Faults_ (<!--M2-->0.7.0<!--M2-->): classification of existing automated oracles proposed in the literature of fuzzing web APIs. Currently under [src/main/resources/wfc/faults/fault_categories.json](src/main/resources/wfc/faults/fault_categories.json).
+2) _WFC Faults_ (<!--M2-->0.8.0<!--M2-->): classification of existing automated oracles proposed in the literature of fuzzing web APIs. Currently under [src/main/resources/wfc/faults/fault_categories.json](src/main/resources/wfc/faults/fault_categories.json).
 
 3) _WFC Report_ (<!--M3-->0.7.0<!--M3-->): a JSON schema definition to represent output information from the fuzzers. Currently under [src/main/resources/wfc/schemas/report.yaml](src/main/resources/wfc/schemas/report.yaml).
 
-4) _WFC Web Report_ (<!--M4-->0.7.0<!--M4-->): a web application that is able to visualize and interact with fuzzer reports in WFC format. Currently under [web-report](web-report). 
+4) _WFC Web Report_ (<!--M4-->0.8.0<!--M4-->): a web application that is able to visualize and interact with fuzzer reports in WFC format. Currently under [web-report](web-report). 
 
 
 To access this data, besides referring directly to this GitHub repository, we also package it in a Maven dependency library, [published on Maven Central](https://central.sonatype.com/artifact/com.webfuzzing/commons).

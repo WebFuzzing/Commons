@@ -2,6 +2,12 @@
 
 Under development in `master` branch.
 
+# 0.8.0
+
+- Faults 0.8.0: add new oracles, and refactored code families into 1xx HTTP, 2xx Schema and 3xx Security.
+
+- Web Report 0.8.0: updated oracle family codes.  
+
 # 0.7.0
 
 - Now each component in WFC has its own version number, so that they can be upgraded independently (e.g., a change in the report schema would not force a change in the auth schema version number)
