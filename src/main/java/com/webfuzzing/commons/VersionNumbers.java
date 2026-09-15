@@ -1,4 +1,4 @@
-package com.webfuzzing.commons.faults;
+package com.webfuzzing.commons;
 
 /**
  * WebFuzzing Commons (WFC) currently contains 4 different contributions.

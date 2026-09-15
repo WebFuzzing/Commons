@@ -1,7 +1,5 @@
 package com.webfuzzing.commons;
 
-import com.webfuzzing.commons.faults.VersionNumbers;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
