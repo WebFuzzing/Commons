@@ -1,11 +1,16 @@
 package com.webfuzzing.commons;
 
+import com.webfuzzing.commons.faults.DefinedFaultCategory;
+import com.webfuzzing.commons.faults.FaultsToJson;
+import com.webfuzzing.commons.faults.MarkdownFaults;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -13,9 +18,13 @@ import java.util.regex.Pattern;
 /**
  * Needed to run if we do any modification on version numbers
  */
-public class ReadmeUpdater {
+public class DocumentationUpdater {
 
     public static void main(String[] args) throws IOException {
+
+        FaultsToJson.main(args);
+
+        MarkdownFaults.createMarkdown("faults.md", Arrays.asList(DefinedFaultCategory.values()));
 
         replaceBetweenMarkers("README.md", "M1", VersionNumbers.AUTHENTICATION);
         replaceBetweenMarkers("README.md", "M2", VersionNumbers.FAULTS);

@@ -34,4 +34,21 @@ public interface FaultCategory {
         return "F" + getCode() + ":" + getDescriptiveName();
     }
 
+    public default FaultCategoryGroup getGroup() {
+
+        int code = getCode();
+        if(code >= 100 && code < 199){
+            return FaultCategoryGroup.G_1XX;
+        }
+        if(code >= 200 && code < 300){
+            return FaultCategoryGroup.G_2XX;
+        }
+        if(code >= 300 && code < 400){
+            return FaultCategoryGroup.G_3XX;
+        }
+        if(code >= 900 && code < 1_000){
+            return FaultCategoryGroup.G_9XX;
+        }
+        return FaultCategoryGroup.G_Others;
+    }
 }

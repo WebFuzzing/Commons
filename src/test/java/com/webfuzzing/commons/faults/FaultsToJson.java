@@ -16,11 +16,15 @@ public class FaultsToJson {
 
     public static final String JSON_OUTPUT_FILEPATH = "src/main/resources/wfc/faults/fault_categories.json";
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
         String json = getJsonFromClass();
 
-        Files.write(Paths.get(JSON_OUTPUT_FILEPATH), json.getBytes());
+        try {
+            Files.write(Paths.get(JSON_OUTPUT_FILEPATH), json.getBytes());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public static String getJsonFromClass(){
