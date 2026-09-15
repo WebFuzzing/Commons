@@ -2,6 +2,10 @@
 
 Under development in `master` branch.
 
+# 0.9.0
+
+- Added markdown documentation for the defined fault categories.
+
 # 0.8.0
 
 - Faults 0.8.0: add new oracles, and refactored code families into 1xx HTTP, 2xx Schema and 3xx Security.
