@@ -30,7 +30,9 @@ export const warningSchema = z.record(z.unknown()).and(
 
 export const faultCategoryIdSchema = z.record(z.unknown()).and(
   z.object({
-    code: z.union([z.number(), z.number(), z.number()]).and(z.number()),
+    code: z
+      .union([z.number(), z.number(), z.number(), z.number()])
+      .and(z.number()),
     context: z.string().optional().nullable(),
   }),
 );
@@ -69,7 +71,7 @@ export const coverageSchema = z.record(z.unknown()).and(
 
 export const foundFaultSchema = z.record(z.unknown()).and(
   z.object({
-    operationId: operationIdSchema.optional(),
+    operationId: operationIdSchema,
     testCaseId: testCaseIdSchema,
     faultCategories: z
       .tuple([faultCategoryIdSchema])

@@ -2,6 +2,8 @@
 
 Under development in `master` branch.
 
+- Report: fixed `FoundFault` to require `operationId`, and `FaultCategoryId` to accept codes 105-120 and 300-310.
+
 # 0.9.0
 
 - Added markdown documentation for the defined fault categories.

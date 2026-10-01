@@ -97,10 +97,13 @@ $defs:
         anyOf:
           - type: integer
             minimum: 100
-            maximum: 104
+            maximum: 120
           - type: integer
             minimum: 200
             maximum: 206
+          - type: integer
+            minimum: 300
+            maximum: 310
           - type: integer
             minimum: 900
             maximum: 999
@@ -149,7 +152,7 @@ $defs:
           $ref: "#/$defs/FaultCategoryId"
         minItems: 1
         uniqueItems: true
-    required: ["endpointId","testCaseId","faultCategories"]
+    required: ["operationId","testCaseId","faultCategories"]
 
   RESTReport:
     type: object

@@ -85,7 +85,7 @@ export interface Faults {
  * Data-structure to represent found faults, based on operations (e.g., HTTP endpoints in REST, and methods in GraphQL and RPC) and which tests find faults in them.
  */
 export interface FoundFault {
-  operationId?: OperationId;
+  operationId: OperationId;
   testCaseId: TestCaseId;
   /**
    * @minItems 1
@@ -100,7 +100,7 @@ export interface FaultCategoryId {
   /**
    * Identifying fault 'code', based on WFC classification.
    */
-  code: (number | number | number) & number;
+  code: (number | number | number | number) & number;
   /**
    * An optional context for the fault. The same fault type could be manifested in different ways, and we use this property to differentiate among them.
    */
