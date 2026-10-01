@@ -146,6 +146,20 @@
   "group" : "G_1XX",
   "label" : "F120:HTTP Violation: Invalid Location HTTP Header"
 }, {
+  "code" : 121,
+  "testCaseLabel" : "causes5xx_serverError",
+  "fullDescription" : "Status codes in the 5xx range represent server-side errors. Apart from 500 and 501, any other 5xx code (e.g., 502, 503 and 504) might indicate faults in the tested application, or in how it deals with the services it depends on. Like 500, these codes need a manual check: the environment can cause them (e.g., a temporarily unavailable database).",
+  "descriptiveName" : "HTTP Status 5xx Other Than 500 And 501",
+  "group" : "G_1XX",
+  "label" : "F121:HTTP Status 5xx Other Than 500 And 501"
+}, {
+  "code" : 122,
+  "testCaseLabel" : "createdResourceNotFound",
+  "fullDescription" : "If a resource is successfully created (e.g., with a POST), then it should be possible to access it right after. If a request on the new resource (e.g., using the identifier returned in the creation response) gives a 404, and nobody deleted it, then either the resource was not created, or the API returns wrong information about how to access it.",
+  "descriptiveName" : "HTTP Violation: Resource Not Found Right After Successful Creation",
+  "group" : "G_1XX",
+  "label" : "F122:HTTP Violation: Resource Not Found Right After Successful Creation"
+}, {
   "code" : 200,
   "testCaseLabel" : "returnsMismatchResponseWithSchema",
   "fullDescription" : "A schema, like for example OpenAPI for REST, defines the structures not only of the inputs but also the outputs of the API. If what returned by an API is not conforming to its schema, then it is a clear fault. However, whether the fault is in the API (i.e., it does not conform to the schema) or in the schema itself (i.e., it is underspecified, or having mistakes) is something that cannot be known for sure without debugging the issue.",
@@ -194,6 +208,13 @@
   "descriptiveName" : "Received Success Response When Sending Wrong Data",
   "group" : "G_2XX",
   "label" : "F206:Received Success Response When Sending Wrong Data"
+}, {
+  "code" : 207,
+  "testCaseLabel" : "rejectedValidInputs",
+  "fullDescription" : "The converse of 'Received Success Response When Sending Wrong Data'. If all input data satisfies the types and constraints defined in the schema, then the API should not mark the request as 'user error' (e.g., with a 400 or 422 in REST). Status codes that do not depend on data validity, like 401, 403, 404, 409 and 429, are not considered here. Either the schema is incorrect (e.g., it is missing some constraints), or the API rejects valid data. As OpenAPI is not able to express all possible types of input constraints (e.g., inter-parameter dependencies), depending on the API this oracle might lead to some false positives.",
+  "descriptiveName" : "Received User Error Response When Sending Valid Data",
+  "group" : "G_2XX",
+  "label" : "F207:Received User Error Response When Sending Valid Data"
 }, {
   "code" : 300,
   "testCaseLabel" : "vulnerableToSQLInjection",
@@ -271,4 +292,18 @@
   "descriptiveName" : "Hidden Accessible Endpoint",
   "group" : "G_3XX",
   "label" : "F310:Hidden Accessible Endpoint"
+}, {
+  "code" : 311,
+  "testCaseLabel" : "declaredAuthNotEnforced",
+  "fullDescription" : "A schema can declare that an operation requires authentication (e.g., with security requirements in OpenAPI). If a request with valid credentials succeeds, then the same request with no credentials, or with invalid ones, should be rejected (e.g., with a 401 or 403 in REST). Otherwise, either the schema declares authentication by mistake, or the API does not enforce it. Modifications (e.g., DELETE, PUT and PATCH) accepted with no credentials are handled in 'Anonymous Modifications'; this code covers all other cases, including reads and invalid credentials.",
+  "descriptiveName" : "Declared Authentication Is Not Enforced",
+  "group" : "G_3XX",
+  "label" : "F311:Declared Authentication Is Not Enforced"
+}, {
+  "code" : 312,
+  "testCaseLabel" : "callTimeout",
+  "fullDescription" : "A call that does not get a response within a given time limit, or never gets one, might point to a denial-of-service vulnerability: specific inputs make the API spend excessive time (or resources) handling the request. An attacker could send such requests repeatedly to make the API unavailable to other users. The environment can also cause slow responses (e.g., an overloaded server or a slow database), so these calls need a manual check. The time limit should match the expected performance of the API.",
+  "descriptiveName" : "Call Timeout",
+  "group" : "G_3XX",
+  "label" : "F312:Call Timeout"
 } ]

@@ -1,13 +1,13 @@
 # Fault Category Descriptions
 
 ## Summary
-Total: 39
+Total: 44
 
-_HTTP Faults_ (1xx): 21
+_HTTP Faults_ (1xx): 23
 
-_Schema Faults_ (2xx): 7
+_Schema Faults_ (2xx): 8
 
-_Security Faults_ (3xx): 11
+_Security Faults_ (3xx): 13
 
 
 ## Details
@@ -34,6 +34,8 @@ _Security Faults_ (3xx): 11
 |118|HTTP Violation: PUT Implementation Must be Idempotent|A PUT operation is treated as idempotent. A write operation with a PUT that is not implemented as idempotent might have severe repercussions, as such operation could be automatically repeated any entity involved in the HTTP connection without any warning to the user.|
 |119|HTTP Violation: Invalid JSON Merge Patch|A JSON Merge Path has a specific semantics, defining how values are modified based on the input payloads. Modifying entries not specified in the payload would be a clear implementation fault.|
 |120|HTTP Violation: Invalid Location HTTP Header|Even outside of 3xx redirections, the Location header can be used to specify for example where newly created resources can be accessed. However, if a Location value point to a path for which there is no valid operation (not necessarily a GET) in the API, then such value might be likely wrong.|
+|121|HTTP Status 5xx Other Than 500 And 501|Status codes in the 5xx range represent server-side errors. Apart from 500 and 501, any other 5xx code (e.g., 502, 503 and 504) might indicate faults in the tested application, or in how it deals with the services it depends on. Like 500, these codes need a manual check: the environment can cause them (e.g., a temporarily unavailable database).|
+|122|HTTP Violation: Resource Not Found Right After Successful Creation|If a resource is successfully created (e.g., with a POST), then it should be possible to access it right after. If a request on the new resource (e.g., using the identifier returned in the creation response) gives a 404, and nobody deleted it, then either the resource was not created, or the API returns wrong information about how to access it.|
 |200|Schema Violation: Received A Response From API With A Structure/Data That Is Not Matching Its Schema|A schema, like for example OpenAPI for REST, defines the structures not only of the inputs but also the outputs of the API. If what returned by an API is not conforming to its schema, then it is a clear fault. However, whether the fault is in the API (i.e., it does not conform to the schema) or in the schema itself (i.e., it is underspecified, or having mistakes) is something that cannot be known for sure without debugging the issue.|
 |201|Schema Violation: Invalid Allow HTTP Header|A returned Allow header specifies what operations (e.g., GET and PATCH) are available on a resource. For consistency, this needs to match what actually defined in the schema of the API, apart from special cases such as HEAD and OPTIONS.|
 |202|Schema Violation: no-401-if-no-auth|Should not return a 401 non-authenticated if there is no authentication in the definition of the API (or conversely, authentication definition is wrongly missing).|
@@ -41,6 +43,7 @@ _Security Faults_ (3xx): 11
 |204|Schema Violation: has-406-if-accept|If a valid payload is sent based on what declared in the schema, it should not happen that the API responds with a 406 non-valid payload type.|
 |205|Schema Violation: no-501-if-implemented|If a schema defines an endpoint, then a call on it should not return a 501 Non-Implemented.|
 |206|Received Success Response When Sending Wrong Data|API inputs might have constraints (e.g., integers in a specific range, and strings matching a given regular expression). Also, they need be to of specific types (e.g., integers, booleans, strings, dates, arrays and objects). If some input data does not satisfy the type on constraints defined in the schema, then the API should mark the request as 'user error'. However, if for any reason the request is processed successfully, then it is a fault. Either the schema is incorrect, or the API is not properly discarding invalid data.|
+|207|Received User Error Response When Sending Valid Data|The converse of 'Received Success Response When Sending Wrong Data'. If all input data satisfies the types and constraints defined in the schema, then the API should not mark the request as 'user error' (e.g., with a 400 or 422 in REST). Status codes that do not depend on data validity, like 401, 403, 404, 409 and 429, are not considered here. Either the schema is incorrect (e.g., it is missing some constraints), or the API rejects valid data. As OpenAPI is not able to express all possible types of input constraints (e.g., inter-parameter dependencies), depending on the API this oracle might lead to some false positives.|
 |300|SQL Injection (SQLi)|Input data was not properly sanitized. Its use in SQL commands led to execute arbitrary commands on the database. See OWASP Top 10 for more information.|
 |301|Cross-Site Scripting (XSS)|XSS is an attack in which it is possible to inject malicious scripts into web pages viewed users. This works as well in APIs, if the malicious payload is stored as it is, and then read afterwards by a frontend web application. See OWASP Top 10 for more information.|
 |302|Server-Side Request Forgery (SSRF)|Some inputs might be URLs, which are then used by the API to retrieve data from external services. However, if the hostnames of these URLs are not verified, the API could be tricked into making requests towards servers it should not to, like for example the 'localhost'. See OWASP Top 10 for more information.|
@@ -52,3 +55,5 @@ _Security Faults_ (3xx): 11
 |308|Anonymous Modifications|Not all systems require authentication when reading data, or creating new ones. Without a formal specification, a fuzzer cannot know if a resource is expected to be public or not. However, 'modifying' data (e.g., with DELETE, PUT and PATCH) with no credentials is problematic.  A user could delete all existing data, or change any new data as soon as it is created by others.|
 |309|Leaked Stack Trace|In case of bugs, the internal business logic of the tested application could throw exceptions. For debugging reasons, the responses from the HTTP server could contain the stack-trace of those thrown exceptions. Albeit useful for debugging, those stack-traces could reveal internal details of the system. This would be a security leak if those debugging settings are left in production.|
 |310|Hidden Accessible Endpoint|To test an API, there is the need of a schema that specifies what endpoints can be called. Being able to call endpoints that are not declared in the schema is a potential risk, as those might be either forgotten endpoints, work-in-progress, admin-only endpoints, etc., whose security protections might not be fully tested or in place. Either the call should fail for auth reasons (e.g., 401 and 403 in REST APIs), or the system should respond that the endpoint does not exist (e.g., 405 and 501).|
+|311|Declared Authentication Is Not Enforced|A schema can declare that an operation requires authentication (e.g., with security requirements in OpenAPI). If a request with valid credentials succeeds, then the same request with no credentials, or with invalid ones, should be rejected (e.g., with a 401 or 403 in REST). Otherwise, either the schema declares authentication by mistake, or the API does not enforce it. Modifications (e.g., DELETE, PUT and PATCH) accepted with no credentials are handled in 'Anonymous Modifications'; this code covers all other cases, including reads and invalid credentials.|
+|312|Call Timeout|A call that does not get a response within a given time limit, or never gets one, might point to a denial-of-service vulnerability: specific inputs make the API spend excessive time (or resources) handling the request. An attacker could send such requests repeatedly to make the API unavailable to other users. The environment can also cause slow responses (e.g., an overloaded server or a slow database), so these calls need a manual check. The time limit should match the expected performance of the API.|
