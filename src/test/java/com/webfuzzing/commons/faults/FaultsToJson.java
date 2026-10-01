@@ -2,6 +2,7 @@ package com.webfuzzing.commons.faults;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
@@ -29,6 +30,7 @@ public class FaultsToJson {
 
     public static String getJsonFromClass(){
         ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY, true);
         mapper.configOverride(DefinedFaultCategory.class)
                 .setFormat(JsonFormat.Value.forShape(JsonFormat.Shape.OBJECT));
 
