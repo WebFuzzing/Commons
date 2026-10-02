@@ -74,3 +74,21 @@ This will build the project and copy static test files from `tests/static` direc
 - `lint` - Run ESLint
 - `installAndBuild` - Install dependencies, run tests and build
 - `debug` - Build the project and run in debug mode using static test files from `tests/static` directory
+- `build:summary` - Build the CI summary CLI (`wfc-summary.cjs`)
+- `summary:smoke` - Run the built CI summary CLI on a test report
+
+## CI Summary CLI
+
+Besides the web app, the build produces `wfc-summary.cjs`, a self-contained Node (>= 18) script that renders a WFC `report.json` for CI systems:
+
+```bash
+node wfc-summary.cjs --report report.json --format summary      # Markdown, e.g. for $GITHUB_STEP_SUMMARY
+node wfc-summary.cjs --report report.json --format pr           # short Markdown for a sticky PR comment
+node wfc-summary.cjs --report report.json --format annotations  # JSON list of annotations
+node wfc-summary.cjs --report report.json --format stats        # JSON with the main counters
+```
+
+Options: `--artifact-url <url>`, `--run-url <url>`, `--max-bytes <n>`, `--max-annotations <n>`, `--include-tests`, `--help`.
+With `--include-tests`, the summary also embeds the code of the generated tests (read from the test files next to `report.json`), and test case ids in the fault details link to it.
+Exit codes: `0` success, `1` usage or I/O error, `2` the report does not match the WFC schema.
+The script is packaged in the Commons jar under `/webreport/wfc-summary.cjs`.
