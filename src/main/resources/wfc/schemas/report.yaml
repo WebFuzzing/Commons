@@ -97,13 +97,13 @@ $defs:
         anyOf:
           - type: integer
             minimum: 100
-            maximum: 120
+            maximum: 122
           - type: integer
             minimum: 200
-            maximum: 206
+            maximum: 207
           - type: integer
             minimum: 300
-            maximum: 310
+            maximum: 312
           - type: integer
             minimum: 900
             maximum: 999
