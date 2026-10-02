@@ -260,6 +260,12 @@ public enum DefinedFaultCategory implements FaultCategory {
     }
 
     @Override
+    public String getId(){
+        //return the name of the enum
+        return super.name();
+    }
+
+    @Override
     public int getCode() {
         return code;
     }
