@@ -167,6 +167,22 @@
   "label" : "F120:HTTP Violation: Invalid Location HTTP Header",
   "testCaseLabel" : "returnsInvalidLocationHeader"
 }, {
+  "code" : 121,
+  "descriptiveName" : "HTTP Status 5xx Other Than 500 And 501",
+  "fullDescription" : "Status codes in the 5xx range represent server-side errors. Apart from 500 and 501, any other 5xx code (e.g., 502, 503 and 504) might indicate faults in the tested application, or in how it deals with the services it depends on. Like 500, these codes need a manual check: the environment can cause them (e.g., a temporarily unavailable database).",
+  "group" : "G_1XX",
+  "id" : "HTTP_OTHER_STATUS_5XX",
+  "label" : "F121:HTTP Status 5xx Other Than 500 And 501",
+  "testCaseLabel" : "causes5xx_serverError"
+}, {
+  "code" : 122,
+  "descriptiveName" : "HTTP Violation: Resource Not Found Right After Successful Creation",
+  "fullDescription" : "If a resource is successfully created (e.g., with a POST), then it should be possible to access it right after. If a request on the new resource (e.g., using the identifier returned in the creation response) gives a 404, and nobody deleted it, then either the resource was not created, or the API returns wrong information about how to access it.",
+  "group" : "G_1XX",
+  "id" : "HTTP_CREATED_RESOURCE_NOT_FOUND",
+  "label" : "F122:HTTP Violation: Resource Not Found Right After Successful Creation",
+  "testCaseLabel" : "createdResourceNotFound"
+}, {
   "code" : 200,
   "descriptiveName" : "Schema Violation: Received A Response From API With A Structure/Data That Is Not Matching Its Schema",
   "fullDescription" : "A schema, like for example OpenAPI for REST, defines the structures not only of the inputs but also the outputs of the API. If what returned by an API is not conforming to its schema, then it is a clear fault. However, whether the fault is in the API (i.e., it does not conform to the schema) or in the schema itself (i.e., it is underspecified, or having mistakes) is something that cannot be known for sure without debugging the issue.",
@@ -223,6 +239,14 @@
   "label" : "F206:Received Success Response When Sending Wrong Data",
   "testCaseLabel" : "successOnInvalidInputs"
 }, {
+  "code" : 207,
+  "descriptiveName" : "Received User Error Response When Sending Valid Data",
+  "fullDescription" : "The converse of 'Received Success Response When Sending Wrong Data'. If all input data satisfies the types and constraints defined in the schema, then the API should not mark the request as 'user error' (e.g., with a 400 or 422 in REST). Status codes that do not depend on data validity, like 401, 403, 404, 409 and 429, are not considered here. Either the schema is incorrect (e.g., it is missing some constraints), or the API rejects valid data. As OpenAPI is not able to express all possible types of input constraints (e.g., inter-parameter dependencies), depending on the API this oracle might lead to some false positives.",
+  "group" : "G_2XX",
+  "id" : "SCHEMA_VALID_INPUT_REJECTED",
+  "label" : "F207:Received User Error Response When Sending Valid Data",
+  "testCaseLabel" : "rejectedValidInputs"
+}, {
   "code" : 300,
   "descriptiveName" : "SQL Injection (SQLi)",
   "fullDescription" : "Input data was not properly sanitized. Its use in SQL commands led to execute arbitrary commands on the database. See OWASP Top 10 for more information.",
@@ -235,7 +259,7 @@
   "descriptiveName" : "Cross-Site Scripting (XSS)",
   "fullDescription" : "XSS is an attack in which it is possible to inject malicious scripts into web pages viewed users. This works as well in APIs, if the malicious payload is stored as it is, and then read afterwards by a frontend web application. See OWASP Top 10 for more information.",
   "group" : "G_3XX",
-  "id" : "SECURITY_XSS",
+  "id" : "SECURITY_XSS_INJECTION",
   "label" : "F301:Cross-Site Scripting (XSS)",
   "testCaseLabel" : "vulnerableToXSS"
 }, {
@@ -275,7 +299,7 @@
   "descriptiveName" : "Allowed To Modify Resource That Likely Should Had Been Protected",
   "fullDescription" : "BOLA and BFLA are major security vulnerabilities. To avoid users accessing protected resources, authorization mechanisms are usually put in place. However, it can happen that, on some endpoints, these authorization mechanisms are missing or misconfigured by mistake. This can have disastrous consequences, e.g., a regular user deleting all data from all other users. However, access policies could be arbitrarily complex, where some users might validly interact with some resources of other users. A common example is 'administrator' users. Without a formal specification describing in details the access policies in place, it is hard to say automatically if we are in the case of a BOLA/BFLA vulnerability. Still, some heuristics could be used to flag highly suspicious cases. For example, if a user is blocked with a 403 to do a PUT and a PATCH on a resource, it would be quite suspicious if a DELETE would work just fine on that resource.",
   "group" : "G_3XX",
-  "id" : "SECURITY_WRONG_AUTHORIZATION",
+  "id" : "SECURITY_INCONSISTENT_WRITE_AUTHORIZATION",
   "label" : "F306:Allowed To Modify Resource That Likely Should Had Been Protected",
   "testCaseLabel" : "missedAuthorizationCheck"
 }, {
@@ -310,4 +334,20 @@
   "id" : "SECURITY_HIDDEN_ACCESSIBLE_ENDPOINT",
   "label" : "F310:Hidden Accessible Endpoint",
   "testCaseLabel" : "hiddenAccessible"
+}, {
+  "code" : 311,
+  "descriptiveName" : "Declared Authentication Is Not Enforced",
+  "fullDescription" : "A schema can declare that an operation requires authentication (e.g., with security requirements in OpenAPI). If a request with valid credentials succeeds, then the same request with no credentials, or with invalid ones, should be rejected (e.g., with a 401 or 403 in REST). Otherwise, either the schema declares authentication by mistake, or the API does not enforce it. Modifications (e.g., DELETE, PUT and PATCH) accepted with no credentials are handled in 'Anonymous Modifications'; this code covers all other cases, including reads and invalid credentials.",
+  "group" : "G_3XX",
+  "id" : "SECURITY_DECLARED_AUTH_NOT_ENFORCED",
+  "label" : "F311:Declared Authentication Is Not Enforced",
+  "testCaseLabel" : "declaredAuthNotEnforced"
+}, {
+  "code" : 312,
+  "descriptiveName" : "Call Timeout",
+  "fullDescription" : "A call that does not get a response within a given time limit, or never gets one, might point to a denial-of-service vulnerability: specific inputs make the API spend excessive time (or resources) handling the request. An attacker could send such requests repeatedly to make the API unavailable to other users. The environment can also cause slow responses (e.g., an overloaded server or a slow database), so these calls need a manual check. The time limit should match the expected performance of the API.",
+  "group" : "G_3XX",
+  "id" : "SECURITY_CALL_TIMEOUT",
+  "label" : "F312:Call Timeout",
+  "testCaseLabel" : "callTimeout"
 } ]
