@@ -79,6 +79,18 @@ public enum DefinedFaultCategory implements FaultCategory {
             "Even outside of 3xx redirections, the Location header can be used to specify for example where newly created resources can be accessed." +
                     " However, if a Location value point to a path for which there is no valid operation (not necessarily a GET) in the API, then such value might" +
                     " be likely wrong."),
+    HTTP_OTHER_STATUS_5XX(121, "HTTP Status 5xx Other Than 500 And 501", "causes5xx_serverError",
+            "Status codes in the 5xx range represent server-side errors." +
+                    " Apart from 500 and 501," +
+                    " any other 5xx code (e.g., 502, 503 and 504) might indicate faults in the tested application, or in how it deals" +
+                    " with the services it depends on." +
+                    " Like 500, these codes need a manual check: the environment can cause them" +
+                    " (e.g., a temporarily unavailable database)."),
+    HTTP_CREATED_RESOURCE_NOT_FOUND(122, "HTTP Violation: Resource Not Found Right After Successful Creation", "createdResourceNotFound",
+            "If a resource is successfully created (e.g., with a POST), then it should be possible to access it right after." +
+                    " If a request on the new resource (e.g., using the identifier returned in the creation response)" +
+                    " gives a 404, and nobody deleted it, then either the resource was not created," +
+                    " or the API returns wrong information about how to access it."),
 
 
     // 2xx: schema
@@ -115,6 +127,16 @@ public enum DefinedFaultCategory implements FaultCategory {
                     " mark the request as 'user error'." +
                     " However, if for any reason the request is processed successfully, then it is a fault." +
                     " Either the schema is incorrect, or the API is not properly discarding invalid data."),
+    SCHEMA_VALID_INPUT_REJECTED(207, "Received User Error Response When Sending Valid Data",
+            "rejectedValidInputs",
+            "The converse of 'Received Success Response When Sending Wrong Data'." +
+                    " If all input data satisfies the types and constraints defined in the schema, then the API should not" +
+                    " mark the request as 'user error' (e.g., with a 400 or 422 in REST)." +
+                    " Status codes that do not depend on data validity, like 401, 403, 404, 409 and 429, are not" +
+                    " considered here." +
+                    " Either the schema is incorrect (e.g., it is missing some constraints), or the API rejects valid data." +
+                    " As OpenAPI is not able to express all possible types of input constraints (e.g., inter-parameter dependencies)," +
+                    " depending on the API this oracle might lead to some false positives."),
 
 
 
@@ -125,7 +147,7 @@ public enum DefinedFaultCategory implements FaultCategory {
             "Input data was not properly sanitized." +
                     " Its use in SQL commands led to execute arbitrary commands on the database." +
                     " See OWASP Top 10 for more information."),
-    SECURITY_XSS(301, "Cross-Site Scripting (XSS)",
+    SECURITY_XSS_INJECTION(301, "Cross-Site Scripting (XSS)",
             "vulnerableToXSS",
             "XSS is an attack in which it is possible to inject malicious scripts into web pages viewed users." +
                     " This works as well in APIs, if the malicious payload is stored as it is," +
@@ -157,7 +179,7 @@ public enum DefinedFaultCategory implements FaultCategory {
                     " have no right to access to that resource." +
                     " However, to avoid false positives related to misconfigured credentials, these credentials should be first" +
                     " successfully validated on some other resources before flagging a returned 401 as a server fault."),
-    SECURITY_WRONG_AUTHORIZATION(306, "Allowed To Modify Resource That Likely Should Had Been Protected",
+    SECURITY_INCONSISTENT_WRITE_AUTHORIZATION(306, "Allowed To Modify Resource That Likely Should Had Been Protected",
             "missedAuthorizationCheck",
             "BOLA and BFLA are major security vulnerabilities. To avoid users accessing protected resources," +
                     " authorization mechanisms are usually put in place." +
@@ -200,6 +222,23 @@ public enum DefinedFaultCategory implements FaultCategory {
                     " protections might not be fully tested or in place." +
                     " Either the call should fail for auth reasons (e.g., 401 and 403 in REST APIs), or the system" +
                     " should respond that the endpoint does not exist (e.g., 405 and 501)."),
+    SECURITY_DECLARED_AUTH_NOT_ENFORCED(311, "Declared Authentication Is Not Enforced",
+            "declaredAuthNotEnforced",
+            "A schema can declare that an operation requires authentication (e.g., with security requirements in OpenAPI)." +
+                    " If a request with valid credentials succeeds, then the same request with no credentials," +
+                    " or with invalid ones, should be rejected (e.g., with a 401 or 403 in REST)." +
+                    " Otherwise, either the schema declares authentication by mistake, or the API does not enforce it." +
+                    " Modifications (e.g., DELETE, PUT and PATCH) accepted with no credentials are handled in 'Anonymous Modifications';" +
+                    " this code covers all other cases, including reads and invalid credentials."),
+    SECURITY_CALL_TIMEOUT(312, "Call Timeout",
+            "callTimeout",
+            "A call that does not get a response within a given time limit, or never gets one, might point to" +
+                    " a denial-of-service vulnerability: specific inputs make the API spend excessive time" +
+                    " (or resources) handling the request." +
+                    " An attacker could send such requests repeatedly to make the API unavailable to other users." +
+                    " The environment can also cause slow responses (e.g., an overloaded server or a slow database)," +
+                    " so these calls need a manual check." +
+                    " The time limit should match the expected performance of the API."),
 
 
 
