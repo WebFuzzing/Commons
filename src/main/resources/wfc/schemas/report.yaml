@@ -91,6 +91,14 @@ $defs:
     description: "A unique identifier for a fault type."
     type: object
     properties:
+      id:
+        description: "A unique string that uniquely identify this fault category in WFC. \
+                      This id is meant to be stable, and should not change among different releases of WFC. \
+                      Fuzzer developers should be able to rely on these ids not changing. \
+                      If for any reason an id must be changed, then that would trigger a new major release of WFC. \
+                      Note the 'code' are meant to be stable as well, however, those 'might' change between minor releases. \
+                      There is a 1-to-1 mapping between 'id' and 'code'."
+        type: string
       code:
         description: "Identifying fault 'code', based on WFC classification."
         type: integer
@@ -111,7 +119,7 @@ $defs:
         description: "An optional context for the fault. The same fault type could be manifested in different ways, \
                       and we use this property to differentiate among them."
         type: [string, "null"]
-    required: ["code"]
+    required: ["id","code"]
   TestFilePath:
     description: "A relative path used to unique locate a test suite file."
     type: string
