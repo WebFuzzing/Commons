@@ -125,7 +125,7 @@ public enum DefinedFaultCategory implements FaultCategory {
             "Input data was not properly sanitized." +
                     " Its use in SQL commands led to execute arbitrary commands on the database." +
                     " See OWASP Top 10 for more information."),
-    SECURITY_XSS(301, "Cross-Site Scripting (XSS)",
+    SECURITY_XSS_INJECTION(301, "Cross-Site Scripting (XSS)",
             "vulnerableToXSS",
             "XSS is an attack in which it is possible to inject malicious scripts into web pages viewed users." +
                     " This works as well in APIs, if the malicious payload is stored as it is," +
@@ -157,7 +157,7 @@ public enum DefinedFaultCategory implements FaultCategory {
                     " have no right to access to that resource." +
                     " However, to avoid false positives related to misconfigured credentials, these credentials should be first" +
                     " successfully validated on some other resources before flagging a returned 401 as a server fault."),
-    SECURITY_WRONG_AUTHORIZATION(306, "Allowed To Modify Resource That Likely Should Had Been Protected",
+    SECURITY_INCONSISTENT_WRITE_AUTHORIZATION(306, "Allowed To Modify Resource That Likely Should Had Been Protected",
             "missedAuthorizationCheck",
             "BOLA and BFLA are major security vulnerabilities. To avoid users accessing protected resources," +
                     " authorization mechanisms are usually put in place." +
