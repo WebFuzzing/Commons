@@ -106,7 +106,7 @@
 
                    - update release_notes.md before preparing a new release
 
-                   - manually update <version> in thi file. Typically just remove the -SNAPSHOT tag.
+                   - manually update <version> in this file. Typically just remove the -SNAPSHOT tag.
 
                    - Git commit/push.
 
@@ -118,7 +118,7 @@
                       make sure it is visible at:
                       https://central.sonatype.com/artifact/com.webfuzzing/commons
                       if not, check publishing status at
-                      https://central.sonatype.com/publishing/deployments (requires login)
+                      https://central.sonatype.com/publishing (requires login)
 
                    - run:
                       git tag v<x.y.z>
