@@ -100,14 +100,17 @@
             <!--
                    This profile is needed when making a deployment to Maven Central.
 
-                   0) make sure you are on the "master" branch
+                   - make sure you are on the "master" branch
 
-                   1) update release_notes.md before preparing a new release
+                   - update VersionNumbers if needed, and execute DocumentationUpdater
 
-                   2) manually update <version> in thi file. Typically just remove the -SNAPSHOT tag.
-                      Git commit/push.
+                   - update release_notes.md before preparing a new release
 
-                   3) run:
+                   - manually update <version> in thi file. Typically just remove the -SNAPSHOT tag.
+
+                   - Git commit/push.
+
+                   - run:
                       mvn  -P release -DskipTests  deploy
 
                       IMPORTANT: must make sure you are building with JDK 8!!!
@@ -117,11 +120,11 @@
                       if not, check publishing status at
                       https://central.sonatype.com/publishing/deployments (requires login)
 
-                   4) run:
+                   - run:
                       git tag v<x.y.z>
                       git push origin v<x.y.z>
 
-                   5) increase version number, and put back -SNAPSHOT.
+                   - increase version number, and put back -SNAPSHOT.
                       Git commit/push.
               -->
             <id>release</id>
