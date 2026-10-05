@@ -30,6 +30,7 @@ export const warningSchema = z.record(z.unknown()).and(
 
 export const faultCategoryIdSchema = z.record(z.unknown()).and(
   z.object({
+    id: z.string(),
     code: z
       .union([z.number(), z.number(), z.number(), z.number()])
       .and(z.number()),

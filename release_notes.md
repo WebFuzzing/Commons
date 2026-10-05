@@ -6,6 +6,8 @@ Under development in `master` branch.
 
 - Faults: added 121 (5xx other than 500 and 501), 122 (created resource not found), 207 (valid inputs rejected), 311 (declared authentication not enforced) and 312 (call timeout).
 
+- Faults and Report: added string `id` to all fault categories, besides existing `code`.  
+
 # 0.9.0
 
 - Added markdown documentation for the defined fault categories.

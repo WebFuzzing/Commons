@@ -98,6 +98,10 @@ export interface FoundFault {
  */
 export interface FaultCategoryId {
   /**
+   * A unique string that uniquely identify this fault category in WFC. This id is meant to be stable, and should not change among different releases of WFC. Fuzzer developers should be able to rely on these ids not changing. If for any reason an id must be changed, then that would trigger a new major release of WFC. Note the 'code' are meant to be stable as well, however, those 'might' change between minor releases. There is a 1-to-1 mapping between 'id' and 'code'.
+   */
+  id: string;
+  /**
    * Identifying fault 'code', based on WFC classification.
    */
   code: (number | number | number | number) & number;

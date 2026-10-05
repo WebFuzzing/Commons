@@ -12,10 +12,12 @@
         "testCaseId": "faults.java#test_0",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/credentials/ -> [Path '/collection/14/role'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/credentials/ -> [Path '/collection/14/username'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           }
@@ -26,10 +28,12 @@
         "testCaseId": "faults.java#test_1",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/projects -> [Path '/collection/9/endDate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/projects -> [Path '/collection/9/startDate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           }
@@ -40,10 +44,12 @@
         "testCaseId": "faults.java#test_2",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/projects -> [Path '/collection/9/endDate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/projects -> [Path '/collection/9/startDate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           }
@@ -54,6 +60,7 @@
         "testCaseId": "faults.java#test_3",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/departments -> [Path '/location/postalCode'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           }
@@ -64,14 +71,17 @@
         "testCaseId": "faults.java#test_4",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/credentials/save -> [Path '/password'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/credentials/save -> [Path '/role'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/credentials/save -> [Path '/username'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           }
@@ -82,14 +92,17 @@
         "testCaseId": "faults.java#test_5",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/data/manager-project-data/{employeeId} -> [Path '/collection/0/title'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/data/manager-project-data/{employeeId} -> [Path '/collection/1/title'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/data/manager-project-data/{employeeId} -> [Path '/collection/2/title'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           }
@@ -100,10 +113,12 @@
         "testCaseId": "faults.java#test_6",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/credentials -> [Path '/role'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/credentials -> [Path '/username'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           }
@@ -114,6 +129,7 @@
         "testCaseId": "faults.java#test_7",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/credentials -> [Path '/password'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           }
@@ -124,6 +140,7 @@
         "testCaseId": "faults.java#test_8",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "PUT:/app/api/credentials/update -> [Path '/username'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           }
@@ -134,6 +151,7 @@
         "testCaseId": "faults.java#test_9",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/departments -> [Path '/location/adr'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           }
@@ -144,6 +162,7 @@
         "testCaseId": "faults.java#test_10",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/projects -> [Path '/startDate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           }
@@ -154,6 +173,7 @@
         "testCaseId": "faults.java#test_11",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/credentials -> Response status 400 not defined for path '/api/credentials'."
           }
@@ -164,26 +184,32 @@
         "testCaseId": "faults.java#test_11",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/credentials -> [Path '/collection/14/password'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/credentials -> [Path '/collection/14/role'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/credentials -> [Path '/collection/14/username'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/credentials -> [Path '/collection/15/username'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/credentials -> [Path '/collection/16/role'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/credentials -> [Path '/collection/16/username'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           }
@@ -194,134 +220,167 @@
         "testCaseId": "faults.java#test_12",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/0/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/0/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/1/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/1/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/2/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/2/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/3/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/3/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/4/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/4/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/5/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/5/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/6/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/6/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/6/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/7/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/7/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/8/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/8/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/9/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/9/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/9/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/10/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/10/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/10/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/11/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/11/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/12/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/12/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/12/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/13/department'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/13/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees -> [Path '/collection/13/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           }
@@ -332,134 +391,167 @@
         "testCaseId": "faults.java#test_13",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/0/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/0/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/1/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/1/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/2/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/2/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/3/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/3/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/4/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/4/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/5/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/5/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/6/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/6/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/6/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/7/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/7/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/8/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/8/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/9/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/9/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/9/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/10/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/10/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/10/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/11/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/11/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/12/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/12/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/12/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/13/department'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/13/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/ -> [Path '/collection/13/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           }
@@ -470,6 +562,7 @@
         "testCaseId": "faults.java#test_14",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "PUT:/app/api/locations -> Response status 400 not defined for path '/api/locations'."
           }
@@ -480,10 +573,12 @@
         "testCaseId": "faults.java#test_15",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/projects -> [Path '/endDate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/projects -> [Path '/startDate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           }
@@ -494,6 +589,7 @@
         "testCaseId": "faults.java#test_15",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "PUT:/app/api/projects -> Response status 400 not defined for path '/api/projects'."
           }
@@ -504,770 +600,962 @@
         "testCaseId": "faults.java#test_16",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/0/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/0/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/0/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/1/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/1/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/2/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/2/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/2/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/3/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/3/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/3/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/4/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/4/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/4/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/5/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/5/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/5/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/6/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/6/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/6/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/7/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/7/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/8/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/8/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/8/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/9/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/9/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/9/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/10/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/10/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/10/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/11/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/11/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/11/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/12/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/12/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/12/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/13/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/13/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/13/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/14/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/14/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/14/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/15/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/15/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/15/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/16/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/16/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/16/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/17/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/17/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/17/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/18/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/18/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/18/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/19/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/19/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/19/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/20/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/20/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/20/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/21/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/21/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/21/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/22/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/22/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/22/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/23/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/23/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/23/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/24/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/24/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/24/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/25/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/25/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/25/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/26/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/26/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/26/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/27/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/27/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/27/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/28/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/28/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/28/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/29/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/29/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/29/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/30/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/30/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/30/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/31/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/31/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/31/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/32/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/32/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/32/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/33/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/33/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/33/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/34/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/34/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/34/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/35/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/35/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/35/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/36/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/36/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/36/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/36/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/37/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/37/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/37/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/37/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/38/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/38/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/38/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/38/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/39/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/39/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/39/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/39/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/40/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/40/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/40/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/40/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/41/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/41/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/41/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/41/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/42/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/42/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/42/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/42/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/43/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/43/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/43/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/43/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/44/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/44/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/44/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/44/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/45/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/45/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/45/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/45/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/46/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/46/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/46/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/46/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/47/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/47/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/47/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/48/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/48/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/48/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/49/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/49/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/49/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/50/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/50/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/50/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/51/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/51/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/51/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/52/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/52/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/52/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/53/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/53/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/53/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/53/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/54/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/54/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/54/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/54/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/55/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/55/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/55/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/55/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/56/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/56/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/56/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/56/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/57/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/57/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/57/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/57/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/58/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/58/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/58/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments -> [Path '/collection/58/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           }
@@ -1278,770 +1566,962 @@
         "testCaseId": "faults.java#test_17",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/0/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/0/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/0/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/1/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/1/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/2/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/2/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/2/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/3/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/3/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/3/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/4/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/4/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/4/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/5/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/5/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/5/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/6/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/6/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/6/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/7/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/7/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/8/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/8/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/8/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/9/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/9/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/9/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/10/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/10/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/10/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/11/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/11/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/11/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/12/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/12/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/12/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/13/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/13/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/13/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/14/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/14/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/14/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/15/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/15/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/15/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/16/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/16/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/16/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/17/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/17/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/17/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/18/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/18/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/18/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/19/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/19/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/19/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/20/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/20/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/20/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/21/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/21/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/21/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/22/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/22/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/22/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/23/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/23/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/23/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/24/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/24/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/24/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/25/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/25/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/25/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/26/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/26/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/26/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/27/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/27/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/27/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/28/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/28/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/28/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/29/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/29/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/29/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/30/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/30/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/30/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/31/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/31/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/31/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/32/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/32/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/32/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/33/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/33/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/33/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/34/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/34/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/34/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/35/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/35/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/35/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/36/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/36/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/36/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/36/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/37/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/37/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/37/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/37/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/38/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/38/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/38/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/38/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/39/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/39/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/39/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/39/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/40/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/40/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/40/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/40/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/41/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/41/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/41/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/41/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/42/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/42/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/42/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/42/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/43/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/43/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/43/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/43/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/44/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/44/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/44/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/44/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/45/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/45/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/45/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/45/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/46/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/46/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/46/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/46/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/47/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/47/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/47/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/48/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/48/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/48/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/49/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/49/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/49/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/50/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/50/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/50/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/51/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/51/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/51/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/52/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/52/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/52/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/53/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/53/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/53/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/53/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/54/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/54/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/54/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/54/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/55/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/55/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/55/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/55/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/56/commitEmpDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/56/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/56/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/56/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/57/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/57/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/57/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/57/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/58/commitMgrDesc'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/58/employee/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/58/employee/manager/hiredate'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
           },
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/ -> [Path '/collection/58/employee/manager/manager'] Instance type (null) does not match any allowed primitive type (allowed: [\"object\"])"
           }
@@ -2052,6 +2532,7 @@
         "testCaseId": "faults.java#test_18",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/{employeeId}/{projectId} -> Response status 400 not defined for path '/api/assignments/{employeeId}/{projectId}'."
           }
@@ -2062,6 +2543,7 @@
         "testCaseId": "faults.java#test_19",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/projects -> Response status 400 not defined for path '/api/projects'."
           }
@@ -2072,6 +2554,7 @@
         "testCaseId": "faults.java#test_20",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/projects/save -> Response status 400 not defined for path '/api/projects/save'."
           }
@@ -2082,6 +2565,7 @@
         "testCaseId": "faults.java#test_21",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "DELETE:/app/api/assignments/delete/{employeeId}/{projectId}/{commitDate} -> Response status 400 not defined for path '/api/assignments/delete/{employeeId}/{projectId}/{commitDate}'."
           }
@@ -2092,6 +2576,7 @@
         "testCaseId": "faults.java#test_22",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/data/department/{departmentId} -> Response status 400 not defined for path '/api/employees/data/department/{departmentId}'."
           }
@@ -2102,6 +2587,7 @@
         "testCaseId": "faults.java#test_23",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "DELETE:/app/api/departments/delete/{id} -> Response status 400 not defined for path '/api/departments/delete/{id}'."
           }
@@ -2112,6 +2598,7 @@
         "testCaseId": "faults.java#test_24",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "DELETE:/app/api/employees/{id} -> Response status 400 not defined for path '/api/employees/{id}'."
           }
@@ -2122,6 +2609,7 @@
         "testCaseId": "faults.java#test_25",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "DELETE:/app/api/locations/delete/{id} -> Response status 400 not defined for path '/api/locations/delete/{id}'."
           }
@@ -2132,6 +2620,7 @@
         "testCaseId": "faults.java#test_26",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "DELETE:/app/api/projects/delete/{id} -> Response status 400 not defined for path '/api/projects/delete/{id}'."
           }
@@ -2142,6 +2631,7 @@
         "testCaseId": "faults.java#test_27",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/departments/{id} -> Response status 400 not defined for path '/api/departments/{id}'."
           }
@@ -2152,6 +2642,7 @@
         "testCaseId": "faults.java#test_28",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "PUT:/app/api/projects -> Response status 400 not defined for path '/api/projects'."
           }
@@ -2162,6 +2653,7 @@
         "testCaseId": "faults.java#test_29",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "PUT:/app/api/projects -> Response status 400 not defined for path '/api/projects'."
           }
@@ -2172,6 +2664,7 @@
         "testCaseId": "faults.java#test_30",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId} -> Response status 400 not defined for path '/api/assignments/data/project-commit/{employeeId}/{projectId}'."
           }
@@ -2182,6 +2675,7 @@
         "testCaseId": "faults.java#test_31",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/{employeeId}/{projectId}/{commitDate} -> Response status 400 not defined for path '/api/assignments/{employeeId}/{projectId}/{commitDate}'."
           }
@@ -2192,6 +2686,7 @@
         "testCaseId": "faults.java#test_32",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/data/manager-project-data/{employeeId} -> Response status 400 not defined for path '/api/employees/data/manager-project-data/{employeeId}'."
           }
@@ -2202,6 +2697,7 @@
         "testCaseId": "faults.java#test_33",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "DELETE:/app/api/credentials/delete/{id} -> Response status 400 not defined for path '/api/credentials/delete/{id}'."
           }
@@ -2212,6 +2708,7 @@
         "testCaseId": "faults.java#test_34",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/credentials/{id} -> Response status 400 not defined for path '/api/credentials/{id}'."
           }
@@ -2222,6 +2719,7 @@
         "testCaseId": "faults.java#test_35",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/{id} -> Response status 400 not defined for path '/api/employees/{id}'."
           }
@@ -2232,6 +2730,7 @@
         "testCaseId": "faults.java#test_36",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/projects/{id} -> Response status 400 not defined for path '/api/projects/{id}'."
           }
@@ -2242,6 +2741,7 @@
         "testCaseId": "faults.java#test_37",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "DELETE:/app/api/projects/{id} -> Response status 400 not defined for path '/api/projects/{id}'."
           }
@@ -2252,6 +2752,7 @@
         "testCaseId": "faults.java#test_38",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "DELETE:/app/api/credentials/username/{username} -> Response status 400 not defined for path '/api/credentials/username/{username}'."
           }
@@ -2262,6 +2763,7 @@
         "testCaseId": "faults.java#test_39",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/username/{username} -> Response status 400 not defined for path '/api/employees/username/{username}'."
           }
@@ -2272,6 +2774,7 @@
         "testCaseId": "faults.java#test_40",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/credentials/username/{username} -> Response status 400 not defined for path '/api/credentials/username/{username}'."
           }
@@ -2282,6 +2785,7 @@
         "testCaseId": "faults.java#test_41",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "PUT:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
           }
@@ -2292,6 +2796,7 @@
         "testCaseId": "faults.java#test_42",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/credentials/username/{username} -> Response status 400 not defined for path '/api/credentials/username/{username}'."
           }
@@ -2302,6 +2807,7 @@
         "testCaseId": "faults.java#test_43",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/locations/save -> Response status 400 not defined for path '/api/locations/save'."
           }
@@ -2312,6 +2818,7 @@
         "testCaseId": "faults.java#test_44",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "PUT:/app/api/locations/update -> Response status 400 not defined for path '/api/locations/update'."
           }
@@ -2322,6 +2829,7 @@
         "testCaseId": "faults.java#test_45",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "PUT:/app/api/departments -> Response status 400 not defined for path '/api/departments'."
           }
@@ -2332,6 +2840,7 @@
         "testCaseId": "faults.java#test_46",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "PUT:/app/api/departments -> Response status 400 not defined for path '/api/departments'."
           }
@@ -2342,6 +2851,7 @@
         "testCaseId": "faults.java#test_47",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/authenticate -> Response status 400 not defined for path '/api/authenticate'."
           }
@@ -2352,6 +2862,7 @@
         "testCaseId": "faults.java#test_48",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "PUT:/app/api/departments -> Response status 400 not defined for path '/api/departments'."
           }
@@ -2362,6 +2873,7 @@
         "testCaseId": "faults.java#test_49",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "PUT:/app/api/employees -> Response status 400 not defined for path '/api/employees'."
           }
@@ -2372,6 +2884,7 @@
         "testCaseId": "faults.java#test_50",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "PUT:/app/api/employees/update -> Response status 400 not defined for path '/api/employees/update'."
           }
@@ -2382,6 +2895,7 @@
         "testCaseId": "faults.java#test_51",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/credentials -> Response status 400 not defined for path '/api/credentials'."
           }
@@ -2392,6 +2906,7 @@
         "testCaseId": "faults.java#test_52",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/employees/save -> Response status 400 not defined for path '/api/employees/save'."
           }
@@ -2402,6 +2917,7 @@
         "testCaseId": "faults.java#test_53",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "PUT:/app/api/assignments/update -> Response status 400 not defined for path '/api/assignments/update'."
           }
@@ -2412,6 +2928,7 @@
         "testCaseId": "faults.java#test_54",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
           }
@@ -2422,6 +2939,7 @@
         "testCaseId": "faults.java#test_55",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/data/project-commit/{projectId} -> Response status 400 not defined for path '/api/assignments/data/project-commit/{projectId}'."
           }
@@ -2432,6 +2950,7 @@
         "testCaseId": "faults.java#test_56",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "DELETE:/app/api/projects/{id} -> Response status 400 not defined for path '/api/projects/{id}'."
           }
@@ -2442,6 +2961,7 @@
         "testCaseId": "faults.java#test_57",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/locations/{id} -> Response status 400 not defined for path '/api/locations/{id}'."
           }
@@ -2452,6 +2972,7 @@
         "testCaseId": "faults.java#test_58",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "PUT:/app/api/projects -> Response status 400 not defined for path '/api/projects'."
           }
@@ -2462,6 +2983,7 @@
         "testCaseId": "faults.java#test_59",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "DELETE:/app/api/employees/username/{username} -> Response status 400 not defined for path '/api/employees/username/{username}'."
           }
@@ -2472,6 +2994,7 @@
         "testCaseId": "faults.java#test_60",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/projects/save -> Response status 400 not defined for path '/api/projects/save'."
           }
@@ -2482,6 +3005,7 @@
         "testCaseId": "faults.java#test_61",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/projects -> Response status 400 not defined for path '/api/projects'."
           }
@@ -2492,6 +3016,7 @@
         "testCaseId": "faults.java#test_62",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "DELETE:/app/api/employees/username/{username} -> Response status 400 not defined for path '/api/employees/username/{username}'."
           }
@@ -2502,6 +3027,7 @@
         "testCaseId": "faults.java#test_63",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}/{commitDate} -> Response status 400 not defined for path '/api/assignments/data/project-commit/{employeeId}/{projectId}/{commitDate}'."
           }
@@ -2512,6 +3038,7 @@
         "testCaseId": "faults.java#test_64",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId} -> Response status 400 not defined for path '/api/assignments/data/project-commit/{employeeId}/{projectId}'."
           }
@@ -2522,6 +3049,7 @@
         "testCaseId": "faults.java#test_65",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "DELETE:/app/api/assignments/{employeeId}/{projectId}/{commitDate} -> Response status 400 not defined for path '/api/assignments/{employeeId}/{projectId}/{commitDate}'."
           }
@@ -2532,6 +3060,7 @@
         "testCaseId": "faults.java#test_66",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/employees/data/employee-project-data/{employeeId} -> Response status 400 not defined for path '/api/employees/data/employee-project-data/{employeeId}'."
           }
@@ -2542,6 +3071,7 @@
         "testCaseId": "faults.java#test_67",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "DELETE:/app/api/departments/{id} -> Response status 400 not defined for path '/api/departments/{id}'."
           }
@@ -2552,6 +3082,7 @@
         "testCaseId": "faults.java#test_68",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "DELETE:/app/api/locations/{id} -> Response status 400 not defined for path '/api/locations/{id}'."
           }
@@ -2562,6 +3093,7 @@
         "testCaseId": "faults.java#test_69",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId}/{commitDate} -> Response status 400 not defined for path '/api/assignments/data/project-commit/{employeeId}/{projectId}/{commitDate}'."
           }
@@ -2572,6 +3104,7 @@
         "testCaseId": "faults.java#test_70",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "GET:/app/api/assignments/data/project-commit/{employeeId}/{projectId} -> Response status 400 not defined for path '/api/assignments/data/project-commit/{employeeId}/{projectId}'."
           }
@@ -2582,6 +3115,7 @@
         "testCaseId": "faults.java#test_71",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "DELETE:/app/api/credentials/{id} -> Response status 400 not defined for path '/api/credentials/{id}'."
           }
@@ -2592,6 +3126,7 @@
         "testCaseId": "faults.java#test_72",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "DELETE:/app/api/employees/delete/{id} -> Response status 400 not defined for path '/api/employees/delete/{id}'."
           }
@@ -2602,6 +3137,7 @@
         "testCaseId": "faults.java#test_73",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/employees/save -> Response status 400 not defined for path '/api/employees/save'."
           }
@@ -2612,6 +3148,7 @@
         "testCaseId": "faults.java#test_74",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "PUT:/app/api/projects/update -> Response status 400 not defined for path '/api/projects/update'."
           }
@@ -2622,6 +3159,7 @@
         "testCaseId": "faults.java#test_75",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/locations -> Response status 400 not defined for path '/api/locations'."
           }
@@ -2632,6 +3170,7 @@
         "testCaseId": "faults.java#test_76",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
           }
@@ -2642,6 +3181,7 @@
         "testCaseId": "faults.java#test_77",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "PUT:/app/api/assignments/update -> Response status 400 not defined for path '/api/assignments/update'."
           }
@@ -2652,6 +3192,7 @@
         "testCaseId": "faults.java#test_78",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/assignments/save -> Response status 400 not defined for path '/api/assignments/save'."
           }
@@ -2662,6 +3203,7 @@
         "testCaseId": "faults.java#test_79",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/departments -> Response status 400 not defined for path '/api/departments'."
           }
@@ -2672,6 +3214,7 @@
         "testCaseId": "faults.java#test_80",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
           }
@@ -2682,6 +3225,7 @@
         "testCaseId": "faults.java#test_81",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "PUT:/app/api/credentials -> Response status 400 not defined for path '/api/credentials'."
           }
@@ -2692,6 +3236,7 @@
         "testCaseId": "faults.java#test_82",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "PUT:/app/api/projects/update -> Response status 400 not defined for path '/api/projects/update'."
           }
@@ -2702,6 +3247,7 @@
         "testCaseId": "faults.java#test_83",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "PUT:/app/api/projects -> Response status 400 not defined for path '/api/projects'."
           }
@@ -2712,6 +3258,7 @@
         "testCaseId": "faults.java#test_84",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/departments/save -> Response status 400 not defined for path '/api/departments/save'."
           }
@@ -2722,6 +3269,7 @@
         "testCaseId": "faults.java#test_85",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "PUT:/app/api/departments/update -> Response status 400 not defined for path '/api/departments/update'."
           }
@@ -2732,6 +3280,7 @@
         "testCaseId": "faults.java#test_86",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "PUT:/app/api/departments/update -> Response status 400 not defined for path '/api/departments/update'."
           }
@@ -2742,6 +3291,7 @@
         "testCaseId": "faults.java#test_87",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/credentials/save -> Response status 400 not defined for path '/api/credentials/save'."
           }
@@ -2752,6 +3302,7 @@
         "testCaseId": "faults.java#test_88",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "PUT:/app/api/credentials/update -> Response status 400 not defined for path '/api/credentials/update'."
           }
@@ -2762,6 +3313,7 @@
         "testCaseId": "faults.java#test_89",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
           }
@@ -2772,6 +3324,7 @@
         "testCaseId": "faults.java#test_90",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "PUT:/app/api/departments/update -> Response status 400 not defined for path '/api/departments/update'."
           }
@@ -2782,6 +3335,7 @@
         "testCaseId": "faults.java#test_91",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "DELETE:/app/api/credentials/{id} -> Response status 400 not defined for path '/api/credentials/{id}'."
           }
@@ -2792,6 +3346,7 @@
         "testCaseId": "faults.java#test_92",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/employees -> Response status 400 not defined for path '/api/employees'."
           }
@@ -2802,6 +3357,7 @@
         "testCaseId": "faults.java#test_93",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/locations -> Response status 400 not defined for path '/api/locations'."
           }
@@ -2812,6 +3368,7 @@
         "testCaseId": "faults.java#test_94",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/authenticate/ -> Response status 400 not defined for path '/api/authenticate/'."
           }
@@ -2822,6 +3379,7 @@
         "testCaseId": "faults.java#test_95",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "PUT:/app/api/projects -> Response status 400 not defined for path '/api/projects'."
           }
@@ -2832,6 +3390,7 @@
         "testCaseId": "faults.java#test_96",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "PUT:/app/api/locations/update -> Response status 400 not defined for path '/api/locations/update'."
           }
@@ -2842,6 +3401,7 @@
         "testCaseId": "faults.java#test_97",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/authenticate/ -> Response status 400 not defined for path '/api/authenticate/'."
           }
@@ -2852,6 +3412,7 @@
         "testCaseId": "faults.java#test_98",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/assignments/save -> Response status 400 not defined for path '/api/assignments/save'."
           }
@@ -2862,6 +3423,7 @@
         "testCaseId": "faults.java#test_99",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "PUT:/app/api/departments -> Response status 400 not defined for path '/api/departments'."
           }
@@ -2872,6 +3434,7 @@
         "testCaseId": "faults.java#test_100",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "PUT:/app/api/assignments/update -> Response status 400 not defined for path '/api/assignments/update'."
           }
@@ -2882,6 +3445,7 @@
         "testCaseId": "faults.java#test_101",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
           }
@@ -2892,6 +3456,7 @@
         "testCaseId": "faults.java#test_102",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "PUT:/app/api/locations -> Response status 400 not defined for path '/api/locations'."
           }
@@ -2902,6 +3467,7 @@
         "testCaseId": "faults.java#test_103",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/departments/save -> Response status 400 not defined for path '/api/departments/save'."
           }
@@ -2912,6 +3478,7 @@
         "testCaseId": "faults.java#test_104",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/projects -> Response status 400 not defined for path '/api/projects'."
           }
@@ -2922,6 +3489,7 @@
         "testCaseId": "faults.java#test_105",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
           }
@@ -2932,6 +3500,7 @@
         "testCaseId": "faults.java#test_106",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/departments -> Response status 400 not defined for path '/api/departments'."
           }
@@ -2942,6 +3511,7 @@
         "testCaseId": "faults.java#test_107",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
           }
@@ -2952,6 +3522,7 @@
         "testCaseId": "faults.java#test_108",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "PUT:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
           }
@@ -2962,6 +3533,7 @@
         "testCaseId": "faults.java#test_109",
         "faultCategories": [
           {
+            "id": "SCHEMA_INVALID_RESPONSE",
             "code": 200,
             "context": "POST:/app/api/assignments -> Response status 400 not defined for path '/api/assignments'."
           }
