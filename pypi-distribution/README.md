@@ -19,3 +19,19 @@ data/
         ├── report.css
         └── report.js    
 ```
+
+The library can be installed with:
+
+`python3 -m pip install webfuzzing-commons`
+
+and then be used inside a Python program with for example:
+
+```
+from importlib import resources
+
+file_ref = resources.files('webfuzzing_commons').joinpath('data','auth.yaml')
+
+content = file_ref.read_text(encoding='utf-8')
+
+print(content)
+```

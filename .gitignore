@@ -49,3 +49,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+/pypi-distribution/src/webfuzzing_commons.egg-info/
