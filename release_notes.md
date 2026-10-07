@@ -2,6 +2,8 @@
 
 Under development in `master` branch.
 
+# 0.10.0
+
 - Report 0.8.0: fixed `FoundFault` to require `operationId`, and `FaultCategoryId` to accept codes 105-120 and 300-310.
 
 - Faults 0.9.0: added 121 (5xx other than 500 and 501), 122 (created resource not found), 207 (valid inputs rejected), 311 (declared authentication not enforced) and 312 (call timeout).
