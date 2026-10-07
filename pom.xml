@@ -284,9 +284,9 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.surefire</groupId>
-                <artifactId>surefire</artifactId>
-                <version>3.5.3</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.6.0</version>
             </plugin>
         </plugins>
     </build>

@@ -10,6 +10,10 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -30,6 +34,28 @@ public class DocumentationUpdater {
         replaceBetweenMarkers("README.md", "M2", VersionNumbers.FAULTS);
         replaceBetweenMarkers("README.md", "M3", VersionNumbers.REPORT);
         replaceBetweenMarkers("README.md", "M4", VersionNumbers.WEB_REPORT);
+
+        updatePythonDistribution();
+    }
+
+    public static void updatePythonDistribution(){
+
+        Path targetFolder = Paths.get("pypi-distribution/src/webfuzzing-commons/data");
+        Path sourceFolder = Paths.get("src/main/resources/wfc");
+
+        try {
+            Files.copy(sourceFolder.resolve("schemas/auth.yaml"),
+                    targetFolder.resolve("auth.yaml"),
+                    StandardCopyOption.REPLACE_EXISTING);
+            Files.copy(sourceFolder.resolve("schemas/report.yaml"),
+                    targetFolder.resolve("report.yaml"),
+                    StandardCopyOption.REPLACE_EXISTING);
+            Files.copy(sourceFolder.resolve("faults/fault_categories.json"),
+                    targetFolder.resolve("fault_categories.json"),
+                    StandardCopyOption.REPLACE_EXISTING);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public static void replaceBetweenMarkers(String filePath, String marker, String newText)
