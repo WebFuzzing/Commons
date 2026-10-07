@@ -102,11 +102,13 @@
 
                    - make sure you are on the "master" branch
 
-                   - update VersionNumbers if needed, and execute DocumentationUpdater
+                   - update VersionNumbers if needed, and execute DataUpdater
 
                    - update release_notes.md before preparing a new release
 
                    - manually update <version> in this file. Typically just remove the -SNAPSHOT tag.
+
+                   - update <version> in pypi-distribution/pyproject.toml
 
                    - Git commit/push.
 
@@ -284,9 +286,9 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.surefire</groupId>
-                <artifactId>surefire</artifactId>
-                <version>3.5.3</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.6.0</version>
             </plugin>
         </plugins>
     </build>

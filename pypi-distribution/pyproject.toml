@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "webfuzzing-commons"
+version = "0.10.0"
+description = "Web Fuzzing Commons (WFC). A set of standards and library support for facilitating fuzzing Web APIs."
+readme = "README.md"
+authors = [
+    {name = "Andrea Arcuri", email = "arcuri82@gmail.com"}
+]
+license = {text = "Apache 2.0"}
+dependencies = [
+    "requests>=2.0.0",
+    "tqdm>=4.0.0",
+]
+requires-python = ">=3.8"
+
+[project.urls]
+Homepage = "https://github.com/WebFuzzing/Commons"
+Issues = "https://github.com/WebFuzzing/Commons/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+webfuzzing_commons = ["data/**/*"]
+
+
+###  Release
+# rm -r dist
+# python3 -m build
+# python3 -m twine upload dist/*
+
+### For testing
+# pip3 install --force-reinstall dist/webfuzzing-commons-*.whl

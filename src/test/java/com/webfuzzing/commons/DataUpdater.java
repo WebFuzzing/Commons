@@ -10,6 +10,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.*;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -18,7 +20,7 @@ import java.util.regex.Pattern;
 /**
  * Needed to run if we do any modification on version numbers
  */
-public class DocumentationUpdater {
+public class DataUpdater {
 
     public static void main(String[] args) throws IOException {
 
@@ -30,6 +32,66 @@ public class DocumentationUpdater {
         replaceBetweenMarkers("README.md", "M2", VersionNumbers.FAULTS);
         replaceBetweenMarkers("README.md", "M3", VersionNumbers.REPORT);
         replaceBetweenMarkers("README.md", "M4", VersionNumbers.WEB_REPORT);
+
+        updatePythonDistribution();
+    }
+
+    public static void updatePythonDistribution() {
+
+        Path targetFolder = Paths.get("pypi-distribution/src/webfuzzing_commons/data");
+
+        try {
+            Path sourceFolder = Paths.get("src/main/resources/wfc");
+
+            Files.copy(sourceFolder.resolve("schemas/auth.yaml"),
+                    targetFolder.resolve("auth.yaml"),
+                    StandardCopyOption.REPLACE_EXISTING);
+            Files.copy(sourceFolder.resolve("schemas/report.yaml"),
+                    targetFolder.resolve("report.yaml"),
+                    StandardCopyOption.REPLACE_EXISTING);
+            Files.copy(sourceFolder.resolve("faults/fault_categories.json"),
+                    targetFolder.resolve("fault_categories.json"),
+                    StandardCopyOption.REPLACE_EXISTING);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        Path generatedFolder = Paths.get("target/classes/webreport");
+        if(!Files.exists(generatedFolder)){
+            throw new IllegalStateException("Not existing: " + generatedFolder);
+        }
+
+        try {
+            copyRecursively(generatedFolder, targetFolder.resolve("webreport"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static void copyRecursively(Path source, Path target) throws IOException {
+        Files.walkFileTree(source, new SimpleFileVisitor<Path>() {
+            @Override
+            public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs)
+                    throws IOException {
+                Path targetDir = target.resolve(source.relativize(dir));
+                Files.createDirectories(targetDir);
+                return FileVisitResult.CONTINUE;
+            }
+
+            @Override
+            public FileVisitResult visitFile(Path file, BasicFileAttributes attrs)
+                    throws IOException {
+                Path targetFile = target.resolve(source.relativize(file));
+                Files.copy(file, targetFile, StandardCopyOption.REPLACE_EXISTING);
+                return FileVisitResult.CONTINUE;
+            }
+
+            @Override
+            public FileVisitResult visitFileFailed(Path file, IOException exc)
+                    throws IOException {
+                throw exc;
+            }
+        });
     }
 
     public static void replaceBetweenMarkers(String filePath, String marker, String newText)
