@@ -2,6 +2,8 @@
 
 Under development in `master` branch.
 
+- Auth: fixed `CreateUsers.generators` to use `minItems` instead of `minLength`, which does not apply to arrays.
+
 # 0.11.0
 
 - Automated releases to PyPi, in new `webfuzzing-commons` Python module. 

@@ -113,7 +113,7 @@ $defs:
       generators:
         description: "List of generators for unique/random names to use in payload template resolution."
         type: array
-        minLength: 1
+        minItems: 1
         items:
           $ref: "#/$defs/Generator"
     x-required:
