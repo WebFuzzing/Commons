@@ -102,11 +102,13 @@
 
                    - make sure you are on the "master" branch
 
-                   - update VersionNumbers if needed, and execute DocumentationUpdater
+                   - update VersionNumbers if needed, and execute DataUpdater
 
                    - update release_notes.md before preparing a new release
 
                    - manually update <version> in this file. Typically just remove the -SNAPSHOT tag.
+
+                   - update <version> in pypi-distribution/pyproject.toml
 
                    - Git commit/push.
 
