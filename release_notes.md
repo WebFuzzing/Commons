@@ -2,6 +2,10 @@
 
 Under development in `master` branch.
 
+# 0.11.0
+
+- Automated releases to PyPi, in new `webfuzzing-commons` Python module. 
+
 # 0.10.0
 
 - Report 0.8.0: fixed `FoundFault` to require `operationId`, and `FaultCategoryId` to accept codes 105-120 and 300-310.

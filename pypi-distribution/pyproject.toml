@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "webfuzzing-commons"
-version = "0.10.0"
+version = "0.11.0"
 description = "Web Fuzzing Commons (WFC). A set of standards and library support for facilitating fuzzing Web APIs."
 readme = "README.md"
 authors = [
