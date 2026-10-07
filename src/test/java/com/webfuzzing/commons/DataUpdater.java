@@ -38,7 +38,7 @@ public class DataUpdater {
 
     public static void updatePythonDistribution() {
 
-        Path targetFolder = Paths.get("pypi-distribution/src/webfuzzing-commons/data");
+        Path targetFolder = Paths.get("pypi-distribution/src/webfuzzing_commons/data");
 
         try {
             Path sourceFolder = Paths.get("src/main/resources/wfc");

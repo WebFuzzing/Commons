@@ -25,7 +25,7 @@ Issues = "https://github.com/WebFuzzing/Commons/issues"
 where = ["src"]
 
 [tool.setuptools.package-data]
-webfuzzing-commons = ["data/*.json", "data/*.yaml"]
+webfuzzing_commons = ["data/**/*"]
 
 
 ###  Release
