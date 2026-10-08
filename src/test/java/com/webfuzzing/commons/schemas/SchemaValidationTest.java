@@ -2,12 +2,19 @@ package com.webfuzzing.commons.schemas;
 
 import com.networknt.schema.*;
 import com.networknt.schema.Error;
+import com.networknt.schema.dialect.Dialect;
+import com.networknt.schema.dialect.Dialects;
+import com.networknt.schema.keyword.DisallowUnknownKeywordFactory;
+import com.networknt.schema.keyword.KeywordFactory;
+import com.networknt.schema.keyword.NonValidationKeyword;
+import com.networknt.schema.output.OutputUnit;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -38,16 +45,30 @@ public class SchemaValidationTest {
 
     private void validateYamlSchema(String schemaYaml){
 
+        /*
+            By default, JSON Schema ignores unknown properties.
+            This means that a misspelled "requird" will be silently ignored.
+            We want to crash in those cases.
+            However, we need support "x-" properties (ie, don't crush on those)
+         */
 
-        SchemaRegistry registry = SchemaRegistry.withDefaultDialect(SpecificationVersion.DRAFT_2020_12);
+        KeywordFactory strictKeywordFactory = (keyword, schemaContext) -> {
+            if (keyword.startsWith("x-")) {
+                return new NonValidationKeyword(keyword);
+            }
 
-        Schema schema = registry.getSchema(SchemaLocation.of("https://json-schema.org/draft/2020-12/schema"));
+            return DisallowUnknownKeywordFactory
+                    .getInstance()
+                    .getKeyword(keyword, schemaContext);
+        };
 
-        List<Error> errors = schema.validate(schemaYaml, InputFormat.YAML);
+        Dialect strictDialect = Dialect.builder(Dialects.getDraft202012())
+                .unknownKeywordFactory(strictKeywordFactory)
+                .build();
 
-        assertEquals(0, errors.size(),
-                "Errors: " + String.join(", ",
-                        errors.stream().map(it -> it.toString()).collect(Collectors.joining(", ")))
-        );
+        SchemaRegistry registry = SchemaRegistry.withDialect(strictDialect);
+
+        //should crash if errors
+        registry.getSchema(schemaYaml, InputFormat.YAML);
     }
 }
