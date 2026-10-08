@@ -2,9 +2,9 @@
 
 Under development in `master` branch.
 
-- Auth: fixed invalid use `min` instead of `minimum`.
+- Auth 0.8.0: fixed invalid use `min` instead of `minimum`.
 
-- Auth: fixed `CreateUsers.generators` to use `minItems` instead of `minLength`, which does not apply to arrays.
+- Auth 0.8.0: fixed `CreateUsers.generators` to use `minItems` instead of `minLength`, which does not apply to arrays.
 
 - Added automated checks to conform to Draft 2020-12 dialect for all schemas.
 
