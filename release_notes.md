@@ -2,6 +2,8 @@
 
 Under development in `master` branch.
 
+- fixed invalid use of keywords in schemas. Added auomtated checks to conform to Draft 2020-12 dialect.  
+
 # 0.11.0
 
 - Automated releases to PyPi, in new `webfuzzing-commons` Python module. 
