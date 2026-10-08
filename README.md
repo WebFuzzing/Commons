@@ -26,7 +26,7 @@ There are 4 main contributions in WFC:
 4) _WFC Web Report_ (<!--M4-->0.8.0<!--M4-->): a web application that is able to visualize and interact with fuzzer reports in WFC format. Currently under [web-report](web-report). 
 
 
-To access this data, besides referring directly to this GitHub repository, we also package it in a Maven dependency library, [published on Maven Central](https://central.sonatype.com/artifact/com.webfuzzing/commons), as well as a Python module [published on PyPi](https://pypi.org/project/webfuzzing-commons/).
+To access this data, besides referring directly to this GitHub repository, we also package it in a Maven dependency library (compiled to JDK 17), [published on Maven Central](https://central.sonatype.com/artifact/com.webfuzzing/commons), as well as a Python module [published on PyPi](https://pypi.org/project/webfuzzing-commons/).
 
 > If you need to access such data from other popular library repositories for other programming languages besides Java/Kotlin and Python, we are happy to deploy there as well if there is interest in it. In such a case, you can create a new Feature Request on the issue page.  
 
