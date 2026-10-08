@@ -137,11 +137,11 @@ $defs:
       minLength:
         description: "Minimum length of the generated string"
         type: integer
-        min: 0
+        minimum: 0
       maxLength:
         description: "Maximum length of the generated string"
         type: integer
-        min: 0
+        minimum: 0
       prefix:
         description: "Fixed prefix shared by all generated strings"
         type: string
