@@ -2,9 +2,11 @@
 
 Under development in `master` branch.
 
-- fixed invalid use of keywords in schemas. Added auomtated checks to conform to Draft 2020-12 dialect.  
+- Auth: fixed invalid use `min` instead of `minimum`.
 
 - Auth: fixed `CreateUsers.generators` to use `minItems` instead of `minLength`, which does not apply to arrays.
+
+- Added automated checks to conform to Draft 2020-12 dialect for all schemas.
 
 # 0.11.0
 
