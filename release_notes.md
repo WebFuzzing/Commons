@@ -4,6 +4,8 @@ Under development in `master` branch.
 
 - fixed invalid use of keywords in schemas. Added auomtated checks to conform to Draft 2020-12 dialect.  
 
+- Auth: fixed `CreateUsers.generators` to use `minItems` instead of `minLength`, which does not apply to arrays.
+
 # 0.11.0
 
 - Automated releases to PyPi, in new `webfuzzing-commons` Python module. 
