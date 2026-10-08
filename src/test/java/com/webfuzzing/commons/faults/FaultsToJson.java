@@ -1,9 +1,9 @@
 package com.webfuzzing.commons.faults;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.MapperFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.MapperFeature;
+import tools.jackson.databind.json.JsonMapper;
+
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -29,10 +29,17 @@ public class FaultsToJson {
     }
 
     public static String getJsonFromClass(){
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.configure(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY, true);
-        mapper.configOverride(DefinedFaultCategory.class)
-                .setFormat(JsonFormat.Value.forShape(JsonFormat.Shape.OBJECT));
+
+        JsonMapper mapper = JsonMapper.builder()
+                .enable(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY)
+                /*
+                    We don't want to have dependencies to Jackson in generated POJOs.
+                    But, for enum of DefinedFaultCategory, we want it printed as object...
+                    created a MixIn seems the only way to achieve this in Jackson...
+                    so convoluted!!!
+                 */
+                .addMixIn(DefinedFaultCategory.class, DefinedFaultCategoryMixIn.class)
+                .build();
 
         List<DefinedFaultCategory> faults = Arrays.stream(DefinedFaultCategory.values())
                 .sorted(Comparator.comparingInt(DefinedFaultCategory::getCode))
@@ -43,7 +50,7 @@ public class FaultsToJson {
             json = mapper
                     .writerWithDefaultPrettyPrinter()
                     .writeValueAsString(faults);
-        } catch (JsonProcessingException e) {
+        } catch (JacksonException e) {
             throw new RuntimeException(e);
         }
 
