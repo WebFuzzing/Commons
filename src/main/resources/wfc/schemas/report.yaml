@@ -44,7 +44,11 @@ properties:
     uniqueItems: true
     description: "The list of relative paths (compared to this document) of all the generated test suite files."
   testCases:
-    description: "Information on each generated test case."
+    description: "Information on each generated test case. \
+                  There could several different test suite files. \
+                  All test cases from all suites MUST be present here, with a unique id, \
+                  regardless of whether they detect a fault or not. \
+                  The order in which they are listed here is not important."
     type: array
     items:
       $ref: "#/$defs/TestCase"
