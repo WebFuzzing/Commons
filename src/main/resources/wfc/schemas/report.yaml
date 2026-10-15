@@ -147,7 +147,10 @@ $defs:
     maximum: 599
   FoundFault:
     description: "Data-structure to represent found faults, based on operations (e.g., HTTP endpoints in REST, and methods \
-                  in GraphQL and RPC) and which tests find faults in them."
+                  in GraphQL and RPC) and which tests find faults in them. \
+                  The specified 'testCaseId' MUST match an existing 'TestCase.id' present \
+                  in the top 'testCases' data structure. \
+                  Similarly, 'operationId' MUST match an operation defined under 'problemDetails'."
     type: object
     properties:
       operationId:
