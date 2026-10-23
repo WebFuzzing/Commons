@@ -2,6 +2,10 @@
 
 Under development in `master` branch.
 
+# 0.12.1
+
+- Fixed broken JDK 8 bytecode compatibility for POJOs uploaded to Maven Central. 
+
 # 0.12.0
 
 - Auth 0.8.0: fixed invalid use `min` instead of `minimum`.
