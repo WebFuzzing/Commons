@@ -2,6 +2,8 @@
 
 Under development in `master` branch.
 
+# 0.12.0
+
 - Auth 0.8.0: fixed invalid use `min` instead of `minimum`.
 
 - Auth 0.8.0: fixed `CreateUsers.generators` to use `minItems` instead of `minLength`, which does not apply to arrays.
