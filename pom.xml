@@ -46,7 +46,14 @@
     </developers>
 
     <properties>
-        <java.version>17</java.version>
+        <!--
+            The generated POJOs MUST be in JDK 8, for backward compatibility.
+            And, after all, they are just POJOs...
+            However, scripts in src/test  folder requires JDK 17, due to
+            used third-party dependencies, eg Jackson.
+            So, when building with Maven, we need JDK 17, although we compile to 8.
+        -->
+        <java.version>8</java.version>
         <junit.jupiter.version>5.7.2</junit.jupiter.version>
         <junit.platform.version>1.7.2</junit.platform.version>
         <jackson.version>3.1.7</jackson.version>
