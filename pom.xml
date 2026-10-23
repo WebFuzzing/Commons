@@ -114,7 +114,9 @@
 
                    - make sure you are on the "master" branch
 
-                   - update VersionNumbers if needed, and execute DataUpdater
+                   - update VersionNumbers if needed
+
+                   - execute DataUpdater
 
                    - update release_notes.md before preparing a new release
 

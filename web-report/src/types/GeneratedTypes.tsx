@@ -53,7 +53,7 @@ export interface WebFuzzingCommonsReport {
    */
   testFilePaths: TestFilePath[];
   /**
-   * Information on each generated test case.
+   * Information on each generated test case. There could several different test suite files. All test cases from all suites MUST be present here, with a unique id, regardless of whether they detect a fault or not. The order in which they are listed here is not important.
    */
   testCases: TestCase[];
   /**
@@ -82,7 +82,7 @@ export interface Faults {
   [k: string]: unknown;
 }
 /**
- * Data-structure to represent found faults, based on operations (e.g., HTTP endpoints in REST, and methods in GraphQL and RPC) and which tests find faults in them.
+ * Data-structure to represent found faults, based on operations (e.g., HTTP endpoints in REST, and methods in GraphQL and RPC) and which tests find faults in them. The specified 'testCaseId' MUST match an existing 'TestCase.id' present in the top 'testCases' data structure. Similarly, 'operationId' MUST match an operation defined under 'problemDetails'.
  */
 export interface FoundFault {
   operationId: OperationId;
