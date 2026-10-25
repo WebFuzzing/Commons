@@ -18,7 +18,7 @@ describe("renderPrComment", () => {
         expect(md).toContain("**Endpoints:** 3");
         expect(md).toContain("**Test cases:** 4");
         expect(md).toContain("**Warnings:** 2");
-        expect(rowByFirstCell(findTable(md, "Code"), "F100")).toEqual(["F100", "HTTP Status 500", "1/3 (+1 not in schema)", "2"]);
+        expect(rowByFirstCell(findTable(md, "Code"), "F100")).toEqual(["F100", "<code>HTTP\\_STATUS\\_500</code>", "HTTP Status 500", "1/3 (+1 not in schema)", "2"]);
     });
 
     it("links to the run and the artifact", () => {

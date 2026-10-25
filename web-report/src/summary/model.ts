@@ -11,6 +11,7 @@ export interface StatusCoverage {
 }
 
 export interface FaultCategorySummary {
+    id: string | null;
     code: number;
     name: string;
     label: string;
@@ -29,6 +30,7 @@ export interface EndpointSummary {
 
 export interface FaultDetail {
     operationId: string;
+    id: string | null;
     code: number;
     name: string;
     context: string | null;
@@ -60,6 +62,7 @@ export interface FaultEndpointRow {
 }
 
 export interface FaultGroup {
+    id: string | null;
     code: number;
     name: string;
     faults: number;
@@ -110,9 +113,16 @@ export interface SummaryModel {
     testCases: TestCaseSummary[];
 }
 
+export interface FaultCategoryStats {
+    id: string | null;
+    code: number;
+    count: number;
+}
+
 export interface SummaryStats {
     faults: number;
     distinctFaultTypes: number;
+    faultCategories: FaultCategoryStats[];
     testCases: number;
     endpoints: number | null;
     warnings: number;
@@ -198,8 +208,10 @@ const buildFaultDetails = (report: WebFuzzingCommonsReport): FaultDetail[] => {
             const key = JSON.stringify([operationId, fc.code, context]);
             let entry = details.get(key);
             if (!entry) {
+                // Reports written before 'id' was added to the schema only have the code
+                const info = getFaultCategoryInfo(fc.code);
                 entry = {
-                    detail: {operationId, code: fc.code, name: getFaultCategoryInfo(fc.code).name, context, testCaseIds: []},
+                    detail: {operationId, id: fc.id ?? info.id, code: fc.code, name: info.name, context, testCaseIds: []},
                     tests: new Set(),
                 };
                 details.set(key, entry);
@@ -217,11 +229,11 @@ const buildFaultDetails = (report: WebFuzzingCommonsReport): FaultDetail[] => {
 
 // declaredIds is null when the report has no schema information, so every operation counts as declared
 const buildFaultGroups = (details: FaultDetail[], declaredIds: Set<string> | null): FaultGroup[] => {
-    const groups = new Map<number, {name: string; rows: Map<string, {row: FaultEndpointRow; tests: Set<string>}>}>();
+    const groups = new Map<number, {id: string | null; name: string; rows: Map<string, {row: FaultEndpointRow; tests: Set<string>}>}>();
     for (const d of details) {
         let group = groups.get(d.code);
         if (!group) {
-            group = {name: d.name, rows: new Map()};
+            group = {id: d.id, name: d.name, rows: new Map()};
             groups.set(d.code, group);
         }
         let entry = group.rows.get(d.operationId);
@@ -246,7 +258,7 @@ const buildFaultGroups = (details: FaultDetail[], declaredIds: Set<string> | nul
         const rows = [...group.rows.values()]
             .map(({row, tests}) => ({...row, testCaseIds: [...tests]}))
             .sort((a, b) => b.faults - a.faults || a.operationId.localeCompare(b.operationId));
-        return {code, name: group.name, faults: rows.reduce((sum, r) => sum + r.faults, 0), operations: rows.length, rows};
+        return {id: group.id, code, name: group.name, faults: rows.reduce((sum, r) => sum + r.faults, 0), operations: rows.length, rows};
     });
 };
 
@@ -255,6 +267,7 @@ const buildFaultCategories = (groups: FaultGroup[]): FaultCategorySummary[] =>
         const info = getFaultCategoryInfo(g.code);
         const undeclared = g.rows.filter(r => !r.declared).length;
         return {
+            id: g.id,
             code: g.code,
             name: info.name,
             label: info.label,
@@ -343,6 +356,7 @@ export const buildSummaryModel = (report: WebFuzzingCommonsReport): SummaryModel
 export const toStats = (model: SummaryModel): SummaryStats => ({
     faults: model.totals.faults,
     distinctFaultTypes: model.totals.distinctFaultTypes,
+    faultCategories: model.faultCategories.map(f => ({id: f.id, code: f.code, count: f.count})),
     testCases: model.totals.testCases,
     endpoints: model.totals.endpoints,
     warnings: model.warnings.length,

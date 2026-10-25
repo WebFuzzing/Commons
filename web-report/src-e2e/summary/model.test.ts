@@ -26,8 +26,8 @@ describe("buildSummaryModel on the small fixture", () => {
 
     it("computes fault categories with names from fault_categories.json", () => {
         expect(model.faultCategories).toEqual([
-            {code: 100, name: "HTTP Status 500", label: "F100:HTTP Status 500", count: 2, operationCount: 1, undeclaredOperationCount: 1},
-            {code: 101, name: "HTTP Violation: no-non-standard-codes", label: "F101:HTTP Violation: no-non-standard-codes", count: 1, operationCount: 1, undeclaredOperationCount: 0},
+            {id: "HTTP_STATUS_500", code: 100, name: "HTTP Status 500", label: "F100:HTTP Status 500", count: 2, operationCount: 1, undeclaredOperationCount: 1},
+            {id: "HTTP_STATUS_NO_NON_STANDARD_CODES", code: 101, name: "HTTP Violation: no-non-standard-codes", label: "F101:HTTP Violation: no-non-standard-codes", count: 1, operationCount: 1, undeclaredOperationCount: 0},
         ]);
     });
 
@@ -42,19 +42,19 @@ describe("buildSummaryModel on the small fixture", () => {
 
     it("computes unique fault details sorted by code and operation", () => {
         expect(model.faultDetails).toEqual([
-            {operationId: "GET:/a", code: 100, name: "HTTP Status 500", context: "ctxA", testCaseIds: ["tests.java#t1", "tests.java#t2"]},
-            {operationId: "OPTIONS:/hidden", code: 100, name: "HTTP Status 500", context: null, testCaseIds: ["tests.java#t4"]},
-            {operationId: "POST:/a", code: 101, name: "HTTP Violation: no-non-standard-codes", context: "body | field `x`\nsecond line", testCaseIds: ["tests.java#t3"]},
+            {operationId: "GET:/a", id: "HTTP_STATUS_500", code: 100, name: "HTTP Status 500", context: "ctxA", testCaseIds: ["tests.java#t1", "tests.java#t2"]},
+            {operationId: "OPTIONS:/hidden", id: "HTTP_STATUS_500", code: 100, name: "HTTP Status 500", context: null, testCaseIds: ["tests.java#t4"]},
+            {operationId: "POST:/a", id: "HTTP_STATUS_NO_NON_STANDARD_CODES", code: 101, name: "HTTP Violation: no-non-standard-codes", context: "body | field `x`\nsecond line", testCaseIds: ["tests.java#t3"]},
         ]);
     });
 
     it("groups fault details by category and operation", () => {
         expect(model.faultGroups).toEqual([
-            {code: 100, name: "HTTP Status 500", faults: 2, operations: 2, rows: [
+            {id: "HTTP_STATUS_500", code: 100, name: "HTTP Status 500", faults: 2, operations: 2, rows: [
                 {operationId: "GET:/a", declared: true, faults: 1, example: "ctxA", testCaseIds: ["tests.java#t1", "tests.java#t2"]},
                 {operationId: "OPTIONS:/hidden", declared: false, faults: 1, example: null, testCaseIds: ["tests.java#t4"]},
             ]},
-            {code: 101, name: "HTTP Violation: no-non-standard-codes", faults: 1, operations: 1, rows: [
+            {id: "HTTP_STATUS_NO_NON_STANDARD_CODES", code: 101, name: "HTTP Violation: no-non-standard-codes", faults: 1, operations: 1, rows: [
                 {operationId: "POST:/a", declared: true, faults: 1, example: "body | field `x`\nsecond line", testCaseIds: ["tests.java#t3"]},
             ]},
         ]);
@@ -82,7 +82,10 @@ describe("buildSummaryModel on the small fixture", () => {
     });
 
     it("builds stats", () => {
-        expect(toStats(model)).toEqual({faults: 3, distinctFaultTypes: 2, testCases: 4, endpoints: 3, warnings: 2});
+        expect(toStats(model)).toEqual({faults: 3, distinctFaultTypes: 2, faultCategories: [
+            {id: "HTTP_STATUS_500", code: 100, count: 2},
+            {id: "HTTP_STATUS_NO_NON_STANDARD_CODES", code: 101, count: 1},
+        ], testCases: 4, endpoints: 3, warnings: 2});
     });
 });
 
@@ -115,7 +118,7 @@ describe("buildSummaryModel edge cases", () => {
             ]},
         } as WebFuzzingCommonsReport;
         expect(buildSummaryModel(report).faultCategories).toEqual([
-            {code: 100, name: "HTTP Status 500", label: "F100:HTTP Status 500", count: 1, operationCount: 1, undeclaredOperationCount: 0},
+            {id: "HTTP_STATUS_500", code: 100, name: "HTTP Status 500", label: "F100:HTTP Status 500", count: 1, operationCount: 1, undeclaredOperationCount: 0},
         ]);
     });
 
@@ -131,6 +134,20 @@ describe("buildSummaryModel edge cases", () => {
         const names = buildSummaryModel(report).faultCategories.map(f => [f.code, f.name]);
         expect(names).toEqual([[150, "Unrecognized Code"], [950, "Custom Code"]]);
         expect(getFaultCategoryInfo(950).label).toBe("F950:Custom Code");
+    });
+
+    it("takes fault category ids from the report, falling back to fault_categories.json", () => {
+        const base = loadSmallReport();
+        const report = {
+            ...base,
+            faults: {totalNumber: 3, foundFaults: [
+                {operationId: "GET:/a", testCaseId: "tests.java#t1", faultCategories: [{id: "CUSTOM_ID", code: 950, context: null}]},
+                {operationId: "GET:/a", testCaseId: "tests.java#t1", faultCategories: [{code: 100, context: null}]},
+                {operationId: "GET:/a", testCaseId: "tests.java#t1", faultCategories: [{code: 150, context: null}]},
+            ]},
+        } as WebFuzzingCommonsReport;
+        const ids = buildSummaryModel(report).faultCategories.map(f => [f.code, f.id]);
+        expect(ids).toEqual([[100, "HTTP_STATUS_500"], [150, null], [950, "CUSTOM_ID"]]);
     });
 
     it("processes the full sample report without errors", () => {

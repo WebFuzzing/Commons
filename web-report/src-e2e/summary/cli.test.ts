@@ -31,7 +31,10 @@ describe("runCli", () => {
     it("prints stats", () => {
         const {io, out} = makeIo(files);
         expect(runCli(["--report", "report.json", "--format", "stats"], io)).toBe(EXIT_OK);
-        expect(JSON.parse(out())).toEqual({faults: 3, distinctFaultTypes: 2, testCases: 4, endpoints: 3, warnings: 2});
+        expect(JSON.parse(out())).toEqual({faults: 3, distinctFaultTypes: 2, faultCategories: [
+            {id: "HTTP_STATUS_500", code: 100, count: 2},
+            {id: "HTTP_STATUS_NO_NON_STANDARD_CODES", code: 101, count: 1},
+        ], testCases: 4, endpoints: 3, warnings: 2});
     });
 
     it("prints the job summary by default, with links", () => {

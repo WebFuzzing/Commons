@@ -3,12 +3,13 @@ import {anchorLink, code, details, DOT, escapeHtml, escapeInline, link, omittedN
 import {plural, shortenContext} from "@/summary/format.ts";
 import {FAULTS_ANCHOR} from "@/summary/anchors.ts";
 
-export const FAULT_CATEGORY_HEADERS = ["Code", "Name", "Affected endpoints", "Faults"];
+export const FAULT_CATEGORY_HEADERS = ["Code", "Id", "Name", "Affected endpoints", "Faults"];
 
 const MAX_TEST_IDS_PER_CELL = 3;
 
 export const faultCategoryRow = (f: FaultCategorySummary, totalEndpoints: number | null): string[] => [
     `F${f.code}`,
+    f.id === null ? "-" : code(f.id),
     escapeInline(f.name),
     totalEndpoints === null
         ? String(f.operationCount)
@@ -50,7 +51,7 @@ export const faultDetailsSection = (total: number, anchors: Map<string, string>)
         byGroup.set(group, rows);
     }
     const blocks = [...byGroup.entries()].map(([g, rows]) => details(
-        `<b>F${g.code}</b> ${escapeHtml(g.name)}${DOT}${plural(g.faults, "fault")} on ${plural(g.operations, "endpoint")}`,
+        `<b>F${g.code}</b> ${g.id === null ? "" : `<code>${escapeHtml(g.id)}</code> `}${escapeHtml(g.name)}${DOT}${plural(g.faults, "fault")} on ${plural(g.operations, "endpoint")}`,
         table(["Operation", "Faults", "Example", "Test cases"], rows.map(r => [
             code(r.operationId) + (r.declared ? "" : " _(not in schema)_"),
             String(r.faults),

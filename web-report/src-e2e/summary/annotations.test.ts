@@ -8,8 +8,8 @@ describe("buildAnnotations", () => {
 
     it("lists fault categories first, then fuzzer warnings", () => {
         expect(buildAnnotations(model)).toEqual([
-            {level: "warning", title: "F100:HTTP Status 500 (2 potential faults)", message: "HTTP Status 500. Affected operations: GET:/a, OPTIONS:/hidden."},
-            {level: "warning", title: "F101:HTTP Violation: no-non-standard-codes (1 potential fault)", message: "HTTP Violation: no-non-standard-codes. Affected operations: POST:/a."},
+            {faultId: "HTTP_STATUS_500", level: "warning", title: "F100:HTTP Status 500 (2 potential faults)", message: "HTTP Status 500. Affected operations: GET:/a, OPTIONS:/hidden."},
+            {faultId: "HTTP_STATUS_NO_NON_STANDARD_CODES", level: "warning", title: "F101:HTTP Violation: no-non-standard-codes (1 potential fault)", message: "HTTP Violation: no-non-standard-codes. Affected operations: POST:/a."},
             {level: "notice", title: "Fuzzer warning: FUZZER", message: "No auth <configured>"},
             {level: "notice", title: "Fuzzer warning: SCHEMA", message: "Schema has issues"},
         ]);

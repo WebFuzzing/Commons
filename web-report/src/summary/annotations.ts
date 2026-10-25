@@ -2,6 +2,8 @@ import {SummaryModel} from "@/summary/model.ts";
 import {plural} from "@/summary/format.ts";
 
 export interface Annotation {
+    // Fault category id, only set on fault annotations
+    faultId?: string;
     level: "warning" | "notice";
     title: string;
     message: string;
@@ -21,6 +23,7 @@ export const buildAnnotations = (model: SummaryModel, max: number = DEFAULT_MAX_
                 ? ` and ${operations.length - MAX_OPERATIONS_IN_MESSAGE} more`
                 : "";
             return {
+                ...(f.id === null ? {} : {faultId: f.id}),
                 level: "warning",
                 title: `${f.label} (${plural(f.count, "potential fault")})`,
                 message: `${f.name}. Affected operations: ${shown}${more}.`,

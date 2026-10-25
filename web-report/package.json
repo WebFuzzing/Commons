@@ -14,6 +14,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "debug": "vite build && cpx \"src-e2e/static/**/*\" \"../target/classes/webreport\" && vite preview",
+    "debug-ci": "vite build --mode summary && node scripts/debug-ci.mjs && vite preview --outDir ../target/debug-ci --open",
     "test": "vitest"
   },
   "dependencies": {

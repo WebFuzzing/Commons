@@ -60,8 +60,8 @@ describe("renderJobSummary on the small fixture", () => {
 
     it("renders faults by category with undeclared operations", () => {
         const t = findTable(md, "Code");
-        expect(rowByFirstCell(t, "F100")).toEqual(["F100", "HTTP Status 500", "1/3 (+1 not in schema)", "2"]);
-        expect(rowByFirstCell(t, "F101")?.[3]).toBe("1");
+        expect(rowByFirstCell(t, "F100")).toEqual(["F100", "<code>HTTP\\_STATUS\\_500</code>", "HTTP Status 500", "1/3 (+1 not in schema)", "2"]);
+        expect(rowByFirstCell(t, "F101")?.[4]).toBe("1");
     });
 
     it("charts the fault categories as a mermaid pie", () => {
@@ -69,8 +69,8 @@ describe("renderJobSummary on the small fixture", () => {
     });
 
     it("groups fault details by category and endpoint", () => {
-        expect(md).toContain("<summary><b>F100</b> HTTP Status 500 &middot; 2 faults on 2 endpoints</summary>");
-        expect(md).toContain("<summary><b>F101</b> HTTP Violation: no-non-standard-codes &middot; 1 fault on 1 endpoint</summary>");
+        expect(md).toContain("<summary><b>F100</b> <code>HTTP_STATUS_500</code> HTTP Status 500 &middot; 2 faults on 2 endpoints</summary>");
+        expect(md).toContain("<summary><b>F101</b> <code>HTTP_STATUS_NO_NON_STANDARD_CODES</code> HTTP Violation: no-non-standard-codes &middot; 1 fault on 1 endpoint</summary>");
         const tables = faultTables(md);
         expect(tables).toHaveLength(2);
         expect(tables[0].rows.map(r => r.map(c => c.text))).toEqual([
@@ -124,7 +124,7 @@ describe("renderJobSummary variants", () => {
         expect(md).not.toContain("endpoints affected");
         expect(rowByFirstCell(findTable(md, "Metric"), "HTTP calls in generated tests")).toBeUndefined();
         expect(rowByFirstCell(findTable(md, "Metric"), "Endpoints")).toBeUndefined();
-        expect(rowByFirstCell(findTable(md, "Code"), "F100")).toEqual(["F100", "HTTP Status 500", "2", "2"]);
+        expect(rowByFirstCell(findTable(md, "Code"), "F100")).toEqual(["F100", "<code>HTTP\\_STATUS\\_500</code>", "HTTP Status 500", "2", "2"]);
     });
 
     it("does not print the tool name", () => {
