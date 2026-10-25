@@ -28,7 +28,7 @@ export const buildLargeReport = (n: number): WebFuzzingCommonsReport => {
             foundFaults: ops.map((op, i) => ({
                 operationId: op,
                 testCaseId: `tests.java#t${i}`,
-                faultCategories: [{code: 100, context: `context ${i}`}],
+                faultCategories: [{id: "HTTP_STATUS_500", code: 100, context: `context ${i}`}],
             })),
         },
         problemDetails: {
@@ -51,7 +51,7 @@ export const buildManyCategoriesReport = (n: number): WebFuzzingCommonsReport =>
             foundFaults: Array.from({length: n}, (_, i) => ({
                 operationId: "GET:/a",
                 testCaseId: "tests.java#t1",
-                faultCategories: [{code: 900 + i, context: null}],
+                faultCategories: [{id: `UNKNOWN_${900 + i}`, code: 900 + i, context: null}],
             })),
         },
     } as WebFuzzingCommonsReport;

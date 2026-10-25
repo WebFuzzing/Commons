@@ -15,10 +15,10 @@
   "faults": {
     "totalNumber": 3,
     "foundFaults": [
-      {"operationId": "GET:/a", "testCaseId": "tests.java#t1", "faultCategories": [{"code": 100, "context": "ctxA"}]},
-      {"operationId": "GET:/a", "testCaseId": "tests.java#t2", "faultCategories": [{"code": 100, "context": "ctxA"}]},
-      {"operationId": "POST:/a", "testCaseId": "tests.java#t3", "faultCategories": [{"code": 101, "context": "body | field `x`\nsecond line"}]},
-      {"operationId": "OPTIONS:/hidden", "testCaseId": "tests.java#t4", "faultCategories": [{"code": 100, "context": null}]}
+      {"operationId": "GET:/a", "testCaseId": "tests.java#t1", "faultCategories": [{"id": "HTTP_STATUS_500", "code": 100, "context": "ctxA"}]},
+      {"operationId": "GET:/a", "testCaseId": "tests.java#t2", "faultCategories": [{"id": "HTTP_STATUS_500", "code": 100, "context": "ctxA"}]},
+      {"operationId": "POST:/a", "testCaseId": "tests.java#t3", "faultCategories": [{"id": "HTTP_STATUS_NO_NON_STANDARD_CODES", "code": 101, "context": "body | field `x`\nsecond line"}]},
+      {"operationId": "OPTIONS:/hidden", "testCaseId": "tests.java#t4", "faultCategories": [{"id": "HTTP_STATUS_500", "code": 100, "context": null}]}
     ]
   },
   "problemDetails": {
