@@ -37,7 +37,7 @@ export const buildGeneratedTests = (testCases: TestCaseSummary[], sources: Map<s
         if (content === undefined) return undefined;
         let lines = splitFiles.get(path);
         if (!lines) {
-            lines = content.split(/\r?\n/);
+            lines = content.replace(/\r/g, "").split("\n");
             splitFiles.set(path, lines);
         }
         return lines;

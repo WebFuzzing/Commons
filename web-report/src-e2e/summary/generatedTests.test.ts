@@ -40,7 +40,9 @@ describe("buildGeneratedTests", () => {
             }
             const [test] = buildGeneratedTests([testCase("a", true, "tests.java", start, end)], sources);
             const actual = test ? test.code : null;
-            expect(actual, `${start}-${end}`).toBe(expected === null || expected.trim() === "" ? null : expected);
+            // The web report keeps the line endings of the file, the summary always uses LF
+            const expectedLf = expected?.replace(/\r/g, "") ?? null;
+            expect(actual, `${start}-${end}`).toBe(expectedLf === null || expectedLf.trim() === "" ? null : expectedLf);
         }
     });
 

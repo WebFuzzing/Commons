@@ -65,7 +65,7 @@ export const extractCodeLines = (
     startLine: number | undefined,
     endLine: number  | undefined
 ): string => {
-    const lines: string[] = fileContent.split(/\r?\n/);
+    const lines: string[] = fileContent.split('\n');
 
     if(!startLine || !endLine){
         return "";
