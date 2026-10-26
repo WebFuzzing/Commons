@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "0.7.0",
+  "toolName": "EvoMaster",
+  "toolVersion": "4.0.0",
+  "creationTime": "2026-09-01T10:00:00Z",
+  "executionTimeInSeconds": 3725,
+  "totalTests": 4,
+  "testFilePaths": ["tests.java"],
+  "testCases": [
+    {"id": "tests.java#t1", "filePath": "tests.java", "name": "t1", "startLine": 1, "endLine": 5},
+    {"id": "tests.java#t2", "filePath": "tests.java", "name": "t2", "startLine": 6, "endLine": 10},
+    {"id": "tests.java#t3", "filePath": "tests.java", "name": "t3", "startLine": 11, "endLine": 15, "namedExamples": ["alice"]},
+    {"id": "tests.java#t4", "filePath": "tests.java", "name": "t4", "startLine": 16, "endLine": 20, "namedExamples": ["alice", "bob"]}
+  ],
+  "faults": {
+    "totalNumber": 3,
+    "foundFaults": [
+      {"operationId": "GET:/a", "testCaseId": "tests.java#t1", "faultCategories": [{"id": "HTTP_STATUS_500", "code": 100, "context": "ctxA"}]},
+      {"operationId": "GET:/a", "testCaseId": "tests.java#t2", "faultCategories": [{"id": "HTTP_STATUS_500", "code": 100, "context": "ctxA"}]},
+      {"operationId": "POST:/a", "testCaseId": "tests.java#t3", "faultCategories": [{"id": "HTTP_STATUS_NO_NON_STANDARD_CODES", "code": 101, "context": "body | field `x`\nsecond line"}]},
+      {"operationId": "OPTIONS:/hidden", "testCaseId": "tests.java#t4", "faultCategories": [{"id": "HTTP_STATUS_500", "code": 100, "context": null}]}
+    ]
+  },
+  "problemDetails": {
+    "rest": {
+      "outputHttpCalls": 5,
+      "evaluatedHttpCalls": 1000,
+      "endpointIds": ["GET:/a", "POST:/a", "GET:/b"],
+      "coveredHttpStatus": [
+        {"endpointId": "GET:/a", "testCaseId": "tests.java#t1", "httpStatus": [500]},
+        {"endpointId": "GET:/a", "testCaseId": "tests.java#t2", "httpStatus": [200, 500]},
+        {"endpointId": "POST:/a", "testCaseId": "tests.java#t3", "httpStatus": [201]},
+        {"endpointId": "POST:/a", "testCaseId": "tests.java#t4", "httpStatus": [400]},
+        {"endpointId": "GET:/b", "testCaseId": "tests.java#t4", "httpStatus": null}
+      ]
+    }
+  },
+  "extra": [
+    {"toolName": "EvoMaster", "criteria": [
+      {"name": "Line Coverage", "covered": 50, "total": 100},
+      {"name": "Branch Coverage", "covered": 7, "total": null}
+    ]}
+  ],
+  "warnings": [
+    {"message": "Schema has issues", "category": "SCHEMA", "displayPriority": 3},
+    {"message": "No auth <configured>", "category": "FUZZER", "displayPriority": 1}
+  ]
+}

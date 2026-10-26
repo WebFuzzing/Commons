@@ -15,8 +15,31 @@ const readWfcVersion = (): string => {
 
 const WFC_VERSION = readWfcVersion();
 
+// Node CLI rendering WFC reports as Markdown for CI summaries, built with "vite build --mode summary"
+const summaryConfig: UserConfig = {
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  ssr: { noExternal: true },
+  build: {
+    ssr: "src/summary/main.ts",
+    outDir: '../target/classes/webreport',
+    emptyOutDir: false,
+    target: "node18",
+    rollupOptions: {
+      output: {
+        format: "cjs",
+        entryFileNames: "wfc-summary.cjs",
+        inlineDynamicImports: true,
+      },
+    },
+  },
+};
+
 // https://vite.dev/config/
-export default defineConfig({
+const appConfig = {
   plugins: [react(), tailwindcss()],
   define: {
     __WFC_VERSION__: JSON.stringify(WFC_VERSION),
@@ -52,4 +75,6 @@ export default defineConfig({
     }
   },
 
-} as UserConfig)
+} as UserConfig
+
+export default defineConfig(({ mode }) => (mode === "summary" ? summaryConfig : appConfig))
