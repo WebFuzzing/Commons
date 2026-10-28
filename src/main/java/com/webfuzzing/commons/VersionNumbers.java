@@ -5,7 +5,7 @@ package com.webfuzzing.commons;
  * Initially, these had the same version numbers as WFC.
  * But now they can be different, and so can evolve separately.
  *
- * WARNING: if making any change here, do run ReadmeUpdater
+ * WARNING: if making any change here, do run DataUpdater
  */
 public class VersionNumbers {
 
