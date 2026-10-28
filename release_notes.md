@@ -2,6 +2,8 @@
 
 Under development in `master` branch.
 
+# 0.13.0 
+
 - Faults 0.10.0: added new categories
   - 123 (broken read after fuzzing)
   - 124 (update/read state inconsistency)
