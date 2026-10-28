@@ -23,7 +23,7 @@ There are 4 main contributions in WFC:
 
 3) _WFC Report_ (<!--M3-->0.10.0<!--M3-->): a JSON schema definition to represent output information from the fuzzers. Currently under [src/main/resources/wfc/schemas/report.yaml](src/main/resources/wfc/schemas/report.yaml).
 
-4) _WFC Web Report_ (<!--M4-->0.8.0<!--M4-->): a web application that is able to visualize and interact with fuzzer reports in WFC format. Currently under [web-report](web-report). 
+4) _WFC Web Report_ (<!--M4-->0.9.0<!--M4-->): a web application that is able to visualize and interact with fuzzer reports in WFC format. Currently under [web-report](web-report). 
   The build also produces `wfc-summary.cjs`, a Node script that renders a report as Markdown for CI systems (e.g., GitHub Actions job summaries and PR comments), see [web-report/README.md](web-report/README.md#ci-summary-cli).
 
 

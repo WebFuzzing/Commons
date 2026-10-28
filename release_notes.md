@@ -12,7 +12,7 @@ Under development in `master` branch.
   - 316 (missing security headers)
   - 317 (LDAP injection)
 
-- Added new output JS script to convert report.json into a MD file (useful for example in CI)
+- Web Report 0.9.0: added new output JS script to convert report.json into a MD file (useful for example in CI)
 
 # 0.12.1
 
