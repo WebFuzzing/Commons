@@ -1,13 +1,13 @@
 # Fault Category Descriptions
 
 ## Summary
-Total: 44
+Total: 51
 
-_HTTP Faults_ (1xx): 23
+_HTTP Faults_ (1xx): 26
 
 _Schema Faults_ (2xx): 8
 
-_Security Faults_ (3xx): 13
+_Security Faults_ (3xx): 17
 
 
 ## Details
@@ -36,6 +36,9 @@ _Security Faults_ (3xx): 13
 |120|HTTP Violation: Invalid Location HTTP Header|Even outside of 3xx redirections, the Location header can be used to specify for example where newly created resources can be accessed. However, if a Location value point to a path for which there is no valid operation (not necessarily a GET) in the API, then such value might be likely wrong.|
 |121|HTTP Status 5xx Other Than 500 And 501|Status codes in the 5xx range represent server-side errors. Apart from 500 and 501, any other 5xx code (e.g., 502, 503 and 504) might indicate faults in the tested application, or in how it deals with the services it depends on. Like 500, these codes need a manual check: the environment can cause them (e.g., a temporarily unavailable database).|
 |122|HTTP Violation: Resource Not Found Right After Successful Creation|If a resource is successfully created (e.g., with a POST), then it should be possible to access it right after. If a request on the new resource (e.g., using the identifier returned in the creation response) gives a 404, and nobody deleted it, then either the resource was not created, or the API returns wrong information about how to access it.|
+|123|HTTP Violation: Read Operation Broken After Fuzzing|If a GET operation on an endpoint succeeded before fuzzing, repeating the same valid GET request after fuzzing write operations (e.g., POST, PUT and PATCH) on that path should not fail with a 5xx server error. A server error at this point suggests that a fuzzed write operation stored corrupted data that now breaks subsequent reads.|
+|124|HTTP Violation: Updated Resource State Not Reflected On Subsequent Read|If a resource is successfully updated (e.g., with a PUT or PATCH returning a 2xx status code), reading the resource back with a GET right after should reflect the updated writable fields. If the comparable fields still have their old values or differ from what was sent in the update, the update was silently ignored or not persisted properly.|
+|125|HTTP Violation: Update With Stale ETag Precondition Accepted|Optimistic concurrency control in HTTP uses ETags and the If-Match header to prevent lost updates. If a resource is modified so that its ETag changes, a subsequent write request (e.g., PUT or PATCH) carrying the old, stale If-Match ETag should be rejected (typically with 412 Precondition Failed), rather than succeeding and overwriting the newer state.|
 |200|Schema Violation: Received A Response From API With A Structure/Data That Is Not Matching Its Schema|A schema, like for example OpenAPI for REST, defines the structures not only of the inputs but also the outputs of the API. If what returned by an API is not conforming to its schema, then it is a clear fault. However, whether the fault is in the API (i.e., it does not conform to the schema) or in the schema itself (i.e., it is underspecified, or having mistakes) is something that cannot be known for sure without debugging the issue.|
 |201|Schema Violation: Invalid Allow HTTP Header|A returned Allow header specifies what operations (e.g., GET and PATCH) are available on a resource. For consistency, this needs to match what actually defined in the schema of the API, apart from special cases such as HEAD and OPTIONS.|
 |202|Schema Violation: no-401-if-no-auth|Should not return a 401 non-authenticated if there is no authentication in the definition of the API (or conversely, authentication definition is wrongly missing).|
@@ -57,3 +60,7 @@ _Security Faults_ (3xx): 13
 |310|Hidden Accessible Endpoint|To test an API, there is the need of a schema that specifies what endpoints can be called. Being able to call endpoints that are not declared in the schema is a potential risk, as those might be either forgotten endpoints, work-in-progress, admin-only endpoints, etc., whose security protections might not be fully tested or in place. Either the call should fail for auth reasons (e.g., 401 and 403 in REST APIs), or the system should respond that the endpoint does not exist (e.g., 405 and 501).|
 |311|Declared Authentication Is Not Enforced|A schema can declare that an operation requires authentication (e.g., with security requirements in OpenAPI). If a request with valid credentials succeeds, then the same request with no credentials, or with invalid ones, should be rejected (e.g., with a 401 or 403 in REST). Otherwise, either the schema declares authentication by mistake, or the API does not enforce it. Modifications (e.g., DELETE, PUT and PATCH) accepted with no credentials are handled in 'Anonymous Modifications'; this code covers all other cases, including reads and invalid credentials.|
 |312|Call Timeout|A call that does not get a response within a given time limit, or never gets one, might point to a denial-of-service vulnerability: specific inputs make the API spend excessive time (or resources) handling the request. An attacker could send such requests repeatedly to make the API unavailable to other users. The environment can also cause slow responses (e.g., an overloaded server or a slow database), so these calls need a manual check. The time limit should match the expected performance of the API.|
+|313|Command Injection (OS Command Execution)|Input data was not properly sanitized. Its use in system shell or process execution calls led to executing arbitrary OS commands on the server. See OWASP Top 10 for more information.|
+|314|NoSQL Injection (NoSQLi)|Input data was not properly sanitized. Its use in NoSQL queries (e.g., MongoDB operators such as $ne, $gt and $where) led to unauthorized query manipulation or server-side script evaluation. See OWASP Top 10 for more information.|
+|315|Excessive Data Exposure|An API response exposed sensitive data that should not be returned to the client, such as fields marked as writeOnly in the schema or unmasked credentials, secrets and personal identifiers. See OWASP API Security Top 10 for more information.|
+|316|Missing Security Headers|The HTTP response omitted standard security headers (such as X-Content-Type-Options, X-Frame-Options, Content-Security-Policy or Cache-Control for sensitive responses) that harden clients against MIME sniffing, framing and caching attacks.|

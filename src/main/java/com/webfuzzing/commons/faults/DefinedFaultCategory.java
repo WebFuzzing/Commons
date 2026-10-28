@@ -91,6 +91,21 @@ public enum DefinedFaultCategory implements FaultCategory {
                     " If a request on the new resource (e.g., using the identifier returned in the creation response)" +
                     " gives a 404, and nobody deleted it, then either the resource was not created," +
                     " or the API returns wrong information about how to access it."),
+    HTTP_BROKEN_READ(123, "HTTP Violation: Read Operation Broken After Fuzzing", "readBrokenAfterFuzzing",
+            "If a GET operation on an endpoint succeeded before fuzzing, repeating the same valid GET request after" +
+                    " fuzzing write operations (e.g., POST, PUT and PATCH) on that path should not fail with a 5xx server error." +
+                    " A server error at this point suggests that a fuzzed write operation stored corrupted data" +
+                    " that now breaks subsequent reads."),
+    HTTP_UPDATE_READ_INCONSISTENCY(124, "HTTP Violation: Updated Resource State Not Reflected On Subsequent Read", "updateReadInconsistency",
+            "If a resource is successfully updated (e.g., with a PUT or PATCH returning a 2xx status code)," +
+                    " reading the resource back with a GET right after should reflect the updated writable fields." +
+                    " If the comparable fields still have their old values or differ from what was sent in the update," +
+                    " the update was silently ignored or not persisted properly."),
+    HTTP_STALE_ETAG_ACCEPTED(125, "HTTP Violation: Update With Stale ETag Precondition Accepted", "staleEtagAccepted",
+            "Optimistic concurrency control in HTTP uses ETags and the If-Match header to prevent lost updates." +
+                    " If a resource is modified so that its ETag changes, a subsequent write request (e.g., PUT or PATCH)" +
+                    " carrying the old, stale If-Match ETag should be rejected (typically with 412 Precondition Failed)," +
+                    " rather than succeeding and overwriting the newer state."),
 
 
     // 2xx: schema
@@ -239,6 +254,27 @@ public enum DefinedFaultCategory implements FaultCategory {
                     " The environment can also cause slow responses (e.g., an overloaded server or a slow database)," +
                     " so these calls need a manual check." +
                     " The time limit should match the expected performance of the API."),
+    SECURITY_COMMAND_INJECTION(313, "Command Injection (OS Command Execution)",
+            "vulnerableToCommandInjection",
+            "Input data was not properly sanitized." +
+                    " Its use in system shell or process execution calls led to executing arbitrary OS commands on the server." +
+                    " See OWASP Top 10 for more information."),
+    SECURITY_NOSQL_INJECTION(314, "NoSQL Injection (NoSQLi)",
+            "vulnerableToNoSQLInjection",
+            "Input data was not properly sanitized." +
+                    " Its use in NoSQL queries (e.g., MongoDB operators such as $ne, $gt and $where) led to" +
+                    " unauthorized query manipulation or server-side script evaluation." +
+                    " See OWASP Top 10 for more information."),
+    SECURITY_EXCESSIVE_DATA_EXPOSURE(315, "Excessive Data Exposure",
+            "excessiveDataExposure",
+            "An API response exposed sensitive data that should not be returned to the client," +
+                    " such as fields marked as writeOnly in the schema or unmasked credentials, secrets and personal identifiers." +
+                    " See OWASP API Security Top 10 for more information."),
+    SECURITY_MISSING_HEADERS(316, "Missing Security Headers",
+            "missingSecurityHeaders",
+            "The HTTP response omitted standard security headers (such as X-Content-Type-Options, X-Frame-Options," +
+                    " Content-Security-Policy or Cache-Control for sensitive responses) that harden clients against" +
+                    " MIME sniffing, framing and caching attacks."),
 
 
 
