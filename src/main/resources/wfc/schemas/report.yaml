@@ -115,7 +115,7 @@ $defs:
             maximum: 207
           - type: integer
             minimum: 300
-            maximum: 316
+            maximum: 317
           - type: integer
             minimum: 900
             maximum: 999
