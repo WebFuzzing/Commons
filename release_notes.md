@@ -2,7 +2,17 @@
 
 Under development in `master` branch.
 
-- Faults: added 123 (broken read after fuzzing), 124 (update/read state inconsistency), 125 (stale ETag accepted), 313 (command injection), 314 (NoSQL injection), 315 (excessive data exposure) and 316 (missing security headers).
+- Faults 0.10.0: added new categories
+  - 123 (broken read after fuzzing)
+  - 124 (update/read state inconsistency)
+  - 125 (stale ETag accepted)
+  - 313 (command injection)
+  - 314 (NoSQL injection)
+  - 315 (excessive data exposure)
+  - 316 (missing security headers)
+  - 317 (LDAP injection)
+
+- Added new output JS script to convert report.json into a MD file (useful for example in CI)
 
 # 0.12.1
 
