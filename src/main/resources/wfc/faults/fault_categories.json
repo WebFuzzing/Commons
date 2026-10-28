@@ -406,4 +406,12 @@
   "id" : "SECURITY_MISSING_HEADERS",
   "label" : "F316:Missing Security Headers",
   "testCaseLabel" : "missingSecurityHeaders"
+}, {
+  "code" : 317,
+  "descriptiveName" : "LDAP Injection",
+  "fullDescription" : "Input data was not properly sanitized. Its use in LDAP queries led to unauthorized query manipulation, such as altering filters (e.g., via unescaped characters like '(', ')' and '*') to bypass authentication or extract directory data beyond what was intended. See OWASP Top 10 for more information.",
+  "group" : "G_3XX",
+  "id" : "SECURITY_LDAP_INJECTION",
+  "label" : "F317:LDAP Injection",
+  "testCaseLabel" : "vulnerableToLDAPInjection"
 } ]

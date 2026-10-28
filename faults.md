@@ -1,13 +1,13 @@
 # Fault Category Descriptions
 
 ## Summary
-Total: 51
+Total: 52
 
 _HTTP Faults_ (1xx): 26
 
 _Schema Faults_ (2xx): 8
 
-_Security Faults_ (3xx): 17
+_Security Faults_ (3xx): 18
 
 
 ## Details
@@ -64,3 +64,4 @@ _Security Faults_ (3xx): 17
 |314|NoSQL Injection (NoSQLi)|Input data was not properly sanitized. Its use in NoSQL queries (e.g., MongoDB operators such as $ne, $gt and $where) led to unauthorized query manipulation or server-side script evaluation. See OWASP Top 10 for more information.|
 |315|Excessive Data Exposure|An API response exposed sensitive data that should not be returned to the client, such as fields marked as writeOnly in the schema or unmasked credentials, secrets and personal identifiers. See OWASP API Security Top 10 for more information.|
 |316|Missing Security Headers|The HTTP response omitted standard security headers (such as X-Content-Type-Options, X-Frame-Options, Content-Security-Policy or Cache-Control for sensitive responses) that harden clients against MIME sniffing, framing and caching attacks.|
+|317|LDAP Injection|Input data was not properly sanitized. Its use in LDAP queries led to unauthorized query manipulation, such as altering filters (e.g., via unescaped characters like '(', ')' and '*') to bypass authentication or extract directory data beyond what was intended. See OWASP Top 10 for more information.|
