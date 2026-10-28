@@ -183,6 +183,30 @@
   "label" : "F122:HTTP Violation: Resource Not Found Right After Successful Creation",
   "testCaseLabel" : "createdResourceNotFound"
 }, {
+  "code" : 123,
+  "descriptiveName" : "HTTP Violation: Read Operation Broken After Fuzzing",
+  "fullDescription" : "If a GET operation on an endpoint succeeded before fuzzing, repeating the same valid GET request after fuzzing write operations (e.g., POST, PUT and PATCH) on that path should not fail with a 5xx server error. A server error at this point suggests that a fuzzed write operation stored corrupted data that now breaks subsequent reads.",
+  "group" : "G_1XX",
+  "id" : "HTTP_BROKEN_READ",
+  "label" : "F123:HTTP Violation: Read Operation Broken After Fuzzing",
+  "testCaseLabel" : "readBrokenAfterFuzzing"
+}, {
+  "code" : 124,
+  "descriptiveName" : "HTTP Violation: Updated Resource State Not Reflected On Subsequent Read",
+  "fullDescription" : "If a resource is successfully updated (e.g., with a PUT or PATCH returning a 2xx status code), reading the resource back with a GET right after should reflect the updated writable fields. If the comparable fields still have their old values or differ from what was sent in the update, the update was silently ignored or not persisted properly.",
+  "group" : "G_1XX",
+  "id" : "HTTP_UPDATE_READ_INCONSISTENCY",
+  "label" : "F124:HTTP Violation: Updated Resource State Not Reflected On Subsequent Read",
+  "testCaseLabel" : "updateReadInconsistency"
+}, {
+  "code" : 125,
+  "descriptiveName" : "HTTP Violation: Update With Stale ETag Precondition Accepted",
+  "fullDescription" : "Optimistic concurrency control in HTTP uses ETags and the If-Match header to prevent lost updates. If a resource is modified so that its ETag changes, a subsequent write request (e.g., PUT or PATCH) carrying the old, stale If-Match ETag should be rejected (typically with 412 Precondition Failed), rather than succeeding and overwriting the newer state.",
+  "group" : "G_1XX",
+  "id" : "HTTP_STALE_ETAG_ACCEPTED",
+  "label" : "F125:HTTP Violation: Update With Stale ETag Precondition Accepted",
+  "testCaseLabel" : "staleEtagAccepted"
+}, {
   "code" : 200,
   "descriptiveName" : "Schema Violation: Received A Response From API With A Structure/Data That Is Not Matching Its Schema",
   "fullDescription" : "A schema, like for example OpenAPI for REST, defines the structures not only of the inputs but also the outputs of the API. If what returned by an API is not conforming to its schema, then it is a clear fault. However, whether the fault is in the API (i.e., it does not conform to the schema) or in the schema itself (i.e., it is underspecified, or having mistakes) is something that cannot be known for sure without debugging the issue.",
@@ -350,4 +374,36 @@
   "id" : "SECURITY_CALL_TIMEOUT",
   "label" : "F312:Call Timeout",
   "testCaseLabel" : "callTimeout"
+}, {
+  "code" : 313,
+  "descriptiveName" : "Command Injection (OS Command Execution)",
+  "fullDescription" : "Input data was not properly sanitized. Its use in system shell or process execution calls led to executing arbitrary OS commands on the server. See OWASP Top 10 for more information.",
+  "group" : "G_3XX",
+  "id" : "SECURITY_COMMAND_INJECTION",
+  "label" : "F313:Command Injection (OS Command Execution)",
+  "testCaseLabel" : "vulnerableToCommandInjection"
+}, {
+  "code" : 314,
+  "descriptiveName" : "NoSQL Injection (NoSQLi)",
+  "fullDescription" : "Input data was not properly sanitized. Its use in NoSQL queries (e.g., MongoDB operators such as $ne, $gt and $where) led to unauthorized query manipulation or server-side script evaluation. See OWASP Top 10 for more information.",
+  "group" : "G_3XX",
+  "id" : "SECURITY_NOSQL_INJECTION",
+  "label" : "F314:NoSQL Injection (NoSQLi)",
+  "testCaseLabel" : "vulnerableToNoSQLInjection"
+}, {
+  "code" : 315,
+  "descriptiveName" : "Excessive Data Exposure",
+  "fullDescription" : "An API response exposed sensitive data that should not be returned to the client, such as fields marked as writeOnly in the schema or unmasked credentials, secrets and personal identifiers. See OWASP API Security Top 10 for more information.",
+  "group" : "G_3XX",
+  "id" : "SECURITY_EXCESSIVE_DATA_EXPOSURE",
+  "label" : "F315:Excessive Data Exposure",
+  "testCaseLabel" : "excessiveDataExposure"
+}, {
+  "code" : 316,
+  "descriptiveName" : "Missing Security Headers",
+  "fullDescription" : "The HTTP response omitted standard security headers (such as X-Content-Type-Options, X-Frame-Options, Content-Security-Policy or Cache-Control for sensitive responses) that harden clients against MIME sniffing, framing and caching attacks.",
+  "group" : "G_3XX",
+  "id" : "SECURITY_MISSING_HEADERS",
+  "label" : "F316:Missing Security Headers",
+  "testCaseLabel" : "missingSecurityHeaders"
 } ]
