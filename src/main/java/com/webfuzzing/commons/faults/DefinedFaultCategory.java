@@ -275,6 +275,13 @@ public enum DefinedFaultCategory implements FaultCategory {
             "The HTTP response omitted standard security headers (such as X-Content-Type-Options, X-Frame-Options," +
                     " Content-Security-Policy or Cache-Control for sensitive responses) that harden clients against" +
                     " MIME sniffing, framing and caching attacks."),
+    SECURITY_LDAP_INJECTION(317, "LDAP Injection",
+            "vulnerableToLDAPInjection",
+            "Input data was not properly sanitized." +
+                    " Its use in LDAP queries led to unauthorized query manipulation, such as altering filters" +
+                    " (e.g., via unescaped characters like '(', ')' and '*') to bypass authentication or extract" +
+                    " directory data beyond what was intended." +
+                    " See OWASP Top 10 for more information."),
 
 
 
