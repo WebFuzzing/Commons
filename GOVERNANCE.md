@@ -93,6 +93,12 @@ Notifications are done by @ tagging on GitHub (e.g., in PRs, issues and discussi
 Reminders are sent by retagging, and by direct contact (e.g., emails and LinkedIn messages). 
 It is responsibility of the maintainers to carry out those reminder communications. 
 
+### SemVer
+
+In this project, we follow `X.Y.Z` Semantic Versioning (SemVer). 
+A breaking change requires increasing `X` (unless we are still on version `0.?.?`) when making a new release, whereas an addition would require increasing `Y`. For misc changes, those would typically be confined to increasing `Z`, albeit in some cases (e.g., when improving WFC Web Report) could need a change in `Y`. 
+
+
 ## Changes To This Document 
 
 Any change on this document, regardless of how trivial it is, is automatically treated as a \[BREAKING\] change. 
