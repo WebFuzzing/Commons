@@ -15,6 +15,7 @@ on:
       - '!LICENSE'
       - '!.gitignore'
       - '!release_notes.md'
+      - '!GOVERNANCE.md'
 
 
 jobs:
