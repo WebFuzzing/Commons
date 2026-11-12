@@ -65,6 +65,10 @@ Currently, there three main types of activity. Each PR _must_ start its title wi
 
 * __\[MISC\]__: internal coding/documentation activity that has no direct impact on the implementations of the fuzzers using WFC. This could be adding some info to README, fixing typos, adding tests for schema validation, improvements to WFC Web Report, etc. Typically, only maintainers deal with this kind of activity. Depending on the importance of the changes, contributors might or might not be notified, at the discretion of the maintainers.
 
+When some activities are still under discussion, and no PR is created yet, such discussions might or might not use those tags. 
+For example, at the beginning of a discussion it might be unclear if a change is just an addition or if it will require a breaking change. 
+Titles can be updated afterward to reflect any update in the discussions. 
+
 ### Time Expectation
 
 Ideally, we would like to hear the opinions of all contributors before making changes to WFC.
