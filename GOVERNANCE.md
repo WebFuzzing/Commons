@@ -47,6 +47,7 @@ _MAINTAINERS_
 
 _CONTRIBUTORS_
 * [CATS](https://github.com/Endava/cats) (@en-milie)
+* [RESTest](https://github.com/isa-group/RESTest) (@ssegura)
 * [Schemathesis](https://github.com/schemathesis/schemathesis) (@Stranger6667)
 * [WuppieFuzz](https://github.com/TNO-S3/WuppieFuzz) (@grebnetiew, @ThomasTNO )
 
