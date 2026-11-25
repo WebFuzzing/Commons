@@ -46,9 +46,9 @@ If you are a developer of a Web API fuzzer, there are 3 ways in which you can co
 
 If you are using WFC in an academic work, you can cite the following:
 
-> O. Sahin, M. Zhang, A. Arcuri.
-**WFC/WFD: Web Fuzzing Commons, Dataset and Guidelines to Support Experimentation in REST API Fuzzing**.
-[arxiv 2509.01612](https://arxiv.org/abs/2509.01612)
+> Omur Sahin, Man Zhang, Dmitry Dygalo, Madalin Ilie, Thomas Rooijakkers, Erieke Weitenberg, Andrea Arcuri.
+> **Web Fuzzing Commons, Dataset, Guidelines and Evaluations to Support Experimentation in REST API Fuzzing**.
+> [arxiv 2509.01612](https://arxiv.org/abs/2509.01612)
 
 
 ## Fuzzers Supporting WFC
