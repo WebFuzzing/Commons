@@ -63,6 +63,7 @@ If your fuzzer supports  WFC (e.g., implements authentication mechanisms based o
 Existing fuzzers that have been involved with WFC, and/or are fully/partially supporting it (in alphabetic order):
 * [CATS](https://github.com/Endava/cats)
 * [EvoMaster](https://github.com/WebFuzzing/EvoMaster)
+* [RESTest](https://github.com/isa-group/RESTest)
 * [Schemathesis](https://github.com/schemathesis/schemathesis)
 * [WuppieFuzz](https://github.com/TNO-S3/WuppieFuzz)
 
